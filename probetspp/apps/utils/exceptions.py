@@ -1,0 +1,2 @@
+class ProBetsException(Exception):
+    pass
