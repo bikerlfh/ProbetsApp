@@ -143,4 +143,3 @@ def update_prediction_by_game_updated(
         status = PredictionStatus.LOSE.value
     prediction.status = status
     prediction.save()
-

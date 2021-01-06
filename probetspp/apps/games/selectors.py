@@ -25,8 +25,8 @@ def filter_player(
         filter_.update(external_id=external_id)
     if league_id:
         player_qry = player_qry.filter(
-            Q(home_games__league_id=league_id) |
-            Q(away_games__league_id=league_id)
+            Q(home_games__league_id=league_id)
+            | Q(away_games__league_id=league_id)
         )
     if filter_:
         player_qry = player_qry.filter(**filter_)
@@ -119,9 +119,9 @@ def filter_h2h_games(
 ) -> 'QuerySet[Game]':
     game_qry = Game.objects.filter(
         Q(home_player_id=first_player_id,
-          away_player_id=second_player_id) |
-        Q(home_player_id=second_player_id,
-          away_player_id=first_player_id)
+          away_player_id=second_player_id)
+        | Q(home_player_id=second_player_id,
+            away_player_id=first_player_id)
     ).order_by('-start_dt')
     if isinstance(status, list):
         game_qry = game_qry.filter(status__in=status)
@@ -137,8 +137,8 @@ def filter_last_games_by_player_id(
 ) -> 'QuerySet[Game]':
     now = datetime.now().date()
     game_qry = Game.objects.filter(
-        Q(home_player_id=player_id) |
-        Q(away_player_id=player_id),
+        Q(home_player_id=player_id)
+        | Q(away_player_id=player_id),
         status=GameStatus.FINISHED.value,
         start_dt__date__lte=now
     ).order_by('-start_dt')

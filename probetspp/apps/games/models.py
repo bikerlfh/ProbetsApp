@@ -34,18 +34,19 @@ class PlayerStats(BaseModel):
         on_delete=models.DO_NOTHING,
         related_name='stats'
     )
-    total_games = models.IntegerField(
-        default=0
-    )
-    won_games = models.IntegerField(
-        default=0
-    )
-    lost_games = models.IntegerField(
-        default=0
-    )
-    prediction_games = models.IntegerField(
-        default=0
-    )
+    total_games = models.IntegerField(default=0)
+    won_games = models.IntegerField(default=0)
+    lost_games = models.IntegerField(default=0)
+    won_sets = models.IntegerField(default=0)
+    lost_sets = models.IntegerField(default=0)
+    won_points = models.IntegerField(default=0)
+    lost_points = models.IntegerField(default=0)
+    back_to_win = models.IntegerField(default=0)
+    back_to_lose = models.IntegerField(default=0)
+    games_sold = models.IntegerField(default=0)
+    total_predictions = models.IntegerField(default=0)
+    won_predictions = models.IntegerField(default=0)
+    lost_predictions = models.IntegerField(default=0)
     confidence_percentage = models.DecimalField(
         default=Decimal(0),
         max_digits=5,

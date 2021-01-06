@@ -3,8 +3,6 @@ from rest_framework import serializers
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
-from django.core.serializers.json import DjangoJSONEncoder
-
 from apps.utils.mixins import APIErrorsMixin
 from apps.utils.serializers import inline_serializer
 
@@ -188,4 +186,3 @@ class CreatePredictionView(APIErrorsMixin, APIView):
         out_serializer = self.OutputSerializer(data=data)
         out_serializer.is_valid(raise_exception=True)
         return Response(data=out_serializer.validated_data)
-

@@ -12,7 +12,7 @@ from apps.games.models import (
     Player,
     PlayerStats
 )
-from apps.games import selectors
+from apps.games import selectors, statistics
 
 
 logger = logging.getLogger(__name__)
@@ -65,6 +65,10 @@ def create_player(
     PlayerStats.objects.create(
         player=player
     )
+    logger.info(
+        f'create_player :: player '
+        f'{external_id} has been created'
+    )
     return player
 
 
@@ -85,6 +89,7 @@ def update_player_stats_by_game(
     if status != GameStatus.FINISHED:
         return
 
+    game_stats = statistics.get_game_stats(game=game)
     is_home_winner = game.is_winner(home_player_id)
     home_stats = selectors.get_player_stats(
         player_id=home_player_id
@@ -100,6 +105,30 @@ def update_player_stats_by_game(
     else:
         away_stats.won_games += 1
         home_stats.lost_games += 1
+
+    h_score = game_stats['h_score']
+    h_points = game_stats['h_points']
+    a_score = game_stats['a_score']
+    a_points = game_stats['a_points']
+
+    home_stats.won_sets += h_score
+    home_stats.lost_sets += a_score
+    home_stats.won_points += h_points
+    home_stats.lost_points += a_points
+
+    away_stats.won_sets += a_score
+    away_stats.lost_sets += h_score
+    away_stats.won_points += a_points
+    away_stats.lost_points += h_points
+
+    h_back_to_win = game_stats['h_back_to_win']
+    a_back_to_win = game_stats['a_back_to_win']
+    if h_back_to_win:
+        home_stats.back_to_win += 1
+        away_stats.back_to_lose += 1
+    elif a_back_to_win:
+        away_stats.back_to_win += 1
+        home_stats.back_to_lose += 1
     home_stats.save()
     away_stats.save()
 
@@ -231,22 +260,6 @@ def get_games(
     return data
 
 
-def _get_player_stats_data(
-    *,
-    player: Player
-) -> Dict[str, Any]:
-    player_id = player.id
-    stats = selectors.get_player_stats(player_id=player_id)
-    data = dict(
-        id=player_id,
-        name=player.name,
-        total_games=stats.total_games,
-        won_games=stats.won_games,
-        lost_games=stats.lost_games,
-    )
-    return data
-
-
 def _get_h2h_data(
     *,
     home_player_id: int,
@@ -307,11 +320,11 @@ def get_game_data_to_prediction(
         away_player_id=away_player.id,
         h2h=h2h_data
     )
-    home_data = _get_player_stats_data(
+    home_data = statistics.get_player_stats_data(
         player=home_player
     )
     data.update(home_player=home_data)
-    away_data = _get_player_stats_data(
+    away_data = statistics.get_player_stats_data(
         player=away_player
     )
     data.update(away_player=away_data)

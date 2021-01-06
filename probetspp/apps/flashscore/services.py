@@ -119,19 +119,26 @@ def _read_events(
                 start_dt_ = f"{start_dt_} {time.text.replace('SRF', '')}"
                 start_dt_format = '%d/%m/%Y %H:%M'
             start_dt_ = datetime.strptime(start_dt_, start_dt_format)
-            home_player = child.find('div', class_='event__participant--home').text
-            away_player = child.find('div', class_='event__participant--away').text
+            home_player = child.find(
+                'div', class_='event__participant--home'
+            ).text
+            away_player = child.find(
+                'div', class_='event__participant--away'
+            ).text
             score_home = child.find('div', class_='event__score--home').text
             score_away = child.find('div', class_='event__score--away').text
 
             parts = child.find_all('div', class_='event__part')
             line_score = []
             for i in range(1, 6):
-                parts_ = [a for a in parts if f'event__part--{i}' in a.attrs['class']]
+                parts_ = [a for a in parts
+                          if f'event__part--{i}' in a.attrs['class']]
                 if not parts_:
                     continue
-                home_ = [e for e in parts_ if 'event__part--home' in e.attrs['class']]
-                away_ = [e for e in parts_ if 'event__part--away' in e.attrs['class']]
+                home_ = [e for e in parts_
+                         if 'event__part--home' in e.attrs['class']]
+                away_ = [e for e in parts_
+                         if 'event__part--away' in e.attrs['class']]
                 line_score.append({
                     'home': int(home_[0].text),
                     'away': int(away_[0].text)
@@ -248,7 +255,10 @@ def create_or_update_game(
             line_score=line_score,
             status=status
         )
-        logger.info('create_update_game :: game created')
+        logger.info(
+            f'create_update_game :: '
+            f'game {external_id} created'
+        )
         return True
 
     games_services.update_game(
@@ -259,7 +269,9 @@ def create_or_update_game(
         away_score=away_score,
         line_score=line_score,
     )
-    logger.info('create_update_game :: game update')
+    logger.info(
+        f'create_update_game :: game {external_id} update'
+    )
     return False
 
 
