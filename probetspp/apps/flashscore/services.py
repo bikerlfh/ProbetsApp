@@ -1,3 +1,4 @@
+import os
 import pathlib
 import logging
 from datetime import datetime, date
@@ -61,6 +62,12 @@ def read_events_from_html_file(
     filename = file_date.strftime(FILENAME_FORMAT_FLASH_DATA)
     file_path = f'{FOLDER_PATH_FLASH_DATA}' \
                 f'{filename}'
+    if not os.path.isfile(file_path):
+        logger.warning(
+            f'read_events_from_html_file :: '
+            f'file {file_path} does not exists'
+        )
+        return
     file = open(file_path)
     data = None
     try:
@@ -287,6 +294,9 @@ def load_events(
         )
     events_created = 0
     events_updated = 0
+    if not events:
+        logger.info('load_events :: no events')
+        return
     for event in events:
         gender = event['gender']
         league = event['league']
