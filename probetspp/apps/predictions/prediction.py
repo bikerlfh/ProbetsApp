@@ -15,20 +15,6 @@ from apps.predictions.constants import (
 )
 
 
-def _is_player_winner(
-    *,
-    game_data: Dict[str, Any],
-    player_id: int
-) -> bool:
-    home_player_id = game_data['home_player_id']
-    away_player_id = game_data['away_player_id']
-    home_score = game_data['home_score']
-    away_score = game_data['away_score']
-    if home_score > away_score:
-        return home_player_id == player_id
-    return away_player_id == player_id
-
-
 class BasicPrediction:
     """
     Apply basic prediction from game data
@@ -152,14 +138,14 @@ class BasicPrediction:
     def _get_h2h_prediction(self) -> Union[Dict[str, Any], None]:
         if self.h2h is None:
             return None
-        home_wins = self.h2h['home_wins']
-        away_wins = self.h2h['away_wins']
+        # home_wins = self.h2h['home_wins']
+        # away_wins = self.h2h['away_wins']
         games = self.h2h['games']
         total_h2h_games = len(games)
         if total_h2h_games < NUM_H2H_GAMES_TO_PREDICT:
             return None
-        home_percentage = 100 * (home_wins / total_h2h_games)
-        away_percentage = 100 * (away_wins / total_h2h_games)
+        # h_history_percentage = 100 * (home_wins / total_h2h_games)
+        # a_history_percentage = 100 * (away_wins / total_h2h_games)
         last_h_games = 0
         last_a_games = 0
         last_start_dt_game = games[0]['start_dt']
@@ -176,18 +162,18 @@ class BasicPrediction:
             else:
                 last_a_games += 1
             last_games_total += 1
-        last_home_percentage = 100 * (last_h_games / last_games_total)
-        last_away_percentage = 100 * (last_a_games / last_games_total)
+        h_percentage = 100 * (last_h_games / last_games_total)
+        a_percentage = 100 * (last_a_games / last_games_total)
 
-        if last_home_percentage == last_away_percentage:
+        if h_percentage == a_percentage:
             prediction = WinnerPrediction.HOME_OR_AWAY
             confidence_percentage = 50
-        elif last_home_percentage > last_away_percentage:
+        elif h_percentage > a_percentage:
             prediction = WinnerPrediction.HOME_PLAYER
-            confidence_percentage = last_home_percentage
+            confidence_percentage = h_percentage
         else:
             prediction = WinnerPrediction.AWAY_PLAYER
-            confidence_percentage = last_away_percentage
+            confidence_percentage = a_percentage
 
         if confidence_percentage < ALLOWED_H2H_PERCENTAGE:
             return None
@@ -198,10 +184,10 @@ class BasicPrediction:
                 value=Decimal(confidence_percentage)
             ),
             home_percentage=format_decimal_to_n_places(
-                value=Decimal(home_percentage)
+                value=Decimal(h_percentage)
             ),
             away_percentage=format_decimal_to_n_places(
-                value=Decimal(away_percentage)
+                value=Decimal(a_percentage)
             ),
             last_game=last_start_dt_game
         )

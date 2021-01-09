@@ -1,6 +1,6 @@
 from datetime import date, datetime
 from typing import Optional, Union, List, Dict, Any
-from django.db.models import QuerySet, Q, F, Case, When, IntegerField, Value
+from django.db.models import QuerySet, Q, F, Case, When, IntegerField
 
 from apps.games.constants import GameStatus
 from apps.games.models import (
@@ -47,7 +47,7 @@ def filter_player_by_external_id(
     return filter_player(external_id=external_id)
 
 
-def get_player_stats(
+def get_player_stats_by_player_id(
     *,
     player_id: int
 ) -> PlayerStats:

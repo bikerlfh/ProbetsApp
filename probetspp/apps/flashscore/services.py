@@ -271,7 +271,6 @@ def create_or_update_game(
     games_services.update_game(
         game=game_qry.first(),
         status=status,
-        # start_dt=start_dt,
         home_score=home_score,
         away_score=away_score,
         line_score=line_score,

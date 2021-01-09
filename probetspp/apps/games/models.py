@@ -132,4 +132,3 @@ class Game(BaseModel):
 
     def is_winner(self, player_id: int):
         return player_id == self.winner_id
-

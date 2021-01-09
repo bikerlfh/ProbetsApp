@@ -1,6 +1,6 @@
 import logging
 from datetime import datetime, date
-from typing import Union, Optional, Dict, Any, List
+from typing import Union, Optional, Dict, Any
 from django.db.models import F
 
 from apps.predictions import services as predictions_services
@@ -87,14 +87,14 @@ def update_player_stats_by_game(
         return
 
     game_stats = statistics.get_game_stats(game_id=game.id)
-    home_player_id = game_stats['h_id']
-    away_player_id = game_stats['a_id']
-    is_home_winner = game_stats['winner_id'] == home_player_id
-    home_stats = selectors.get_player_stats(
-        player_id=home_player_id
+    h_id = game_stats['h_id']
+    a_id = game_stats['a_id']
+    is_home_winner = game_stats['winner_id'] == h_id
+    home_stats = selectors.get_player_stats_by_player_id(
+        player_id=h_id
     )
-    away_stats = selectors.get_player_stats(
-        player_id=away_player_id
+    away_stats = selectors.get_player_stats_by_player_id(
+        player_id=a_id
     )
     home_stats.total_games += 1
     away_stats.total_games += 1
@@ -282,8 +282,7 @@ def get_h2h_games_data(
         start_dt = game['start_dt']
         game['start_dt'] = start_dt.date()
         winner_id = game['winner_id']
-        h_id = game['h_id']
-        if winner_id == h_id:
+        if winner_id == home_player_id:
             h2h_home_wins += 1
             continue
         h2h_away_wins += 1
