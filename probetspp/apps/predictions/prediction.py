@@ -38,10 +38,10 @@ class BasicPrediction:
         self.game_id = self.game_data['id']
         self.league = self.game_data['league']
         self.start_dt = self.game_data['start_dt']
+        self.h_id = game_data['h_id']
         self.home_player = self.game_data['home_player']
-        self.home_player_id = self.home_player['id']
+        self.a_id = game_data['a_id']
         self.away_player = self.game_data['away_player']
-        self.away_player_id = self.away_player['id']
         self.h2h = self.game_data['h2h']
 
     def get_prediction(self) -> Union[Dict[str, Any], None]:
@@ -109,10 +109,10 @@ class BasicPrediction:
 
     def get_last_games_prediction(self) -> Union[Dict[str, Any], None]:
         last_home_data = self._get_last_games_player_data(
-            player_id=self.home_player_id
+            player_id=self.h_id
         )
         last_away_data = self._get_last_games_player_data(
-            player_id=self.away_player_id
+            player_id=self.a_id
         )
         if not last_home_data or not last_away_data:
             return None
@@ -150,6 +150,8 @@ class BasicPrediction:
         return data
 
     def _get_h2h_prediction(self) -> Union[Dict[str, Any], None]:
+        if self.h2h is None:
+            return None
         home_wins = self.h2h['home_wins']
         away_wins = self.h2h['away_wins']
         games = self.h2h['games']
@@ -167,10 +169,8 @@ class BasicPrediction:
             if len(games) <= i:
                 break
             game = games[i]
-            h_is_winner = _is_player_winner(
-                game_data=game,
-                player_id=self.home_player_id
-            )
+            winner_id = game['winner_id']
+            h_is_winner = winner_id == self.h_id
             if h_is_winner:
                 last_h_games += 1
             else:

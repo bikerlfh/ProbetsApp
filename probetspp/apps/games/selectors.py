@@ -1,6 +1,6 @@
 from datetime import date, datetime
-from typing import Optional, Union, List
-from django.db.models import QuerySet, Q
+from typing import Optional, Union, List, Dict, Any
+from django.db.models import QuerySet, Q, F, Case, When, IntegerField, Value
 
 from apps.games.constants import GameStatus
 from apps.games.models import (
@@ -122,7 +122,7 @@ def filter_h2h_games(
           away_player_id=second_player_id)
         | Q(home_player_id=second_player_id,
             away_player_id=first_player_id)
-    ).order_by('-start_dt')
+    ).order_by('id', '-start_dt')
     if isinstance(status, list):
         game_qry = game_qry.filter(status__in=status)
     elif isinstance(status, int):
@@ -141,7 +141,98 @@ def filter_last_games_by_player_id(
         | Q(away_player_id=player_id),
         status=GameStatus.FINISHED.value,
         start_dt__date__lte=now
-    ).order_by('-start_dt')
+    ).order_by('-id', '-start_dt')
     if limit:
         game_qry = game_qry[:limit]
+    return game_qry
+
+
+def filter_player_stats_data(
+    *,
+    player_id: Optional[Union[int, List[int]]] = None
+) -> 'QuerySet[Dict[str, Any]]':
+    """
+    filter player stats data
+    Attrs:
+        player_id: player identifier or list ids
+    Returns: QuerySet[Dict](
+        id: PlayerStats_id,
+        player_id: player identifier
+        t_games: total games
+        w_games: won games
+        l_games: lost games
+        w_sets: won sets
+        l_sets: lost sets
+        w_points: won points
+        l_points: lost points
+        b2w: back to win
+        b2l: back to lose
+        g_sold: games sold
+        t_predictions: win predictions
+        w_predictions: win predictions
+        l_predictions: lost predictions
+        cp: confidence %
+    )
+    """
+    stats_qry = PlayerStats.objects.all().annotate(
+        t_games=F('total_games'), w_games=F('won_games'),
+        l_games=F('lost_games'), w_sets=F('won_sets'),
+        l_sets=F('lost_sets'), w_points=F('won_points'),
+        l_points=F('lost_points'), b2w=F('back_to_win'),
+        b2l=F('back_to_lose'), g_sold=F('games_sold'),
+        t_predictions=F('total_predictions'),
+        w_predictions=F('won_predictions'),
+        l_predictions=F('lost_predictions'),
+        cp=F('confidence_percentage')
+    ).values(
+        'id', 'player_id', 't_games', 'w_games', 'l_games',
+        'w_sets', 'l_sets', 'w_points', 'l_points', 'b2w',
+        'b2l', 'g_sold', 'w_predictions', 'l_predictions', 'cp'
+    )
+    if isinstance(player_id, int):
+        stats_qry = stats_qry.filter(player_id=player_id)
+    elif isinstance(player_id, list):
+        stats_qry = stats_qry.filter(player_id__in=player_id)
+    return stats_qry
+
+
+def filter_game_stats_data(
+    *,
+    game_id: Optional[Union[int, List]] = None,
+    league_id: Optional[int] = None,
+    status: Optional[int] = None
+) -> 'QuerySet[Dict[str, Any]]':
+    game_qry = Game.objects.all().annotate(
+        h_id=F('home_player_id'),
+        a_id=F('away_player_id'),
+        h_score=F('home_score'),
+        a_score=F('away_score'),
+        l_score=F('line_score'),
+        winner_id=Case(
+            When(
+                home_score__gt=F('away_score'),
+                then=F('home_player_id')
+            ),
+            When(
+                home_score__lt=F('away_score'),
+                then=F('away_player_id')
+            ),
+            output_field=IntegerField()
+        )
+    ).values(
+        'id', 'status', 'league_id', 'start_dt',
+        'h_id', 'a_id', 'h_score', 'a_score',
+        'l_score', 'winner_id'
+    ).order_by('-id', '-start_dt')
+    filter_ = dict()
+    if isinstance(game_id, list):
+        filter_.update(id__in=game_id)
+    elif isinstance(game_id, int):
+        filter_.update(id=game_id)
+    if status:
+        filter_.update(status=status)
+    if league_id:
+        filter_.update(league_id=league_id)
+    if filter_:
+        game_qry = game_qry.filter(**filter_)
     return game_qry
