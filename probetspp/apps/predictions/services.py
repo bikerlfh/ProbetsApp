@@ -1,7 +1,7 @@
 import logging
 import json
+from django.db import transaction
 from django.core.serializers.json import DjangoJSONEncoder
-
 from datetime import datetime, date
 from typing import Dict, Any, List, Optional, Union
 from rest_framework.exceptions import ValidationError
@@ -117,10 +117,18 @@ def create_predictions(
     return data
 
 
+@transaction.atomic()
 def update_prediction_by_game_updated(
     *,
     game: Game
 ) -> Union[None]:
+    """
+    update prediction and player stats (prediction)
+    from game update
+    Attrs:
+        game: Game object
+    Returns: None
+    """
     prediction = selectors.filter_prediction_by_game_id(
         game_id=game.id,
         status=PredictionStatus.DEFAULT.value
@@ -128,12 +136,12 @@ def update_prediction_by_game_updated(
     if not prediction.exists():
         return
     prediction = prediction.first()
-    game_status = GameStatus(game.status)
-    if game_status == GameStatus.CANCELED:
+    status = GameStatus(game.status)
+    if status == GameStatus.CANCELED:
         prediction.status = PredictionStatus.CANCELED.value
         prediction.save()
         return
-    if game_status != GameStatus.FINISHED:
+    if status != GameStatus.FINISHED:
         return
     is_winner = game.is_winner(
         player_id=prediction.player_winner_id
@@ -141,5 +149,22 @@ def update_prediction_by_game_updated(
     status = PredictionStatus.WON.value
     if not is_winner:
         status = PredictionStatus.LOSE.value
+
+    h_id = game.h_id
+    a_id = game.a_id
+    h_stats = games_selectors.\
+        get_player_stats_by_player_id(player_id=h_id)
+    a_stats = games_selectors.\
+        get_player_stats_by_player_id(player_id=a_id)
+    h_stats.total_predictions += 1
+    a_stats.total_predictions += 1
+    if h_id == prediction.player_winner_id:
+        h_stats.won_predictions += 1 if is_winner else 0
+        a_stats.lost_predictions += 1 if not is_winner else 0
+    else:
+        a_stats.won_predictions += 1 if is_winner else 0
+        h_stats.lost_predictions += 1 if not is_winner else 0
+    h_stats.save()
+    a_stats.save()
     prediction.status = status
     prediction.save()

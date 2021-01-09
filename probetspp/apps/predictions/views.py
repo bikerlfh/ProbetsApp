@@ -65,6 +65,24 @@ class PrePredictionDataView(APIErrorsMixin, APIView):
         league = serializers.CharField()
         start_dt = serializers.DateTimeField()
         winner_prediction = serializers.IntegerField()
+        home_player = inline_serializer(
+            fields=dict(
+                id=serializers.IntegerField(),
+                # name=serializers.CharField(),
+                t_games=serializers.IntegerField(),
+                w_games=serializers.IntegerField(),
+                l_games=serializers.IntegerField(),
+            )
+        )
+        away_player = inline_serializer(
+            fields=dict(
+                id=serializers.IntegerField(),
+                # name=serializers.CharField(),
+                t_games=serializers.IntegerField(),
+                w_games=serializers.IntegerField(),
+                l_games=serializers.IntegerField(),
+            )
+        )
         last_games_prediction = inline_serializer(
             fields=dict(
                 prediction=serializers.IntegerField(),
@@ -116,24 +134,6 @@ class PrePredictionDataView(APIErrorsMixin, APIView):
                 last_game=serializers.DateField()
             )
         )
-        home_player = inline_serializer(
-            fields=dict(
-                id=serializers.IntegerField(),
-                name=serializers.CharField(),
-                total_games=serializers.IntegerField(),
-                won_games=serializers.IntegerField(),
-                lost_games=serializers.IntegerField(),
-            )
-        )
-        away_player = inline_serializer(
-            fields=dict(
-                id=serializers.IntegerField(),
-                name=serializers.CharField(),
-                total_games=serializers.IntegerField(),
-                won_games=serializers.IntegerField(),
-                lost_games=serializers.IntegerField(),
-            )
-        )
         h2h = inline_serializer(
             fields=dict(
                 home_wins=serializers.IntegerField(),
@@ -143,11 +143,11 @@ class PrePredictionDataView(APIErrorsMixin, APIView):
                         id=serializers.IntegerField(),
                         start_dt=serializers.DateField(),
                         league_id=serializers.IntegerField(),
-                        home_player_id=serializers.IntegerField(),
-                        away_player_id=serializers.IntegerField(),
-                        home_score=serializers.IntegerField(),
-                        away_score=serializers.IntegerField(),
-                        line_score=serializers.JSONField()
+                        h_id=serializers.IntegerField(),
+                        a_id=serializers.IntegerField(),
+                        h_score=serializers.IntegerField(),
+                        a_score=serializers.IntegerField(),
+                        l_score=serializers.JSONField()
                     ),
                     many=True
                 )

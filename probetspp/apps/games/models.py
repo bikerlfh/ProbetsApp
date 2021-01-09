@@ -110,10 +110,25 @@ class Game(BaseModel):
     away_score = models.SmallIntegerField(default=0)
     line_score = models.JSONField(null=True)
 
-    def is_winner(self, player_id: int):
+    @property
+    def h_id(self):
+        return self.home_player_id
+
+    @property
+    def a_id(self):
+        return self.away_player_id
+
+    @property
+    def winner_id(self):
         status = GameStatus(self.status)
         if status != GameStatus.FINISHED:
             return None
         if self.home_score > self.away_score:
-            return self.home_player_id == player_id
-        return self.away_player_id == player_id
+            return self.h_id
+        return self.a_id
+
+    def __str__(self):
+        return f'{self.home_player} vs {self.away_player}'
+
+    def is_winner(self, player_id: int):
+        return player_id == self.winner_id

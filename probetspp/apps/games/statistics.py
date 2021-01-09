@@ -1,29 +1,35 @@
-from typing import Dict, Any, Union
+from typing import Dict, Any, Union, List, Optional
 
 from apps.games.constants import GameStatus
-from apps.games.models import Game, Player
-
 from apps.games import selectors as games_selectors
 
 
-def get_game_stats(
+def _add_line_score_data(
     *,
-    game: Game
-) -> Union[Dict[str, Any], None]:
-    status = GameStatus(game.status)
-    if status != GameStatus.FINISHED:
-        return None
-    h_id = game.home_player.id
-    a_id = game.away_player.id
-    line_score = game.line_score
-    h_back_to_win = False
-    a_back_to_win = False
+    game_data: Dict[str, Any]
+) -> Dict[str, Any]:
+    """
+    add line score data to game_data
+    Attrs:
+        game_data: game stats data
+    Returns: game_data.update(
+        num_set: number of sets
+        h_points: home points
+        h_b2w: home back to win
+        a_points: away points
+        a_b2w: away back to win
+    )
+    """
+    h_b2w = False
+    a_b2w = False
     h_points = 0
     a_points = 0
     num_set = 0
-    h_sets_won = 0
-    a_sets_won = 0
-    h_is_winner = game.is_winner(player_id=h_id)
+    h_sets = 0
+    a_sets = 0
+    line_score = game_data['l_score']
+    h_id = game_data['h_id']
+    h_is_winner = game_data['winner_id'] == h_id
     for set_score in line_score:
         num_set += 1
         h_set_point = set_score['home']
@@ -31,43 +37,82 @@ def get_game_stats(
         h_points += h_set_point
         a_points += a_set_point
         if h_set_point > a_set_point:
-            h_sets_won += 1
+            h_sets += 1
         else:
-            a_sets_won += 1
+            a_sets += 1
         if num_set == 2 or num_set == 3:
-            if a_sets_won >= 2:
-                h_back_to_win = h_is_winner
-            elif h_sets_won >= 2:
-                a_back_to_win = not h_is_winner
+            if a_sets >= 2:
+                h_b2w = h_is_winner
+            elif h_sets >= 2:
+                a_b2w = not h_is_winner
 
-    data = dict(
-        num_sets=num_set,
-        h_id=h_id,
+    game_data.update(
+        num_set=num_set,
         h_points=h_points,
-        h_score=h_sets_won,
-        h_back_to_win=h_back_to_win,
-        h_winner=h_is_winner,
-        a_id=a_id,
+        h_b2w=h_b2w,
         a_points=a_points,
-        a_score=a_sets_won,
-        a_back_to_win=a_back_to_win,
-        a_winner=not h_is_winner
+        a_b2w=a_b2w,
     )
-    return data
+    return game_data
+
+
+def get_game_stats(
+    *,
+    game_id: Optional[int] = None,
+    games_id: Optional[List[int]] = None
+) -> Union[List[Dict[str, Any]], Dict[str, Any], None]:
+    """
+    get game stats only status game FINISHED
+    Attrs:
+        game_id: game id
+        games_id: list of games id
+    Returns:
+        List: dicts of games stats data if games_id is specified
+        Dict: game data (
+            id: game id
+            status: game status
+            league_id: game league id
+            start_dt: game start_dt
+            h_id: home player id
+            a_id: away player id
+            h_score: home score
+            a_score: away score
+            l_score: line score
+            winner_id: winner player id
+            num_set: number of sets
+            h_points: home points
+            h_b2w: home back to win
+            a_points: away points
+            a_b2w: away back to win
+        )
+    """
+    assert game_id or games_id, (
+        'game_id or games_id are required'
+    )
+    stats_qry = games_selectors.filter_game_stats_data(
+        game_id=game_id or games_id,
+        status=GameStatus.FINISHED.value
+    )
+    stats = []
+    for item in stats_qry:
+        game_data = _add_line_score_data(game_data=item)
+        stats.append(game_data)
+    if isinstance(game_id, int):
+        return stats[0] if stats else None
+    return stats
 
 
 def get_player_stats_data(
     *,
-    player: Player
-) -> Dict[str, Any]:
-    player_id = player.id
-    stats = games_selectors.\
-        get_player_stats(player_id=player_id)
-    data = dict(
-        id=player_id,
-        name=player.name,
-        total_games=stats.total_games,
-        won_games=stats.won_games,
-        lost_games=stats.lost_games,
+    player_id: Optional[int] = None,
+    players_id: Optional[List[int]] = None
+) -> Union[List[Dict[str, Any]], Dict[str, Any], None]:
+    assert player_id or players_id, (
+        'player_id or players_id are required'
     )
-    return data
+    stats_qry = games_selectors.filter_player_stats_data(
+        player_id=player_id or players_id
+    )
+    if player_id:
+        return stats_qry.first()
+    return list(stats_qry)

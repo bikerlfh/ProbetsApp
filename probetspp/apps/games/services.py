@@ -82,20 +82,19 @@ def update_player_stats_by_game(
         game: game objects
     Returns: None
     """
-    home_player_id = game.home_player.id
-    away_player_id = game.away_player.id
-
     status = GameStatus(game.status)
     if status != GameStatus.FINISHED:
         return
 
-    game_stats = statistics.get_game_stats(game=game)
-    is_home_winner = game.is_winner(home_player_id)
-    home_stats = selectors.get_player_stats(
-        player_id=home_player_id
+    game_stats = statistics.get_game_stats(game_id=game.id)
+    h_id = game_stats['h_id']
+    a_id = game_stats['a_id']
+    is_home_winner = game_stats['winner_id'] == h_id
+    home_stats = selectors.get_player_stats_by_player_id(
+        player_id=h_id
     )
-    away_stats = selectors.get_player_stats(
-        player_id=away_player_id
+    away_stats = selectors.get_player_stats_by_player_id(
+        player_id=a_id
     )
     home_stats.total_games += 1
     away_stats.total_games += 1
@@ -121,8 +120,8 @@ def update_player_stats_by_game(
     away_stats.won_points += a_points
     away_stats.lost_points += h_points
 
-    h_back_to_win = game_stats['h_back_to_win']
-    a_back_to_win = game_stats['a_back_to_win']
+    h_back_to_win = game_stats['h_b2w']
+    a_back_to_win = game_stats['a_b2w']
     if h_back_to_win:
         home_stats.back_to_win += 1
         away_stats.back_to_lose += 1
@@ -260,43 +259,38 @@ def get_games(
     return data
 
 
-def _get_h2h_data(
+def get_h2h_games_data(
     *,
     home_player_id: int,
     away_player_id: int
-) -> Dict[str, Any]:
-    h2h_games_qry = selectors.filter_h2h_games(
+) -> Union[Dict[str, Any], None]:
+    h2h_games_ids = selectors.filter_h2h_games(
         first_player_id=home_player_id,
         second_player_id=away_player_id,
         status=GameStatus.FINISHED.value
+    ).values_list('id', flat=True)
+
+    if not h2h_games_ids.exists():
+        return None
+
+    games_data = statistics.get_game_stats(
+        games_id=list(h2h_games_ids)
     )
-    games = []
     h2h_home_wins = 0
     h2h_away_wins = 0
-    for game in h2h_games_qry:
-        games.append(dict(
-            id=game.id,
-            start_dt=game.start_dt.date(),
-            status=game.status,
-            league_id=game.league_id,
-            home_player_id=game.home_player_id,
-            away_player_id=game.away_player_id,
-            home_score=game.home_score,
-            away_score=game.away_score,
-            line_score=game.line_score
-        ))
-        is_home_winner = game.is_winner(
-            player_id=home_player_id
-        )
-        if is_home_winner:
+    for game in games_data:
+        start_dt = game['start_dt']
+        game['start_dt'] = start_dt.date()
+        winner_id = game['winner_id']
+        if winner_id == home_player_id:
             h2h_home_wins += 1
-        else:
-            h2h_away_wins += 1
+            continue
+        h2h_away_wins += 1
 
     data = dict(
         home_wins=h2h_home_wins,
         away_wins=h2h_away_wins,
-        games=games
+        games=games_data
     )
     return data
 
@@ -305,27 +299,27 @@ def get_game_data_to_prediction(
     *,
     game: Game
 ) -> Dict[str, Any]:
-    home_player = game.home_player
-    away_player = game.away_player
-    h2h_data = _get_h2h_data(
-        home_player_id=home_player.id,
-        away_player_id=away_player.id
-    )
+    h_id = game.h_id
+    a_id = game.a_id
     data = dict(
         id=game.id,
-        name=f'{str(home_player)} vs {str(away_player)}',
+        name=str(game),
         league=str(game.league),
         start_dt=game.start_dt,
-        home_player_id=home_player.id,
-        away_player_id=away_player.id,
-        h2h=h2h_data
+        h_id=h_id,
+        a_id=a_id
     )
-    home_data = statistics.get_player_stats_data(
-        player=home_player
+    player_stats = statistics.get_player_stats_data(
+        players_id=[h_id, a_id]
     )
-    data.update(home_player=home_data)
-    away_data = statistics.get_player_stats_data(
-        player=away_player
+    for stats in player_stats:
+        if stats['player_id'] == h_id:
+            data.update(home_player=stats)
+            continue
+        data.update(away_player=stats)
+    h2h_data = get_h2h_games_data(
+        home_player_id=h_id,
+        away_player_id=a_id
     )
-    data.update(away_player=away_data)
+    data.update(h2h=h2h_data)
     return data
