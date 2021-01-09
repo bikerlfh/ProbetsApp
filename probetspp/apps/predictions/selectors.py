@@ -10,7 +10,7 @@ def filter_prediction(
     game_id: Optional[int] = None,
     status: Optional[Union[List, int]] = None,
     league_id: Optional[int] = None,
-    game_date: Optional[date] = None
+    start_dt: Optional[date] = None
 ) -> 'QuerySet[Prediction]':
     filter_ = dict()
     prediction_qry = Prediction.objects.all()
@@ -22,8 +22,8 @@ def filter_prediction(
         filter_.update(status=status)
     if league_id:
         filter_.update(game__league_id=league_id)
-    if game_date:
-        filter_.update(game__start_dt__date=game_date)
+    if start_dt:
+        filter_.update(game__start_dt__date=start_dt)
     if filter_:
         prediction_qry = prediction_qry.filter(**filter_)
     return prediction_qry

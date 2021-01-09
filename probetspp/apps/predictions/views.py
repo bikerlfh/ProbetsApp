@@ -21,7 +21,7 @@ class PredictionView(APIErrorsMixin, APIView):
             required=False,
             allow_null=True
         )
-        game_date = serializers.DateField(
+        start_dt = serializers.DateField(
             required=False,
             allow_null=True
         )
