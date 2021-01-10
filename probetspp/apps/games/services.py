@@ -251,7 +251,6 @@ def update_game(
         )
 
 
-
 def get_games(
     *,
     start_dt: date,

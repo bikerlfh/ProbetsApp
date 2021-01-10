@@ -8,14 +8,16 @@ from apps.predictions.models import Prediction
 
 class PredictionDataSerializer(serializers.Serializer):
     id = serializers.IntegerField()
-    # name = serializers.CharField()
     league = serializers.CharField()
     start_dt = serializers.DateTimeField()
     winner_prediction = serializers.IntegerField()
+    probability = serializers.DecimalField(
+        max_digits=5,
+        decimal_places=2
+    )
     home_player = inline_serializer(
         fields=dict(
             id=serializers.IntegerField(),
-            # name=serializers.CharField(),
             t_games=serializers.IntegerField(),
             w_games=serializers.IntegerField(),
             l_games=serializers.IntegerField(),
@@ -24,7 +26,6 @@ class PredictionDataSerializer(serializers.Serializer):
     away_player = inline_serializer(
         fields=dict(
             id=serializers.IntegerField(),
-            # name=serializers.CharField(),
             t_games=serializers.IntegerField(),
             w_games=serializers.IntegerField(),
             l_games=serializers.IntegerField(),

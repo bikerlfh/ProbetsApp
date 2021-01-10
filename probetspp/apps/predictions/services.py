@@ -47,6 +47,10 @@ def get_prediction_data_today(
         prediction = basic_prediction.get_prediction()
         if prediction:
             predictions_data.append(prediction)
+    logger.info(
+        f'get_prediction_data_today :: total '
+        f'predictions: {len(predictions_data)}'
+    )
     return predictions_data
 
 

@@ -4,7 +4,6 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 
 from apps.utils.mixins import APIErrorsMixin
-from apps.utils.serializers import inline_serializer
 
 from apps.predictions import services, selectors
 from apps.predictions.serializers import (
