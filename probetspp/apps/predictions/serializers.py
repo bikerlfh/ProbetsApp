@@ -1,14 +1,35 @@
+import json
 from rest_framework import serializers
 
 from apps.utils.serializers import inline_serializer
+from apps.games.serializers import GameModelSerializer
+from apps.predictions.models import Prediction
 
 
 class PredictionDataSerializer(serializers.Serializer):
     id = serializers.IntegerField()
-    name = serializers.CharField()
+    # name = serializers.CharField()
     league = serializers.CharField()
     start_dt = serializers.DateTimeField()
     winner_prediction = serializers.IntegerField()
+    home_player = inline_serializer(
+        fields=dict(
+            id=serializers.IntegerField(),
+            # name=serializers.CharField(),
+            t_games=serializers.IntegerField(),
+            w_games=serializers.IntegerField(),
+            l_games=serializers.IntegerField(),
+        )
+    )
+    away_player = inline_serializer(
+        fields=dict(
+            id=serializers.IntegerField(),
+            # name=serializers.CharField(),
+            t_games=serializers.IntegerField(),
+            w_games=serializers.IntegerField(),
+            l_games=serializers.IntegerField(),
+        )
+    )
     last_games_prediction = inline_serializer(
         fields=dict(
             prediction=serializers.IntegerField(),
@@ -60,24 +81,6 @@ class PredictionDataSerializer(serializers.Serializer):
             last_game=serializers.DateField()
         )
     )
-    home_player = inline_serializer(
-        fields=dict(
-            id=serializers.IntegerField(),
-            name=serializers.CharField(),
-            total_games=serializers.IntegerField(),
-            won_games=serializers.IntegerField(),
-            lost_games=serializers.IntegerField(),
-        )
-    )
-    away_player = inline_serializer(
-        fields=dict(
-            id=serializers.IntegerField(),
-            name=serializers.CharField(),
-            total_games=serializers.IntegerField(),
-            won_games=serializers.IntegerField(),
-            lost_games=serializers.IntegerField(),
-        )
-    )
     h2h = inline_serializer(
         fields=dict(
             home_wins=serializers.IntegerField(),
@@ -87,13 +90,34 @@ class PredictionDataSerializer(serializers.Serializer):
                     id=serializers.IntegerField(),
                     start_dt=serializers.DateField(),
                     league_id=serializers.IntegerField(),
-                    home_player_id=serializers.IntegerField(),
-                    away_player_id=serializers.IntegerField(),
-                    home_score=serializers.IntegerField(),
-                    away_score=serializers.IntegerField(),
-                    line_score=serializers.JSONField()
+                    h_id=serializers.IntegerField(),
+                    a_id=serializers.IntegerField(),
+                    h_score=serializers.IntegerField(),
+                    a_score=serializers.IntegerField(),
+                    l_score=serializers.JSONField()
                 ),
                 many=True
             )
         )
     )
+
+
+class PredictionModelSerializer(serializers.ModelSerializer):
+    game = GameModelSerializer()
+    game_data = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Prediction
+        fields = [
+            'id',
+            'status',
+            'player_winner_id',
+            'confidence_percentage',
+            'game',
+            'game_data'
+        ]
+
+    def get_game_data(self, obj):
+        serializer = PredictionDataSerializer(data=json.loads(obj.game_data))
+        serializer.is_valid(raise_exception=True)
+        return serializer.validated_data

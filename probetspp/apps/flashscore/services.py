@@ -267,14 +267,20 @@ def create_or_update_game(
             f'game {external_id} created'
         )
         return True
-
-    games_services.update_game(
-        game=game_qry.first(),
+    game = game_qry.first()
+    data = dict(
+        game=game,
         status=status,
         home_score=home_score,
         away_score=away_score,
-        line_score=line_score,
+        line_score=line_score
     )
+    # TODO when player changed
+    if game.home_player != home_player:
+        data.update(home_player=home_player)
+    if game.away_player != away_player:
+        data.update(away_player=away_player)
+    games_services.update_game(**data)
     logger.info(
         f'create_update_game :: game {external_id} update'
     )

@@ -1,6 +1,6 @@
 import logging
 from datetime import datetime, date
-from typing import Union, Optional, Dict, Any
+from typing import Union, Optional, Dict, Any, List
 from django.db.models import F
 
 from apps.predictions import services as predictions_services
@@ -187,6 +187,19 @@ def create_game(
     )
 
 
+def _recalculate_players_stats(
+    *,
+    players_id: List[int]
+) -> Union[None]:
+    for id_ in players_id:
+        statistics.recalculate_player_stats(
+            player_id=id_
+        )
+        predictions_services.recalculate_prediction_stats(
+            player_id=id_
+        )
+
+
 def update_game(
     *,
     game: Game,
@@ -195,12 +208,26 @@ def update_game(
     away_score: int,
     line_score: Dict[str, Any],
     start_dt: Optional[datetime] = None,
+    home_player: Optional[Player] = None,
+    away_player: Optional[Player] = None
 ) -> Union[None]:
+    """
+    update game.
+    NOTE: when home_player o away_player are changed,
+    player (old and new) stats mush be recalculate
+    """
     old_status = GameStatus(game.status)
     new_status = GameStatus(status)
     game.status = status
+
+    h_id = game.h_id
+    a_id = game.a_id
     if start_dt:
         game.start_dt = start_dt
+    if home_player:
+        game.home_player = home_player
+    if away_player:
+        game.away_player = away_player
     game.home_score = home_score
     game.away_score = away_score
     game.line_score = line_score
@@ -211,6 +238,18 @@ def update_game(
     predictions_services.update_prediction_by_game_updated(
         game=game
     )
+    players_id = []
+    if home_player:
+        players_id.append(h_id)
+        players_id.append(home_player.id)
+    if away_player:
+        players_id.append(a_id)
+        players_id.append(away_player.id)
+    if players_id:
+        _recalculate_players_stats(
+            players_id=players_id
+        )
+
 
 
 def get_games(
