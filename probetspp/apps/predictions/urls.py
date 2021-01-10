@@ -8,6 +8,6 @@ from apps.predictions.views import (
 
 urlpatterns = [
     path('', PredictionView.as_view()),
-    path('get-data/', PrePredictionDataView.as_view()),
+    path('get-pre-data/', PrePredictionDataView.as_view()),
     path('create/', CreatePredictionView.as_view())
 ]

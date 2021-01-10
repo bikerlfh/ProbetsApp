@@ -1,7 +1,11 @@
+import logging
 from typing import Dict, Any, Union, List, Optional
 
 from apps.games.constants import GameStatus
 from apps.games import selectors as games_selectors
+
+
+logger = logging.getLogger(__name__)
 
 
 def _add_line_score_data(
@@ -116,3 +120,62 @@ def get_player_stats_data(
     if player_id:
         return stats_qry.first()
     return list(stats_qry)
+
+
+def recalculate_player_stats(
+    *,
+    player_id: int
+) -> Union[None]:
+    """
+    Recalculate player stats
+    """
+    games_id = games_selectors.filter_games_by_player_id(
+        player_id=player_id
+    ).values_list('id', flat=True)
+    games_stats = get_game_stats(
+        games_id=list(games_id)
+    )
+    player_stats = games_selectors.\
+        get_player_stats_by_player_id(player_id=player_id)
+    t_games = 0
+    w_games = 0
+    l_games = 0
+    w_score = 0
+    l_score = 0
+    w_points = 0
+    l_points = 0
+    b2w = 0
+    b2l = 0
+    for game_ in games_stats:
+        t_games += 1
+        a_id = game_['a_id']
+        p_ = 'h'
+        vs_ = 'a'
+        if a_id == player_id:
+            p_ = 'a'
+            vs_ = 'h'
+        winner_id = game_['winner_id']
+        w_score += game_[f'{p_}_score']
+        l_score += game_[f'{vs_}_score']
+        w_points += game_[f'{p_}_points']
+        l_points += game_[f'{vs_}_points']
+        b2w += 1 if game_[f'{p_}_b2w'] else 0
+        b2l += 1 if game_[f'{vs_}_b2w'] else 0
+        if winner_id == player_id:
+            w_games += 1
+            continue
+        l_games += 1
+    player_stats.total_games = t_games
+    player_stats.won_games = w_games
+    player_stats.lost_games = l_games
+    player_stats.won_sets = w_score
+    player_stats.lost_sets = l_score
+    player_stats.won_points = w_points
+    player_stats.lost_points = l_points
+    player_stats.back_to_win = b2w
+    player_stats.back_to_lose = b2l
+    player_stats.save()
+    logger.info(
+        f'recalculate_player_stats :: player '
+        f'{player_id} stats has been recalculated'
+    )

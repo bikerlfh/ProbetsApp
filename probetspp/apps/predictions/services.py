@@ -47,6 +47,10 @@ def get_prediction_data_today(
         prediction = basic_prediction.get_prediction()
         if prediction:
             predictions_data.append(prediction)
+    logger.info(
+        f'get_prediction_data_today :: total '
+        f'predictions: {len(predictions_data)}'
+    )
     return predictions_data
 
 
@@ -168,3 +172,34 @@ def update_prediction_by_game_updated(
     a_stats.save()
     prediction.status = status
     prediction.save()
+
+
+def recalculate_prediction_stats(
+    *,
+    player_id: int
+) -> Union[None]:
+    prediction_qry = selectors.\
+        filter_prediction_by_player_winner_id(
+            player_id=player_id
+        )
+    if not prediction_qry.exists():
+        return
+    player_stats = games_selectors. \
+        get_player_stats_by_player_id(player_id=player_id)
+    t_prediction = 0
+    w_prediction = 0
+    l_prediction = 0
+
+    for data in prediction_qry:
+        t_prediction += 1
+        status = PredictionStatus(data.status)
+        if status == PredictionStatus.WON:
+            w_prediction += 1
+            continue
+        l_prediction += 1
+    player_stats.total_predictions = t_prediction
+    player_stats.won_predictions = w_prediction
+    player_stats.lost_predictions = l_prediction
+    c_percentage = 100 * (w_prediction / t_prediction)
+    player_stats.confidence_percentage = c_percentage
+    player_stats.save()

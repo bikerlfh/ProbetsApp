@@ -42,17 +42,20 @@ class BasicPrediction:
         h2h_confidence = h2h_prediction['confidence_percentage']
 
         winner_prediction = h2h_prediction_
+        probability = h2h_confidence
         if l_g_prediction != h2h_prediction_ and \
                 l_g_confidence > h2h_confidence:
             diff = l_g_confidence - h2h_confidence
             if diff > 30:
                 winner_prediction = l_g_prediction
+                probability = l_g_confidence
         data = dict(
             id=self.game_id,
             name=self.game_data['name'],
             league=self.league,
             start_dt=self.start_dt,
             winner_prediction=winner_prediction,
+            probability=probability,
             last_games_prediction=last_games_prediction,
             h2h_prediction=h2h_prediction,
             home_player=self.home_player,

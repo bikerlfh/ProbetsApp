@@ -130,18 +130,28 @@ def filter_h2h_games(
     return game_qry
 
 
+def filter_games_by_player_id(
+    *,
+    player_id: int
+) -> 'QuerySet[Game]':
+    return Game.objects.filter(
+        Q(home_player_id=player_id)
+        | Q(away_player_id=player_id)
+    ).order_by('-id', '-start_dt')
+
+
 def filter_last_games_by_player_id(
     *,
     player_id: int,
     limit: Optional[int] = None
 ) -> 'QuerySet[Game]':
     now = datetime.now().date()
-    game_qry = Game.objects.filter(
-        Q(home_player_id=player_id)
-        | Q(away_player_id=player_id),
+    game_qry = filter_games_by_player_id(
+        player_id=player_id
+    ).filter(
         status=GameStatus.FINISHED.value,
         start_dt__date__lte=now
-    ).order_by('-id', '-start_dt')
+    )
     if limit:
         game_qry = game_qry[:limit]
     return game_qry

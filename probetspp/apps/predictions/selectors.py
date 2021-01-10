@@ -3,6 +3,7 @@ from typing import Optional, Union, List
 from django.db.models import QuerySet
 
 from apps.predictions.models import Prediction
+from apps.predictions.constants import PredictionStatus
 
 
 def filter_prediction(
@@ -26,7 +27,7 @@ def filter_prediction(
         filter_.update(game__start_dt__date=start_dt)
     if filter_:
         prediction_qry = prediction_qry.filter(**filter_)
-    return prediction_qry
+    return prediction_qry.order_by('game__start_dt')
 
 
 def filter_prediction_by_game_id(
@@ -38,3 +39,15 @@ def filter_prediction_by_game_id(
         game_id=game_id,
         status=status
     )
+
+
+def filter_prediction_by_player_winner_id(
+    *,
+    player_id: int
+) -> 'QuerySet[Prediction]':
+    return filter_prediction(
+        status=[
+            PredictionStatus.WON.value,
+            PredictionStatus.LOSE.value
+        ]
+    ).filter(player_winner_id=player_id)
