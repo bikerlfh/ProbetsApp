@@ -3,7 +3,9 @@ from typing import Union, Dict, Any
 
 from apps.utils.decimal import format_decimal_to_n_places
 
-from apps.games import selectors as games_selectors
+from apps.games import (
+    statistics
+)
 
 from apps.predictions.constants import (
     NUM_H2H_GAMES_TO_PREDICT,
@@ -69,7 +71,7 @@ class BasicPrediction:
         *,
         player_id: int
     ) -> Union[Dict[str, Any], None]:
-        game_qry = games_selectors.filter_last_games_by_player_id(
+        game_qry = statistics.get_last_player_games_data(
             player_id=player_id,
             limit=NUM_LAST_GAMES_TO_PREDICT
         )
@@ -78,8 +80,8 @@ class BasicPrediction:
         total_games = 0
         for game in game_qry:
             total_games += 1
-            is_winner = game.is_winner(player_id=player_id)
-            if is_winner:
+            winner_id = game['winner_id']
+            if winner_id == player_id:
                 won_games += 1
                 continue
             lost_games += 1
