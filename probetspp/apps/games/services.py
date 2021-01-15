@@ -86,7 +86,7 @@ def update_player_stats_by_game(
     if status != GameStatus.FINISHED:
         return
 
-    game_stats = statistics.get_game_stats(game_id=game.id)
+    game_stats = statistics.get_games_stats(game_id=game.id)
     h_id = game_stats['h_id']
     a_id = game_stats['a_id']
     is_home_winner = game_stats['winner_id'] == h_id
@@ -299,20 +299,18 @@ def get_games(
 
 def get_h2h_games_data(
     *,
-    home_player_id: int,
-    away_player_id: int
+    h_player_id: int,
+    a_player_id: int
 ) -> Union[Dict[str, Any], None]:
-    h2h_games_ids = selectors.filter_h2h_games(
-        first_player_id=home_player_id,
-        second_player_id=away_player_id,
+    """
+    get h2h games data
+    Attrs:
+        h_player_id: home player id
+        a_player_id: away player id
+    """
+    games_data = statistics.get_games_stats(
+        h2h_players_id=[h_player_id, a_player_id],
         status=GameStatus.FINISHED.value
-    ).values_list('id', flat=True)
-
-    if not h2h_games_ids.exists():
-        return None
-
-    games_data = statistics.get_game_stats(
-        games_id=list(h2h_games_ids)
     )
     h2h_home_wins = 0
     h2h_away_wins = 0
@@ -320,7 +318,7 @@ def get_h2h_games_data(
         start_dt = game['start_dt']
         game['start_dt'] = start_dt.date()
         winner_id = game['winner_id']
-        if winner_id == home_player_id:
+        if winner_id == h_player_id:
             h2h_home_wins += 1
             continue
         h2h_away_wins += 1
@@ -356,8 +354,8 @@ def get_game_data_to_prediction(
             continue
         data.update(away_player=stats)
     h2h_data = get_h2h_games_data(
-        home_player_id=h_id,
-        away_player_id=a_id
+        h_player_id=h_id,
+        a_player_id=a_id
     )
     data.update(h2h=h2h_data)
     return data

@@ -1,8 +1,7 @@
-from datetime import date, datetime
+from datetime import date
 from typing import Optional, Union, List, Dict, Any
 from django.db.models import QuerySet, Q, F, Case, When, IntegerField
 
-from apps.games.constants import GameStatus
 from apps.games.models import (
     League,
     Game,
@@ -92,12 +91,15 @@ def filter_game_by_external_id(
 
 def filter_games(
     *,
+    game_id: Optional[int] = None,
     league_id: Optional[int] = None,
     start_dt: Optional[date] = None,
-    status: Optional[Union[List, int]] = None
+    status: Optional[Union[List, int]] = None,
+    filter_: Optional[Dict[str, any]] = None
 ) -> 'QuerySet[Game]':
-    filter_ = dict()
-    game_qry = Game.objects.all().order_by('start_dt')
+    filter_ = filter_ or dict()
+    if game_id:
+        filter_.update(id=game_id)
     if league_id:
         filter_.update(league_id=league_id)
     if start_dt:
@@ -106,28 +108,7 @@ def filter_games(
         filter_.update(status__in=status)
     if isinstance(status, int):
         filter_.update(status=status)
-    if filter_:
-        game_qry = game_qry.filter(**filter_)
-    return game_qry
-
-
-def filter_h2h_games(
-    *,
-    first_player_id: int,
-    second_player_id: int,
-    status: Optional[Union[List, int]] = None
-) -> 'QuerySet[Game]':
-    game_qry = Game.objects.filter(
-        Q(home_player_id=first_player_id,
-          away_player_id=second_player_id)
-        | Q(home_player_id=second_player_id,
-            away_player_id=first_player_id)
-    ).order_by('id', '-start_dt')
-    if isinstance(status, list):
-        game_qry = game_qry.filter(status__in=status)
-    elif isinstance(status, int):
-        game_qry = game_qry.filter(status=status)
-    return game_qry
+    return Game.objects.filter(**filter_).order_by('start_dt')
 
 
 def filter_games_by_player_id(
@@ -138,23 +119,6 @@ def filter_games_by_player_id(
         Q(home_player_id=player_id)
         | Q(away_player_id=player_id)
     ).order_by('-id', '-start_dt')
-
-
-def filter_last_games_by_player_id(
-    *,
-    player_id: int,
-    limit: Optional[int] = None
-) -> 'QuerySet[Game]':
-    now = datetime.now().date()
-    game_qry = filter_games_by_player_id(
-        player_id=player_id
-    ).filter(
-        status=GameStatus.FINISHED.value,
-        start_dt__date__lte=now
-    )
-    if limit:
-        game_qry = game_qry[:limit]
-    return game_qry
 
 
 def filter_player_stats_data(
@@ -209,9 +173,24 @@ def filter_player_stats_data(
 def filter_game_stats_data(
     *,
     game_id: Optional[Union[int, List]] = None,
+    player_id: Optional[int] = None,
     league_id: Optional[int] = None,
-    status: Optional[int] = None
+    status: Optional[Union[int, List]] = None,
+    start_dt: Optional[date] = None,
+    h2h_players_id: Optional[List[int]] = None,
+    filter_: Optional[Dict[str, Any]] = None
 ) -> 'QuerySet[Dict[str, Any]]':
+    """
+    filter games stats data
+    Attrs:
+        game_id: game id or list of games id
+        player_id: player identifier
+        league_id: league identifier
+        status: game status
+        start_dt: date of game
+        h2h_players_id: list of 2 h2h players id
+        limit: limits rows
+    """
     game_qry = Game.objects.all().annotate(
         h_id=F('home_player_id'),
         a_id=F('away_player_id'),
@@ -234,15 +213,33 @@ def filter_game_stats_data(
         'h_id', 'a_id', 'h_score', 'a_score',
         'l_score', 'winner_id'
     ).order_by('-id', '-start_dt')
-    filter_ = dict()
+    filter_ = filter_ or {}
     if isinstance(game_id, list):
         filter_.update(id__in=game_id)
     elif isinstance(game_id, int):
         filter_.update(id=game_id)
-    if status:
+    if isinstance(status, int):
         filter_.update(status=status)
+    elif isinstance(status, list):
+        filter_.update(status__in=status)
     if league_id:
         filter_.update(league_id=league_id)
+    if start_dt:
+        filter_.update(start_dt__date=start_dt)
     if filter_:
         game_qry = game_qry.filter(**filter_)
+    if player_id:
+        game_qry = game_qry.filter(
+            Q(home_player_id=player_id)
+            | Q(away_player_id=player_id)
+        )
+    elif h2h_players_id and len(h2h_players_id) == 2:
+        player_1 = h2h_players_id[0]
+        player_2 = h2h_players_id[1]
+        game_qry = game_qry.filter(
+            Q(home_player_id=player_1,
+              away_player_id=player_2)
+            | Q(home_player_id=player_2,
+                away_player_id=player_1)
+        )
     return game_qry
