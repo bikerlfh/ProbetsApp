@@ -72,6 +72,7 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     'apps.flashscore',
     'apps.core',
+    'apps.data',
     'apps.games',
     'apps.predictions'
 ]
@@ -217,6 +218,10 @@ LOGGING = {
     },
     'loggers': {
         'apps.core': {
+            'handlers': ['console'],
+            'level': environ.get('LOG_LEVEL', 'INFO')
+        },
+        'apps.data': {
             'handlers': ['console'],
             'level': environ.get('LOG_LEVEL', 'INFO')
         },

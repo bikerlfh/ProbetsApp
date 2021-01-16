@@ -161,7 +161,8 @@ def filter_player_stats_data(
     ).values(
         'id', 'player_id', 't_games', 'w_games', 'l_games',
         'w_sets', 'l_sets', 'w_points', 'l_points', 'b2w',
-        'b2l', 'g_sold', 'w_predictions', 'l_predictions', 'cp'
+        'b2l', 'g_sold', 't_predictions', 'w_predictions',
+        'l_predictions', 'cp'
     )
     if isinstance(player_id, int):
         stats_qry = stats_qry.filter(player_id=player_id)
