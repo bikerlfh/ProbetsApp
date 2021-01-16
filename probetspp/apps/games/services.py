@@ -85,7 +85,6 @@ def update_player_stats_by_game(
     status = GameStatus(game.status)
     if status != GameStatus.FINISHED:
         return
-
     game_stats = statistics.get_games_stats(game_id=game.id)
     h_id = game_stats['h_id']
     a_id = game_stats['a_id']
@@ -104,30 +103,30 @@ def update_player_stats_by_game(
     else:
         away_stats.won_games += 1
         home_stats.lost_games += 1
+    if game.line_score:
+        h_score = game_stats['h_score']
+        h_points = game_stats['h_points']
+        a_score = game_stats['a_score']
+        a_points = game_stats['a_points']
 
-    h_score = game_stats['h_score']
-    h_points = game_stats['h_points']
-    a_score = game_stats['a_score']
-    a_points = game_stats['a_points']
+        home_stats.won_sets += h_score
+        home_stats.lost_sets += a_score
+        home_stats.won_points += h_points
+        home_stats.lost_points += a_points
 
-    home_stats.won_sets += h_score
-    home_stats.lost_sets += a_score
-    home_stats.won_points += h_points
-    home_stats.lost_points += a_points
+        away_stats.won_sets += a_score
+        away_stats.lost_sets += h_score
+        away_stats.won_points += a_points
+        away_stats.lost_points += h_points
 
-    away_stats.won_sets += a_score
-    away_stats.lost_sets += h_score
-    away_stats.won_points += a_points
-    away_stats.lost_points += h_points
-
-    h_back_to_win = game_stats['h_b2w']
-    a_back_to_win = game_stats['a_b2w']
-    if h_back_to_win:
-        home_stats.back_to_win += 1
-        away_stats.back_to_lose += 1
-    elif a_back_to_win:
-        away_stats.back_to_win += 1
-        home_stats.back_to_lose += 1
+        h_back_to_win = game_stats['h_b2w']
+        a_back_to_win = game_stats['a_b2w']
+        if h_back_to_win:
+            home_stats.back_to_win += 1
+            away_stats.back_to_lose += 1
+        elif a_back_to_win:
+            away_stats.back_to_win += 1
+            home_stats.back_to_lose += 1
     home_stats.save()
     away_stats.save()
 
@@ -307,7 +306,7 @@ def get_h2h_games_data(
     Attrs:
         h_player_id: home player id
         a_player_id: away player id
-    """
+   02 """
     games_data = statistics.get_games_stats(
         h2h_players_id=[h_player_id, a_player_id],
         status=GameStatus.FINISHED.value

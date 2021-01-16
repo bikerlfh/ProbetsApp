@@ -1,4 +1,5 @@
 import os
+import platform
 import pathlib
 import logging
 from datetime import datetime, date
@@ -28,19 +29,17 @@ logger = logging.getLogger(__name__)
 
 
 def read_events_web_driver() -> Union[None, List[Dict[str, Any]]]:
+    os_name = platform.system()
     now = datetime.now()
     main_path = pathlib.Path().absolute()
     driver_path = f'{main_path}' \
-                  f'/probetspp/web_drivers/chromedriver'
+                  f'/probetspp/web_drivers/{os_name}/chromedriver'
     driver = webdriver.Chrome(driver_path)
     driver.get(TABLE_TENNIS_TODAY_URL)
     driver.implicitly_wait(40)
     content = driver.page_source
     filename = f'{FOLDER_PATH_FLASH_DATA}' \
                f'{now.strftime(FILENAME_FORMAT_FLASH_DATA)}'
-    f = open(filename, "w")
-    f.write(content)
-    f.close()
     data = None
     try:
         data = _read_events(
@@ -52,6 +51,10 @@ def read_events_web_driver() -> Union[None, List[Dict[str, Any]]]:
             f'read_events_web_driver :: {exc}'
         )
     driver.close()
+    if data:
+        f = open(filename, "w")
+        f.write(content)
+        f.close()
     return data
 
 
@@ -103,6 +106,9 @@ def _read_events(
     league = None
     gender = None
     events_info = []
+    if not events:
+        logger.error('_read_events :: no events found')
+        return
     for child in events[0].children:
         attrs = child.attrs
         if 'event__header' in attrs['class']:

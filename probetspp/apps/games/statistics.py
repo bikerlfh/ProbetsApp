@@ -31,6 +31,8 @@ def _add_line_score_data(
     h_id = game_data['h_id']
     a_id = game_data['a_id']
     winner_id = game_data['winner_id']
+    if not game_data['l_score']:
+        return game_data
     df = pd.DataFrame(game_data['l_score'])
     sum_pts = df.sum()
     h_points = sum_pts['home']

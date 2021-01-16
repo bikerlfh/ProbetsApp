@@ -21,19 +21,44 @@ class LeagueView(APIErrorsMixin, APIView):
 
 class PlayerView(APIErrorsMixin, APIView):
     class InputSerializer(serializers.Serializer):
+        player_id = serializers.IntegerField(
+            required=False
+        )
         league_id = serializers.IntegerField(
             required=False
         )
 
     class OutputSerializer(serializers.Serializer):
         id = serializers.IntegerField()
-        name = serializers.DateTimeField()
+        name = serializers.CharField()
+        gender = serializers.IntegerField()
+        stats = inline_serializer(
+            fields=dict(
+                total_games=serializers.IntegerField(),
+                won_games=serializers.IntegerField(),
+                lost_games=serializers.IntegerField(),
+                won_sets=serializers.IntegerField(),
+                lost_sets=serializers.IntegerField(),
+                won_points=serializers.IntegerField(),
+                lost_points=serializers.IntegerField(),
+                back_to_win=serializers.IntegerField(),
+                back_to_lose=serializers.IntegerField(),
+                games_sold=serializers.IntegerField(),
+                total_predictions=serializers.IntegerField(),
+                won_predictions=serializers.IntegerField(),
+                lost_predictions=serializers.IntegerField(),
+                confidence_percentage=serializers.DecimalField(
+                    max_digits=5,
+                    decimal_places=2
+                )
+            )
+        )
 
     def get(self, request):
         params = request.query_params.dict()
         in_serializer = self.InputSerializer(data=params)
         in_serializer.is_valid(raise_exception=True)
-        data = selectors.filter_player(**params)
+        data = selectors.filter_player(**params).distinct('id')
         out_serializer = self.OutputSerializer(instance=data, many=True)
         return Response(data=out_serializer.data)
 

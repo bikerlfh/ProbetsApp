@@ -42,7 +42,6 @@ class AdvancePrediction:
             'home_player_id',
             'away_player_id',
         )
-        import pdb; pdb.set_trace()
         data_lst = []
         for game in games_qry:
             id_ = game['id']
