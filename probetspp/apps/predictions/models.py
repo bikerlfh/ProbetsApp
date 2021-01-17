@@ -11,7 +11,7 @@ class Prediction(BaseModel):
         null=True,
         max_length=50
     )
-    game = models.ForeignKey(
+    game = models.OneToOneField(
         Game,
         on_delete=models.DO_NOTHING,
         related_name='predictions'

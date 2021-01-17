@@ -6,6 +6,7 @@ from datetime import datetime, date
 from typing import Dict, Any, List, Optional, Union
 from rest_framework.exceptions import ValidationError
 
+from apps.data.weights import wt_score
 from apps.games.models import Game
 from apps.games.constants import GameStatus
 from apps.games import (
@@ -69,6 +70,16 @@ def create_prediction(
     if not status:
         status = PredictionStatus.DEFAULT.value
 
+    prediction_qry = selectors.filter_prediction(
+        game_id=game_id
+    )
+    if prediction_qry.exists():
+        msg = f'prediction for game {game_id} already exists'
+        logger.error(
+            f'create_prediction :: {msg}'
+        )
+        raise ValidationError(msg)
+
     if game.home_player != player_winner and \
             game.away_player != player_winner:
         msg = f'player {player_winner_id} ' \
@@ -122,6 +133,33 @@ def create_predictions(
 
 
 @transaction.atomic()
+def create_predictions_by_wt_player_score(
+    *,
+    start_dt: Optional[date] = None
+) -> int:
+    """
+    create predictions by wt player score
+    Attrs:
+        start_dt: game start date
+    Return: num predictions created
+    """
+    wt_data = wt_score.\
+        get_games_prediction_by_wt_score_player(
+            start_dt=start_dt,
+            create_data_game=True
+        )
+    for wt in wt_data:
+        game_id = wt['id']
+        winner_id = wt['winner_id_pdt']
+        create_prediction(
+            game_id=game_id,
+            player_winner_id=winner_id,
+            game_data=wt
+        )
+    return len(wt_data)
+
+
+@transaction.atomic()
 def update_prediction_by_game_updated(
     *,
     game: Game
@@ -147,29 +185,25 @@ def update_prediction_by_game_updated(
         return
     if status != GameStatus.FINISHED:
         return
+
+    player_stats = games_selectors. \
+        get_player_stats_by_player_id(
+            player_id=prediction.player_winner_id
+        )
     is_winner = game.is_winner(
         player_id=prediction.player_winner_id
     )
-    status = PredictionStatus.WON.value
-    if not is_winner:
-        status = PredictionStatus.LOSE.value
-
-    h_id = game.h_id
-    a_id = game.a_id
-    h_stats = games_selectors.\
-        get_player_stats_by_player_id(player_id=h_id)
-    a_stats = games_selectors.\
-        get_player_stats_by_player_id(player_id=a_id)
-    h_stats.total_predictions += 1
-    a_stats.total_predictions += 1
-    if h_id == prediction.player_winner_id:
-        h_stats.won_predictions += 1 if is_winner else 0
-        a_stats.lost_predictions += 1 if not is_winner else 0
+    player_stats.total_predictions += 1
+    if is_winner:
+        status = PredictionStatus.WON.value
+        player_stats.won_predictions += 1
     else:
-        a_stats.won_predictions += 1 if is_winner else 0
-        h_stats.lost_predictions += 1 if not is_winner else 0
-    h_stats.save()
-    a_stats.save()
+        status = PredictionStatus.LOSE.value
+        player_stats.lost_predictions += 1
+    c_percentage = 100 * (player_stats.won_predictions
+                          / player_stats.total_predictions)
+    player_stats.confidence_percentage = c_percentage
+    player_stats.save()
     prediction.status = status
     prediction.save()
 

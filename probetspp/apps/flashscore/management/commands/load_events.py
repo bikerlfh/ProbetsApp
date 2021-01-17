@@ -37,7 +37,9 @@ class Command(BaseCommand):
             self.stdout.write(
                 self.style.SUCCESS(f'loading events from {file_date}....')
             )
-            file_date = datetime.strptime(file_date, self.date_format)
+            file_date = datetime.strptime(
+                file_date, self.date_format
+            ).date()
             data = services.load_events(file_date=file_date)
             self.stdout.write(
                 self.style.SUCCESS(data)
@@ -52,7 +54,7 @@ class Command(BaseCommand):
                 file_date_to_ = datetime.strptime(
                     file_date_to,
                     self.date_format
-                )
+                ).date()
             self.stdout.write(
                 self.style.SUCCESS(
                     f'loading all events from {file_date} '

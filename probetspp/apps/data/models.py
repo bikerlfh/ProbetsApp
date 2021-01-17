@@ -52,6 +52,12 @@ class DataGame(BaseModel):
         on_delete=models.DO_NOTHING,
         related_name='data'
     )
+    min_wt_p_diff = models.DecimalField(
+        default=Decimal(0),
+        max_digits=18,
+        decimal_places=10,
+        verbose_name='min wt player diff'
+    )
     h_wt_score = models.DecimalField(
         default=Decimal(0),
         max_digits=18,

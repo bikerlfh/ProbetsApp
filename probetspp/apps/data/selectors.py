@@ -44,5 +44,6 @@ def filter_data_game_by_game_id(
         'id',
         'game_id',
         'h_wt_score',
-        'a_wt_score'
+        'a_wt_score',
+        'min_wt_p_diff'
     )

@@ -9,6 +9,7 @@ from apps.data.constants import (
     MIN_DIFF_PLAYER_SCORE,
     MIN_TOTAL_GAMES_PLAYER
 )
+from apps.data import services
 from apps.data.weights import wt_player
 
 
@@ -17,7 +18,8 @@ def get_games_prediction_by_wt_score_player(
     start_dt: Optional[date] = None,
     status: Optional[int] = None,
     min_diff: Optional[int] = None,
-    min_total_games: Optional[int] = None
+    min_total_games: Optional[int] = None,
+    create_data_game: Optional[bool] = False
 ) -> List[Dict[str, Any]]:
     """
     get games prediction by wt_score_player
@@ -58,6 +60,7 @@ def get_games_prediction_by_wt_score_player(
     )
     data_games = []
     for game in games_qry:
+        game_id = game.id
         h_id = game.h_id
         a_id = game.a_id
         wt_score = wt_player.get_player_scores_by_game(
@@ -76,7 +79,7 @@ def get_games_prediction_by_wt_score_player(
             winner_id_pdt = a_id
         if diff >= min_diff:
             data_games.append(dict(
-                id=game.id,
+                id=game_id,
                 h_id=h_id,
                 a_id=a_id,
                 # only if game is finished
@@ -85,6 +88,14 @@ def get_games_prediction_by_wt_score_player(
                 diff=diff,
                 **wt_score
             ))
+            if not create_data_game:
+                continue
+            services.create_or_update_data_game(
+                game_id=game_id,
+                min_wt_p_diff=min_diff,
+                h_wt_score=h_wt_score,
+                a_wt_score=a_wt_score
+            )
     return data_games
 
 
@@ -131,6 +142,11 @@ def get_games_finished_predictions_by_score_player(
 
     df = pd.DataFrame(data_games)
     t_predictions = len(data_games)
+    if t_predictions == 0:
+        return dict(
+            min_diff=min_diff,
+            t_predictions=t_predictions
+        )
     w_pdt = len(df[df['pdt_won']])
     l_pdt = t_predictions - w_pdt
     per_ = 100 * (w_pdt / t_predictions)

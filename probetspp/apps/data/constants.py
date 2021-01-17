@@ -3,7 +3,7 @@ from decimal import Decimal
 
 
 MIN_DIFF_PLAYER_SCORE = int(getenv(
-    'MIN_DIFF_PLAYER_SCORE', 80
+    'MIN_DIFF_PLAYER_SCORE', 120
 ))
 
 MIN_TOTAL_GAMES_PLAYER = int(getenv(

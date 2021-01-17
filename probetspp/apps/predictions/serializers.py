@@ -119,6 +119,5 @@ class PredictionModelSerializer(serializers.ModelSerializer):
         ]
 
     def get_game_data(self, obj):
-        serializer = PredictionDataSerializer(data=json.loads(obj.game_data))
-        serializer.is_valid(raise_exception=True)
-        return serializer.validated_data
+        data = json.loads(obj.game_data)
+        return data

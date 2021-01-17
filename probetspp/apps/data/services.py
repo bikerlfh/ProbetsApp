@@ -106,19 +106,26 @@ def create_default_weights(
     return create_or_update_data_weights(**data)
 
 
-def create_data_game(
+def create_or_update_data_game(
     *,
     game_id: int,
     h_wt_score: Decimal,
-    a_wt_score: Decimal
+    a_wt_score: Decimal,
+    min_wt_p_diff: Decimal
 ) -> Union[None]:
     data_game_qry = selectors.filter_data_game_by_game_id(
         game_id=game_id
     )
     if data_game_qry.exists():
+        data_game_qry.update(
+            min_wt_p_diff=min_wt_p_diff,
+            h_wt_score=h_wt_score,
+            a_wt_score=a_wt_score
+        )
         return
     DataGame.objects.create(
         game_id=game_id,
+        min_wt_p_diff=min_wt_p_diff,
         h_wt_score=h_wt_score,
         a_wt_score=a_wt_score
     )
