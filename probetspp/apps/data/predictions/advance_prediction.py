@@ -1,7 +1,5 @@
 from datetime import date
-from typing import List, Dict, Any, Optional, Union
-
-import pandas as pd
+from typing import Optional
 
 from apps.games.constants import GameStatus
 from apps.games import (

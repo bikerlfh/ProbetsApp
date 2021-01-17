@@ -1,9 +1,8 @@
 from typing import Optional, Union
 from django.core.management.base import BaseCommand
 
-from apps.data.models import DataWeights
 from apps.data.constants import DEFAULT_WEIGHTS
-from apps.data.weights import services, selectors
+from apps.data import selectors, services
 
 
 class Command(BaseCommand):

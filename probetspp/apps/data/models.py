@@ -3,7 +3,7 @@ from django.db import models
 
 from apps.core.models import BaseModel
 
-from apps.games.models import Player
+from apps.games.models import Player, Game
 
 
 class DataWeights(BaseModel):
@@ -43,4 +43,24 @@ class DataWeights(BaseModel):
         default=Decimal(0),
         max_digits=18,
         decimal_places=10
+    )
+
+
+class DataGame(BaseModel):
+    game = models.OneToOneField(
+        Game,
+        on_delete=models.DO_NOTHING,
+        related_name='data'
+    )
+    h_wt_score = models.DecimalField(
+        default=Decimal(0),
+        max_digits=18,
+        decimal_places=10,
+        verbose_name='home wt score'
+    )
+    a_wt_score = models.DecimalField(
+        default=Decimal(0),
+        max_digits=18,
+        decimal_places=10,
+        verbose_name='away wt score'
     )

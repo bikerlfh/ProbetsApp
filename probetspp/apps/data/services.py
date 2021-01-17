@@ -3,9 +3,9 @@ from decimal import Decimal
 from typing import Optional, Union
 
 from apps.games import selectors as games_selectors
-from apps.data.models import DataWeights
+from apps.data.models import DataWeights, DataGame
 from apps.data.constants import DEFAULT_WEIGHTS
-from apps.data.weights import selectors
+from apps.data import selectors
 
 logger = logging.getLogger(__name__)
 
@@ -104,3 +104,21 @@ def create_default_weights(
         default_.pop('id')
         data.update(**default_)
     return create_or_update_data_weights(**data)
+
+
+def create_data_game(
+    *,
+    game_id: int,
+    h_wt_score: Decimal,
+    a_wt_score: Decimal
+) -> Union[None]:
+    data_game_qry = selectors.filter_data_game_by_game_id(
+        game_id=game_id
+    )
+    if data_game_qry.exists():
+        return
+    DataGame.objects.create(
+        game_id=game_id,
+        h_wt_score=h_wt_score,
+        a_wt_score=a_wt_score
+    )

@@ -1,6 +1,6 @@
 from django.db.models import QuerySet
 
-from apps.data.models import DataWeights
+from apps.data.models import DataWeights, DataGame
 
 
 def filter_default_data_weights() -> 'QuerySet[DataWeights]':
@@ -31,4 +31,18 @@ def filter_data_weights_by_player_id(
         'wt_games_sold',
         'wt_predictions',
         'player_id'
+    )
+
+
+def filter_data_game_by_game_id(
+    *,
+    game_id: int
+) -> 'QuerySet[DataGame]':
+    return DataGame.objects.filter(
+        game_id=game_id
+    ).values(
+        'id',
+        'game_id',
+        'h_wt_score',
+        'a_wt_score'
     )

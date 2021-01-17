@@ -2,14 +2,13 @@ from os import getenv
 from decimal import Decimal
 
 
-MIN_NUM_H2H_GAMES_TO_PREDICT = int(getenv(
-    'MIN_NUM_H2H_GAMES_TO_PREDICT', 10
+MIN_DIFF_PLAYER_SCORE = int(getenv(
+    'MIN_DIFF_PLAYER_SCORE', 80
 ))
 
-MIN_NUM_LAST_GAMES_TO_PREDICT = int(getenv(
-    'MIN_NUM_LAST_GAMES_TO_PREDICT', 10
+MIN_TOTAL_GAMES_PLAYER = int(getenv(
+    'MIN_TOTAL_GAMES_PLAYER', 10
 ))
-
 
 DEFAULT_WEIGHTS = dict(
     WT_GAMES=Decimal(0.9),
