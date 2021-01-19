@@ -144,7 +144,7 @@ def create_predictions_by_wt_player_score(
     Return: num predictions created
     """
     wt_data = wt_score.\
-        get_games_prediction_by_wt_score_player(
+        get_game_prediction_by_wt_score_player(
             start_dt=start_dt,
             create_data_game=True
         )

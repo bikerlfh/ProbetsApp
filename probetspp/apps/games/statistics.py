@@ -54,8 +54,7 @@ def _add_line_score_data(
 
 def get_games_stats(
     *,
-    game_id: Optional[int] = None,
-    games_id: Optional[List[int]] = None,
+    game_id: Optional[Union[List[int], int]] = None,
     player_id: Optional[int] = None,
     league_id: Optional[int] = None,
     status: Optional[int] = None,
@@ -67,8 +66,7 @@ def get_games_stats(
     """
     get game stats only status game FINISHED
     Attrs:
-        game_id: game id
-        games_id: list of games id
+        game_id: game id or list of game_id
         league_id: league identifier
         status: game status
         start_dt: date of game
@@ -95,7 +93,7 @@ def get_games_stats(
         )
     """
     stats_qry = games_selectors.filter_game_stats_data(
-        game_id=game_id or games_id,
+        game_id=game_id,
         player_id=player_id,
         league_id=league_id,
         status=status,
@@ -117,29 +115,63 @@ def get_games_stats(
 def get_last_player_games_data(
     *,
     player_id: int,
-    limit: Optional[int] = None,
+    from_dt: Optional[date] = None,
+    to_dt: Optional[date] = None,
+    limit: Optional[int] = None
 ) -> List[Dict[str, Any]]:
-    now = date.today()
+    """
+    get last player games (stats data)
+    Attrs:
+        player_id: player identification
+        from_dt: from date of games
+        to_dt: to date of games
+        limit: limit of games
+    """
+    if not to_dt:
+        to_dt = date.today()
+    filter_ = dict(
+        start_dt__date__lte=to_dt
+    )
+    if from_dt:
+        filter_.update(
+            start_dt__date__gte=from_dt
+        )
     return get_games_stats(
         player_id=player_id,
         status=GameStatus.FINISHED.value,
-        filter_=dict(start_dt__date__lte=now),
+        filter_=filter_,
         limit=limit
     )
 
 
 def get_player_stats_data(
     *,
-    player_id: Optional[int] = None,
-    players_id: Optional[List[int]] = None
+    player_id: Union[List[int], int]
 ) -> Union[List[Dict[str, Any]], Dict[str, Any], None]:
-    assert player_id or players_id, (
-        'player_id or players_id are required'
+    """
+    Return dict or list of dict(
+        id: PlayerStats_id,
+        player_id: player identifier
+        t_games: total games
+        w_games: won games
+        l_games: lost games
+        w_sets: won sets
+        l_sets: lost sets
+        w_points: won points
+        l_points: lost points
+        b2w: back to win
+        b2l: back to lose
+        g_sold: games sold
+        t_predictions: win predictions
+        w_predictions: win predictions
+        l_predictions: lost predictions
+        cp: confidence %
     )
+    """
     stats_qry = games_selectors.filter_player_stats_data(
-        player_id=player_id or players_id
+        player_id=player_id
     )
-    if player_id:
+    if isinstance(player_id, int):
         return stats_qry.first()
     return list(stats_qry)
 

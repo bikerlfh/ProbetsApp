@@ -11,9 +11,12 @@ MIN_TOTAL_GAMES_PLAYER = int(getenv(
 ))
 
 DEFAULT_WEIGHTS = dict(
-    WT_GAMES=Decimal(0.9),
-    WT_SETS=Decimal(0.7),
-    WT_POINTS=Decimal(0.5),
-    WT_GAMES_SOLD=Decimal(0.8),
-    WT_PREDICTIONS=Decimal(1)
+    wt_games=Decimal(0.9),
+    wt_sets=Decimal(0.7),
+    wt_points=Decimal(0.5),
+    wt_games_sold=Decimal(0.8),
+    wt_predictions=Decimal(1),
+    wt_h2h=Decimal(1),
+    wt_last_games=Decimal(0.8),
+    wt_direct_opponents=Decimal(0.6)
 )

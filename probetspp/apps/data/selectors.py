@@ -13,7 +13,10 @@ def filter_default_data_weights() -> 'QuerySet[DataWeights]':
         'wt_points',
         'wt_games_sold',
         'wt_predictions',
-        'player_id'
+        'player_id',
+        'wt_h2h',
+        'wt_last_games',
+        'wt_direct_opponents'
     )
 
 
@@ -30,7 +33,10 @@ def filter_data_weights_by_player_id(
         'wt_points',
         'wt_games_sold',
         'wt_predictions',
-        'player_id'
+        'player_id',
+        'wt_h2h',
+        'wt_last_games',
+        'wt_direct_opponents'
     )
 
 

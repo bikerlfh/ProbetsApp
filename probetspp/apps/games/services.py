@@ -1,7 +1,6 @@
 import logging
 from datetime import datetime, date
 from typing import Union, Optional, Dict, Any, List
-from django.db.models import F
 
 from apps.predictions import services as predictions_services
 
@@ -250,52 +249,6 @@ def update_game(
         )
 
 
-def get_games(
-    *,
-    start_dt: date,
-    league_id: Optional[int] = None,
-    status: Optional[int] = None
-) -> Dict[str, Any]:
-    data = selectors.filter_games(
-        league_id=league_id,
-        start_dt=start_dt,
-        status=status
-    ).annotate(
-        home_name=F('home_player__name'),
-        away_name=F('away_player__name')
-    ).values(
-        'id',
-        'status',
-        'start_dt',
-        'league_id',
-        'home_player_id',
-        'home_name',
-        'away_player_id',
-        'away_name',
-        'home_score',
-        'away_score',
-        'line_score'
-    )
-    for game in data:
-        name = f"{game['home_name']} vs {game['away_name']}"
-        game.update(
-            name=name,
-            home_player=dict(
-                id=game['home_player_id'],
-                name=game['home_name']
-            ),
-            away_player=dict(
-                id=game['away_player_id'],
-                name=game['away_name']
-            )
-        )
-        game.pop('home_player_id')
-        game.pop('home_name')
-        game.pop('away_player_id')
-        game.pop('away_name')
-    return data
-
-
 def get_h2h_games_data(
     *,
     h_player_id: int,
@@ -306,7 +259,7 @@ def get_h2h_games_data(
     Attrs:
         h_player_id: home player id
         a_player_id: away player id
-   02 """
+    """
     games_data = statistics.get_games_stats(
         h2h_players_id=[h_player_id, a_player_id],
         status=GameStatus.FINISHED.value
@@ -330,31 +283,94 @@ def get_h2h_games_data(
     return data
 
 
-def get_game_data_to_prediction(
+def get_games_data_to_predict(
     *,
-    game: Game
-) -> Dict[str, Any]:
-    h_id = game.h_id
-    a_id = game.a_id
-    data = dict(
-        id=game.id,
-        name=str(game),
-        league=str(game.league),
-        start_dt=game.start_dt,
-        h_id=h_id,
-        a_id=a_id
+    game_id: Optional[int] = None,
+    start_dt: Optional[date] = None,
+    status: Optional[int] = None,
+    min_t_games: Optional[int] = 10,
+    last_games_limit: Optional[int] = 20,
+    last_games_from_dt: Optional[date] = None
+) -> List[Dict[str, Any]]:
+    """
+    get games data to predict
+    Attrs:
+        game_id:  game identification
+        start_dt: game start date
+        status: status of game (default SCHEDULED)
+        min_t_games: min total games of player to predict
+        last_games_limit: player last games limit
+        last_games_from_dt: player last games from date
+    Return: list of dict(
+        id: game identification
+        external_id: game external_id
+        start_dt: game start_dt
+        status: game status
+        home_player: home player data
+                     (statistics.get_player_stats_data)
+        away_player: away player data
+                     (statistics.get_player_stats_data)
+        h2h_games_data: h2h games data (get_h2h_games_data)
+        h_last_games: list of home last games
+                      (statistics.get_games_stats)
+        a_last_games: list of away last games
+                      (statistics.get_games_stats)
     )
-    player_stats = statistics.get_player_stats_data(
-        players_id=[h_id, a_id]
+    """
+    if not status:
+        status = GameStatus.SCHEDULED.value
+    games_qry = selectors.filter_games(
+        game_id=game_id,
+        start_dt=start_dt,
+        status=status,
+        filter_=dict(
+            home_player__stats__total_games__gte=min_t_games,
+            away_player__stats__total_games__gte=min_t_games
+        )
+    ).values(
+        'id',
+        'external_id',
+        'start_dt',
+        'status',
+        'home_player_id',
+        'away_player_id',
     )
-    for stats in player_stats:
-        if stats['player_id'] == h_id:
-            data.update(home_player=stats)
-            continue
-        data.update(away_player=stats)
-    h2h_data = get_h2h_games_data(
-        h_player_id=h_id,
-        a_player_id=a_id
-    )
-    data.update(h2h=h2h_data)
-    return data
+    games_data = []
+    for game in games_qry:
+        id_ = game['id']
+        start_dt_ = game['start_dt']
+        h_id = game['home_player_id']
+        a_id = game['away_player_id']
+        p_stats = statistics.get_player_stats_data(
+            player_id=[h_id, a_id]
+        )
+        home_player = [s for s in p_stats if s['player_id'] == h_id][0]
+        away_player = [s for s in p_stats if s['player_id'] == a_id][0]
+
+        h2h_games_data = get_h2h_games_data(
+            h_player_id=h_id,
+            a_player_id=a_id
+        )
+        h_last_games = statistics.get_last_player_games_data(
+            player_id=h_id,
+            limit=last_games_limit
+        )
+        a_last_games = statistics.get_last_player_games_data(
+            player_id=a_id,
+            from_dt=last_games_from_dt,
+            to_dt=start_dt_,
+            limit=last_games_limit
+        )
+        data = dict(
+            id=id_,
+            external_id=game['external_id'],
+            start_dt=start_dt_,
+            status=game['status'],
+            home_player=home_player,
+            away_player=away_player,
+            h2h_games_data=h2h_games_data,
+            h_last_games=h_last_games,
+            a_last_games=a_last_games
+        )
+        games_data.append(data)
+    return games_data

@@ -2,21 +2,8 @@ from decimal import Decimal
 from typing import Dict, Any
 
 from apps.games import statistics
-from apps.data import selectors
-
-
-def _calculate_score_item(
-    wt: Decimal,
-    total: int,
-    won: int,
-    lost: int
-) -> Decimal:
-    if total == 0:
-        return Decimal(0)
-    w_per = 100 * (won / total)
-    l_per = 100 * (lost / total)
-    score = wt * Decimal(w_per - l_per)
-    return Decimal(score)
+from apps.data import services
+from apps.data.weights import wt_core
 
 
 def get_wt_score_player(
@@ -29,14 +16,9 @@ def get_wt_score_player(
         player_id: player identification
     Return: wt_score
     """
-    data_wt_qry = selectors.filter_data_weights_by_player_id(
+    wt_player = services.get_data_weights_player(
         player_id=player_id
     )
-    if not data_wt_qry.exists():
-        data_wt_qry = selectors.filter_default_data_weights()
-
-    wt_player = data_wt_qry.first()
-
     stats = statistics. \
         get_player_stats_data(player_id=player_id)
 
@@ -58,11 +40,11 @@ def get_wt_score_player(
     l_pdt = stats['l_predictions']
     t_sts = w_sts + l_sts
     t_pts = w_pts + l_pts
-    s_g = _calculate_score_item(wt_g, t_g, w_g, l_g)
-    s_sts = _calculate_score_item(wt_sets, t_sts, w_sts, l_sts)
-    s_pts = _calculate_score_item(wt_points, t_pts, w_pts, l_pts)
-    s_g_sold = _calculate_score_item(wt_g_sold, t_g, g_sold, 0)
-    s_pdt = _calculate_score_item(wt_predictions, t_pdt, w_pdt, l_pdt)
+    s_g = wt_core.calculate_score_item(wt_g, t_g, w_g, l_g)
+    s_sts = wt_core.calculate_score_item(wt_sets, t_sts, w_sts, l_sts)
+    s_pts = wt_core.calculate_score_item(wt_points, t_pts, w_pts, l_pts)
+    s_g_sold = wt_core.calculate_score_item(wt_g_sold, t_g, g_sold, 0)
+    s_pdt = wt_core.calculate_score_item(wt_predictions, t_pdt, w_pdt, l_pdt)
     score = s_g + s_sts + s_pts + s_g_sold + s_pdt
     return score
 

@@ -1,5 +1,6 @@
 from datetime import date
-from typing import Dict, Any, Optional, List
+from decimal import Decimal
+from typing import Dict, Any, Optional, List, Union
 
 import pandas as pd
 
@@ -9,28 +10,83 @@ from apps.data.constants import (
     MIN_DIFF_PLAYER_SCORE,
     MIN_TOTAL_GAMES_PLAYER
 )
-from apps.data import services
 from apps.data.weights import wt_player
 
 
-def get_games_prediction_by_wt_score_player(
+def validate_game_by_wt_player_score(
     *,
+    game_id: int,
+    h_id: int,
+    a_id: int,
+    min_diff: Optional[Decimal] = MIN_DIFF_PLAYER_SCORE
+) -> Union[Dict[str, Any], None]:
+    """
+    validate game by wt player score.
+    If it returns data it means that it
+    passed the viability parameters
+    Attrs:
+        game_id: game id
+        h_id: home player id
+        a_id: away player id
+        min_diff: diff between players
+                  score to predicted
+    Return: dict(
+        id: game id
+        h_id: home player id
+        a_id: away player id
+        winner_id_pdt: winner prediction id (player_id)
+        diff: diff between player wt score,
+        h_wt_score: home player wt score
+        a_wt_score: away player wt score
+    )
+    """
+    wt_score = wt_player.get_player_scores_by_game(
+        h_id=h_id,
+        a_id=a_id
+    )
+    h_wt_score = wt_score['h_wt_score']
+    a_wt_score = wt_score['a_wt_score']
+    winner_id_pdt = h_id
+    if h_wt_score < 0 and a_wt_score < 0:
+        return
+    if h_wt_score > a_wt_score:
+        diff = h_wt_score - a_wt_score
+    else:
+        diff = a_wt_score - h_wt_score
+        winner_id_pdt = a_id
+    if diff < min_diff:
+        return
+    data = dict(
+        id=game_id,
+        h_id=h_id,
+        a_id=a_id,
+        winner_id_pdt=winner_id_pdt,
+        diff=diff,
+        **wt_score
+    )
+    return data
+
+
+def get_game_prediction_by_wt_score_player(
+    *,
+    game_id: Optional[int] = None,
     start_dt: Optional[date] = None,
     status: Optional[int] = None,
-    min_diff: Optional[int] = None,
-    min_total_games: Optional[int] = None,
-    create_data_game: Optional[bool] = False
+    min_diff: Optional[Decimal] = MIN_DIFF_PLAYER_SCORE,
+    min_t_games: Optional[int] = MIN_TOTAL_GAMES_PLAYER
 ) -> List[Dict[str, Any]]:
     """
-    get games prediction by wt_score_player
+    get game prediction by wt_score_player
     Attrs:
+        game_id: game identification
         start_dt: game start_dt
         status: status of game
         min_diff: diff between players
                   score to predicted
-        min_total_games: min of number of total games
+        min_t_games: min of number of total games
                          to player to can predicted
-    Return: dict(
+        create_data_game: create register in DateGame
+    Return: List to dict(
         id: game id
         h_id: home player id
         a_id: away player id
@@ -45,57 +101,27 @@ def get_games_prediction_by_wt_score_player(
         start_dt = date.today()
     if not status:
         status = GameStatus.SCHEDULED.value
-    if min_diff is None:
-        min_diff = MIN_DIFF_PLAYER_SCORE
-    if min_total_games is None:
-        min_total_games = MIN_TOTAL_GAMES_PLAYER
-
     games_qry = games_selectors.filter_games(
+        game_id=game_id,
         start_dt=start_dt,
         status=status,
         filter_=dict(
-            home_player__stats__total_games__gte=min_total_games,
-            away_player__stats__total_games__gte=min_total_games
+            home_player__stats__total_games__gte=min_t_games,
+            away_player__stats__total_games__gte=min_t_games
         )
     )
     data_games = []
     for game in games_qry:
-        game_id = game.id
-        h_id = game.h_id
-        a_id = game.a_id
-        wt_score = wt_player.get_player_scores_by_game(
-            h_id=h_id,
-            a_id=a_id
+        data = validate_game_by_wt_player_score(
+            game_id=game.id,
+            h_id=game.h_id,
+            a_id=game.a_id,
+            min_diff=min_diff
         )
-        h_wt_score = wt_score['h_wt_score']
-        a_wt_score = wt_score['a_wt_score']
-        winner_id_pdt = h_id
-        if h_wt_score < 0 and a_wt_score < 0:
+        if not data:
             continue
-        if h_wt_score > a_wt_score:
-            diff = h_wt_score - a_wt_score
-        else:
-            diff = a_wt_score - h_wt_score
-            winner_id_pdt = a_id
-        if diff >= min_diff:
-            data_games.append(dict(
-                id=game_id,
-                h_id=h_id,
-                a_id=a_id,
-                # only if game is finished
-                winner_id=game.winner_id,
-                winner_id_pdt=winner_id_pdt,
-                diff=diff,
-                **wt_score
-            ))
-            if not create_data_game:
-                continue
-            services.create_or_update_data_game(
-                game_id=game_id,
-                min_wt_p_diff=min_diff,
-                h_wt_score=h_wt_score,
-                a_wt_score=a_wt_score
-            )
+        data.update(winner_id=game.winner_id)
+        data_games.append(data)
     return data_games
 
 
@@ -119,7 +145,7 @@ def get_games_finished_predictions_by_score_player(
         p_l_score: average score for lost games
     )
     """
-    games_qry = get_games_prediction_by_wt_score_player(
+    games_qry = get_game_prediction_by_wt_score_player(
         status=GameStatus.FINISHED.value,
         start_dt=start_dt,
         min_diff=min_diff
