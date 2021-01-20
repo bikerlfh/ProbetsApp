@@ -26,6 +26,8 @@ def get_h2h_wt_score(
     away_wins = h2h_data['away_wins']
     t_h2h = home_wins + away_wins
     data = dict(
+        home_wins=home_wins,
+        away_wins=away_wins,
         t_h2h=t_h2h,
         h_h2h_wt_score=0,
         a_h2h_wt_score=0
@@ -46,16 +48,13 @@ def get_h2h_wt_score(
         )
         if game['h_id'] == h_id:
             h_wt_score += score['h_game_wt_score']
+            a_wt_score += score['a_game_wt_score']
             continue
-        a_wt_score += score['a_game_wt_score']
+        h_wt_score += score['a_game_wt_score']
+        a_wt_score += score['h_game_wt_score']
+
     h_h2h_wt_score = h_wt * Decimal(h_wt_score / t_h2h)
     a_h2h_wt_score = a_wt * Decimal(a_wt_score / t_h2h)
-    """h_h2h_wt_score = wt_core.calculate_score_item(
-        h_wt, t_h2h, home_wins, away_wins
-    )
-    a_h2h_wt_score = wt_core.calculate_score_item(
-        a_wt, t_h2h, away_wins, home_wins
-    )"""
     data.update(
         h_h2h_wt_score=h_h2h_wt_score,
         a_h2h_wt_score=a_h2h_wt_score

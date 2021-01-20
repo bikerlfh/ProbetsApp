@@ -1,15 +1,13 @@
 from django.urls import path
 
 from apps.games.views import (
-    GameView,
-    LeagueView,
-    PlayerView,
-    LastPlayerGames
+    GameListView,
+    LeagueListView,
+    PlayerListView
 )
 
 urlpatterns = [
-    path('', GameView.as_view()),
-    path('league/', LeagueView.as_view()),
-    path('player/', PlayerView.as_view()),
-    path('player/games/', LastPlayerGames.as_view())
+    path('', GameListView.as_view()),
+    path('league/', LeagueListView.as_view()),
+    path('player/', PlayerListView.as_view()),
 ]

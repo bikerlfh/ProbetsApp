@@ -252,7 +252,8 @@ def update_game(
 def get_h2h_games_data(
     *,
     h_player_id: int,
-    a_player_id: int
+    a_player_id: int,
+    limit: Optional[int] = None
 ) -> Union[Dict[str, Any], None]:
     """
     get h2h games data
@@ -262,7 +263,8 @@ def get_h2h_games_data(
     """
     games_data = statistics.get_games_stats(
         h2h_players_id=[h_player_id, a_player_id],
-        status=GameStatus.FINISHED.value
+        status=GameStatus.FINISHED.value,
+        limit=limit
     )
     h2h_home_wins = 0
     h2h_away_wins = 0
@@ -289,7 +291,8 @@ def get_games_data_to_predict(
     start_dt: Optional[date] = None,
     status: Optional[int] = None,
     min_t_games: Optional[int] = 10,
-    last_games_limit: Optional[int] = 20,
+    h2h_games_limit: Optional[int] = 5,
+    last_games_limit: Optional[int] = 10,
     last_games_from_dt: Optional[date] = None
 ) -> List[Dict[str, Any]]:
     """
@@ -349,7 +352,8 @@ def get_games_data_to_predict(
 
         h2h_games_data = get_h2h_games_data(
             h_player_id=h_id,
-            a_player_id=a_id
+            a_player_id=a_id,
+            limit=h2h_games_limit
         )
         h_last_games = statistics.get_last_player_games_data(
             player_id=h_id,

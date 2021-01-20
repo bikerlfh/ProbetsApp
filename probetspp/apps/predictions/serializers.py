@@ -2,7 +2,7 @@ import json
 from rest_framework import serializers
 
 from apps.utils.serializers import inline_serializer
-from apps.games.serializers import GameModelSerializer
+from apps.games.serializers import GameSerializer
 from apps.predictions.models import Prediction
 
 
@@ -104,7 +104,7 @@ class PredictionDataSerializer(serializers.Serializer):
 
 
 class PredictionModelSerializer(serializers.ModelSerializer):
-    game = GameModelSerializer()
+    game = GameSerializer()
     game_data = serializers.SerializerMethodField()
 
     class Meta:

@@ -52,7 +52,6 @@ class AdvancePrediction:
                 a_id=a_id,
                 min_diff=self.min_diff
             )"""
-
             h2h_wt_score = wt_h2h.get_h2h_wt_score(
                 h_id=h_id,
                 a_id=a_id,

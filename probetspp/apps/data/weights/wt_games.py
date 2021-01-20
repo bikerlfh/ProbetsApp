@@ -107,6 +107,12 @@ def __calculate_direct_opponents_wt_score(
     h_d_opp_wt_score = 0
     a_d_opp_wt_score = 0
     t_games = 0
+    data = dict(
+        h_d_opp_wt_score=h_d_opp_wt_score,
+        a_d_opp_wt_score=a_d_opp_wt_score
+    )
+    if not h_d_opp_games or not a_d_opp_games:
+        return data
     for game in h_d_opp_games:
         vs_id = game['vs_id']
         a_game = a_df[a_df['vs_id'] == vs_id]
@@ -134,7 +140,7 @@ def __calculate_direct_opponents_wt_score(
         t_games += 1
     a_d_opp_wt_score = (a_d_opp_wt_score / t_games)
     h_d_opp_wt_score = (h_d_opp_wt_score / t_games)
-    data = dict(
+    data.update(
         h_d_opp_wt_score=h_d_opp_wt_score,
         a_d_opp_wt_score=a_d_opp_wt_score
     )

@@ -71,10 +71,6 @@ def filter_league_by_external_id(
     return League.objects.filter(**filter_)
 
 
-def get_all_leagues() -> 'QuerySet[League]':
-    return League.objects.all()
-
-
 def filter_game_by_id(
     *,
     game_id: int
