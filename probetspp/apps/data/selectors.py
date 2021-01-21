@@ -1,6 +1,7 @@
+from typing import Optional
 from django.db.models import QuerySet
 
-from apps.data.models import DataWeights, DataGame
+from apps.data.models import DataWeights, DataGame, AcceptanceValue
 
 
 def filter_default_data_weights() -> 'QuerySet[DataWeights]':
@@ -49,7 +50,26 @@ def filter_data_game_by_game_id(
     ).values(
         'id',
         'game_id',
+        'acceptance_value_id',
         'h_wt_score',
         'a_wt_score',
-        'min_wt_p_diff'
+        'h_h2h_wt_score',
+        'a_h2h_wt_score',
+        'h_l_g_wt_score',
+        'a_l_g_wt_score',
+        'h_d_opp_wt_score',
+        'a_d_opp_wt_score',
+    )
+
+
+def filter_acceptance_value_active() -> 'QuerySet[AcceptanceValue]':
+    return AcceptanceValue.objects.filter(
+        is_active=True
+    ).values(
+        'id',
+        'p_wt_diff',
+        'h2h_wt_diff',
+        'l_g_wt_diff',
+        'd_opp_wt_diff',
+        'is_active'
     )

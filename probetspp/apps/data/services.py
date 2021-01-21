@@ -3,7 +3,7 @@ from decimal import Decimal
 from typing import Optional, Union, Dict, Any
 
 from apps.games import selectors as games_selectors
-from apps.data.models import DataWeights, DataGame
+from apps.data.models import DataWeights, DataGame, AcceptanceValue
 from apps.data.constants import DEFAULT_WEIGHTS
 from apps.data import selectors
 
@@ -157,3 +157,25 @@ def get_data_weights_player(
         return p_wt_qry.first()
     d_wt_qry = selectors.filter_default_data_weights()
     return d_wt_qry.first()
+
+
+def create_acceptance_value(
+    *,
+    p_wt_diff: Decimal,
+    h2h_wt_diff: Decimal,
+    l_g_wt_diff: Decimal,
+    d_opp_wt_diff: Decimal
+) -> AcceptanceValue:
+    ac_value_qry = selectors.\
+        filter_acceptance_value_active()
+    if ac_value_qry.exists():
+        ac_value_qry.update(
+            is_active=False
+        )
+    return AcceptanceValue.objects.create(
+        p_wt_diff=p_wt_diff,
+        h2h_wt_diff=h2h_wt_diff,
+        l_g_wt_diff=l_g_wt_diff,
+        d_opp_wt_diff=d_opp_wt_diff,
+        is_active=True
+    )

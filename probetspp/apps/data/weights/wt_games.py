@@ -5,7 +5,6 @@ import pandas as pd
 import numpy as np
 
 from apps.data import services
-from apps.data.weights import wt_core
 
 
 def get_game_wt_score(
@@ -46,12 +45,14 @@ def get_game_wt_score(
     h_wt_pts_score = 0
     a_wt_pts_score = 0
     if t_points > 0:
-        h_wt_pts_score = wt_core.calculate_score_item(
+        h_wt_pts_score = h_points * h_wt_points
+        a_wt_pts_score = a_points * a_wt_points
+        """h_wt_pts_score = wt_core.calculate_score_item(
             h_wt_points, t_points, h_points, a_points
         )
         a_wt_pts_score = wt_core.calculate_score_item(
             a_wt_points, t_points, a_points, h_points
-        )
+        )"""
     h_game_wt_score = h_wt_st_score + h_wt_pts_score
     a_game_wt_score = a_wt_st_score + a_wt_pts_score
     data = dict(

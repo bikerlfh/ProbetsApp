@@ -293,7 +293,8 @@ def get_games_data_to_predict(
     min_t_games: Optional[int] = 10,
     h2h_games_limit: Optional[int] = 5,
     last_games_limit: Optional[int] = 10,
-    last_games_from_dt: Optional[date] = None
+    last_games_from_dt: Optional[date] = None,
+    filter_: Optional[Dict[str, any]] = None
 ) -> List[Dict[str, Any]]:
     """
     get games data to predict
@@ -304,6 +305,7 @@ def get_games_data_to_predict(
         min_t_games: min total games of player to predict
         last_games_limit: player last games limit
         last_games_from_dt: player last games from date
+        filter_: additional filters
     Return: list of dict(
         id: game identification
         external_id: game external_id
@@ -322,14 +324,17 @@ def get_games_data_to_predict(
     """
     if not status:
         status = GameStatus.SCHEDULED.value
+
+    filter_ = filter_ or dict()
+    filter_.update(
+        home_player__stats__total_games__gte=min_t_games,
+        away_player__stats__total_games__gte=min_t_games
+    )
     games_qry = selectors.filter_games(
         game_id=game_id,
         start_dt=start_dt,
         status=status,
-        filter_=dict(
-            home_player__stats__total_games__gte=min_t_games,
-            away_player__stats__total_games__gte=min_t_games
-        )
+        filter_=filter_
     ).values(
         'id',
         'external_id',
@@ -337,7 +342,7 @@ def get_games_data_to_predict(
         'status',
         'home_player_id',
         'away_player_id',
-    )
+    ).order_by('id').distinct('id')
     games_data = []
     for game in games_qry:
         id_ = game['id']

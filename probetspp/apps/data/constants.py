@@ -1,14 +1,5 @@
-from os import getenv
 from decimal import Decimal
 
-
-MIN_DIFF_PLAYER_SCORE = int(getenv(
-    'MIN_DIFF_PLAYER_SCORE', 120
-))
-
-MIN_TOTAL_GAMES_PLAYER = int(getenv(
-    'MIN_TOTAL_GAMES_PLAYER', 10
-))
 
 DEFAULT_WEIGHTS = dict(
     wt_games=Decimal(0.9),

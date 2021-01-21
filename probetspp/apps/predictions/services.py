@@ -133,33 +133,6 @@ def create_predictions(
 
 
 @transaction.atomic()
-def create_predictions_by_wt_player_score(
-    *,
-    start_dt: Optional[date] = None
-) -> int:
-    """
-    create predictions by wt player score
-    Attrs:
-        start_dt: game start date
-    Return: num predictions created
-    """
-    wt_data = wt_score.\
-        get_game_prediction_by_wt_score_player(
-            start_dt=start_dt,
-            create_data_game=True
-        )
-    for wt in wt_data:
-        game_id = wt['id']
-        winner_id = wt['winner_id_pdt']
-        create_prediction(
-            game_id=game_id,
-            player_winner_id=winner_id,
-            game_data=wt
-        )
-    return len(wt_data)
-
-
-@transaction.atomic()
 def update_prediction_by_game_updated(
     *,
     game: Game

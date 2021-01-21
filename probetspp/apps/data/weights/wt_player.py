@@ -45,7 +45,7 @@ def get_wt_score_player(
     s_pts = wt_core.calculate_score_item(wt_points, t_pts, w_pts, l_pts)
     s_g_sold = wt_core.calculate_score_item(wt_g_sold, t_g, g_sold, 0)
     s_pdt = wt_core.calculate_score_item(wt_predictions, t_pdt, w_pdt, l_pdt)
-    score = s_g + s_sts + s_pts + s_g_sold + s_pdt
+    score = s_g + s_sts + s_pts + s_pdt - s_g_sold
     return score
 
 

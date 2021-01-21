@@ -61,17 +61,50 @@ class DataWeights(BaseModel):
     )
 
 
+class AcceptanceValue(BaseModel):
+    """
+    save acceptance values
+    to predict a game
+    """
+    p_wt_diff = models.DecimalField(
+        default=Decimal(0),
+        max_digits=18,
+        decimal_places=10,
+        verbose_name='min player wt diff'
+    )
+    h2h_wt_diff = models.DecimalField(
+        default=Decimal(0),
+        max_digits=18,
+        decimal_places=10,
+        verbose_name='min h2h wt diff'
+    )
+    l_g_wt_diff = models.DecimalField(
+        default=Decimal(0),
+        max_digits=18,
+        decimal_places=10,
+        verbose_name='min last games wt diff'
+    )
+    d_opp_wt_diff = models.DecimalField(
+        default=Decimal(0),
+        max_digits=18,
+        decimal_places=10,
+        verbose_name='min direct opponents wt diff'
+    )
+    is_active = models.BooleanField(
+        default=True
+    )
+
+
 class DataGame(BaseModel):
     game = models.OneToOneField(
         Game,
         on_delete=models.DO_NOTHING,
         related_name='data'
     )
-    min_wt_p_diff = models.DecimalField(
-        default=Decimal(0),
-        max_digits=18,
-        decimal_places=10,
-        verbose_name='min wt player diff'
+    acceptance_value = models.ForeignKey(
+        AcceptanceValue,
+        on_delete=models.DO_NOTHING,
+        related_name='data_games'
     )
     h_wt_score = models.DecimalField(
         default=Decimal(0),
@@ -85,12 +118,6 @@ class DataGame(BaseModel):
         decimal_places=10,
         verbose_name='away wt score'
     )
-    min_h2h_wt_diff = models.DecimalField(
-        default=Decimal(0),
-        max_digits=18,
-        decimal_places=10,
-        verbose_name='min h2h wt diff'
-    )
     h_h2h_wt_score = models.DecimalField(
         default=Decimal(0),
         max_digits=18,
@@ -103,12 +130,6 @@ class DataGame(BaseModel):
         decimal_places=10,
         verbose_name='away h2h wt score'
     )
-    min_l_g_wt_diff = models.DecimalField(
-        default=Decimal(0),
-        max_digits=18,
-        decimal_places=10,
-        verbose_name='min last games wt diff'
-    )
     h_l_g_wt_score = models.DecimalField(
         default=Decimal(0),
         max_digits=18,
@@ -120,12 +141,6 @@ class DataGame(BaseModel):
         max_digits=18,
         decimal_places=10,
         verbose_name='away last games wt score'
-    )
-    min_d_opp_wt_diff = models.DecimalField(
-        default=Decimal(0),
-        max_digits=18,
-        decimal_places=10,
-        verbose_name='min direct opponents wt diff'
     )
     h_d_opp_wt_score = models.DecimalField(
         default=Decimal(0),
