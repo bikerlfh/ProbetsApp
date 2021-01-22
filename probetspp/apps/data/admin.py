@@ -22,7 +22,7 @@ class AcceptanceValueAdmin(admin.ModelAdmin):
     list_display = [
         'p_wt_diff',
         'h2h_wt_diff',
-        'l_g_wt_diff',
+        'lg_wt_diff',
         'd_opp_wt_diff',
         'is_active'
     ]
@@ -34,8 +34,9 @@ class DataGameAdmin(admin.ModelAdmin):
         'game',
         'p_wt_diff',
         'h2h_wt_diff',
-        'l_g_wt_diff',
-        'd_opp_wt_diff'
+        'lg_wt_diff',
+        'd_opp_wt_diff',
+        'confidence'
     ]
     list_display = [
         'game',
@@ -43,8 +44,8 @@ class DataGameAdmin(admin.ModelAdmin):
         'a_wt_score',
         'h_h2h_wt_score',
         'a_h2h_wt_score',
-        'h_l_g_wt_score',
-        'a_l_g_wt_score',
+        'h_lg_wt_score',
+        'a_lg_wt_score',
         'h_d_opp_wt_score',
         'a_d_opp_wt_score'
     ]
@@ -55,14 +56,13 @@ class DataGameAdmin(admin.ModelAdmin):
     def h2h_wt_diff(self, obj):
         return obj.acceptance_value.h2h_wt_diff
 
-    def l_g_wt_diff(self, obj):
-        return obj.acceptance_value.l_g_wt_diff
+    def lg_wt_diff(self, obj):
+        return obj.acceptance_value.lg_wt_diff
 
     def d_opp_wt_diff(self, obj):
         return obj.acceptance_value.d_opp_wt_diff
 
     p_wt_diff.short_description = 'min player wt diff'
     h2h_wt_diff.short_description = 'min h2h wt diff'
-    l_g_wt_diff.short_description = 'min last games wt diff'
+    lg_wt_diff.short_description = 'min last games wt diff'
     d_opp_wt_diff.short_description = 'min direct opponents wt diff'
-

@@ -5,10 +5,9 @@ from rest_framework.response import Response
 
 from apps.utils.mixins import APIErrorsMixin
 
-from apps.predictions import services, selectors
+from apps.predictions import selectors
 from apps.predictions.serializers import (
-    PredictionModelSerializer,
-    PredictionDataSerializer
+    PredictionModelSerializer
 )
 
 
@@ -37,48 +36,3 @@ class PredictionView(APIErrorsMixin, APIView):
         )
         out_serializer = PredictionModelSerializer(instance=data, many=True)
         return Response(data=out_serializer.data)
-
-
-class PrePredictionDataView(APIErrorsMixin, APIView):
-    class InputSerializer(serializers.Serializer):
-        league_id = serializers.IntegerField(
-            required=False,
-            allow_null=True
-        )
-        game_date = serializers.DateField(
-            required=False,
-            allow_null=True
-        )
-
-    def get(self, request):
-        data_ = request.query_params.dict()
-        in_serializer = self.InputSerializer(data=data_)
-        in_serializer.is_valid(raise_exception=True)
-        data = services.get_prediction_data_today(**data_)
-        out_serializer = PredictionDataSerializer(data=data, many=True)
-        out_serializer.is_valid(raise_exception=True)
-        return Response(data=out_serializer.validated_data)
-
-
-class CreatePredictionView(APIErrorsMixin, APIView):
-    class InputSerializer(serializers.Serializer):
-        league_id = serializers.IntegerField(
-            required=False,
-            allow_null=True
-        )
-        game_date = serializers.DateField(
-            required=False,
-            allow_null=True
-        )
-
-    class OutputSerializer(serializers.Serializer):
-        predictions_created = serializers.IntegerField()
-
-    def post(self, request):
-        data_ = request.data
-        in_serializer = self.InputSerializer(data=data_)
-        in_serializer.is_valid(raise_exception=True)
-        data = services.create_predictions(**data_)
-        out_serializer = self.OutputSerializer(data=data)
-        out_serializer.is_valid(raise_exception=True)
-        return Response(data=out_serializer.validated_data)

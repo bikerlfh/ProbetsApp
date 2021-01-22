@@ -1,67 +1,31 @@
 import logging
 import json
+from decimal import Decimal
 from django.db import transaction
 from django.core.serializers.json import DjangoJSONEncoder
 from datetime import datetime, date
 from typing import Dict, Any, List, Optional, Union
-from rest_framework.exceptions import ValidationError
 
-from apps.data.weights import wt_score
+from apps.data import services as data_services
 from apps.games.models import Game
 from apps.games.constants import GameStatus
-from apps.games import (
-    selectors as games_selectors,
-    services as games_services
-)
+from apps.games import selectors as games_selectors
 
-from apps.predictions.prediction import BasicPrediction
-from apps.predictions.constants import (
-    WinnerPrediction,
-    PredictionStatus
-)
+from apps.predictions.constants import PredictionStatus
 from apps.predictions.models import Prediction
 from apps.predictions import selectors
 
 logger = logging.getLogger(__name__)
 
 
-def get_prediction_data_today(
-    *,
-    league_id: Optional[int] = None,
-    game_date: Optional[date] = None
-) -> List[Dict[str, Any]]:
-    if not game_date:
-        now = datetime.now().date()
-        game_date = now
-    games_qry = games_selectors.filter_games(
-        status=GameStatus.SCHEDULED.value,
-        start_dt=game_date,
-        league_id=league_id
-    )
-    predictions_data = []
-    for game in games_qry:
-        game_data = games_services.\
-            get_game_data_to_prediction(game=game)
-        basic_prediction = BasicPrediction(
-            game_data=game_data
-        )
-        prediction = basic_prediction.get_prediction()
-        if prediction:
-            predictions_data.append(prediction)
-    logger.info(
-        f'get_prediction_data_today :: total '
-        f'predictions: {len(predictions_data)}'
-    )
-    return predictions_data
-
-
 def create_prediction(
     *,
     game_id: int,
     player_winner_id: int,
+    confidence: Decimal,
     status: Optional[int] = None,
     game_data: Optional[Dict[str, Any]] = None
-) -> Union[None]:
+) -> Union[Prediction, None]:
     game = games_selectors.\
         filter_game_by_id(game_id=game_id).first()
     player_winner = games_selectors.filter_player_by_id(
@@ -75,56 +39,53 @@ def create_prediction(
     )
     if prediction_qry.exists():
         msg = f'prediction for game {game_id} already exists'
-        logger.error(
-            f'create_prediction :: {msg}'
-        )
-        raise ValidationError(msg)
+        logger.warning(f'create_prediction :: {msg}')
+        return
 
     if game.home_player != player_winner and \
             game.away_player != player_winner:
         msg = f'player {player_winner_id} ' \
               f'not in game {game_id}'
-        logger.error(
-            f'create_prediction :: {msg}'
-        )
-        raise ValidationError(msg)
-    Prediction.objects.create(
+        logger.error(f'create_prediction :: {msg}')
+        return
+    data = dict(
         game=game,
         player_winner=player_winner,
         status=status,
-        game_data=json.dumps(game_data, cls=DjangoJSONEncoder)
+
+        confidence=confidence
     )
+    if game_data:
+        data.update(
+            game_data=json.dumps(game_data, cls=DjangoJSONEncoder)
+        )
+    return Prediction.objects.create(**data)
 
 
-def create_predictions(
+def create_prediction_by_advance_analysis(
     *,
-    league_id: Optional[int] = None,
-    game_date: Optional[date] = None
+    game_id: Optional[int] = None,
+    status: Optional[int] = None,
+    start_dt: Optional[date] = None,
+    start_dt_range: Optional[List[datetime]] = None
 ) -> Dict[str, Any]:
-    predictions_data = get_prediction_data_today(
-        league_id=league_id,
-        game_date=game_date
-    )
+    predictions_data = data_services.\
+        get_games_data_to_predict_by_advance_analysis(
+            game_id=game_id,
+            status=status,
+            start_dt=start_dt,
+            start_dt_range=start_dt_range
+        )
     num_created = 0
     for data in predictions_data:
-        game_id = data['id']
-        winner_prediction = WinnerPrediction(data['winner_prediction'])
-        home_player = data['home_player']
-        away_player = data['away_player']
-        player_winner_id = home_player['id']
-        if winner_prediction == WinnerPrediction.AWAY_PLAYER:
-            player_winner_id = away_player['id']
-        prediction = selectors.filter_prediction_by_game_id(
-            game_id=game_id,
+        prediction = create_prediction(
+            game_id=data['game_id'],
+            player_winner_id=data['winner_id'],
+            confidence=data['confidence']
         )
-        if not prediction.exists():
-            create_prediction(
-                game_id=game_id,
-                player_winner_id=player_winner_id,
-                game_data=data
-            )
-            num_created += 1
+        if not prediction:
             continue
+        num_created += 1
 
     data = dict(
         predictions_created=num_created

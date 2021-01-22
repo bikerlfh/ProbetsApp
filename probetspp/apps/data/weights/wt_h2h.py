@@ -26,9 +26,9 @@ def get_h2h_wt_score(
     away_wins = h2h_data['away_wins']
     t_h2h = home_wins + away_wins
     data = dict(
-        home_wins=home_wins,
-        away_wins=away_wins,
         t_h2h=t_h2h,
+        h_h2h_wins=home_wins,
+        a_h2h_wins=away_wins,
         h_h2h_wt_score=0,
         a_h2h_wt_score=0
     )

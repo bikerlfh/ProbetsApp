@@ -1,5 +1,8 @@
+from os import getenv
 from decimal import Decimal
 
+
+CONFIDENCE_ALLOWED = Decimal(getenv('CONFIDENCE_ALLOWED', '46'))
 
 DEFAULT_WEIGHTS = dict(
     wt_games=Decimal(0.9),

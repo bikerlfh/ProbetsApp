@@ -4,13 +4,17 @@ from datetime import date, datetime
 from typing import Optional, List, Dict, Any, Union
 from rest_framework.exceptions import ValidationError
 from apps.games.constants import GameStatus
+from apps.data.constants import CONFIDENCE_ALLOWED
 from apps.data.weights import wt_score
 from apps.data import selectors
 
 logger = logging.getLogger(__name__)
 
 
-class AdvancePrediction:
+class AdvanceAnalysis:
+    """
+    Advance Analysis
+    """
     def __init__(
         self,
         *,
@@ -20,39 +24,56 @@ class AdvancePrediction:
         start_dt_range: Optional[List[datetime]] = None
     ):
         self.game_id = game_id
-        self.start_at = start_dt
+        self.start_at = start_dt or date.today()
         self.status = status or GameStatus.SCHEDULED.value
         self.start_dt_range = start_dt_range
         self.p_wt_diff = None
         self.h2h_wt_diff = None
         self.lg_wt_diff = None
         self.d_opp_wt_diff = None
-        self.game_data = None
-        self.games_predictions = []
+        # weights to default
+        self.wt_player = 0
+        self.wt_h2h = 0
+        self.wt_last_games = 0
+        self.wt_direct_opponents = 0
+        self.wt_total = 0
+
+        self.acceptance_value_id = None
+        self._game_data = None
+        self.games_data = []
+        # game data to create predictions
+        self.games_to_predict = []
         self.initialize()
 
     def initialize(self):
-        self.game_data = wt_score.get_games_score_data_to_predict(
+        self._load_default_wt()
+        self._get_acceptance_value()
+        self._game_data = wt_score.get_games_score_data_to_predict(
             game_id=self.game_id,
             start_dt=self.start_at,
             status=self.status,
             start_dt_range=self.start_dt_range
         )
 
-    def analyze_games_to_predict(self):
-        self._get_acceptance_value()
-        for game in self.game_data:
-            data = self._get_winner(game=game)
-            if not data:
-                continue
-            data.update(**game)
-            self.games_predictions.append(data)
+    def analyze_games(self):
+        """
+        analyze games to predict
+        """
+        for game in self._game_data:
+            data = game
+            data.update(
+                acceptance_value_id=self.acceptance_value_id,
+                **self._get_winner(game=game)
+            )
+            self.games_data.append(data)
+            if data['confidence'] >= CONFIDENCE_ALLOWED:
+                self.games_to_predict.append(data)
 
     def _get_winner(
         self,
         *,
         game: Dict[str, Any]
-    ) -> Union[Dict[str, Any], None]:
+    ) -> Dict[str, Any]:
         """
         get winner
         Attrs:
@@ -62,43 +83,59 @@ class AdvancePrediction:
             confidence: confidence percentage
         )
         """
-        game_id = game['game_id']
+        h_id = game['h_id']
+        a_id = game['a_id']
         winner_p = self._analyze_player_score(game)
         winner_h2h = self._analyze_h2h_score(game)
         winner_lg = self._analyze_last_games_score(game)
         winner_d_opp = self._analyze_d_opp_score(game)
-        if not winner_p and not winner_h2h and \
-           not winner_lg and not winner_d_opp:
-            logger.info(
-                f'_get_winner :: 4 none {game_id}'
-            )
-            return None
-        if not winner_h2h and not winner_lg and \
-           not winner_d_opp:
-            logger.info(
-                f'_get_winner :: 2 none {game_id}'
-            )
-            return None
-        p_h2h = winner_p == winner_h2h
-        h2h_lg = winner_h2h == winner_lg
-        h2h_d_opp = winner_h2h == winner_d_opp
-        lg_d_opp = winner_lg == winner_d_opp
-        if p_h2h and h2h_lg and h2h_d_opp:
-            return dict(
-                confidence=90,
-                winner_id=winner_p
-            )
-        if h2h_lg and h2h_d_opp:
-            return dict(
-                confidence=80,
-                winner_id=winner_h2h
-            )
-        if winner_p == winner_d_opp and lg_d_opp:
-            return dict(
-                confidence=51,
-                winner_id=winner_h2h
-            )
-        return None
+
+        scores = self._get_players_score(game=game)
+        h_score = scores.get('h_score')
+        a_score = scores.get('a_score')
+        winner_id = h_id
+        if h_score < a_score:
+            winner_id = a_id
+
+        confidence_ = 0
+        if winner_id == winner_p:
+            confidence_ += self.wt_player
+        if winner_id == winner_h2h:
+            confidence_ += self.wt_h2h
+        if winner_id == winner_lg:
+            confidence_ += self.wt_last_games
+        if winner_id == winner_d_opp:
+            confidence_ += self.wt_direct_opponents
+
+        confidence_ = 100 * (confidence_ / self.wt_total)
+
+        data = dict(
+            winner_id=winner_id,
+            confidence=confidence_
+        )
+        return data
+
+    def _get_players_score(
+        self,
+        game: Dict[str, Any]
+    ) -> Dict[str, Any]:
+        h_wt_score = game['h_wt_score']
+        a_wt_score = game['a_wt_score']
+        h_h2h_wt_score = game['h_h2h_wt_score']
+        a_h2h_wt_score = game['a_h2h_wt_score']
+        h_lg_wt_score = game['h_lg_wt_score']
+        a_lg_wt_score = game['a_lg_wt_score']
+        h_d_opp_wt_score = game['h_d_opp_wt_score']
+        a_d_opp_wt_score = game['a_d_opp_wt_score']
+
+        h_score = h_wt_score + h_h2h_wt_score
+        h_score += h_lg_wt_score + h_d_opp_wt_score
+        a_score = a_wt_score + a_h2h_wt_score
+        a_score += a_lg_wt_score + a_d_opp_wt_score
+        return dict(
+            h_score=h_score,
+            a_score=a_score
+        )
 
     def _analyze_player_score(
         self,
@@ -199,10 +236,22 @@ class AdvancePrediction:
             )
             raise ValidationError(msg)
         acc_value = acc_value_qry.first()
+        self.acceptance_value_id = acc_value['id']
         self.p_wt_diff = acc_value['p_wt_diff']
         self.h2h_wt_diff = acc_value['h2h_wt_diff']
-        self.lg_wt_diff = acc_value['l_g_wt_diff']
+        self.lg_wt_diff = acc_value['lg_wt_diff']
         self.d_opp_wt_diff = acc_value['d_opp_wt_diff']
+
+    def _load_default_wt(self):
+        d_ = selectors.filter_default_data_weights().first()
+        self.wt_h2h = d_['wt_h2h']
+        self.wt_last_games = d_['wt_last_games']
+        self.wt_direct_opponents = d_['wt_direct_opponents']
+        self.wt_player = d_['wt_games'] + d_['wt_sets'] + d_['wt_points']
+        self.wt_player += d_['wt_games_sold'] + d_['wt_predictions']
+        self.wt_player = self.wt_player / 5
+        self.wt_total = self.wt_h2h + self.wt_last_games
+        self.wt_total += self.wt_direct_opponents + self.wt_player
 
 
 def _get_diff(

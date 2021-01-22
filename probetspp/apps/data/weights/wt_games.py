@@ -45,8 +45,8 @@ def get_game_wt_score(
     h_wt_pts_score = 0
     a_wt_pts_score = 0
     if t_points > 0:
-        h_wt_pts_score = h_points * h_wt_points
-        a_wt_pts_score = a_points * a_wt_points
+        h_wt_pts_score = Decimal(float(h_points)) * h_wt_points
+        a_wt_pts_score = Decimal(float(a_points)) * a_wt_points
         """h_wt_pts_score = wt_core.calculate_score_item(
             h_wt_points, t_points, h_points, a_points
         )

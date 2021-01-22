@@ -78,7 +78,7 @@ class AcceptanceValue(BaseModel):
         decimal_places=10,
         verbose_name='min h2h wt diff'
     )
-    l_g_wt_diff = models.DecimalField(
+    lg_wt_diff = models.DecimalField(
         default=Decimal(0),
         max_digits=18,
         decimal_places=10,
@@ -118,6 +118,18 @@ class DataGame(BaseModel):
         decimal_places=10,
         verbose_name='away wt score'
     )
+    h_h2h_wins = models.IntegerField(
+        default=0,
+        verbose_name='home h2h wins'
+    )
+    a_h2h_wins = models.IntegerField(
+        default=0,
+        verbose_name='away h2h wins'
+    )
+    t_h2h = models.IntegerField(
+        default=0,
+        verbose_name='total h2h games'
+    )
     h_h2h_wt_score = models.DecimalField(
         default=Decimal(0),
         max_digits=18,
@@ -130,13 +142,13 @@ class DataGame(BaseModel):
         decimal_places=10,
         verbose_name='away h2h wt score'
     )
-    h_l_g_wt_score = models.DecimalField(
+    h_lg_wt_score = models.DecimalField(
         default=Decimal(0),
         max_digits=18,
         decimal_places=10,
         verbose_name='home last games wt score'
     )
-    a_l_g_wt_score = models.DecimalField(
+    a_lg_wt_score = models.DecimalField(
         default=Decimal(0),
         max_digits=18,
         decimal_places=10,
@@ -154,3 +166,29 @@ class DataGame(BaseModel):
         decimal_places=10,
         verbose_name='away direct opponents wt score'
     )
+    confidence = models.DecimalField(
+        default=Decimal(0),
+        max_digits=18,
+        decimal_places=12,
+        verbose_name='confidence prediction'
+    )
+
+    @property
+    def h_score(self):
+        score = self.h_wt_score + self.h_h2h_wt_score
+        score += self.h_lg_wt_score + self.h_d_opp_wt_score
+        return score
+
+    @property
+    def a_score(self):
+        score = self.a_wt_score + self.a_h2h_wt_score
+        score += self.a_lg_wt_score + self.a_d_opp_wt_score
+        return score
+
+    @property
+    def winner_id(self):
+        h_score = self.h_score
+        a_score = self.a_score
+        if h_score > a_score:
+            return self.game.h_id
+        return self.game.a_id

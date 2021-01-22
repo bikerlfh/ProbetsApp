@@ -25,7 +25,7 @@ class Prediction(BaseModel):
         default=PredictionStatus.DEFAULT.value
     )
     game_data = models.JSONField(null=True)
-    confidence_percentage = models.DecimalField(
+    confidence = models.DecimalField(
         default=Decimal(0),
         max_digits=5,
         decimal_places=2

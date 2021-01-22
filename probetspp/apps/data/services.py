@@ -1,11 +1,13 @@
 import logging
 from decimal import Decimal
-from typing import Optional, Union, Dict, Any
+from datetime import date, datetime
+from typing import Optional, Union, Dict, Any, List
 
 from apps.games import selectors as games_selectors
 from apps.data.models import DataWeights, DataGame, AcceptanceValue
 from apps.data.constants import DEFAULT_WEIGHTS
 from apps.data import selectors
+from apps.data import analysis
 
 logger = logging.getLogger(__name__)
 
@@ -109,36 +111,39 @@ def create_default_weights(
 def create_or_update_data_game(
     *,
     game_id: int,
-    min_wt_p_diff: Decimal,
+    acceptance_value_id: int,
+    h_h2h_wins: int,
+    a_h2h_wins: int,
+    t_h2h: int,
     h_wt_score: Decimal,
     a_wt_score: Decimal,
-    min_h2h_wt_diff: Decimal,
     h_h2h_wt_score: Decimal,
     a_h2h_wt_score: Decimal,
-    min_l_g_wt_diff: Decimal,
-    h_l_g_wt_score: Decimal,
-    a_l_g_wt_score: Decimal,
-    min_d_opp_wt_diff: Decimal,
+    h_lg_wt_score: Decimal,
+    a_lg_wt_score: Decimal,
     h_d_opp_wt_score: Decimal,
-    a_d_opp_wt_score: Decimal
+    a_d_opp_wt_score: Decimal,
+    confidence: Decimal,
+    **kwargs
 ) -> Union[None]:
     data_game_qry = selectors.filter_data_game_by_game_id(
         game_id=game_id
     )
     data = dict(
         game_id=game_id,
-        min_wt_p_diff=min_wt_p_diff,
+        acceptance_value_id=acceptance_value_id,
+        h_h2h_wins=h_h2h_wins,
+        a_h2h_wins=a_h2h_wins,
+        t_h2h=t_h2h,
         h_wt_score=h_wt_score,
         a_wt_score=a_wt_score,
-        min_h2h_wt_diff=min_h2h_wt_diff,
         h_h2h_wt_score=h_h2h_wt_score,
         a_h2h_wt_score=a_h2h_wt_score,
-        min_l_g_wt_diff=min_l_g_wt_diff,
-        h_l_g_wt_score=h_l_g_wt_score,
-        a_l_g_wt_score=a_l_g_wt_score,
-        min_d_opp_wt_diff=min_d_opp_wt_diff,
+        h_lg_wt_score=h_lg_wt_score,
+        a_lg_wt_score=a_lg_wt_score,
         h_d_opp_wt_score=h_d_opp_wt_score,
-        a_d_opp_wt_score=a_d_opp_wt_score
+        a_d_opp_wt_score=a_d_opp_wt_score,
+        confidence=confidence
     )
     if data_game_qry.exists():
         data_game_qry.update(**data)
@@ -163,7 +168,7 @@ def create_acceptance_value(
     *,
     p_wt_diff: Decimal,
     h2h_wt_diff: Decimal,
-    l_g_wt_diff: Decimal,
+    lg_wt_diff: Decimal,
     d_opp_wt_diff: Decimal
 ) -> AcceptanceValue:
     ac_value_qry = selectors.\
@@ -175,7 +180,60 @@ def create_acceptance_value(
     return AcceptanceValue.objects.create(
         p_wt_diff=p_wt_diff,
         h2h_wt_diff=h2h_wt_diff,
-        l_g_wt_diff=l_g_wt_diff,
+        lg_wt_diff=lg_wt_diff,
         d_opp_wt_diff=d_opp_wt_diff,
         is_active=True
     )
+
+
+def get_advance_analysis_data(
+    *,
+    game_id: Optional[int] = None,
+    status: Optional[int] = None,
+    start_dt: Optional[date] = None,
+    start_dt_range: Optional[List[datetime]] = None
+) -> List[Dict[str, Any]]:
+    advance_analysis = analysis.AdvanceAnalysis(
+        game_id=game_id,
+        status=status,
+        start_dt=start_dt,
+        start_dt_range=start_dt_range
+    )
+    advance_analysis.analyze_games()
+    return advance_analysis.games_data
+
+
+def get_games_data_to_predict_by_advance_analysis(
+    *,
+    game_id: Optional[int] = None,
+    status: Optional[int] = None,
+    start_dt: Optional[date] = None,
+    start_dt_range: Optional[List[datetime]] = None
+) -> List[Dict[str, Any]]:
+    advance_analysis = analysis.AdvanceAnalysis(
+        game_id=game_id,
+        status=status,
+        start_dt=start_dt,
+        start_dt_range=start_dt_range
+    )
+    advance_analysis.analyze_games()
+    game_data = advance_analysis.games_data
+    for data in game_data:
+        create_or_update_data_game(**data)
+    return advance_analysis.games_to_predict
+
+
+def create_game_data_by_advance_analysis(
+    game_id: Optional[int] = None,
+    status: Optional[int] = None,
+    start_dt: Optional[date] = None
+) -> Union[None]:
+    advance_analysis = analysis.AdvanceAnalysis(
+        game_id=game_id,
+        status=status,
+        start_dt=start_dt
+    )
+    advance_analysis.analyze_games()
+    game_data = advance_analysis.games_data
+    for data in game_data:
+        create_or_update_data_game(**data)

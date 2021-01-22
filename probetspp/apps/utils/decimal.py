@@ -19,7 +19,8 @@ def format_decimal_to_n_places(
     if decimal_places is None:
         decimal_places = DECIMAL_PLACES
 
-    assert isinstance(value, Decimal), 'value must be a Decimal instance'
+    if not isinstance(value, Decimal):
+        value = Decimal(value)
     assert isinstance(decimal_places, int), (
         'decimal_places must be a int instance'
     )

@@ -113,11 +113,13 @@ class PredictionModelSerializer(serializers.ModelSerializer):
             'id',
             'status',
             'player_winner_id',
-            'confidence_percentage',
+            'confidence',
             'game',
             'game_data'
         ]
 
     def get_game_data(self, obj):
+        if not obj.game_data:
+            return
         data = json.loads(obj.game_data)
         return data
