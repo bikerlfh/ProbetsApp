@@ -9,6 +9,10 @@ from django.db import transaction
 
 from bs4 import BeautifulSoup
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as ec
+
 
 from apps.core.constants import GenderConstants
 from apps.games.constants import GameStatus
@@ -36,7 +40,9 @@ def read_events_web_driver() -> Union[None, List[Dict[str, Any]]]:
                   f'/probetspp/web_drivers/{os_name}/chromedriver'
     driver = webdriver.Chrome(driver_path)
     driver.get(TABLE_TENNIS_TODAY_URL)
-    driver.implicitly_wait(40)
+    WebDriverWait(driver, 60).until(
+        ec.presence_of_element_located((By.CLASS_NAME, "sportName"))
+    )
     content = driver.page_source
     filename = f'{FOLDER_PATH_FLASH_DATA}' \
                f'{now.strftime(FILENAME_FORMAT_FLASH_DATA)}'

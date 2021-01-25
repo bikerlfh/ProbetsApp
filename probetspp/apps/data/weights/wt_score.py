@@ -28,7 +28,8 @@ def get_games_score_data_to_predict(
     start_dt: Optional[date] = None,
     start_dt_range: Optional[List[datetime]] = None,
     status: Optional[int] = None,
-    h2h_games_limit: Optional[int] = None
+    h2h_games_limit: Optional[int] = None,
+    last_games_limit: Optional[int] = None,
 ) -> List[Dict[str, Any]]:
     """
     get games score data to predict
@@ -41,6 +42,7 @@ def get_games_score_data_to_predict(
         ]
         status: game status
         h2h_games_limit: h2h games limit
+        last_games_limit: last games limit
     Return: list to dict
     """
     filter_ = None
@@ -54,7 +56,8 @@ def get_games_score_data_to_predict(
         start_dt=start_dt,
         status=status,
         filter_=filter_,
-        h2h_games_limit=h2h_games_limit
+        h2h_games_limit=h2h_games_limit,
+        last_games_limit=last_games_limit
     )
     game_score_data = []
     for game in game_data:

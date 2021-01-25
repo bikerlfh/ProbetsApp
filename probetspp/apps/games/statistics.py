@@ -184,7 +184,8 @@ def recalculate_player_stats(
     Recalculate player stats
     """
     games_stats = get_games_stats(
-        player_id=player_id
+        player_id=player_id,
+        status=GameStatus.FINISHED.value
     )
     player_stats = games_selectors.\
         get_player_stats_by_player_id(player_id=player_id)

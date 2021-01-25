@@ -3,7 +3,6 @@ from decimal import Decimal
 from datetime import date, datetime
 from typing import Optional, List, Dict, Any, Union
 from rest_framework.exceptions import ValidationError
-from apps.games.constants import GameStatus
 from apps.data.constants import CONFIDENCE_ALLOWED
 from apps.data.weights import wt_score
 from apps.data import selectors
@@ -24,8 +23,8 @@ class AdvanceAnalysis:
         start_dt_range: Optional[List[datetime]] = None
     ):
         self.game_id = game_id
-        self.start_at = start_dt or date.today()
-        self.status = status or GameStatus.SCHEDULED.value
+        self.start_at = start_dt
+        self.status = status
         self.start_dt_range = start_dt_range
         self.p_wt_diff = None
         self.h2h_wt_diff = None
@@ -52,7 +51,8 @@ class AdvanceAnalysis:
             game_id=self.game_id,
             start_dt=self.start_at,
             status=self.status,
-            start_dt_range=self.start_dt_range
+            start_dt_range=self.start_dt_range,
+            last_games_limit=10
         )
 
     def analyze_games(self):

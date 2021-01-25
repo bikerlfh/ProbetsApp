@@ -14,3 +14,11 @@ DEFAULT_WEIGHTS = dict(
     wt_last_games=Decimal(0.8),
     wt_direct_opponents=Decimal(0.6)
 )
+
+
+ACCEPTANCE_VALUES = dict(
+    p_wt_diff=Decimal(50),
+    h2h_wt_diff=Decimal(5),
+    lg_wt_diff=Decimal(5),
+    d_opp_wt_diff=Decimal(10)
+)

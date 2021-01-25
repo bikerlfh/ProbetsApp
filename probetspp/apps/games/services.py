@@ -290,9 +290,9 @@ def get_games_data_to_predict(
     game_id: Optional[int] = None,
     start_dt: Optional[date] = None,
     status: Optional[int] = None,
-    min_t_games: Optional[int] = 10,
-    h2h_games_limit: Optional[int] = 5,
-    last_games_limit: Optional[int] = 10,
+    min_t_games: Optional[int] = None,
+    h2h_games_limit: Optional[int] = None,
+    last_games_limit: Optional[int] = None,
     last_games_from_dt: Optional[date] = None,
     filter_: Optional[Dict[str, any]] = None
 ) -> List[Dict[str, Any]]:
@@ -322,14 +322,12 @@ def get_games_data_to_predict(
                       (statistics.get_games_stats)
     )
     """
-    if not status:
-        status = GameStatus.SCHEDULED.value
-
     filter_ = filter_ or dict()
-    filter_.update(
-        home_player__stats__total_games__gte=min_t_games,
-        away_player__stats__total_games__gte=min_t_games
-    )
+    if min_t_games:
+        filter_.update(
+            home_player__stats__total_games__gte=min_t_games,
+            away_player__stats__total_games__gte=min_t_games
+        )
     games_qry = selectors.filter_games(
         game_id=game_id,
         start_dt=start_dt,

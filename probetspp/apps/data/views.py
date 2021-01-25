@@ -19,7 +19,7 @@ class AdvanceAnalysisView(APIErrorsMixin, APIView):
             required=False,
             allow_null=True
         )
-        start_at = serializers.DateField(
+        start_dt = serializers.DateField(
             required=False,
             allow_null=True
         )

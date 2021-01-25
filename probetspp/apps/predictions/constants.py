@@ -24,10 +24,11 @@ NUM_LAST_GAMES_TO_PREDICT = int(getenv(
 
 
 class PredictionStatus(IntEnum):
-    CANCELED = -1
     DEFAULT = 0
     WON = 1
     LOSE = 2
+    CANCELED = -1
+    ERROR_CORE = -2
 
 
 class WinnerPrediction(IntEnum):

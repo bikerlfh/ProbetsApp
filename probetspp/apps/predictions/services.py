@@ -120,12 +120,21 @@ def update_prediction_by_game_updated(
     if status != GameStatus.FINISHED:
         return
 
+    h_id = game.h_id
+    a_id = game.a_id
+    pdt_winner_id = prediction.player_winner_id
+    # when player has been changed
+    if h_id != pdt_winner_id and a_id != pdt_winner_id:
+        prediction.status = PredictionStatus.ERROR_CORE.value
+        prediction.save()
+        return
+
     player_stats = games_selectors. \
         get_player_stats_by_player_id(
             player_id=prediction.player_winner_id
         )
     is_winner = game.is_winner(
-        player_id=prediction.player_winner_id
+        player_id=pdt_winner_id
     )
     player_stats.total_predictions += 1
     if is_winner:
