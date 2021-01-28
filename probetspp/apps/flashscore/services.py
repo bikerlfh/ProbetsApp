@@ -252,12 +252,15 @@ def create_or_update_game(
     finished = TableTennisStatus.FINISHED.value
     canceled = TableTennisStatus.CANCELED.value
     in_live = TableTennisStatus.IN_LIVE.value
+    abandonment = TableTennisStatus.ABANDONMENT.value
     if stage and finished in stage:
         status = GameStatus.FINISHED.value
-    if stage and canceled in stage:
+    elif stage and canceled in stage:
         status = GameStatus.CANCELED.value
-    if stage and in_live in stage:
+    elif stage and in_live in stage:
         status = GameStatus.IN_LIVE.value
+    elif stage and abandonment in stage:
+        status = GameStatus.ABANDONMENT.value
 
     game_qry = games_selectors.filter_game_by_external_id(
         external_id=external_id

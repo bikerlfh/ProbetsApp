@@ -62,6 +62,7 @@ THIRD_PARTY_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'django_filters',
+    'django_q',
     #'dj_rest_auth',
     #'dj_rest_auth.registration',
     #'allauth',
@@ -244,4 +245,9 @@ LOGGING = {
             'level': environ.get('LOG_LEVEL', 'INFO')
         },
     }
+}
+
+Q_CLUSTER = {
+    "name": "probets",
+    "orm": "default",  # Use Django's ORM + database for broker
 }

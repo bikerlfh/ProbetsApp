@@ -7,6 +7,7 @@ __pycache__/
 .envfile
 *.py[cod]
 *$py.class
+*.session
 
 # C extensions
 *.so

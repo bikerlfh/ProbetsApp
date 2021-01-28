@@ -25,7 +25,7 @@ def create_prediction(
     confidence: Decimal,
     status: Optional[int] = None,
     game_data: Optional[Dict[str, Any]] = None
-) -> Union[Prediction, None]:
+) -> Union[Dict[str, Any], None]:
     game = games_selectors.\
         filter_game_by_id(game_id=game_id).first()
     player_winner = games_selectors.filter_player_by_id(
@@ -52,14 +52,21 @@ def create_prediction(
         game=game,
         player_winner=player_winner,
         status=status,
-
         confidence=confidence
     )
     if game_data:
         data.update(
             game_data=json.dumps(game_data, cls=DjangoJSONEncoder)
         )
-    return Prediction.objects.create(**data)
+    prediction = Prediction.objects.create(**data)
+    data_ = dict(
+        game=str(game),
+        league=str(game.league),
+        start_dt=game.start_dt,
+        winner=str(prediction.player_winner),
+        confidence=confidence
+    )
+    return data_
 
 
 def create_prediction_by_advance_analysis(
@@ -68,7 +75,11 @@ def create_prediction_by_advance_analysis(
     status: Optional[int] = None,
     start_dt: Optional[date] = None,
     start_dt_range: Optional[List[datetime]] = None
-) -> Dict[str, Any]:
+) -> List[Dict[str, Any]]:
+    if not status:
+        status = GameStatus.SCHEDULED.value
+    if not start_dt:
+        start_dt = datetime.now().date()
     predictions_data = data_services.\
         get_games_data_to_predict_by_advance_analysis(
             game_id=game_id,
@@ -76,7 +87,7 @@ def create_prediction_by_advance_analysis(
             start_dt=start_dt,
             start_dt_range=start_dt_range
         )
-    num_created = 0
+    predictions = []
     for data in predictions_data:
         prediction = create_prediction(
             game_id=data['game_id'],
@@ -85,12 +96,8 @@ def create_prediction_by_advance_analysis(
         )
         if not prediction:
             continue
-        num_created += 1
-
-    data = dict(
-        predictions_created=num_created
-    )
-    return data
+        predictions.append(prediction)
+    return predictions
 
 
 @transaction.atomic()
@@ -113,7 +120,7 @@ def update_prediction_by_game_updated(
         return
     prediction = prediction.first()
     status = GameStatus(game.status)
-    if status == GameStatus.CANCELED:
+    if status == GameStatus.CANCELED or status == GameStatus.ABANDONMENT:
         prediction.status = PredictionStatus.CANCELED.value
         prediction.save()
         return
