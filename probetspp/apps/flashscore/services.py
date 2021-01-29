@@ -57,11 +57,15 @@ def save_events_data(
     if os.path.isfile(filename):
         # if not is new file, can not replace odds and start_dt
         df_o = pd.read_csv(filename, sep=DELIMITER_CSV)
+        if len(df) != len(df_o):
+            df_o = df_o[df_o['external_id'].isin(df['external_id'])]
+        df_o.reset_index(drop=True, inplace=True)
+        # df = df.sort_index(inplace=True)
         df['start_dt'] = df_o[
             df_o['external_id'] == df['external_id']
         ]['start_dt']
         df['h_odds'] = np.where(
-            (df_o['external_id'] == df['external_id']) & (df_o['h_odds']),
+            (df['external_id'] == df_o['external_id']) & (df_o['h_odds']),
             df_o['h_odds'],
             df['h_odds'])
         df['a_odds'] = np.where(
@@ -69,7 +73,7 @@ def save_events_data(
             df_o['a_odds'],
             df['a_odds']
         )
-    df.to_csv(filename, sep=DELIMITER_CSV, encoding='utf-8')
+    df.to_csv(filename, sep=DELIMITER_CSV, index=False, encoding='utf-8')
     return df.to_dict(orient='records')
 
 
@@ -98,6 +102,11 @@ def read_events_from_html_file(
             f'read_events_from_html_file :: {exc}'
         )
     file.close()
+    odds_none = dict(
+        h_odds=None,
+        a_odds=None
+    )
+    events = [e.update(**odds_none) or e for e in events]
     events = save_events_data(
         events=events,
         event_date=file_date
@@ -316,10 +325,13 @@ def create_or_update_game(
         status=status,
         home_score=home_score,
         away_score=away_score,
-        line_score=line_score,
-        h_odds=h_odds,
-        a_odds=a_odds
+        line_score=line_score
     )
+    if h_odds and a_odds:
+        data.update(
+            h_odds=h_odds,
+            a_odds=a_odds
+        )
     # TODO when player changed
     if game.home_player != home_player:
         data.update(home_player=home_player)

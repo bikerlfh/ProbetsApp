@@ -236,8 +236,10 @@ def update_game(
     game.home_score = home_score
     game.away_score = away_score
     game.line_score = line_score
-    game.h_odds = h_odds
-    game.a_odds = a_odds
+    if h_odds:
+        game.h_odds = h_odds
+    if a_odds:
+        game.a_odds = a_odds
     game.save()
     if old_status != new_status and \
             new_status == GameStatus.FINISHED:
