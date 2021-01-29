@@ -57,10 +57,14 @@ def save_events_data(
     if os.path.isfile(filename):
         # if not is new file, can not replace odds and start_dt
         df_o = pd.read_csv(filename, sep=DELIMITER_CSV)
+        df_new = None
         if len(df) != len(df_o):
             df_o = df_o[df_o['external_id'].isin(df['external_id'])]
+            df_new = df[~df['external_id'].isin(df_o['external_id'])]
+            df = df[df['external_id'].isin(df_o['external_id'])]
         df_o.reset_index(drop=True, inplace=True)
-        # df = df.sort_index(inplace=True)
+        df.reset_index(drop=True, inplace=True)
+
         df['start_dt'] = df_o[
             df_o['external_id'] == df['external_id']
         ]['start_dt']
@@ -73,6 +77,8 @@ def save_events_data(
             df_o['a_odds'],
             df['a_odds']
         )
+        if df_new is not None:
+            df = df.append(df_new)
     df.to_csv(filename, sep=DELIMITER_CSV, index=False, encoding='utf-8')
     return df.to_dict(orient='records')
 

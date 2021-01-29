@@ -1,4 +1,5 @@
-from typing import Union
+from typing import Union, List
+from datetime import datetime
 from asgiref.sync import async_to_sync
 from apps.communications import telegram
 
@@ -6,11 +7,21 @@ from apps.communications import telegram
 @async_to_sync
 async def send_telegram_message(
     *,
-    message: str
+    messages: List[str]
 ) -> Union[None]:
     connector = telegram.TelegramConnector()
     await connector.connect()
-    await connector.send_message(
-        user=connector.channel_name,
-        message=message
-    )
+    for message in messages:
+        await connector.send_message(
+            user=connector.channel_name,
+            message=message,
+            silent=False
+        )
+    await connector.disconnect()
+
+
+def is_time_between(begin_time, end_time, check_time=None):
+    check_time = check_time or datetime.now().time()
+    if begin_time < end_time:
+        return begin_time <= check_time <= end_time
+    return check_time >= begin_time or check_time <= end_time

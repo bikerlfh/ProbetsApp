@@ -28,6 +28,7 @@ def create_periodical_prediction():
         ]
     )
     num_predictions = len(predictions)
+    messages = []
     for data in predictions:
         start_dt = timezone.localtime(data["start_dt"])
         confidence = format_decimal_to_n_places(value=data["confidence"])
@@ -40,10 +41,10 @@ def create_periodical_prediction():
               f'Date: {start_dt.strftime("%H:%M")}\n' \
               f'Winner: {winner}\n' \
               f'Confidence: {confidence}'
-        msg_ = msg.format(**data)
-        communications_services.send_telegram_message(
-            message=msg_
-        )
+        messages.append(msg.format(**data))
+    communications_services.send_telegram_message(
+        messages=messages
+    )
     logger.info(
         f'create_periodical_prediction :: {num_predictions}'
     )
