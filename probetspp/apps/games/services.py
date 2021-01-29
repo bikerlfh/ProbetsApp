@@ -1,4 +1,5 @@
 import logging
+from decimal import Decimal
 from datetime import datetime, date
 from typing import Union, Optional, Dict, Any, List
 
@@ -140,7 +141,9 @@ def create_game(
     home_score: Optional[int] = 0,
     away_score: Optional[int] = 0,
     line_score: Optional[Dict[str, Any]] = None,
-    status: Optional[int] = None
+    status: Optional[int] = None,
+    h_odds: Optional[Decimal] = None,
+    a_odds: Optional[Decimal] = None
 ) -> Union[None]:
     home_player = selectors.filter_player_by_id(
         player_id=home_player_id
@@ -178,7 +181,9 @@ def create_game(
         status=status,
         home_score=home_score,
         away_score=away_score,
-        line_score=line_score
+        line_score=line_score,
+        h_odds=h_odds,
+        a_odds=a_odds
     )
     update_player_stats_by_game(
         game=game
@@ -207,7 +212,9 @@ def update_game(
     line_score: Dict[str, Any],
     start_dt: Optional[datetime] = None,
     home_player: Optional[Player] = None,
-    away_player: Optional[Player] = None
+    away_player: Optional[Player] = None,
+    h_odds: Optional[Decimal] = None,
+    a_odds: Optional[Decimal] = None
 ) -> Union[None]:
     """
     update game.
@@ -229,6 +236,8 @@ def update_game(
     game.home_score = home_score
     game.away_score = away_score
     game.line_score = line_score
+    game.h_odds = h_odds
+    game.a_odds = a_odds
     game.save()
     if old_status != new_status and \
             new_status == GameStatus.FINISHED:

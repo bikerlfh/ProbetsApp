@@ -9,8 +9,7 @@ from apps.communications.constants import (
     TELEGRAM_PHONE_NUMBER,
     TELEGRAM_CHANNEL_NAME,
     TELEGRAM_API_HASH,
-    TELEGRAM_API_ID,
-    TELEGRAM_CHANNEL_ID
+    TELEGRAM_API_ID
 )
 
 logger = logging.getLogger(__name__)
@@ -29,9 +28,6 @@ def _validate_config():
     assert isinstance(TELEGRAM_CHANNEL_NAME, str), (
         'TELEGRAM_CHANNEL_NAME mush be a str instance'
     )
-    assert isinstance(TELEGRAM_CHANNEL_ID, str), (
-        'TELEGRAM_CHANNEL_ID mush be a int instance'
-    )
 
 
 class TelegramConnector(Singleton):
@@ -42,6 +38,8 @@ class TelegramConnector(Singleton):
         self.channel_name = TELEGRAM_CHANNEL_NAME
 
     async def connect(self):
+        if self.client is not None:
+            return
         try:
             self.client = TelegramClient(
                 'session',
@@ -62,8 +60,8 @@ class TelegramConnector(Singleton):
                 f'TelegramConnector::connect :: {e}'
             )
 
-    def disconnect(self):
-        self.client.disconnect()
+    async def disconnect(self):
+        await self.client.disconnect()
 
     async def send_message(
         self,

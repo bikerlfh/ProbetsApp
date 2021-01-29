@@ -59,12 +59,14 @@ def create_prediction(
             game_data=json.dumps(game_data, cls=DjangoJSONEncoder)
         )
     prediction = Prediction.objects.create(**data)
+    winner = prediction.player_winner
     data_ = dict(
         game=str(game),
         league=str(game.league),
         start_dt=game.start_dt,
-        winner=str(prediction.player_winner),
-        confidence=confidence
+        winner=str(winner),
+        confidence=confidence,
+        odds=game.player_odds(player_id=winner.id)
     )
     return data_
 

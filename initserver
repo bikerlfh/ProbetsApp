@@ -1,0 +1,2 @@
+python probetspp/manage.py runserver
+python probetspp/manage.py qcluster

@@ -109,6 +109,18 @@ class Game(BaseModel):
     home_score = models.SmallIntegerField(default=0)
     away_score = models.SmallIntegerField(default=0)
     line_score = models.JSONField(null=True)
+    h_odds = models.DecimalField(
+        null=True,
+        default=None,
+        max_digits=5,
+        decimal_places=2
+    )
+    a_odds = models.DecimalField(
+        null=True,
+        default=None,
+        max_digits=5,
+        decimal_places=2
+    )
 
     @property
     def h_id(self):
@@ -132,3 +144,8 @@ class Game(BaseModel):
 
     def is_winner(self, player_id: int):
         return player_id == self.winner_id
+
+    def player_odds(self, player_id: int):
+        if player_id == self.h_id:
+            return self.h_odds
+        return self.a_odds
