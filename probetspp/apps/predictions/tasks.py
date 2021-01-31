@@ -43,7 +43,8 @@ def create_periodical_prediction():
               f'Confidence: {confidence}'
         messages.append(msg.format(**data))
     communications_services.send_telegram_message(
-        messages=messages
+        messages=messages,
+        user='me'
     )
     logger.info(
         f'create_periodical_prediction :: {num_predictions}'

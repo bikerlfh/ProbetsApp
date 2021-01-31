@@ -1,5 +1,4 @@
 import pathlib
-import platform
 from enum import Enum
 
 
@@ -9,9 +8,6 @@ TABLE_TENNIS_TODAY_URL = 'https://www.flashscore.co/tenis-de-mesa/'
 FOLDER_PATH_FLASH_DATA = f'{_main_path}/info_pages/flash/'
 FILE_PATH_DATA_SET = f'{_main_path}/datasets/%Y%m%d.csv'
 FILENAME_FORMAT_FLASH_DATA = '%d%m%Y.html'
-
-DRIVER_PATH = f'{_main_path}/probetspp/web_drivers' \
-              f'/{platform.system()}/chromedriver'
 
 
 class TableTennisStatus(Enum):

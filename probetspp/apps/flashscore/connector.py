@@ -8,11 +8,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 
+from apps.utils.constants import DRIVER_PATH
 from apps.core.constants import GenderConstants
-from apps.flashscore.constants import (
-    GenderLeague,
-    DRIVER_PATH
-)
+from apps.flashscore.constants import GenderLeague
 
 
 _URL = 'https://www.flashscore.co'
@@ -104,7 +102,7 @@ class FlashConnector:
         div_ods = self.driver.find_element_by_xpath("//div[text()='Cuotas']")
         div_ods.click()
         WebDriverWait(self.driver, 90).until(
-            ec.presence_of_element_located((By.CLASS_NAME, "sportName"))
+            ec.presence_of_element_located((By.CLASS_NAME, "event__match"))
         )
         odds_content = self.driver.page_source
         soup = BeautifulSoup(odds_content, features='html.parser')

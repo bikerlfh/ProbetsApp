@@ -39,7 +39,7 @@ class GameFilter(filters.FilterSet):
 
     class Meta:
         model = Game
-        fields = ['id', 'status', 'start_dt', 'h2h_ids']
+        fields = ['id', 'status', 'start_dt', 'league_id', 'h2h_ids']
 
     def player_filter(self, queryset, name, value):
         return queryset.filter(

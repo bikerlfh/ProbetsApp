@@ -1,4 +1,4 @@
-from typing import Union, List
+from typing import Union, List, Optional
 from datetime import datetime
 from asgiref.sync import async_to_sync
 from apps.communications import telegram
@@ -7,13 +7,14 @@ from apps.communications import telegram
 @async_to_sync
 async def send_telegram_message(
     *,
-    messages: List[str]
+    messages: List[str],
+    user: Optional[str] = None
 ) -> Union[None]:
     connector = telegram.TelegramConnector()
     await connector.connect()
     for message in messages:
         await connector.send_message(
-            user=connector.channel_name,
+            user=user or connector.channel_name,
             message=message,
             silent=False
         )

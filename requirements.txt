@@ -1,5 +1,5 @@
 appnope==0.1.2django-q==1.3.4
-
+Babel==2.9.0
 asgiref==3.3.1
 backcall==0.2.0
 beautifulsoup4==4.9.3

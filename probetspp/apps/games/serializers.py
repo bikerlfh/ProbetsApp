@@ -8,6 +8,7 @@ from apps.games.models import Game
 class LeagueSerializer(serializers.Serializer):
     id = serializers.IntegerField()
     name = serializers.DateTimeField()
+    gender = serializers.IntegerField()
 
 
 class GameSerializer(serializers.ModelSerializer):
@@ -29,6 +30,8 @@ class GameSerializer(serializers.ModelSerializer):
             'away_player_id',
             'home_score',
             'away_score',
+            'h_odds',
+            'a_odds',
             'line_score'
         ]
 
