@@ -13,13 +13,13 @@ from apps.games import (
     selectors as games_selectors,
     services as games_services
 )
-from apps.flashscore.constants import (
+from apps.third_parties.flashscore.constants import (
     TableTennisStatus,
     FOLDER_PATH_FLASH_DATA,
     FILENAME_FORMAT_FLASH_DATA,
     FILE_PATH_DATA_SET
 )
-from apps.flashscore.connector import FlashConnector
+from apps.third_parties.flashscore.connector import FlashConnector
 
 
 logger = logging.getLogger(__name__)

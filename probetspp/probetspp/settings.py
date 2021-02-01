@@ -72,7 +72,6 @@ THIRD_PARTY_APPS = [
 
 # Application definition
 LOCAL_APPS = [
-    'apps.flashscore',
     'apps.core',
     'apps.data',
     'apps.games',
@@ -241,6 +240,14 @@ LOGGING = {
             'level': environ.get('LOG_LEVEL', 'INFO')
         },
         'apps.predictions': {
+            'handlers': ['console'],
+            'level': environ.get('LOG_LEVEL', 'INFO')
+        },
+        'apps.third_parties.flashscore': {
+            'handlers': ['console'],
+            'level': environ.get('LOG_LEVEL', 'INFO')
+        },
+        'apps.third_parties.yajuego': {
             'handlers': ['console'],
             'level': environ.get('LOG_LEVEL', 'INFO')
         },

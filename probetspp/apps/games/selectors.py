@@ -53,6 +53,10 @@ def get_player_stats_by_player_id(
     return PlayerStats.objects.get(player_id=player_id)
 
 
+def get_all_leagues() -> 'QuerySet[League]':
+    return League.objects.all()
+
+
 def filter_league_by_id(
     *,
     league_id: int

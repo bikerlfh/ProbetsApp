@@ -1,6 +1,6 @@
 from datetime import date, timedelta, datetime
 from django.core.management.base import BaseCommand
-from apps.flashscore import services
+from apps.third_parties.flashscore import services as flash_services
 
 
 class Command(BaseCommand):
@@ -24,7 +24,7 @@ class Command(BaseCommand):
         self.stdout.write(
             self.style.SUCCESS(f'loading events from {file_date}....')
         )
-        data = services.load_events(file_date=file_date)
+        data = flash_services.load_events(file_date=file_date)
         self.stdout.write(
             self.style.SUCCESS(data)
         )
@@ -40,7 +40,7 @@ class Command(BaseCommand):
             file_date = datetime.strptime(
                 file_date, self.date_format
             ).date()
-            data = services.load_events(file_date=file_date)
+            data = flash_services.load_events(file_date=file_date)
             self.stdout.write(
                 self.style.SUCCESS(data)
             )
@@ -70,7 +70,7 @@ class Command(BaseCommand):
             self.stdout.write(
                 self.style.SUCCESS('loading today events....')
             )
-            data = services.load_events()
+            data = flash_services.load_events()
             self.stdout.write(
                 self.style.SUCCESS(data)
             )

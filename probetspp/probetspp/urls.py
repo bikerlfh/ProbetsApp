@@ -21,5 +21,4 @@ urlpatterns = [
     path('data/', include('apps.data.urls')),
     path('games/', include('apps.games.urls')),
     path('predictions/', include('apps.predictions.urls')),
-    path('flash-score/', include('apps.flashscore.urls')),
 ]

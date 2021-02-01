@@ -87,7 +87,7 @@ class Game(BaseModel):
     league = models.ForeignKey(
         League,
         on_delete=models.DO_NOTHING,
-        related_name='home_visitor',
+        related_name='games',
         null=False
     )
     home_player = models.ForeignKey(

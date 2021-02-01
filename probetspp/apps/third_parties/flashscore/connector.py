@@ -10,7 +10,7 @@ from selenium.webdriver.support import expected_conditions as ec
 
 from apps.utils.constants import DRIVER_PATH
 from apps.core.constants import GenderConstants
-from apps.flashscore.constants import GenderLeague
+from apps.third_parties.flashscore.constants import GenderLeague
 
 
 _URL = 'https://www.flashscore.co'
@@ -104,6 +104,19 @@ class FlashConnector:
         WebDriverWait(self.driver, 90).until(
             ec.presence_of_element_located((By.CLASS_NAME, "event__match"))
         )
+        last_height = self.driver.execute_script(
+            "return document.body.scrollHeight"
+        )
+        while True:
+            self.driver.execute_script(
+                "window.scrollTo(0, document.body.scrollHeight);"
+            )
+            new_height = self.driver.execute_script(
+                "return document.body.scrollHeight"
+            )
+            if new_height == last_height:
+                break
+            last_height = new_height
         odds_content = self.driver.page_source
         soup = BeautifulSoup(odds_content, features='html.parser')
         result = soup.find("div", {"id": "live-table"})

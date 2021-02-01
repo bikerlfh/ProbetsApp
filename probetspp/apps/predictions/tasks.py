@@ -4,7 +4,8 @@ from datetime import datetime, timedelta
 from django.utils import timezone
 from apps.utils.decimal import format_decimal_to_n_places
 from apps.communications import services as communications_services
-from apps.flashscore import services as flash_services
+from apps.third_parties.flashscore import services as flash_services
+from apps.third_parties.yajuego import services as yajuego_services
 from apps.games.constants import GameStatus
 from apps.predictions import services
 
@@ -18,6 +19,7 @@ def create_periodical_prediction():
     """
     # update events
     flash_services.load_events()
+    yajuego_services.update_odds_games()
     start_dt_from = datetime.now()
     start_dt_to = start_dt_from + timedelta(minutes=30)
     predictions = services.create_prediction_by_advance_analysis(
