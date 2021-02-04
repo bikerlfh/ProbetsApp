@@ -1,7 +1,16 @@
 from os import getenv
-
+from enum import Enum
 
 TELEGRAM_PHONE_NUMBER = getenv('TELEGRAM_PHONE_NUMBER')
 TELEGRAM_API_ID = int(getenv('TELEGRAM_API_ID', 0))
 TELEGRAM_API_HASH = getenv('TELEGRAM_API_HASH')
 TELEGRAM_CHANNEL_NAME = getenv('TELEGRAM_CHANNEL_NAME')
+
+
+class Emoji(Enum):
+    CHECK_BUTTON = '\u2705'
+    CROSS_MARK = '\u274C'
+    MONEY_FACE = '\U0001F911'
+    MONEY_BAG = '\U0001F4B0'
+    MONEY_WINGS = '\U0001F4B8'
+    DOLLAR = '\U0001F4B5'

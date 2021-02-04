@@ -15,6 +15,8 @@ class TableTennisStatus(Enum):
     CANCELED = 'Anulado'
     IN_LIVE = 'Set'
     ABANDONMENT = 'Abandono'
+    DISCONTINUED = 'Suspendido'
+    FOR_LOST = 'Por perdido'
 
 
 class GenderLeague(Enum):

@@ -152,6 +152,8 @@ def update_prediction_by_game_updated(
     else:
         status = PredictionStatus.LOSE.value
         player_stats.lost_predictions += 1
+        if prediction.confidence == 100:
+            player_stats.games_sold += 1
     c_percentage = 100 * (player_stats.won_predictions
                           / player_stats.total_predictions)
     player_stats.confidence_percentage = c_percentage

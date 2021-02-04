@@ -120,96 +120,6 @@ def read_events_from_html_file(
     return events
 
 
-"""
-def _read_events(
-    *,
-    content: Union[str, TextIO],
-    event_date: Optional[date] = None
-) -> Union[None, List[Dict[str, Any]]]:
-    "
-    read events from flashscore
-    :return:
-    "
-    soup = BeautifulSoup(content, features='html.parser')
-    result = soup.find("div", {"id": "live-table"})
-    # now = datetime.now()
-    # date_dt = result.find('div', class_='calendar__datepicker')
-    # start_dt = f"{date_dt.text.split(' ')[0]}/{now.year}"
-    start_dt = event_date.strftime('%d/%m/%Y')
-
-    events = result.find_all('div', class_='sportName')
-    league = None
-    gender = None
-    events_info = []
-    if not events:
-        logger.error('_read_events :: no events found')
-        return
-    for child in events[0].children:
-        attrs = child.attrs
-        if 'event__header' in attrs['class']:
-            event_type = child.find('span', class_='event__title--type')
-            event_title = child.find('span', class_='event__title--name')
-            if GenderLeague.FEMALE.value in event_type.text:
-                gender = GenderConstants.FEMALE
-            else:
-                gender = GenderConstants.MALE
-            league = event_title.text
-            continue
-        if 'event__match' in attrs['class']:
-            start_dt_ = start_dt
-            start_dt_format = '%d/%m/%Y'
-            external_id = attrs['id']
-            stage = child.find('div', class_='event__stage--block')
-            if stage:
-                stage = stage.text
-            time = child.find('div', class_='event__time')
-            if time:
-                start_dt_ = f"{start_dt_} {time.text.replace('SRF', '')}"
-                start_dt_format = '%d/%m/%Y %H:%M'
-            start_dt_ = datetime.strptime(start_dt_, start_dt_format)
-            home_player = child.find(
-                'div', class_='event__participant--home'
-            ).text
-            away_player = child.find(
-                'div', class_='event__participant--away'
-            ).text
-            score_home = child.find('div', class_='event__score--home').text
-            score_away = child.find('div', class_='event__score--away').text
-
-            parts = child.find_all('div', class_='event__part')
-            line_score = []
-            for i in range(1, 6):
-                parts_ = [a for a in parts
-                          if f'event__part--{i}' in a.attrs['class']]
-                if not parts_:
-                    continue
-                home_ = [e for e in parts_
-                         if 'event__part--home' in e.attrs['class']]
-                away_ = [e for e in parts_
-                         if 'event__part--away' in e.attrs['class']]
-                line_score.append({
-                    'home': int(home_[0].text),
-                    'away': int(away_[0].text)
-                })['start_dt']
-
-            events_info.append(
-                dict(
-                    league=league,
-                    gender=gender,
-                    external_id=external_id,
-                    stage=stage,
-                    start_dt=start_dt_,
-                    home_player=home_player,
-                    away_player=away_player,
-                    home_score=int(score_home.replace('-', '0')),
-                    away_score=int(score_away.replace('-', '0')),
-                    line_score=line_score
-                )
-            )
-    return events_info
-"""
-
-
 def format_player_name(
     name: str
 ) -> str:
@@ -293,15 +203,19 @@ def create_or_update_game(
     finished = TableTennisStatus.FINISHED.value
     canceled = TableTennisStatus.CANCELED.value
     in_live = TableTennisStatus.IN_LIVE.value
+    discontinued = TableTennisStatus.DISCONTINUED.value
     abandonment = TableTennisStatus.ABANDONMENT.value
+    for_lost = TableTennisStatus.FOR_LOST.value
     if stage and finished in stage:
         status = GameStatus.FINISHED.value
-    elif stage and canceled in stage:
+    elif stage and (canceled in stage or for_lost in stage):
         status = GameStatus.CANCELED.value
     elif stage and in_live in stage:
         status = GameStatus.IN_LIVE.value
     elif stage and abandonment in stage:
         status = GameStatus.ABANDONMENT.value
+    elif stage and discontinued in stage:
+        status = GameStatus.DISCONTINUED.value
 
     game_qry = games_selectors.filter_game_by_external_id(
         external_id=external_id
@@ -357,9 +271,15 @@ def load_events(
     if not file_date:
         events = read_events_web_driver()
     else:
-        events = read_events_from_html_file(
-            file_date=file_date
-        )
+        filename = file_date.strftime(FILE_PATH_DATA_SET)
+        if os.path.isfile(filename):
+            df = pd.read_csv(filename, sep=DELIMITER_CSV)
+            df = df.where(pd.notnull(df), None)
+            events = df.to_dict(orient='records')
+        else:
+            events = read_events_from_html_file(
+                file_date=file_date
+            )
     events_created = 0
     events_updated = 0
     if not events:

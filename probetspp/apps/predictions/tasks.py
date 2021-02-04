@@ -1,6 +1,6 @@
 import logging
+from typing import Union
 from datetime import datetime, timedelta
-
 from django.utils import timezone
 from apps.utils.decimal import format_decimal_to_n_places
 from apps.communications import services as communications_services
@@ -13,14 +13,21 @@ from apps.predictions import services
 logger = logging.getLogger(__name__)
 
 
-def create_periodical_prediction():
+def update_events_data() -> Union[None]:
+    try:
+        flash_services.load_events()
+    except Exception as exc:
+        logger.exception(
+            f'update_events_data :: {exc}'
+        )
+
+
+def create_periodical_prediction() -> Union[None]:
     """
     create today periodical prediction task
     """
-    # update events
-    flash_services.load_events()
-    yajuego_services.update_odds_games()
     start_dt_from = datetime.now()
+    yajuego_services.update_odds_games()
     start_dt_to = start_dt_from + timedelta(minutes=30)
     predictions = services.create_prediction_by_advance_analysis(
         status=GameStatus.SCHEDULED.value,

@@ -6,5 +6,6 @@ URL_LEAGUES = dict(
     ligapro=f'{_URL}/russia/ligapro/20-5453-124706',
     setkacup=f'{_URL}/international/setkacup/20-407-124755',
     setkacup_women=f'{_URL}/international/setkacupwomen/20-407-124757',
-    wincup=f'{_URL}/international/ukrainewincup/20-407-124973'
+    wincup=f'{_URL}/international/ukrainewincup/20-407-124973',
+    ukrainewincupwomen=f'{_URL}/international/ukrainewincupwomen/20-407-124978'
 )
