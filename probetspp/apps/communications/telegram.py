@@ -2,7 +2,7 @@
 https://docs.telethon.dev/en/latest/basic/signing-in.html
 """
 import logging
-from typing import Union, Optional
+from typing import Union
 from telethon import TelegramClient
 from apps.core.singleton import Singleton
 from apps.communications.constants import (
@@ -11,6 +11,7 @@ from apps.communications.constants import (
     TELEGRAM_API_HASH,
     TELEGRAM_API_ID
 )
+from apps.communications.typing import Message
 
 logger = logging.getLogger(__name__)
 
@@ -66,13 +67,16 @@ class TelegramConnector(Singleton):
     async def send_message(
         self,
         *,
-        user: object,
-        message: str,
-        silent: Optional[bool] = False
+        message: Message
     ) -> Union[None]:
         try:
+            user = self.channel_name
+            if message.user:
+                user = message.user
             await self.client.send_message(
-                user, message, parse_mode='html', silent=silent
+                user, message.message,
+                parse_mode='html',
+                silent=message.silent
             )
         except Exception as e:
             logger.exception(

@@ -3,6 +3,7 @@ from typing import Union
 from datetime import datetime, timedelta
 from django.utils import timezone
 from apps.utils.decimal import format_decimal_to_n_places
+from apps.communications.typing import Message
 from apps.communications import services as communications_services
 from apps.third_parties.flashscore import services as flash_services
 from apps.third_parties.yajuego import services as yajuego_services
@@ -50,10 +51,13 @@ def create_periodical_prediction() -> Union[None]:
               f'Date: {start_dt.strftime("%H:%M")}\n' \
               f'Winner: {winner}\n' \
               f'Confidence: {confidence}'
-        messages.append(msg.format(**data))
-    communications_services.send_telegram_message(
-        messages=messages,
-        user='me'
+        message = Message(
+            message=msg.format(**data),
+            user='me'
+        )
+        messages.append(message)
+    communications_services.send_telegram_messages(
+        messages=messages
     )
     logger.info(
         f'create_periodical_prediction :: {num_predictions}'
