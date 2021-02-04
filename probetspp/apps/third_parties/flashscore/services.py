@@ -25,6 +25,19 @@ from apps.third_parties.flashscore.connector import FlashConnector
 logger = logging.getLogger(__name__)
 
 
+def read_yesterday_events_web_driver() -> Union[None, List[Dict[str, Any]]]:
+    connector = FlashConnector()
+    try:
+        events = connector.get_yesterday_events()
+    except Exception as exc:
+        logger.exception(
+            f'read_yesterday_events_web_driver :: {exc}'
+        )
+        return
+    events = save_events_data(events=events)
+    return events
+
+
 def read_events_web_driver() -> Union[None, List[Dict[str, Any]]]:
     connector = FlashConnector()
     try:
@@ -266,10 +279,14 @@ def create_or_update_game(
 
 def load_events(
     *,
-    file_date: Optional[date] = None
+    file_date: Optional[date] = None,
+    yesterday: Optional[bool] = None
 ) -> Union[Dict[str, Any], None]:
     if not file_date:
-        events = read_events_web_driver()
+        if yesterday:
+            events = read_yesterday_events_web_driver()
+        else:
+            events = read_events_web_driver()
     else:
         filename = file_date.strftime(FILE_PATH_DATA_SET)
         if os.path.isfile(filename):

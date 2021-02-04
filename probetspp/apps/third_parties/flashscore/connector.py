@@ -41,6 +41,62 @@ class FlashConnector:
         self.content = None
         self.events = None
 
+    def get_yesterday_events(
+        self,
+        *,
+        sport: Optional[SPORTS] = SPORTS.TABLE_TENNIS
+    ) -> List[Dict[str, Any]]:
+        """
+        get events by sport with odds
+        Return: list of dict(
+            league: league name
+            gender: gender
+            external_id: game external id
+            stage: stage
+            start_dt: start dt
+            home_player: home player external id
+            away_player: away player external id
+            home_score: home score
+            away_score: away score
+            line_score: dict of line score
+            h_odds: home odd
+            a_odds: away odd
+        )
+        """
+        url = URLS.SPORT_EVENTS.value.format(
+            sport.value
+        )
+        self.driver.get(url)
+        # wait a page has been loaded
+        WebDriverWait(self.driver, 90).until(
+            ec.presence_of_element_located((By.CLASS_NAME, "sportName"))
+        )
+        btn_yesterday = self.driver.find_element_by_class_name(
+            name='calendar__direction--yesterday'
+        )
+        if btn_yesterday:
+            btn_yesterday.click()
+            # wait a page has been loaded
+            WebDriverWait(self.driver, 90).until(
+                ec.presence_of_element_located((By.CLASS_NAME, "sportName"))
+            )
+        self.content = self.driver.page_source
+        self.events = FlashConnector.read_events_by_content(
+            content=self.content,
+            event_date=datetime.now().date()
+        )
+        if self.events:
+            odds_events = self._get_odds_events()
+            df_odds = pd.DataFrame(odds_events)
+            df_events = pd.DataFrame(self.events)
+            df_events['h_odds'] = df_odds[
+                df_odds['external_id'] == df_events['external_id']]['h_odds']
+            df_events['a_odds'] = df_odds[
+                df_odds['external_id'] == df_events['external_id']]['a_odds']
+            self.events = df_events.to_dict(orient='records')
+        self.driver.close()
+        return self.events
+
     def get_today_events(
         self,
         *,

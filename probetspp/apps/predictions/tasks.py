@@ -23,6 +23,15 @@ def update_events_data() -> Union[None]:
         )
 
 
+def update_yesterday_events() -> Union[None]:
+    try:
+        flash_services.load_events(yesterday=True)
+    except Exception as exc:
+        logger.exception(
+            f'update_yesterday_events :: {exc}'
+        )
+
+
 def create_periodical_prediction() -> Union[None]:
     """
     create today periodical prediction task
