@@ -23,21 +23,13 @@ def update_events_data() -> Union[None]:
         )
 
 
-def update_yesterday_events() -> Union[None]:
-    try:
-        flash_services.load_events(yesterday=True)
-    except Exception as exc:
-        logger.exception(
-            f'update_yesterday_events :: {exc}'
-        )
-
-
 def create_periodical_prediction() -> Union[None]:
     """
     create today periodical prediction task
     """
-    start_dt_from = datetime.now()
+    flash_services.load_events()
     yajuego_services.update_odds_games()
+    start_dt_from = datetime.now()
     start_dt_to = start_dt_from + timedelta(minutes=30)
     predictions = services.create_prediction_by_advance_analysis(
         status=GameStatus.SCHEDULED.value,

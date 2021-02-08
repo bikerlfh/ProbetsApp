@@ -122,7 +122,12 @@ def update_prediction_by_game_updated(
         return
     prediction = prediction.first()
     status = GameStatus(game.status)
-    if status == GameStatus.CANCELED or status == GameStatus.ABANDONMENT:
+    cancel_status = [
+        GameStatus.CANCELED,
+        GameStatus.ABANDONMENT,
+        GameStatus.POSTPONED
+    ]
+    if status in cancel_status:
         prediction.status = PredictionStatus.CANCELED.value
         prediction.save()
         return

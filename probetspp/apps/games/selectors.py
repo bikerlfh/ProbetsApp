@@ -195,6 +195,8 @@ def filter_game_stats_data(
     game_qry = Game.objects.all().annotate(
         h_id=F('home_player_id'),
         a_id=F('away_player_id'),
+        h_name=F('home_player__name'),
+        a_name=F('away_player__name'),
         h_score=F('home_score'),
         a_score=F('away_score'),
         l_score=F('line_score'),
@@ -211,7 +213,7 @@ def filter_game_stats_data(
         )
     ).values(
         'id', 'status', 'league_id', 'start_dt',
-        'h_id', 'a_id', 'h_score', 'a_score',
+        'h_id', 'a_id', 'h_name', 'a_name', 'h_score', 'a_score',
         'l_score', 'winner_id'
     ).order_by('-id', '-start_dt')
     filter_ = filter_ or {}

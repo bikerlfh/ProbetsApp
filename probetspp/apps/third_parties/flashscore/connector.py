@@ -1,5 +1,5 @@
 from enum import Enum
-from datetime import datetime, date
+from datetime import datetime, date, timedelta
 from typing import Union, Dict, Any, List, Optional, TextIO
 import pandas as pd
 from bs4 import BeautifulSoup
@@ -74,25 +74,22 @@ class FlashConnector:
         btn_yesterday = self.driver.find_element_by_class_name(
             name='calendar__direction--yesterday'
         )
-        if btn_yesterday:
-            btn_yesterday.click()
-            # wait a page has been loaded
-            WebDriverWait(self.driver, 90).until(
-                ec.presence_of_element_located((By.CLASS_NAME, "sportName"))
-            )
+        btn_yesterday.click()
+        # wait a page has been loaded
+        WebDriverWait(self.driver, 90).until(
+            ec.presence_of_element_located((By.CLASS_NAME, "sportName"))
+        )
+        self.driver.implicitly_wait(10)
         self.content = self.driver.page_source
+        event_date = datetime.now() - timedelta(days=1)
         self.events = FlashConnector.read_events_by_content(
             content=self.content,
-            event_date=datetime.now().date()
+            event_date=event_date
         )
         if self.events:
-            odds_events = self._get_odds_events()
-            df_odds = pd.DataFrame(odds_events)
             df_events = pd.DataFrame(self.events)
-            df_events['h_odds'] = df_odds[
-                df_odds['external_id'] == df_events['external_id']]['h_odds']
-            df_events['a_odds'] = df_odds[
-                df_odds['external_id'] == df_events['external_id']]['a_odds']
+            df_events['h_odds'] = None
+            df_events['a_odds'] = None
             self.events = df_events.to_dict(orient='records')
         self.driver.close()
         return self.events

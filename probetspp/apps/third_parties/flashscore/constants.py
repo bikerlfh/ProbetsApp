@@ -17,6 +17,7 @@ class TableTennisStatus(Enum):
     ABANDONMENT = 'Abandono'
     DISCONTINUED = 'Suspendido'
     FOR_LOST = 'Por perdido'
+    POSTPONED = 'Aplazado'
 
 
 class GenderLeague(Enum):

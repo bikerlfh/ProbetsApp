@@ -1,8 +1,9 @@
 import os
 import re
 import logging
+from ast import literal_eval
 from decimal import Decimal
-from datetime import datetime, date
+from datetime import datetime, date, timedelta
 from typing import Union, Dict, Any, List, Optional
 from django.db import transaction
 import pandas as pd
@@ -34,7 +35,11 @@ def read_yesterday_events_web_driver() -> Union[None, List[Dict[str, Any]]]:
             f'read_yesterday_events_web_driver :: {exc}'
         )
         return
-    events = save_events_data(events=events)
+    now = datetime.now() - timedelta(days=1)
+    events = save_events_data(
+        events=events,
+        event_date=now.date()
+    )
     return events
 
 
@@ -46,6 +51,25 @@ def read_events_web_driver() -> Union[None, List[Dict[str, Any]]]:
         logger.exception(f'read_events_web_driver :: {exc}')
         return
     events = save_events_data(events=events)
+    return events
+
+
+def read_events_by_dataset(
+    *,
+    event_date: date
+) -> Union[None, List[Dict[str, Any]]]:
+    filename = event_date.strftime(FILE_PATH_DATA_SET)
+    events = None
+    if os.path.isfile(filename):
+        df = pd.read_csv(
+            filename,
+            sep=DELIMITER_CSV,
+            converters={
+                'line_score': literal_eval
+            }
+        )
+        df = df.where(pd.notnull(df), None)
+        events = df.to_dict(orient='records')
     return events
 
 
@@ -219,6 +243,7 @@ def create_or_update_game(
     discontinued = TableTennisStatus.DISCONTINUED.value
     abandonment = TableTennisStatus.ABANDONMENT.value
     for_lost = TableTennisStatus.FOR_LOST.value
+    postponed = TableTennisStatus.POSTPONED.value
     if stage and finished in stage:
         status = GameStatus.FINISHED.value
     elif stage and (canceled in stage or for_lost in stage):
@@ -229,6 +254,8 @@ def create_or_update_game(
         status = GameStatus.ABANDONMENT.value
     elif stage and discontinued in stage:
         status = GameStatus.DISCONTINUED.value
+    elif stage and postponed in stage:
+        status = GameStatus.POSTPONED.value
 
     game_qry = games_selectors.filter_game_by_external_id(
         external_id=external_id
@@ -288,12 +315,10 @@ def load_events(
         else:
             events = read_events_web_driver()
     else:
-        filename = file_date.strftime(FILE_PATH_DATA_SET)
-        if os.path.isfile(filename):
-            df = pd.read_csv(filename, sep=DELIMITER_CSV)
-            df = df.where(pd.notnull(df), None)
-            events = df.to_dict(orient='records')
-        else:
+        events = read_events_by_dataset(
+            event_date=file_date
+        )
+        if not events:
             events = read_events_from_html_file(
                 file_date=file_date
             )

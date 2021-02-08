@@ -1,0 +1,712 @@
+league;gender;external_id;stage;start_dt;home_player;away_player;home_score;away_score;line_score;h_odds;a_odds
+Bundesliga (Alemania);1;g_25_0CUYUlBf;Finalizado;2021-02-07 00:00:00;Bad Homburg;Bergneustadt;0;3;[];;
+Bundesliga (Alemania);1;g_25_fFRQWAtr;Finalizado;2021-02-07 00:00:00;Bad Konigshofen;Muhlhausen;3;1;[];;
+Bundesliga (Alemania);1;g_25_AsjfxXIK;Finalizado;2021-02-07 00:00:00;Bremen;Saarbrücken;0;3;[];;
+Bundesliga (Alemania);1;g_25_t8ojwD3E;Finalizado;2021-02-07 00:00:00;Düsseldorf;Neu-Ulm;3;1;[];;
+Bundesliga (Alemania);1;g_25_lYlbyiYQ;Finalizado;2021-02-07 00:00:00;Fulda-Maberzell;Grenzau;2;3;[];;
+Bundesliga (Alemania);1;g_25_6kVUVUel;Finalizado;2021-02-07 00:00:00;Grunwettersbach;Ochsenhausen;1;3;[];;
+Bundesliga (Alemania);1;g_25_QNw5Xrzo;Finalizado;2021-02-07 00:00:00;Aruna Q. (Nga);Pletea C. (Rou);3;2;[{'home': 8, 'away': 11}, {'home': 11, 'away': 7}, {'home': 11, 'away': 6}, {'home': 6, 'away': 11}, {'home': 11, 'away': 6}];;
+Bundesliga (Alemania);1;g_25_QaeItmDb;Finalizado;2021-02-07 00:00:00;Boll T. (Ger);Apolonia T. (Por);2;3;[{'home': 11, 'away': 5}, {'home': 11, 'away': 7}, {'home': 8, 'away': 11}, {'home': 9, 'away': 11}, {'home': 10, 'away': 12}];;
+Bundesliga (Alemania);1;g_25_GllVwocH;Finalizado;2021-02-07 00:00:00;Falck M. (Swe);Franziska P. (Ger);2;3;[{'home': 8, 'away': 11}, {'home': 12, 'away': 10}, {'home': 11, 'away': 8}, {'home': 6, 'away': 11}, {'home': 3, 'away': 11}];;
+Bundesliga (Alemania);1;g_25_EqGef6sb;Finalizado;2021-02-07 00:00:00;Qiu D. (Ger);Gauzy S. (Fra);0;3;[{'home': 11, 'away': 13}, {'home': 5, 'away': 11}, {'home': 9, 'away': 11}];;
+Bundesliga (Alemania);1;g_25_l288i4RG;Finalizado;2021-02-07 00:00:00;Sipos R. (Rou);Robles A. (Esp);2;3;[{'home': 11, 'away': 9}, {'home': 9, 'away': 11}, {'home': 6, 'away': 11}, {'home': 11, 'away': 9}, {'home': 5, 'away': 11}];;
+Bundesliga (Alemania);1;g_25_29lqo24p;Finalizado;2021-02-07 00:00:00;Steger B. (Ger);Ionescu O. (Rou);3;1;[{'home': 15, 'away': 13}, {'home': 11, 'away': 6}, {'home': 5, 'away': 11}, {'home': 11, 'away': 4}];;
+Bundesliga (Alemania);1;g_25_hzFagQd4;Finalizado;2021-02-07 00:00:00;Kozul D. (Slo);Calderano H. (Bra);0;3;[{'home': 6, 'away': 11}, {'home': 10, 'away': 12}, {'home': 5, 'away': 11}];;
+Bundesliga (Alemania);1;g_25_SSHmdSCo;Finalizado;2021-02-07 00:00:00;Filus R. (Ger);Sgouropoulos I. (Gre);3;1;[{'home': 11, 'away': 7}, {'home': 10, 'away': 12}, {'home': 14, 'away': 12}, {'home': 11, 'away': 6}];;
+Bundesliga (Alemania);1;g_25_t0mmpMJj;Finalizado;2021-02-07 00:00:00;Zeljko F. (Cro);Habesohn D. (Aut);2;3;[{'home': 5, 'away': 11}, {'home': 11, 'away': 9}, {'home': 11, 'away': 6}, {'home': 7, 'away': 11}, {'home': 9, 'away': 11}];;
+Bundesliga (Alemania);1;g_25_KMfMu7S4;Finalizado;2021-02-07 00:00:00;Walther R. (Ger);Stumper K. (Ger);3;2;[{'home': 11, 'away': 5}, {'home': 11, 'away': 9}, {'home': 7, 'away': 11}, {'home': 4, 'away': 11}, {'home': 11, 'away': 8}];;
+Bundesliga (Alemania);1;g_25_fumZx5CN;Finalizado;2021-02-07 09:45:00;Gerassimenko K. (Kaz);Jorgic D. (Slo);0;3;[{'home': 9, 'away': 11}, {'home': 6, 'away': 11}, {'home': 10, 'away': 12}];;
+Bundesliga (Alemania);1;g_25_rP7CjOtN;Finalizado;2021-02-07 00:00:00;Grebnev M. (Rus);Duda B. (Ger);0;3;[{'home': 5, 'away': 11}, {'home': 8, 'away': 11}, {'home': 9, 'away': 11}];;
+Bundesliga (Alemania);1;g_25_za44hpCA;Finalizado;;Wang X. (Ger);Jha K. (Usa);3;0;[{'home': 11, 'away': 8}, {'home': 11, 'away': 8}, {'home': 11, 'away': 6}];;
+Bundesliga (Alemania);1;g_25_MF6GkrdT;Finalizado;;Katsman L. (Ger);Mino A. (Ecu);0;3;[{'home': 7, 'away': 11}, {'home': 2, 'away': 11}, {'home': 8, 'away': 11}];;
+Bundesliga (Alemania);1;g_25_bDgQvRsB;Finalizado;;Kallberg A. (Swe);Sidorenko V. (Rus);3;0;[{'home': 13, 'away': 11}, {'home': 11, 'away': 4}, {'home': 11, 'away': 4}];;
+Bundesliga (Alemania);1;g_25_rwmo5NeG;Anulado;;Gerassimenko K. (Kaz);Franziska P. (Ger);0;0;[];;
+Bundesliga (Alemania);1;g_25_6JGienSi;Finalizado;;Meng F. B. (Ger);Karakasevic A. (Srb);1;3;[{'home': 11, 'away': 8}, {'home': 9, 'away': 11}, {'home': 6, 'away': 11}, {'home': 9, 'away': 11}];;
+Bundesliga (Alemania);1;g_25_GU3NoZfe;Finalizado;;Qiu D. (Ger);Calderano H. (Bra);0;3;[{'home': 14, 'away': 16}, {'home': 5, 'away': 11}, {'home': 12, 'away': 14}];;
+Bundesliga (Alemania);1;g_25_l2nwxPRT;Finalizado;;Aguirre M. (Par);Shang K. (Chn);2;3;[{'home': 11, 'away': 8}, {'home': 11, 'away': 4}, {'home': 6, 'away': 11}, {'home': 9, 'away': 11}, {'home': 2, 'away': 11}];;
+Bundesliga (Alemania);1;g_25_f3yV85di;Finalizado;;Ort K. (Ger);Mengel S. (Ger);3;1;[{'home': 9, 'away': 11}, {'home': 11, 'away': 8}, {'home': 11, 'away': 5}, {'home': 11, 'away': 9}];;
+Bundesliga (Alemania);1;g_25_2RaJnFuk;Anulado;;Filus R. (Ger);Pletea C. (Rou);0;0;[];;
+Bundesliga (Alemania);1;g_25_lz868d28;Anulado;;Grebnev M. (Rus);Robles A. (Esp);0;0;[];;
+Bundesliga (Alemania);1;g_25_Ai3RpgA1;Anulado;;Kozul D. (Slo);Gauzy S. (Fra);0;0;[];;
+Bundesliga (Alemania);1;g_25_lr2VqDP7;Anulado;;Sipos R. (Rou);Duda B. (Ger);0;0;[];;
+Bundesliga (Alemania);1;g_25_zDqw7qR3;Anulado;;Walther R. (Ger);Apolonia T. (Por);0;0;[];;
+Bundesliga (Alemania);1;g_25_Mm6E6zXK;Anulado;;Zeljko F. (Cro);Ionescu O. (Rou);0;0;[];;
+Bundesliga (Alemania);1;g_25_hlfY7PBc;Finalizado;;Boll T. (Ger);Stumper K. (Ger);3;1;[{'home': 11, 'away': 7}, {'home': 11, 'away': 8}, {'home': 4, 'away': 11}, {'home': 13, 'away': 11}];;
+Bundesliga (Alemania);1;g_25_K2AEmeQr;Finalizado;;Aruna Q. (Nga);Sgouropoulos I. (Gre);0;3;[{'home': 0, 'away': 11}, {'home': 0, 'away': 11}, {'home': 0, 'away': 11}];;
+Bundesliga (Alemania);1;g_25_SQ6A7GHE;Finalizado;;Steger B. (Ger);Habesohn D. (Aut);3;2;[{'home': 7, 'away': 11}, {'home': 14, 'away': 12}, {'home': 11, 'away': 8}, {'home': 8, 'away': 11}, {'home': 11, 'away': 9}];;
+Bundesliga (Alemania);1;g_25_E3rs63tA;Anulado;;Falck M. (Swe);Jorgic D. (Slo);0;0;[];;
+Liga Pro (Rusia);1;g_25_xCxqbHzk;Finalizado;2021-02-07 00:00:00;Esin A. (Rus);Bogomolov A. (Rus);1;3;[{'home': 7, 'away': 11}, {'home': 12, 'away': 10}, {'home': 8, 'away': 11}, {'home': 9, 'away': 11}];4.25;1.16
+Liga Pro (Rusia);1;g_25_ILpide51;Finalizado;2021-02-07 00:00:00;Doncenko A. (Rus);Makarenkov E. (Rus);1;3;[{'home': 3, 'away': 11}, {'home': 14, 'away': 12}, {'home': 10, 'away': 12}, {'home': 5, 'away': 11}];2.95;1.32
+Liga Pro (Rusia);1;g_25_pSxwKbc8;Finalizado;2021-02-07 00:00:00;Nikiforov O. (Rus);Lisov A. (Rus);3;1;[{'home': 10, 'away': 12}, {'home': 11, 'away': 7}, {'home': 11, 'away': 5}, {'home': 11, 'away': 6}];1.63;2.08
+Liga Pro (Rusia);1;g_25_rqd0NX30;Finalizado;2021-02-07 00:00:00;Merezhko A. (Rus);Esin A. (Rus);3;0;[{'home': 12, 'away': 10}, {'home': 11, 'away': 5}, {'home': 11, 'away': 9}];1.38;2.7
+Liga Pro (Rusia);1;g_25_vBk9LBYC;Finalizado;2021-02-07 00:00:00;Klimentev V. (Rus);Doncenko A. (Rus);1;3;[{'home': 6, 'away': 11}, {'home': 6, 'away': 11}, {'home': 11, 'away': 7}, {'home': 13, 'away': 15}];2.02;1.67
+Liga Pro (Rusia);1;g_25_jkJRwgls;Finalizado;2021-02-07 00:00:00;Olshakov K. (Rus);Nikiforov O. (Rus);1;3;[{'home': 11, 'away': 7}, {'home': 6, 'away': 11}, {'home': 5, 'away': 11}, {'home': 7, 'away': 11}];;
+Liga Pro (Rusia);1;g_25_lMddODlf;Finalizado;2021-02-07 00:00:00;Bogomolov A. (Rus);Merezhko A. (Rus);0;3;[{'home': 4, 'away': 11}, {'home': 8, 'away': 11}, {'home': 5, 'away': 11}];;
+Liga Pro (Rusia);1;g_25_xnghPgZm;Finalizado;2021-02-07 00:00:00;Duka A. (Rus);Esin A. (Rus);0;3;[{'home': 8, 'away': 11}, {'home': 10, 'away': 12}, {'home': 9, 'away': 11}];2.42;1.47
+Liga Pro (Rusia);1;g_25_UuIVxD3m;Finalizado;2021-02-07 00:00:00;Lisov A. (Rus);Arutiunyan A. (Rus);3;2;[{'home': 6, 'away': 11}, {'home': 11, 'away': 5}, {'home': 4, 'away': 11}, {'home': 11, 'away': 9}, {'home': 11, 'away': 8}];2.28;1.52
+Liga Pro (Rusia);1;g_25_I1lDKVmJ;Finalizado;2021-02-07 00:00:00;Makarenkov E. (Rus);Alov R. (Rus);3;1;[{'home': 11, 'away': 6}, {'home': 6, 'away': 11}, {'home': 11, 'away': 5}, {'home': 11, 'away': 1}];1.78;1.88
+Liga Pro (Rusia);1;g_25_rkwuacLr;Finalizado;2021-02-07 00:00:00;Merezhko A. (Rus);Duka A. (Rus);2;3;[{'home': 11, 'away': 7}, {'home': 11, 'away': 9}, {'home': 4, 'away': 11}, {'home': 11, 'away': 13}, {'home': 5, 'away': 11}];;
+Liga Pro (Rusia);1;g_25_W4xeqFQJ;Finalizado;2021-02-07 00:00:00;Alov R. (Rus);Doncenko A. (Rus);0;3;[{'home': 4, 'away': 11}, {'home': 4, 'away': 11}, {'home': 6, 'away': 11}];1.43;2.52
+Liga Pro (Rusia);1;g_25_OGWYyXIg;Finalizado;2021-02-07 00:00:00;Arutiunyan A. (Rus);Nikiforov O. (Rus);3;0;[{'home': 11, 'away': 9}, {'home': 11, 'away': 2}, {'home': 11, 'away': 8}];;
+Liga Pro (Rusia);1;g_25_MZf4MiJ6;Finalizado;2021-02-07 00:00:00;Duka A. (Rus);Bogomolov A. (Rus);1;3;[{'home': 12, 'away': 14}, {'home': 8, 'away': 11}, {'home': 11, 'away': 7}, {'home': 6, 'away': 11}];;
+Liga Pro (Rusia);1;g_25_p8tarZuQ;Finalizado;2021-02-07 00:00:00;Klimentev V. (Rus);Makarenkov E. (Rus);3;2;[{'home': 6, 'away': 11}, {'home': 9, 'away': 11}, {'home': 11, 'away': 8}, {'home': 11, 'away': 7}, {'home': 11, 'away': 7}];2.17;1.57
+Liga Pro (Rusia);1;g_25_27VxyiYa;Finalizado;2021-02-07 00:00:00;Olshakov K. (Rus);Lisov A. (Rus);3;0;[{'home': 11, 'away': 4}, {'home': 11, 'away': 2}, {'home': 11, 'away': 6}];1.67;2.02
+Liga Pro (Rusia);1;g_25_8GCsYDLB;Finalizado;2021-02-07 00:00:00;Arutiunyan A. (Rus);Lisov A. (Rus);3;0;[{'home': 11, 'away': 8}, {'home': 11, 'away': 2}, {'home': 11, 'away': 7}];;
+Liga Pro (Rusia);1;g_25_ClJYZZja;Finalizado;2021-02-07 00:00:00;Esin A. (Rus);Duka A. (Rus);2;3;[{'home': 11, 'away': 7}, {'home': 12, 'away': 14}, {'home': 7, 'away': 11}, {'home': 12, 'away': 10}, {'home': 7, 'away': 11}];;
+Liga Pro (Rusia);1;g_25_YN9gVB5U;Finalizado;2021-02-07 00:00:00;Klimentev V. (Rus);Alov R. (Rus);0;3;[{'home': 4, 'away': 11}, {'home': 7, 'away': 11}, {'home': 8, 'away': 11}];;
+Liga Pro (Rusia);1;g_25_boy0jeyt;Finalizado;2021-02-07 00:00:00;Makarenkov E. (Rus);Doncenko A. (Rus);3;1;[{'home': 16, 'away': 14}, {'home': 11, 'away': 6}, {'home': 5, 'away': 11}, {'home': 11, 'away': 6}];;
+Liga Pro (Rusia);1;g_25_QiNxZg65;Finalizado;2021-02-07 00:00:00;Merezhko A. (Rus);Bogomolov A. (Rus);3;1;[{'home': 9, 'away': 11}, {'home': 11, 'away': 3}, {'home': 14, 'away': 12}, {'home': 11, 'away': 9}];;
+Liga Pro (Rusia);1;g_25_n7BoXXzI;Finalizado;2021-02-07 00:00:00;Olshakov K. (Rus);Nikiforov O. (Rus);1;3;[{'home': 11, 'away': 4}, {'home': 8, 'away': 11}, {'home': 9, 'away': 11}, {'home': 11, 'away': 13}];;
+Liga Pro (Rusia);1;g_25_OIysJICE;Finalizado;2021-02-07 00:00:00;Khramkov P. (Rus);Ovchinnikov Y. (Rus);0;3;[{'home': 7, 'away': 11}, {'home': 19, 'away': 21}, {'home': 2, 'away': 11}];;
+Liga Pro (Rusia);1;g_25_GGGLBz5l;Finalizado;2021-02-07 00:00:00;Buyanin I. (Rus);Poletaev I. (Rus);3;1;[{'home': 11, 'away': 9}, {'home': 11, 'away': 7}, {'home': 7, 'away': 11}, {'home': 11, 'away': 9}];1.38;2.7
+Liga Pro (Rusia);1;g_25_KpVkHdsR;Finalizado;2021-02-07 00:00:00;Shishko Y. (Rus);Kovalev I. (Rus);3;1;[{'home': 11, 'away': 7}, {'home': 9, 'away': 11}, {'home': 11, 'away': 7}, {'home': 11, 'away': 3}];1.55;2.22
+Liga Pro (Rusia);1;g_25_6sRoIxSK;Finalizado;2021-02-07 00:00:00;Skrebnev A. (Rus);Davydov M. (Rus);1;3;[{'home': 11, 'away': 7}, {'home': 7, 'away': 11}, {'home': 7, 'away': 11}, {'home': 4, 'away': 11}];2.82;1.35
+Liga Pro (Rusia);1;g_25_xQHHCGkr;Finalizado;2021-02-07 00:00:00;Glazun E. (Rus);Lobanov A. (Rus);3;0;[{'home': 11, 'away': 9}, {'home': 11, 'away': 8}, {'home': 12, 'away': 10}];1.28;3.2
+Liga Pro (Rusia);1;g_25_dSXIAfKf;Finalizado;2021-02-07 00:00:00;Suharkov O. (Rus);Grishaev E. (Rus);3;1;[{'home': 9, 'away': 11}, {'home': 11, 'away': 5}, {'home': 12, 'away': 10}, {'home': 11, 'away': 8}];1.52;2.28
+Liga Pro (Rusia);1;g_25_pWKszBm6;Finalizado;2021-02-07 00:00:00;Ovchinnikov Y. (Rus);Skrebnev A. (Rus);3;1;[{'home': 12, 'away': 10}, {'home': 9, 'away': 11}, {'home': 11, 'away': 4}, {'home': 11, 'away': 7}];1.67;2.02
+Liga Pro (Rusia);1;g_25_6wV1u6Po;Finalizado;2021-02-07 00:00:00;Kovalev I. (Rus);Glazun E. (Rus);3;2;[{'home': 11, 'away': 9}, {'home': 9, 'away': 11}, {'home': 12, 'away': 10}, {'home': 6, 'away': 11}, {'home': 14, 'away': 12}];1.57;2.17
+Liga Pro (Rusia);1;g_25_YkMIyOOA;Finalizado;2021-02-07 00:00:00;Poletaev I. (Rus);Suharkov O. (Rus);3;1;[{'home': 9, 'away': 11}, {'home': 11, 'away': 9}, {'home': 14, 'away': 12}, {'home': 11, 'away': 8}];1.7;1.96
+Liga Pro (Rusia);1;g_25_bZOoZU2C;Finalizado;2021-02-07 00:00:00;Davydov M. (Rus);Khramkov P. (Rus);3;0;[{'home': 11, 'away': 8}, {'home': 11, 'away': 7}, {'home': 11, 'away': 5}];;
+Liga Pro (Rusia);1;g_25_CtLMzrvH;Finalizado;2021-02-07 00:00:00;Grishaev E. (Rus);Buyanin I. (Rus);3;0;[{'home': 11, 'away': 5}, {'home': 15, 'away': 13}, {'home': 11, 'away': 3}];1.37;2.73
+Liga Pro (Rusia);1;g_25_pUT5vQvh;Finalizado;2021-02-07 00:00:00;Lobanov A. (Rus);Shishko Y. (Rus);0;3;[{'home': 8, 'away': 11}, {'home': 5, 'away': 11}, {'home': 13, 'away': 15}];2.55;1.42
+Liga Pro (Rusia);1;g_25_hdOkYlII;Anulado;2021-02-07 00:00:00;Khramkov P. (Rus);Skrebnev A. (Rus);0;0;[];;
+Liga Pro (Rusia);1;g_25_ULoJGMno;Finalizado;2021-02-07 00:00:00;Ovchinnikov Y. (Rus);Davydov M. (Rus);3;2;[{'home': 8, 'away': 11}, {'home': 11, 'away': 4}, {'home': 2, 'away': 11}, {'home': 11, 'away': 5}, {'home': 11, 'away': 9}];2.08;1.63
+Liga Pro (Rusia);1;g_25_viT9wpfb;Finalizado;2021-02-07 00:00:00;Shishko Y. (Rus);Glazun E. (Rus);3;1;[{'home': 11, 'away': 9}, {'home': 3, 'away': 11}, {'home': 11, 'away': 8}, {'home': 11, 'away': 8}];1.52;2.28
+Liga Pro (Rusia);1;g_25_tGPQZ1gN;Finalizado;2021-02-07 00:00:00;Buyanin I. (Rus);Suharkov O. (Rus);3;2;[{'home': 9, 'away': 11}, {'home': 11, 'away': 6}, {'home': 11, 'away': 8}, {'home': 7, 'away': 11}, {'home': 11, 'away': 9}];1.36;2.77
+Liga Pro (Rusia);1;g_25_bwLpzppT;Finalizado;2021-02-07 00:00:00;Ovchinnikov Y. (Rus);Davydov M. (Rus);3;1;[{'home': 12, 'away': 10}, {'home': 9, 'away': 11}, {'home': 11, 'away': 5}, {'home': 11, 'away': 9}];;
+Liga Pro (Rusia);1;g_25_jRWDx494;Finalizado;2021-02-07 00:00:00;Kovalev I. (Rus);Lobanov A. (Rus);3;2;[{'home': 11, 'away': 2}, {'home': 8, 'away': 11}, {'home': 4, 'away': 11}, {'home': 11, 'away': 9}, {'home': 11, 'away': 8}];3.0;1.3
+Liga Pro (Rusia);1;g_25_K6OUYL8T;Finalizado;2021-02-07 00:00:00;Poletaev I. (Rus);Grishaev E. (Rus);1;3;[{'home': 7, 'away': 11}, {'home': 7, 'away': 11}, {'home': 11, 'away': 9}, {'home': 9, 'away': 11}];2.82;1.35
+Liga Pro (Rusia);1;g_25_jk33gBvE;Finalizado;2021-02-07 00:00:00;Glazun E. (Rus);Lobanov A. (Rus);3;0;[{'home': 11, 'away': 4}, {'home': 11, 'away': 7}, {'home': 11, 'away': 7}];;
+Liga Pro (Rusia);1;g_25_6N4znTWm;Finalizado;2021-02-07 00:00:00;Suharkov O. (Rus);Poletaev I. (Rus);3;1;[{'home': 9, 'away': 11}, {'home': 11, 'away': 7}, {'home': 15, 'away': 13}, {'home': 11, 'away': 5}];;
+Liga Pro (Rusia);1;g_25_KQ8vomnf;Finalizado;2021-02-07 00:00:00;Grishaev E. (Rus);Buyanin I. (Rus);3;0;[{'home': 11, 'away': 8}, {'home': 11, 'away': 7}, {'home': 11, 'away': 5}];;
+Liga Pro (Rusia);1;g_25_Uu27hVgK;Finalizado;2021-02-07 00:00:00;Shishko Y. (Rus);Kovalev I. (Rus);3;2;[{'home': 11, 'away': 6}, {'home': 12, 'away': 14}, {'home': 11, 'away': 5}, {'home': 6, 'away': 11}, {'home': 11, 'away': 9}];;
+Liga Pro (Rusia);1;g_25_zJWM9EZ0;Finalizado;2021-02-07 00:00:00;Selkin V. (Rus);Sadkov A. (Rus);2;3;[{'home': 11, 'away': 9}, {'home': 3, 'away': 11}, {'home': 11, 'away': 4}, {'home': 7, 'away': 11}, {'home': 7, 'away': 11}];2.28;1.52
+Liga Pro (Rusia);1;g_25_rqzV7h4D;Finalizado;2021-02-07 00:00:00;Pronkin M. (Rus);Korolev S. (Rus);1;3;[{'home': 11, 'away': 9}, {'home': 4, 'away': 11}, {'home': 8, 'away': 11}, {'home': 6, 'away': 11}];1.6;2.1
+Liga Pro (Rusia);1;g_25_tx11nuwT;Finalizado;2021-02-07 00:00:00;Nikiforov O. (Rus);Panevin S. (Rus);0;3;[{'home': 12, 'away': 14}, {'home': 8, 'away': 11}, {'home': 11, 'away': 13}];2.1;1.6
+Liga Pro (Rusia);1;g_25_UuWQ8Yl7;Finalizado;2021-02-07 00:00:00;Kim S. I. (Kor);Muslikov S. (Rus);0;3;[{'home': 14, 'away': 16}, {'home': 1, 'away': 11}, {'home': 3, 'away': 11}];1.83;1.83
+Liga Pro (Rusia);1;g_25_plEDWysE;Finalizado;2021-02-07 00:00:00;Shirokov V. (Rus);Pinkovskii P. (Rus);3;2;[{'home': 11, 'away': 6}, {'home': 7, 'away': 11}, {'home': 11, 'away': 8}, {'home': 9, 'away': 11}, {'home': 11, 'away': 4}];1.98;1.68
+Liga Pro (Rusia);1;g_25_romTsaop;Finalizado;2021-02-07 00:00:00;Arutiunyan A. (Rus);Nosov K. (Rus);1;3;[{'home': 7, 'away': 11}, {'home': 7, 'away': 11}, {'home': 11, 'away': 8}, {'home': 13, 'away': 15}];1.4;2.58
+Liga Pro (Rusia);1;g_25_Qm1cUuHp;Finalizado;2021-02-07 00:00:00;Sadkov A. (Rus);Kim S. I. (Kor);3;0;[{'home': 11, 'away': 9}, {'home': 11, 'away': 3}, {'home': 12, 'away': 10}];1.57;2.17
+Liga Pro (Rusia);1;g_25_Cd9pjNw4;Finalizado;2021-02-07 00:00:00;Korolev S. (Rus);Shirokov V. (Rus);0;3;[{'home': 7, 'away': 11}, {'home': 4, 'away': 11}, {'home': 7, 'away': 11}];2.4;1.48
+Liga Pro (Rusia);1;g_25_CKiXtJ0j;Finalizado;2021-02-07 00:00:00;Panevin S. (Rus);Arutiunyan A. (Rus);2;3;[{'home': 11, 'away': 2}, {'home': 9, 'away': 11}, {'home': 14, 'away': 12}, {'home': 15, 'away': 17}, {'home': 7, 'away': 11}];2.02;1.67
+Liga Pro (Rusia);1;g_25_vi51TaWj;Finalizado;2021-02-07 00:00:00;Muslikov S. (Rus);Selkin V. (Rus);3;2;[{'home': 11, 'away': 6}, {'home': 7, 'away': 11}, {'home': 11, 'away': 6}, {'home': 5, 'away': 11}, {'home': 11, 'away': 3}];1.68;1.98
+Liga Pro (Rusia);1;g_25_jm8lksgA;Finalizado;2021-02-07 00:00:00;Pinkovskii P. (Rus);Pronkin M. (Rus);3;2;[{'home': 11, 'away': 8}, {'home': 11, 'away': 7}, {'home': 4, 'away': 11}, {'home': 8, 'away': 11}, {'home': 12, 'away': 10}];1.63;2.08
+Liga Pro (Rusia);1;g_25_jBjytwGd;Finalizado;2021-02-07 00:00:00;Nosov K. (Rus);Nikiforov O. (Rus);3;0;[{'home': 11, 'away': 3}, {'home': 11, 'away': 5}, {'home': 11, 'away': 6}];2.58;1.4
+Liga Pro (Rusia);1;g_25_hfgqhq9i;Finalizado;2021-02-07 00:00:00;Selkin V. (Rus);Kim S. I. (Kor);3;2;[{'home': 11, 'away': 9}, {'home': 12, 'away': 10}, {'home': 5, 'away': 11}, {'home': 9, 'away': 11}, {'home': 11, 'away': 9}];1.32;2.95
+Liga Pro (Rusia);1;g_25_pA7hl18G;Finalizado;;Pronkin M. (Rus);Shirokov V. (Rus);0;3;[{'home': 7, 'away': 11}, {'home': 9, 'away': 11}, {'home': 8, 'away': 11}];2.28;1.52
+Liga Pro (Rusia);1;g_25_fqHHlVJd;Finalizado;;Nikiforov O. (Rus);Arutiunyan A. (Rus);1;3;[{'home': 11, 'away': 8}, {'home': 10, 'away': 12}, {'home': 9, 'away': 11}, {'home': 5, 'away': 11}];;
+Liga Pro (Rusia);1;g_25_Wphmi3Oc;Finalizado;2021-02-07 10:00:00;Sadkov A. (Rus);Muslikov S. (Rus);3;1;[{'home': 11, 'away': 9}, {'home': 5, 'away': 11}, {'home': 11, 'away': 3}, {'home': 11, 'away': 3}];1.6;2.1
+Liga Pro (Rusia);1;g_25_bDBdmLNM;Finalizado;2021-02-07 10:15:00;Korolev S. (Rus);Pinkovskii P. (Rus);1;3;[{'home': 8, 'away': 11}, {'home': 10, 'away': 12}, {'home': 11, 'away': 5}, {'home': 3, 'away': 11}];1.5;2.3
+Liga Pro (Rusia);1;g_25_OvDHVedK;Finalizado;2021-02-07 10:15:00;Panevin S. (Rus);Nosov K. (Rus);0;3;[{'home': 9, 'away': 11}, {'home': 8, 'away': 11}, {'home': 13, 'away': 15}];1.43;2.52
+Liga Pro (Rusia);1;g_25_bTgEONAd;Finalizado;;Selkin V. (Rus);Kim S. I. (Kor);0;3;[{'home': 10, 'away': 12}, {'home': 2, 'away': 11}, {'home': 9, 'away': 11}];;
+Liga Pro (Rusia);1;g_25_8by5ooI9;Finalizado;;Korolev S. (Rus);Pronkin M. (Rus);3;2;[{'home': 11, 'away': 9}, {'home': 10, 'away': 12}, {'home': 11, 'away': 9}, {'home': 3, 'away': 11}, {'home': 11, 'away': 5}];;
+Liga Pro (Rusia);1;g_25_2agwTx2r;Finalizado;;Panevin S. (Rus);Nikiforov O. (Rus);3;0;[{'home': 13, 'away': 11}, {'home': 11, 'away': 6}, {'home': 11, 'away': 9}];;
+Liga Pro (Rusia);1;g_25_zowcm7mc;Finalizado;;Sadkov A. (Rus);Muslikov S. (Rus);3;1;[{'home': 11, 'away': 9}, {'home': 8, 'away': 11}, {'home': 11, 'away': 7}, {'home': 11, 'away': 8}];;
+Liga Pro (Rusia);1;g_25_tjhsSdHl;Finalizado;;Nosov K. (Rus);Arutiunyan A. (Rus);2;3;[{'home': 5, 'away': 11}, {'home': 11, 'away': 9}, {'home': 10, 'away': 12}, {'home': 11, 'away': 7}, {'home': 9, 'away': 11}];;
+Liga Pro (Rusia);1;g_25_M1u9p5XF;Finalizado;;Shirokov V. (Rus);Pinkovskii P. (Rus);3;1;[{'home': 11, 'away': 7}, {'home': 11, 'away': 7}, {'home': 10, 'away': 12}, {'home': 11, 'away': 8}];;
+Liga Pro (Rusia);1;g_25_hEHLUFBQ;Finalizado;;Burov S. (Rus);Vlasov A. (Rus);3;2;[{'home': 10, 'away': 12}, {'home': 11, 'away': 9}, {'home': 9, 'away': 11}, {'home': 14, 'away': 12}, {'home': 13, 'away': 11}];2.15;1.58
+Liga Pro (Rusia);1;g_25_hhI7vodk;Finalizado;;Klavdenkov A. (Rus);Yanshaev A. (Rus);0;3;[{'home': 13, 'away': 15}, {'home': 10, 'away': 12}, {'home': 7, 'away': 11}];1.6;2.1
+Liga Pro (Rusia);1;g_25_M9Ryp7YR;Finalizado;;Ziuzikov P. (Rus);Tretyakov A. (Rus);0;3;[{'home': 9, 'away': 11}, {'home': 9, 'away': 11}, {'home': 5, 'away': 11}];2.6;1.4
+Liga Pro (Rusia);1;g_25_fN3mQZJs;Finalizado;;Beliakov V. (Rus);Pronin O. (Rus);2;3;[{'home': 11, 'away': 8}, {'home': 6, 'away': 11}, {'home': 9, 'away': 11}, {'home': 11, 'away': 7}, {'home': 9, 'away': 11}];1.26;3.3
+Liga Pro (Rusia);1;g_25_vkE3uRtq;Finalizado;;Abelmasov I. (Rus);Evlakhin D. (Rus);2;3;[{'home': 6, 'away': 11}, {'home': 4, 'away': 11}, {'home': 12, 'away': 10}, {'home': 11, 'away': 7}, {'home': 6, 'away': 11}];1.52;2.28
+Liga Pro (Rusia);1;g_25_zH7Cw5Be;Finalizado;;Andrusenko M. (Rus);Gribkov A. (Rus);1;3;[{'home': 6, 'away': 11}, {'home': 12, 'away': 14}, {'home': 13, 'away': 11}, {'home': 10, 'away': 12}];2.1;1.6
+Liga Pro (Rusia);1;g_25_UwToh4Ql;Finalizado;;Tretyakov A. (Rus);Abelmasov I. (Rus);3;2;[{'home': 11, 'away': 7}, {'home': 11, 'away': 13}, {'home': 7, 'away': 11}, {'home': 11, 'away': 4}, {'home': 11, 'away': 7}];1.21;3.7
+Liga Pro (Rusia);1;g_25_hUZKmkZ2;Finalizado;;Vlasov A. (Rus);Beliakov V. (Rus);3;1;[{'home': 11, 'away': 5}, {'home': 10, 'away': 12}, {'home': 11, 'away': 5}, {'home': 11, 'away': 6}];1.5;2.3
+Liga Pro (Rusia);1;g_25_GW8tEom8;Finalizado;;Yanshaev A. (Rus);Andrusenko M. (Rus);3;0;[{'home': 11, 'away': 8}, {'home': 11, 'away': 7}, {'home': 11, 'away': 7}];2.15;1.58
+Liga Pro (Rusia);1;g_25_niZOn9l9;Finalizado;;Pronin O. (Rus);Burov S. (Rus);3;2;[{'home': 4, 'away': 11}, {'home': 6, 'away': 11}, {'home': 12, 'away': 10}, {'home': 11, 'away': 8}, {'home': 11, 'away': 6}];2.1;1.6
+Liga Pro (Rusia);1;g_25_8URkiOue;Finalizado;;Evlakhin D. (Rus);Ziuzikov P. (Rus);3;2;[{'home': 11, 'away': 7}, {'home': 9, 'away': 11}, {'home': 12, 'away': 10}, {'home': 6, 'away': 11}, {'home': 11, 'away': 3}];1.8;1.84
+Liga Pro (Rusia);1;g_25_fN7pD52E;Finalizado;;Gribkov A. (Rus);Klavdenkov A. (Rus);2;3;[{'home': 11, 'away': 5}, {'home': 11, 'away': 7}, {'home': 16, 'away': 18}, {'home': 9, 'away': 11}, {'home': 11, 'away': 13}];2.55;1.42
+Liga Pro (Rusia);1;g_25_QsYSoT3F;Finalizado;;Burov S. (Rus);Beliakov V. (Rus);0;3;[{'home': 15, 'away': 17}, {'home': 8, 'away': 11}, {'home': 8, 'away': 11}];2.17;1.57
+Liga Pro (Rusia);1;g_25_2iRgjre1;Finalizado;;Ziuzikov P. (Rus);Abelmasov I. (Rus);2;3;[{'home': 13, 'away': 11}, {'home': 11, 'away': 7}, {'home': 2, 'away': 11}, {'home': 11, 'away': 13}, {'home': 8, 'away': 11}];1.6;2.1
+Liga Pro (Rusia);1;g_25_MVzEewXt;Finalizado;;Klavdenkov A. (Rus);Andrusenko M. (Rus);3;2;[{'home': 11, 'away': 7}, {'home': 11, 'away': 7}, {'home': 5, 'away': 11}, {'home': 3, 'away': 11}, {'home': 11, 'away': 6}];1.19;3.85
+Liga Pro (Rusia);1;g_25_rJSXpmJL;Finalizado;;Vlasov A. (Rus);Pronin O. (Rus);3;0;[{'home': 11, 'away': 7}, {'home': 11, 'away': 5}, {'home': 11, 'away': 5}];1.83;1.83
+Liga Pro (Rusia);1;g_25_ERUck2A7;Finalizado;;Tretyakov A. (Rus);Evlakhin D. (Rus);3;2;[{'home': 11, 'away': 5}, {'home': 4, 'away': 11}, {'home': 11, 'away': 5}, {'home': 11, 'away': 13}, {'home': 11, 'away': 7}];1.22;3.65
+Liga Pro (Rusia);1;g_25_0MZHfcnm;Finalizado;;Yanshaev A. (Rus);Gribkov A. (Rus);3;0;[{'home': 11, 'away': 7}, {'home': 11, 'away': 6}, {'home': 11, 'away': 8}];1.58;2.15
+Liga Pro (Rusia);1;g_25_S4RvfRNe;Finalizado;;Beliakov V. (Rus);Burov S. (Rus);1;3;[{'home': 6, 'away': 11}, {'home': 6, 'away': 11}, {'home': 11, 'away': 4}, {'home': 8, 'away': 11}];;
+Liga Pro (Rusia);1;g_25_zP9wWKzD;Finalizado;;Abelmasov I. (Rus);Ziuzikov P. (Rus);2;3;[{'home': 5, 'away': 11}, {'home': 8, 'away': 11}, {'home': 11, 'away': 7}, {'home': 11, 'away': 7}, {'home': 10, 'away': 12}];;
+Liga Pro (Rusia);1;g_25_04Qlwxrt;Finalizado;;Gribkov A. (Rus);Andrusenko M. (Rus);0;3;[{'home': 6, 'away': 11}, {'home': 8, 'away': 11}, {'home': 10, 'away': 12}];;
+Liga Pro (Rusia);1;g_25_QBqRF8pF;Finalizado;;Vlasov A. (Rus);Pronin O. (Rus);3;0;[{'home': 11, 'away': 6}, {'home': 12, 'away': 10}, {'home': 11, 'away': 5}];;
+Liga Pro (Rusia);1;g_25_EF8sVvjJ;Finalizado;;Tretyakov A. (Rus);Evlakhin D. (Rus);3;0;[{'home': 12, 'away': 10}, {'home': 11, 'away': 7}, {'home': 11, 'away': 7}];;
+Liga Pro (Rusia);1;g_25_vePhxdcn;Finalizado;;Yanshaev A. (Rus);Klavdenkov A. (Rus);3;2;[{'home': 11, 'away': 5}, {'home': 9, 'away': 11}, {'home': 11, 'away': 13}, {'home': 11, 'away': 9}, {'home': 11, 'away': 8}];;
+Liga Pro (Rusia);1;g_25_E76GxPQ1;Finalizado;;Petrov D. (Rus);Zhurba N. (Rus);1;3;[{'home': 10, 'away': 12}, {'home': 5, 'away': 11}, {'home': 11, 'away': 5}, {'home': 7, 'away': 11}];2.08;1.63
+Liga Pro (Rusia);1;g_25_GWnBb6mL;Finalizado;;Bondarenko P. (Rus);Soldatov I. (Rus);0;3;[{'home': 10, 'away': 12}, {'home': 7, 'away': 11}, {'home': 8, 'away': 11}];2.73;1.37
+Liga Pro (Rusia);1;g_25_K4g20SI8;Finalizado;;Shirshov V. (Rus);Minkov M. (Rus);2;3;[{'home': 8, 'away': 11}, {'home': 11, 'away': 8}, {'home': 5, 'away': 11}, {'home': 11, 'away': 7}, {'home': 7, 'away': 11}];2.52;1.43
+Liga Pro (Rusia);1;g_25_tEfb1832;Finalizado;;Tsybikov Z. (Rus);Serebrennikov A. (Rus);2;3;[{'home': 7, 'away': 11}, {'home': 4, 'away': 11}, {'home': 13, 'away': 11}, {'home': 11, 'away': 9}, {'home': 4, 'away': 11}];5.6;1.09
+Liga Pro (Rusia);1;g_25_AgnFcQ2R;Finalizado;;Kobytov R. (Rus);Kalashnikov E. (Rus);1;3;[{'home': 11, 'away': 6}, {'home': 6, 'away': 11}, {'home': 7, 'away': 11}, {'home': 5, 'away': 11}];1.52;2.28
+Liga Pro (Rusia);1;g_25_ns4ymDB4;Finalizado;;Kobytov R. (Rus);Kalashnikov E. (Rus);1;3;[{'home': 11, 'away': 6}, {'home': 6, 'away': 11}, {'home': 7, 'away': 11}, {'home': 5, 'away': 11}];;
+Liga Pro (Rusia);1;g_25_bHVfFkUT;Anulado;;Marshalov V. (Rus);Kalashnikov E. (Rus);0;0;[];;
+Liga Pro (Rusia);1;g_25_2Tr7anYE;Finalizado;;Molodtsov D. (Rus);Ilin A. (Rus);3;1;[{'home': 12, 'away': 10}, {'home': 10, 'away': 12}, {'home': 13, 'away': 11}, {'home': 11, 'away': 4}];3.95;1.19
+Liga Pro (Rusia);1;g_25_roPMgH1g;Finalizado;;Zhurba N. (Rus);Uezdin A. (Rus);3;1;[{'home': 8, 'away': 11}, {'home': 12, 'away': 10}, {'home': 11, 'away': 8}, {'home': 11, 'away': 9}];1.45;2.47
+Liga Pro (Rusia);1;g_25_M5iNMFVu;Finalizado;;Soldatov I. (Rus);Yusipov T. (Rus);1;3;[{'home': 6, 'away': 11}, {'home': 9, 'away': 11}, {'home': 11, 'away': 9}, {'home': 5, 'away': 11}];1.19;3.9
+Liga Pro (Rusia);1;g_25_82Rm8GGn;Finalizado;;Minkov M. (Rus);Novikov I. (Rus);3;2;[{'home': 11, 'away': 7}, {'home': 9, 'away': 11}, {'home': 6, 'away': 11}, {'home': 11, 'away': 9}, {'home': 11, 'away': 8}];1.6;2.1
+Liga Pro (Rusia);1;g_25_dlTQhyHa;Finalizado;;Petrov D. (Rus);Tsybikov Z. (Rus);3;2;[{'home': 11, 'away': 6}, {'home': 9, 'away': 11}, {'home': 12, 'away': 10}, {'home': 8, 'away': 11}, {'home': 11, 'away': 6}];2.4;1.48
+Liga Pro (Rusia);1;g_25_0djRLZpn;Finalizado;;Bondarenko P. (Rus);Kobytov R. (Rus);2;3;[{'home': 6, 'away': 11}, {'home': 11, 'away': 9}, {'home': 3, 'away': 11}, {'home': 11, 'away': 2}, {'home': 3, 'away': 11}];2.26;1.53
+Liga Pro (Rusia);1;g_25_ngQi7zWh;Finalizado;;Shirshov V. (Rus);Molodtsov D. (Rus);0;3;[{'home': 5, 'away': 11}, {'home': 5, 'away': 11}, {'home': 9, 'away': 11}];2.55;1.42
+Liga Pro (Rusia);1;g_25_jBSUieW5;Finalizado;;Uezdin A. (Rus);Serebrennikov A. (Rus);3;2;[{'home': 12, 'away': 10}, {'home': 8, 'away': 11}, {'home': 7, 'away': 11}, {'home': 11, 'away': 4}, {'home': 12, 'away': 10}];1.73;1.93
+Liga Pro (Rusia);1;g_25_ltB4ZhFo;Anulado;;Bondarenko P. (Rus);Marshalov V. (Rus);0;0;[];2.3;1.5
+Liga Pro (Rusia);1;g_25_GSUe6foa;Finalizado;;Novikov I. (Rus);Ilin A. (Rus);3;0;[{'home': 11, 'away': 9}, {'home': 11, 'away': 9}, {'home': 12, 'away': 10}];1.68;1.98
+Liga Pro (Rusia);1;g_25_fJkVKg0h;Finalizado;;Yusipov T. (Rus);Kalashnikov E. (Rus);0;3;[{'home': 6, 'away': 11}, {'home': 8, 'away': 11}, {'home': 3, 'away': 11}];;
+Liga Pro (Rusia);1;g_25_U1RYjFoC;Finalizado;;Zhurba N. (Rus);Tsybikov Z. (Rus);3;2;[{'home': 11, 'away': 5}, {'home': 6, 'away': 11}, {'home': 6, 'away': 11}, {'home': 14, 'away': 12}, {'home': 11, 'away': 9}];2.02;1.67
+Liga Pro (Rusia);1;g_25_fJTa5E05;Finalizado;;Minkov M. (Rus);Molodtsov D. (Rus);1;3;[{'home': 6, 'away': 11}, {'home': 8, 'away': 11}, {'home': 11, 'away': 2}, {'home': 7, 'away': 11}];1.48;2.4
+Liga Pro (Rusia);1;g_25_8MgZJDFb;Finalizado;;Soldatov I. (Rus);Kobytov R. (Rus);3;2;[{'home': 8, 'away': 11}, {'home': 11, 'away': 2}, {'home': 11, 'away': 8}, {'home': 7, 'away': 11}, {'home': 11, 'away': 9}];1.28;3.2
+Liga Pro (Rusia);1;g_25_p84DXWqb;Anulado;;Soldatov I. (Rus);Marshalov V. (Rus);0;0;[];;
+Liga Pro (Rusia);1;g_25_xrJ44YFB;Finalizado;;Ilin A. (Rus);Shirshov V. (Rus);3;0;[{'home': 11, 'away': 7}, {'home': 11, 'away': 8}, {'home': 11, 'away': 6}];1.38;2.67
+Liga Pro (Rusia);1;g_25_joqvJXU4;Finalizado;;Kalashnikov E. (Rus);Bondarenko P. (Rus);3;0;[{'home': 11, 'away': 9}, {'home': 11, 'away': 7}, {'home': 11, 'away': 8}];1.7;1.96
+Liga Pro (Rusia);1;g_25_dOcVkZ0I;Finalizado;;Serebrennikov A. (Rus);Petrov D. (Rus);3;1;[{'home': 4, 'away': 11}, {'home': 17, 'away': 15}, {'home': 11, 'away': 9}, {'home': 11, 'away': 7}];1.32;2.95
+Liga Pro (Rusia);1;g_25_zFdZlgGO;Finalizado;;Tsybikov Z. (Rus);Uezdin A. (Rus);2;3;[{'home': 11, 'away': 9}, {'home': 5, 'away': 11}, {'home': 7, 'away': 11}, {'home': 11, 'away': 4}, {'home': 4, 'away': 11}];1.6;2.1
+Liga Pro (Rusia);1;g_25_UyrrIipB;Finalizado;;Kobytov R. (Rus);Yusipov T. (Rus);3;2;[{'home': 9, 'away': 11}, {'home': 11, 'away': 9}, {'home': 11, 'away': 4}, {'home': 6, 'away': 11}, {'home': 11, 'away': 7}];;
+Liga Pro (Rusia);1;g_25_lIM83hVH;Finalizado;;Molodtsov D. (Rus);Novikov I. (Rus);3;0;[{'home': 11, 'away': 7}, {'home': 11, 'away': 2}, {'home': 11, 'away': 7}];1.83;1.83
+Liga Pro (Rusia);1;g_25_C2YtgpBr;Anulado;;Marshalov V. (Rus);Yusipov T. (Rus);0;0;[];;
+Liga Pro (Rusia);1;g_25_lIpHDxgP;Finalizado;;Serebrennikov A. (Rus);Zhurba N. (Rus);3;2;[{'home': 11, 'away': 6}, {'home': 5, 'away': 11}, {'home': 9, 'away': 11}, {'home': 11, 'away': 7}, {'home': 11, 'away': 8}];2.3;1.5
+Liga Pro (Rusia);1;g_25_ruMC2CpO;Finalizado;;Ilin A. (Rus);Minkov M. (Rus);1;3;[{'home': 5, 'away': 11}, {'home': 11, 'away': 7}, {'home': 9, 'away': 11}, {'home': 9, 'away': 11}];1.5;2.3
+Liga Pro (Rusia);1;g_25_x2snHBaH;Finalizado;;Kalashnikov E. (Rus);Soldatov I. (Rus);1;3;[{'home': 9, 'away': 11}, {'home': 12, 'away': 10}, {'home': 16, 'away': 18}, {'home': 8, 'away': 11}];3.5;1.24
+Liga Pro (Rusia);1;g_25_Qwxq9d1t;Finalizado;;Uezdin A. (Rus);Petrov D. (Rus);2;3;[{'home': 11, 'away': 8}, {'home': 4, 'away': 11}, {'home': 10, 'away': 12}, {'home': 11, 'away': 8}, {'home': 6, 'away': 11}];1.73;1.93
+Liga Pro (Rusia);1;g_25_MVKG1WaU;Finalizado;;Novikov I. (Rus);Shirshov V. (Rus);3;0;[{'home': 11, 'away': 8}, {'home': 11, 'away': 2}, {'home': 11, 'away': 9}];1.63;2.08
+Liga Pro (Rusia);1;g_25_GhtjGVEN;Finalizado;;Yusipov T. (Rus);Bondarenko P. (Rus);3;1;[{'home': 11, 'away': 9}, {'home': 8, 'away': 11}, {'home': 13, 'away': 11}, {'home': 11, 'away': 9}];1.6;2.1
+Liga Pro (Rusia);1;g_25_thRVbvbO;Finalizado;;Uezdin A. (Rus);Petrov D. (Rus);0;3;[{'home': 8, 'away': 11}, {'home': 3, 'away': 11}, {'home': 6, 'away': 11}];;
+Liga Pro (Rusia);1;g_25_KIdtJsqt;Finalizado;;Kobytov R. (Rus);Yusipov T. (Rus);3;0;[{'home': 11, 'away': 9}, {'home': 11, 'away': 6}, {'home': 11, 'away': 7}];;
+Liga Pro (Rusia);1;g_25_8vTN00TB;Finalizado;;Novikov I. (Rus);Ilin A. (Rus);0;3;[{'home': 5, 'away': 11}, {'home': 7, 'away': 11}, {'home': 6, 'away': 11}];;
+Liga Pro (Rusia);1;g_25_feVZcbDU;Finalizado;;Zhurba N. (Rus);Serebrennikov A. (Rus);3;0;[{'home': 11, 'away': 8}, {'home': 11, 'away': 8}, {'home': 11, 'away': 7}];;
+Liga Pro (Rusia);1;g_25_b9epI1bn;Finalizado;;Kalashnikov E. (Rus);Soldatov I. (Rus);1;3;[{'home': 11, 'away': 13}, {'home': 9, 'away': 11}, {'home': 11, 'away': 9}, {'home': 8, 'away': 11}];;
+Liga Pro (Rusia);1;g_25_nVRRaKrI;Finalizado;;Molodtsov D. (Rus);Minkov M. (Rus);2;3;[{'home': 11, 'away': 6}, {'home': 8, 'away': 11}, {'home': 2, 'away': 11}, {'home': 11, 'away': 9}, {'home': 9, 'away': 11}];;
+Liga Pro (Rusia);1;g_25_EgehqVAT;;;Sergeevich I. (Rus);Vshivkov P. (Rus);0;0;[];2.02;1.67
+Liga Pro (Rusia);1;g_25_nsQ62hBi;;;Iskenderov I. (Rus);Sinkovskiy V. (Rus);0;0;[];1.23;3.5
+Liga Pro (Rusia);1;g_25_YwxPw9Yj;;;Simonov S. (Rus);Olshakov K. (Rus);0;0;[];2.02;1.67
+Setka Cup (Ucrania);1;g_25_xQZFgTnt;Finalizado;;Lisechko A. (Ukr);Polysynskyi M. (Ukr);2;3;[{'home': 8, 'away': 11}, {'home': 12, 'away': 14}, {'home': 12, 'away': 10}, {'home': 11, 'away': 8}, {'home': 9, 'away': 11}];1.83;1.83
+Setka Cup (Ucrania);1;g_25_COsUZYe7;Finalizado;;Rehotun D. (Ukr);Bondarenko S. (Ukr);0;3;[{'home': 1, 'away': 11}, {'home': 5, 'away': 11}, {'home': 7, 'away': 11}];2.22;1.55
+Setka Cup (Ucrania);1;g_25_Wd6NoN48;Finalizado;;Chulanov O. (Ukr);Kvak I. (Ukr);3;1;[{'home': 11, 'away': 7}, {'home': 11, 'away': 9}, {'home': 10, 'away': 12}, {'home': 11, 'away': 7}];1.35;2.82
+Setka Cup (Ucrania);1;g_25_IgvBxJRf;Finalizado;;Pomin R. (Ukr);Populovskyi E. (Ukr);3;1;[{'home': 11, 'away': 8}, {'home': 13, 'away': 11}, {'home': 6, 'away': 11}, {'home': 13, 'away': 11}];2.3;1.5
+Setka Cup (Ucrania);1;g_25_lxyHEXe9;Finalizado;;Kovrikov A. (Ukr);Mishchenko O. (Ukr);3;0;[{'home': 11, 'away': 5}, {'home': 11, 'away': 6}, {'home': 11, 'away': 9}];;
+Setka Cup (Ucrania);1;g_25_xIDmjxdf;Finalizado;;Karchevsky T. (Ukr);Lazuryk D. (Ukr);1;3;[{'home': 4, 'away': 11}, {'home': 5, 'away': 11}, {'home': 11, 'away': 9}, {'home': 6, 'away': 11}];;
+Setka Cup (Ucrania);1;g_25_Am5RpsKE;Finalizado;;Okopnyi V. (Ukr);Kuzmych V. (Ukr);1;3;[{'home': 7, 'away': 11}, {'home': 6, 'away': 11}, {'home': 11, 'away': 8}, {'home': 2, 'away': 11}];;
+Setka Cup (Ucrania);1;g_25_dpwFyws1;Finalizado;;Dushak V. (Ukr);Levytskyi V. (Ukr);3;1;[{'home': 11, 'away': 6}, {'home': 14, 'away': 12}, {'home': 7, 'away': 11}, {'home': 11, 'away': 6}];;
+Setka Cup (Ucrania);1;g_25_SSZKDiBF;Finalizado;;Chepurnyi A. (Ukr);Kovalchuk O. (Ukr);3;0;[{'home': 11, 'away': 7}, {'home': 11, 'away': 9}, {'home': 13, 'away': 11}];;
+Setka Cup (Ucrania);1;g_25_WvDikdB0;Finalizado;;Gudimenko D. (Ukr);Vlasenko V. (Ukr);3;0;[{'home': 11, 'away': 3}, {'home': 11, 'away': 6}, {'home': 11, 'away': 5}];1.35;2.82
+Setka Cup (Ucrania);1;g_25_fZLK7PrP;Finalizado;;Laba M. (Ukr);Hasan Y. (Ukr);2;3;[{'home': 11, 'away': 9}, {'home': 6, 'away': 11}, {'home': 10, 'away': 12}, {'home': 11, 'away': 6}, {'home': 8, 'away': 11}];;
+Setka Cup (Ucrania);1;g_25_hCfWq1ZK;Finalizado;;Gil T. (Ukr);Rak S. (Ukr);2;3;[{'home': 11, 'away': 5}, {'home': 11, 'away': 8}, {'home': 7, 'away': 11}, {'home': 6, 'away': 11}, {'home': 8, 'away': 11}];3.2;1.28
+Setka Cup (Ucrania);1;g_25_MROWOace;Finalizado;;Tymchenko V. (Ukr);Sydorenko V. (Ukr);3;0;[{'home': 11, 'away': 8}, {'home': 11, 'away': 9}, {'home': 11, 'away': 5}];1.32;2.98
+Setka Cup (Ucrania);1;g_25_j7xJzcd7;Finalizado;;Dulientsov D. (Ukr);Populovskyi E. (Ukr);2;3;[{'home': 11, 'away': 4}, {'home': 9, 'away': 11}, {'home': 8, 'away': 11}, {'home': 11, 'away': 9}, {'home': 3, 'away': 11}];1.52;2.28
+Setka Cup (Ucrania);1;g_25_p4UPCBQL;Finalizado;;Tkachov S. (Ukr);Kyi Y. (Ukr);0;3;[{'home': 4, 'away': 11}, {'home': 9, 'away': 11}, {'home': 1, 'away': 11}];;
+Setka Cup (Ucrania);1;g_25_AVBelGQ6;Finalizado;;Mishchenko V. (Ukr);Dombrovskyi A. (Ukr);2;3;[{'home': 11, 'away': 6}, {'home': 9, 'away': 11}, {'home': 4, 'away': 11}, {'home': 11, 'away': 5}, {'home': 5, 'away': 11}];;
+Setka Cup (Ucrania);1;g_25_dr8n3qit;Finalizado;;Mishchenko S. (Ukr);Ivanov L. (Ukr);3;1;[{'home': 11, 'away': 8}, {'home': 5, 'away': 11}, {'home': 11, 'away': 8}, {'home': 11, 'away': 6}];;
+Setka Cup (Ucrania);1;g_25_4jEyOJC1;Finalizado;;Kovalchuk K. (Ukr);Leonov V. (Ukr);3;1;[{'home': 11, 'away': 9}, {'home': 11, 'away': 7}, {'home': 6, 'away': 11}, {'home': 11, 'away': 7}];1.21;3.7
+Setka Cup (Ucrania);1;g_25_vsAZInme;Finalizado;;Chulanov O. (Ukr);Kuzmych V. (Ukr);1;3;[{'home': 11, 'away': 8}, {'home': 3, 'away': 11}, {'home': 5, 'away': 11}, {'home': 10, 'away': 12}];3.5;1.23
+Setka Cup (Ucrania);1;g_25_OfTTBVuS;Finalizado;;Kovrikov A. (Ukr);Kovalchuk O. (Ukr);3;1;[{'home': 11, 'away': 5}, {'home': 7, 'away': 11}, {'home': 11, 'away': 5}, {'home': 11, 'away': 1}];;
+Setka Cup (Ucrania);1;g_25_4AtNZGBD;Finalizado;;Pomin R. (Ukr);Dushak V. (Ukr);0;3;[{'home': 9, 'away': 11}, {'home': 8, 'away': 11}, {'home': 11, 'away': 13}];1.83;1.83
+Setka Cup (Ucrania);1;g_25_S660mztD;Finalizado;;Karchevsky T. (Ukr);Vlasenko V. (Ukr);0;3;[{'home': 6, 'away': 11}, {'home': 9, 'away': 11}, {'home': 6, 'away': 11}];;
+Setka Cup (Ucrania);1;g_25_j57j236n;Finalizado;;Parnyvoda I. (Ukr);Hasan Y. (Ukr);1;3;[{'home': 6, 'away': 11}, {'home': 11, 'away': 7}, {'home': 4, 'away': 11}, {'home': 6, 'away': 11}];2.6;1.4
+Setka Cup (Ucrania);1;g_25_rsDuNwS7;Finalizado;;Portnov H. (Ukr);Govoruha A. (Ukr);3;2;[{'home': 11, 'away': 5}, {'home': 8, 'away': 11}, {'home': 8, 'away': 11}, {'home': 11, 'away': 7}, {'home': 12, 'away': 10}];;
+Setka Cup (Ucrania);1;g_25_6FK5b0lE;Finalizado;;Dulientsov D. (Ukr);Levytskyi V. (Ukr);1;3;[{'home': 12, 'away': 10}, {'home': 9, 'away': 11}, {'home': 6, 'away': 11}, {'home': 6, 'away': 11}];1.42;2.55
+Setka Cup (Ucrania);1;g_25_Y39wI621;Finalizado;;Rak S. (Ukr);Kvak I. (Ukr);3;1;[{'home': 11, 'away': 7}, {'home': 11, 'away': 9}, {'home': 3, 'away': 11}, {'home': 11, 'away': 6}];1.14;4.55
+Setka Cup (Ucrania);1;g_25_tzGe7klq;Finalizado;;Kyi Y. (Ukr);Mishchenko O. (Ukr);2;3;[{'home': 8, 'away': 11}, {'home': 11, 'away': 6}, {'home': 11, 'away': 9}, {'home': 9, 'away': 11}, {'home': 2, 'away': 11}];;
+Setka Cup (Ucrania);1;g_25_6c54nfeJ;Finalizado;;Dombrovskyi A. (Ukr);Lazuryk D. (Ukr);3;1;[{'home': 9, 'away': 11}, {'home': 11, 'away': 8}, {'home': 11, 'away': 6}, {'home': 11, 'away': 7}];;
+Setka Cup (Ucrania);1;g_25_48Bf1NLh;Finalizado;;Laba M. (Ukr);Mishchenko S. (Ukr);3;0;[{'home': 20, 'away': 18}, {'home': 11, 'away': 9}, {'home': 15, 'away': 13}];;
+Setka Cup (Ucrania);1;g_25_n7DsHQH7;Finalizado;;Okopnyi V. (Ukr);Gil T. (Ukr);3;1;[{'home': 7, 'away': 11}, {'home': 11, 'away': 9}, {'home': 11, 'away': 8}, {'home': 11, 'away': 8}];1.52;2.28
+Setka Cup (Ucrania);1;g_25_QZNQ3Gsi;Finalizado;;Tymchenko V. (Ukr);Leonov V. (Ukr);3;2;[{'home': 4, 'away': 11}, {'home': 11, 'away': 9}, {'home': 9, 'away': 11}, {'home': 11, 'away': 9}, {'home': 11, 'away': 7}];1.93;1.73
+Setka Cup (Ucrania);1;g_25_p6J9cK3K;Finalizado;;Dushak V. (Ukr);Populovskyi E. (Ukr);2;3;[{'home': 9, 'away': 11}, {'home': 11, 'away': 9}, {'home': 11, 'away': 4}, {'home': 7, 'away': 11}, {'home': 6, 'away': 11}];;
+Setka Cup (Ucrania);1;g_25_hAJa693k;Finalizado;;Chepurnyi A. (Ukr);Tkachov S. (Ukr);3;0;[{'home': 11, 'away': 7}, {'home': 12, 'away': 10}, {'home': 11, 'away': 7}];;
+Setka Cup (Ucrania);1;g_25_K0gnBwYJ;Finalizado;;Gudimenko D. (Ukr);Mishchenko V. (Ukr);0;3;[{'home': 4, 'away': 11}, {'home': 5, 'away': 11}, {'home': 12, 'away': 14}];1.27;3.25
+Setka Cup (Ucrania);1;g_25_nX0a0sya;Finalizado;;Parnyvoda I. (Ukr);Ivanov L. (Ukr);2;3;[{'home': 11, 'away': 7}, {'home': 3, 'away': 11}, {'home': 11, 'away': 7}, {'home': 8, 'away': 11}, {'home': 6, 'away': 11}];1.83;1.83
+Setka Cup (Ucrania);1;g_25_lCiQuAf8;Finalizado;;Chulanov O. (Ukr);Rak S. (Ukr);1;3;[{'home': 11, 'away': 7}, {'home': 5, 'away': 11}, {'home': 6, 'away': 11}, {'home': 3, 'away': 11}];3.9;1.19
+Setka Cup (Ucrania);1;g_25_4QMU2zcc;Finalizado;;Govoruha A. (Ukr);Sydorenko V. (Ukr);3;1;[{'home': 11, 'away': 2}, {'home': 10, 'away': 12}, {'home': 11, 'away': 7}, {'home': 11, 'away': 5}];;
+Setka Cup (Ucrania);1;g_25_vsYCdvJQ;Finalizado;;Pomin R. (Ukr);Levytskyi V. (Ukr);3;2;[{'home': 6, 'away': 11}, {'home': 11, 'away': 3}, {'home': 11, 'away': 4}, {'home': 9, 'away': 11}, {'home': 11, 'away': 7}];1.58;2.15
+Setka Cup (Ucrania);1;g_25_zZ845TIe;Finalizado;;Kovrikov A. (Ukr);Kyi Y. (Ukr);2;3;[{'home': 8, 'away': 11}, {'home': 11, 'away': 3}, {'home': 11, 'away': 8}, {'home': 4, 'away': 11}, {'home': 15, 'away': 17}];;
+Setka Cup (Ucrania);1;g_25_WzcjAcmQ;Finalizado;;Karchevsky T. (Ukr);Dombrovskyi A. (Ukr);2;3;[{'home': 11, 'away': 4}, {'home': 9, 'away': 11}, {'home': 11, 'away': 8}, {'home': 9, 'away': 11}, {'home': 8, 'away': 11}];;
+Setka Cup (Ucrania);1;g_25_QNa3a1j5;Finalizado;;Mishchenko S. (Ukr);Hasan Y. (Ukr);0;3;[{'home': 9, 'away': 11}, {'home': 10, 'away': 12}, {'home': 10, 'away': 12}];;
+Setka Cup (Ucrania);1;g_25_S2jUvU9E;Finalizado;;Gil T. (Ukr);Kuzmych V. (Ukr);3;1;[{'home': 11, 'away': 2}, {'home': 11, 'away': 7}, {'home': 5, 'away': 11}, {'home': 11, 'away': 5}];4.2;1.17
+Setka Cup (Ucrania);1;g_25_M1HZ1fC3;Finalizado;;Kovalchuk K. (Ukr);Portnov H. (Ukr);0;3;[{'home': 10, 'away': 12}, {'home': 4, 'away': 11}, {'home': 9, 'away': 11}];2.08;1.63
+Setka Cup (Ucrania);1;g_25_tjKvhbRs;Finalizado;;Dulientsov D. (Ukr);Dushak V. (Ukr);3;1;[{'home': 11, 'away': 7}, {'home': 8, 'away': 11}, {'home': 11, 'away': 7}, {'home': 14, 'away': 12}];1.48;2.4
+Setka Cup (Ucrania);1;g_25_EP784mY1;Finalizado;;Tkachov S. (Ukr);Kovalchuk O. (Ukr);0;3;[{'home': 8, 'away': 11}, {'home': 6, 'away': 11}, {'home': 9, 'away': 11}];;
+Setka Cup (Ucrania);1;g_25_xIZI5Hes;Finalizado;;Mishchenko V. (Ukr);Vlasenko V. (Ukr);3;2;[{'home': 11, 'away': 5}, {'home': 11, 'away': 7}, {'home': 9, 'away': 11}, {'home': 6, 'away': 11}, {'home': 11, 'away': 8}];;
+Setka Cup (Ucrania);1;g_25_fc47bL5B;Finalizado;;Laba M. (Ukr);Ivanov L. (Ukr);1;3;[{'home': 3, 'away': 11}, {'home': 11, 'away': 5}, {'home': 6, 'away': 11}, {'home': 9, 'away': 11}];;
+Setka Cup (Ucrania);1;g_25_dxeYwlPK;Finalizado;;Okopnyi V. (Ukr);Kvak I. (Ukr);3;2;[{'home': 9, 'away': 11}, {'home': 11, 'away': 6}, {'home': 11, 'away': 9}, {'home': 10, 'away': 12}, {'home': 11, 'away': 1}];1.38;2.67
+Setka Cup (Ucrania);1;g_25_0hGw1ER9;Finalizado;;Tymchenko V. (Ukr);Govoruha A. (Ukr);3;0;[{'home': 11, 'away': 7}, {'home': 11, 'away': 3}, {'home': 11, 'away': 3}];;
+Setka Cup (Ucrania);1;g_25_2u1jTWA2;Finalizado;;Chepurnyi A. (Ukr);Mishchenko O. (Ukr);3;2;[{'home': 9, 'away': 11}, {'home': 11, 'away': 13}, {'home': 12, 'away': 10}, {'home': 11, 'away': 5}, {'home': 11, 'away': 5}];;
+Setka Cup (Ucrania);1;g_25_OE9qiItl;Finalizado;;Levytskyi V. (Ukr);Populovskyi E. (Ukr);3;1;[{'home': 11, 'away': 5}, {'home': 8, 'away': 11}, {'home': 11, 'away': 8}, {'home': 11, 'away': 9}];;
+Setka Cup (Ucrania);1;g_25_G8YM4yBm;Finalizado;;Gudimenko D. (Ukr);Lazuryk D. (Ukr);3;0;[{'home': 13, 'away': 11}, {'home': 11, 'away': 7}, {'home': 13, 'away': 11}];1.88;1.78
+Setka Cup (Ucrania);1;g_25_Ym3BcuLH;Finalizado;;Parnyvoda I. (Ukr);Mishchenko S. (Ukr);3;2;[{'home': 11, 'away': 8}, {'home': 11, 'away': 8}, {'home': 4, 'away': 11}, {'home': 7, 'away': 11}, {'home': 15, 'away': 13}];1.96;1.7
+Setka Cup (Ucrania);1;g_25_zTgxw8vR;Finalizado;;Chulanov O. (Ukr);Gil T. (Ukr);3;1;[{'home': 11, 'away': 8}, {'home': 5, 'away': 11}, {'home': 11, 'away': 8}, {'home': 11, 'away': 4}];2.22;1.55
+Setka Cup (Ucrania);1;g_25_fFFs0YtG;Finalizado;;Portnov H. (Ukr);Leonov V. (Ukr);3;0;[{'home': 11, 'away': 6}, {'home': 17, 'away': 15}, {'home': 11, 'away': 9}];1.38;2.7
+Setka Cup (Ucrania);1;g_25_8OKSPurk;Finalizado;;Dulientsov D. (Ukr);Pomin R. (Ukr);3;2;[{'home': 11, 'away': 7}, {'home': 11, 'away': 2}, {'home': 5, 'away': 11}, {'home': 7, 'away': 11}, {'home': 11, 'away': 4}];1.58;2.15
+Setka Cup (Ucrania);1;g_25_tWafSjQ8;Finalizado;;Kovrikov A. (Ukr);Tkachov S. (Ukr);3;2;[{'home': 11, 'away': 6}, {'home': 11, 'away': 6}, {'home': 10, 'away': 12}, {'home': 8, 'away': 11}, {'home': 11, 'away': 5}];;
+Setka Cup (Ucrania);1;g_25_prwR3eQg;Finalizado;;Karchevsky T. (Ukr);Mishchenko V. (Ukr);3;1;[{'home': 8, 'away': 11}, {'home': 11, 'away': 8}, {'home': 11, 'away': 9}, {'home': 11, 'away': 9}];;
+Setka Cup (Ucrania);1;g_25_EoHutDkp;Finalizado;;Ivanov L. (Ukr);Hasan Y. (Ukr);2;3;[{'home': 11, 'away': 9}, {'home': 8, 'away': 11}, {'home': 11, 'away': 7}, {'home': 7, 'away': 11}, {'home': 6, 'away': 11}];;
+Setka Cup (Ucrania);1;g_25_8IJoahdM;Finalizado;;Kovalchuk K. (Ukr);Sydorenko V. (Ukr);3;1;[{'home': 11, 'away': 1}, {'home': 11, 'away': 5}, {'home': 9, 'away': 11}, {'home': 11, 'away': 6}];2.17;1.57
+Setka Cup (Ucrania);1;g_25_tAW4YRnr;Finalizado;;Okopnyi V. (Ukr);Rak S. (Ukr);3;0;[{'home': 11, 'away': 7}, {'home': 11, 'away': 9}, {'home': 11, 'away': 8}];3.85;1.19
+Setka Cup (Ucrania);1;g_25_OfkaRAuF;Finalizado;;Chepurnyi A. (Ukr);Kyi Y. (Ukr);3;2;[{'home': 11, 'away': 7}, {'home': 11, 'away': 4}, {'home': 4, 'away': 11}, {'home': 3, 'away': 11}, {'home': 11, 'away': 4}];;
+Setka Cup (Ucrania);1;g_25_OYyV2Fu0;Finalizado;;Gudimenko D. (Ukr);Dombrovskyi A. (Ukr);3;2;[{'home': 11, 'away': 5}, {'home': 8, 'away': 11}, {'home': 4, 'away': 11}, {'home': 11, 'away': 6}, {'home': 11, 'away': 7}];1.83;1.83
+Setka Cup (Ucrania);1;g_25_CWZruX4j;Finalizado;;Parnyvoda I. (Ukr);Laba M. (Ukr);3;1;[{'home': 5, 'away': 11}, {'home': 11, 'away': 9}, {'home': 13, 'away': 11}, {'home': 11, 'away': 5}];1.83;1.83
+Setka Cup (Ucrania);1;g_25_hpz9Xo2l;Finalizado;;Kuzmych V. (Ukr);Kvak I. (Ukr);3;1;[{'home': 11, 'away': 4}, {'home': 11, 'away': 5}, {'home': 9, 'away': 11}, {'home': 11, 'away': 8}];1.16;4.25
+Setka Cup (Ucrania);1;g_25_js9jbCBS;Finalizado;;Tymchenko V. (Ukr);Portnov H. (Ukr);1;3;[{'home': 12, 'away': 10}, {'home': 7, 'away': 11}, {'home': 9, 'away': 11}, {'home': 7, 'away': 11}];1.7;1.96
+Setka Cup (Ucrania);1;g_25_xbg3QUfL;Finalizado;;Kovalchuk O. (Ukr);Mishchenko O. (Ukr);3;1;[{'home': 11, 'away': 8}, {'home': 11, 'away': 8}, {'home': 10, 'away': 12}, {'home': 11, 'away': 6}];;
+Setka Cup (Ucrania);1;g_25_6cRZ1Zf6;Finalizado;;Vlasenko V. (Ukr);Lazuryk D. (Ukr);3;1;[{'home': 11, 'away': 9}, {'home': 11, 'away': 9}, {'home': 8, 'away': 11}, {'home': 11, 'away': 9}];;
+Setka Cup (Ucrania);1;g_25_n7ZCW5Hf;Finalizado;;Chulanov O. (Ukr);Okopnyi V. (Ukr);0;3;[{'home': 9, 'away': 11}, {'home': 5, 'away': 11}, {'home': 6, 'away': 11}];1.57;2.17
+Setka Cup (Ucrania);1;g_25_hjeIgWJq;Finalizado;;Kovalchuk K. (Ukr);Govoruha A. (Ukr);3;1;[{'home': 18, 'away': 16}, {'home': 9, 'away': 11}, {'home': 11, 'away': 5}, {'home': 11, 'away': 6}];1.57;2.17
+Setka Cup (Ucrania);1;g_25_WKh7PlAR;Finalizado;;Kovrikov A. (Ukr);Chepurnyi A. (Ukr);0;3;[{'home': 8, 'away': 11}, {'home': 6, 'away': 11}, {'home': 8, 'away': 11}];;
+Setka Cup (Ucrania);1;g_25_K0Vw1gAC;Finalizado;;Karchevsky T. (Ukr);Gudimenko D. (Ukr);0;3;[{'home': 8, 'away': 11}, {'home': 6, 'away': 11}, {'home': 9, 'away': 11}];1.7;1.96
+Setka Cup (Ucrania);1;g_25_QcYGVPW0;Finalizado;;Gil T. (Ukr);Kvak I. (Ukr);3;0;[{'home': 19, 'away': 17}, {'home': 13, 'away': 11}, {'home': 11, 'away': 5}];1.83;1.83
+Setka Cup (Ucrania);1;g_25_0GfMhjZk;Finalizado;;Leonov V. (Ukr);Sydorenko V. (Ukr);0;3;[{'home': 8, 'away': 11}, {'home': 5, 'away': 11}, {'home': 7, 'away': 11}];2.77;1.36
+Setka Cup (Ucrania);1;g_25_YTvZK8Ir;Finalizado;;Tkachov S. (Ukr);Mishchenko O. (Ukr);3;1;[{'home': 5, 'away': 11}, {'home': 11, 'away': 7}, {'home': 12, 'away': 10}, {'home': 11, 'away': 4}];2.28;1.52
+Setka Cup (Ucrania);1;g_25_ENUs0DPI;Finalizado;;Mishchenko V. (Ukr);Lazuryk D. (Ukr);3;2;[{'home': 8, 'away': 11}, {'home': 11, 'away': 5}, {'home': 9, 'away': 11}, {'home': 12, 'away': 10}, {'home': 11, 'away': 6}];1.52;2.28
+Setka Cup (Ucrania);1;g_25_rZSLUqn7;Finalizado;;Rak S. (Ukr);Kuzmych V. (Ukr);3;2;[{'home': 13, 'away': 11}, {'home': 10, 'away': 12}, {'home': 7, 'away': 11}, {'home': 11, 'away': 8}, {'home': 18, 'away': 16}];1.73;1.93
+Setka Cup (Ucrania);1;g_25_v7gQiAld;Finalizado;;Tymchenko V. (Ukr);Kovalchuk K. (Ukr);2;3;[{'home': 6, 'away': 11}, {'home': 12, 'away': 14}, {'home': 11, 'away': 8}, {'home': 11, 'away': 7}, {'home': 6, 'away': 11}];3.75;1.21
+Setka Cup (Ucrania);1;g_25_0jBVJSXl;Finalizado;;Kyi Y. (Ukr);Kovalchuk O. (Ukr);1;3;[{'home': 1, 'away': 11}, {'home': 9, 'away': 11}, {'home': 18, 'away': 16}, {'home': 4, 'away': 11}];2.4;1.48
+Setka Cup (Ucrania);1;g_25_hEToaXvP;Finalizado;;Dombrovskyi A. (Ukr);Vlasenko V. (Ukr);2;3;[{'home': 6, 'away': 11}, {'home': 13, 'away': 11}, {'home': 11, 'away': 5}, {'home': 17, 'away': 19}, {'home': 9, 'away': 11}];2.28;1.52
+Setka Cup (Ucrania);1;g_25_tCX8GgRd;Finalizado;;Portnov H. (Ukr);Sydorenko V. (Ukr);3;1;[{'home': 11, 'away': 5}, {'home': 8, 'away': 11}, {'home': 11, 'away': 6}, {'home': 17, 'away': 15}];1.52;2.28
+Setka Cup (Ucrania);1;g_25_4nbzqLlR;Finalizado;;Chornobab V. (Ukr);Ivashkin O. (Ukr);3;1;[{'home': 9, 'away': 11}, {'home': 11, 'away': 7}, {'home': 11, 'away': 3}, {'home': 11, 'away': 7}];1.28;3.2
+Setka Cup (Ucrania);1;g_25_46l5G8qm;Finalizado;;Gomilko O. (Ukr);Bondarenko S. (Ukr);3;2;[{'home': 11, 'away': 9}, {'home': 11, 'away': 7}, {'home': 5, 'away': 11}, {'home': 8, 'away': 11}, {'home': 17, 'away': 15}];;
+Setka Cup (Ucrania);1;g_25_2u97ONsO;Finalizado;;Demko Z. (Ukr);Korobko V. (Ukr);1;3;[{'home': 8, 'away': 11}, {'home': 11, 'away': 3}, {'home': 7, 'away': 11}, {'home': 6, 'away': 11}];2.17;1.57
+Setka Cup (Ucrania);1;g_25_OjgFlvwt;Finalizado;;Vasko V. (Ukr);Pereguda O. (Ukr);1;3;[{'home': 2, 'away': 11}, {'home': 9, 'away': 11}, {'home': 11, 'away': 8}, {'home': 8, 'away': 11}];1.83;1.83
+Setka Cup (Ucrania);1;g_25_fFyDFDt3;Finalizado;;Govoruha A. (Ukr);Leonov V. (Ukr);1;3;[{'home': 9, 'away': 11}, {'home': 11, 'away': 9}, {'home': 3, 'away': 11}, {'home': 7, 'away': 11}];1.52;2.28
+Setka Cup (Ucrania);1;g_25_MRp2vucr;Finalizado;;Yurchenko K. (Ukr);Zholubak M. (Ukr);2;3;[{'home': 11, 'away': 13}, {'home': 9, 'away': 11}, {'home': 11, 'away': 9}, {'home': 11, 'away': 7}, {'home': 9, 'away': 11}];2.42;1.47
+Setka Cup (Ucrania);1;g_25_pv3wqz7H;Finalizado;;Kundeus I. (Ukr);Sapuzhak O. (Ukr);3;2;[{'home': 10, 'away': 12}, {'home': 10, 'away': 12}, {'home': 11, 'away': 9}, {'home': 11, 'away': 9}, {'home': 11, 'away': 7}];2.42;1.47
+Setka Cup (Ucrania);1;g_25_Yug9FSbg;Finalizado;;Liushnia O. (Ukr);Rehotun D. (Ukr);3;2;[{'home': 9, 'away': 11}, {'home': 11, 'away': 5}, {'home': 11, 'away': 13}, {'home': 11, 'away': 5}, {'home': 12, 'away': 10}];;
+Setka Cup (Ucrania);1;g_25_2shJmbhn;Finalizado;;Kucheryavyi V. (Ukr);Klymenko K. (Ukr);2;3;[{'home': 12, 'away': 10}, {'home': 8, 'away': 11}, {'home': 11, 'away': 7}, {'home': 10, 'away': 12}, {'home': 5, 'away': 11}];2.4;1.48
+Setka Cup (Ucrania);1;g_25_fkAQoxNb;Finalizado;;Solomko R. (Ukr);Paniotov A. (Ukr);3;0;[{'home': 11, 'away': 7}, {'home': 14, 'away': 12}, {'home': 11, 'away': 5}];1.52;2.28
+Setka Cup (Ucrania);1;g_25_OU1srfMN;Finalizado;;Romaniuk A. (Ukr);Serediuk M. (Ukr);0;3;[{'home': 5, 'away': 11}, {'home': 7, 'away': 11}, {'home': 9, 'away': 11}];1.63;2.08
+Setka Cup (Ucrania);1;g_25_CWiDEnEa;Finalizado;;Kostuk B. (Ukr);Trydukh I. (Ukr);1;3;[{'home': 9, 'away': 11}, {'home': 10, 'away': 12}, {'home': 11, 'away': 9}, {'home': 9, 'away': 11}];;
+Setka Cup (Ucrania);1;g_25_d4iNnI7h;Finalizado;;Solomko S. (Ukr);Dovzhenko S. (Ukr);3;1;[{'home': 12, 'away': 10}, {'home': 6, 'away': 11}, {'home': 14, 'away': 12}, {'home': 11, 'away': 9}];2.4;1.48
+Setka Cup (Ucrania);1;g_25_GrDBNscU;Finalizado;;Demko Z. (Ukr);Sapuzhak O. (Ukr);3;0;[{'home': 11, 'away': 7}, {'home': 11, 'away': 7}, {'home': 11, 'away': 8}];1.7;1.96
+Setka Cup (Ucrania);1;g_25_xEaVpdx5;Finalizado;;Sulim A. (Ukr);Diachenko S. (Ukr);2;3;[{'home': 15, 'away': 13}, {'home': 7, 'away': 11}, {'home': 11, 'away': 5}, {'home': 7, 'away': 11}, {'home': 7, 'away': 11}];1.96;1.7
+Setka Cup (Ucrania);1;g_25_MPRPT31D;Finalizado;;Chornobab V. (Ukr);Zholubak M. (Ukr);0;3;[{'home': 8, 'away': 11}, {'home': 4, 'away': 11}, {'home': 7, 'away': 11}];3.5;1.23
+Setka Cup (Ucrania);1;g_25_fesID6T5;Finalizado;;Gomilko O. (Ukr);Rehotun D. (Ukr);3;0;[{'home': 11, 'away': 4}, {'home': 11, 'away': 9}, {'home': 14, 'away': 12}];;
+Setka Cup (Ucrania);1;g_25_UirW1lDd;Finalizado;;Vasko V. (Ukr);Klymenko K. (Ukr);0;3;[{'home': 6, 'away': 11}, {'home': 9, 'away': 11}, {'home': 8, 'away': 11}];3.2;1.28
+Setka Cup (Ucrania);1;g_25_G4bZqGiB;Finalizado;;Kolesnik Y. (Ukr);Hnoievoi R. (Ukr);2;3;[{'home': 11, 'away': 8}, {'home': 10, 'away': 12}, {'home': 7, 'away': 11}, {'home': 11, 'away': 7}, {'home': 9, 'away': 11}];1.83;1.83
+Setka Cup (Ucrania);1;g_25_h4lHrRSu;Finalizado;;Serediuk M. (Ukr);Korobko V. (Ukr);3;2;[{'home': 10, 'away': 12}, {'home': 14, 'away': 16}, {'home': 11, 'away': 4}, {'home': 11, 'away': 7}, {'home': 11, 'away': 9}];1.7;1.96
+Setka Cup (Ucrania);1;g_25_ht0LCQrC;Finalizado;;Trydukh I. (Ukr);Bondarenko S. (Ukr);0;3;[{'home': 3, 'away': 11}, {'home': 2, 'away': 11}, {'home': 9, 'away': 11}];;
+Setka Cup (Ucrania);1;g_25_r9oDQXkc;Finalizado;;Dovzhenko S. (Ukr);Pereguda O. (Ukr);0;3;[{'home': 6, 'away': 11}, {'home': 8, 'away': 11}, {'home': 4, 'away': 11}];1.63;2.08
+Setka Cup (Ucrania);1;g_25_j3O0VGxI;Finalizado;;Volkovskyi V. (Ukr);Melnykov V. (Ukr);0;3;[{'home': 3, 'away': 11}, {'home': 8, 'away': 11}, {'home': 6, 'away': 11}];;
+Setka Cup (Ucrania);1;g_25_WfmLsorn;Finalizado;;Kundeus I. (Ukr);Romaniuk A. (Ukr);1;3;[{'home': 9, 'away': 11}, {'home': 11, 'away': 9}, {'home': 7, 'away': 11}, {'home': 5, 'away': 11}];2.98;1.32
+Setka Cup (Ucrania);1;g_25_Y1Mb9ixK;Finalizado;;Solomko R. (Ukr);Diachenko S. (Ukr);0;3;[{'home': 9, 'away': 11}, {'home': 10, 'away': 12}, {'home': 3, 'away': 11}];2.55;1.42
+Setka Cup (Ucrania);1;g_25_n3aPBpbI;Finalizado;;Liushnia O. (Ukr);Kostuk B. (Ukr);2;3;[{'home': 7, 'away': 11}, {'home': 14, 'away': 12}, {'home': 7, 'away': 11}, {'home': 11, 'away': 3}, {'home': 8, 'away': 11}];;
+Setka Cup (Ucrania);1;g_25_MapHPi53;Finalizado;;Kucheryavyi V. (Ukr);Solomko S. (Ukr);0;3;[{'home': 9, 'away': 11}, {'home': 1, 'away': 11}, {'home': 0, 'away': 11}];1.83;1.83
+Setka Cup (Ucrania);1;g_25_pQN4UzhO;Finalizado;;Kovalchuk P. (Ukr);Burdelnyi S. (Ukr);3;2;[{'home': 9, 'away': 11}, {'home': 6, 'away': 11}, {'home': 12, 'away': 10}, {'home': 11, 'away': 2}, {'home': 14, 'away': 12}];1.52;2.28
+Setka Cup (Ucrania);1;g_25_n5ryyL8t;Anulado;;Yurchenko K. (Ukr);Yolkin A. (Ukr);0;0;[];1.52;2.28
+Setka Cup (Ucrania);1;g_25_lWsQt5ch;Finalizado;;Demko Z. (Ukr);Serediuk M. (Ukr);1;3;[{'home': 7, 'away': 11}, {'home': 11, 'away': 8}, {'home': 10, 'away': 12}, {'home': 9, 'away': 11}];3.5;1.23
+Setka Cup (Ucrania);1;g_25_2yR28BiQ;Finalizado;;Hnoievoi R. (Ukr);Paniotov A. (Ukr);3;1;[{'home': 11, 'away': 9}, {'home': 11, 'away': 8}, {'home': 10, 'away': 12}, {'home': 13, 'away': 11}];1.78;1.88
+Setka Cup (Ucrania);1;g_25_zTF7hmvE;Anulado;;Malynka R. (Ukr);Ivashkin O. (Ukr);0;0;[];1.58;2.15
+Setka Cup (Ucrania);1;g_25_0Iq6waCl;Anulado;;Yolkin A. (Ukr);Malynka R. (Ukr);0;0;[];1.63;2.08
+Setka Cup (Ucrania);1;g_25_UTXuzuOn;Anulado;;Chornobab V. (Ukr);Malynka R. (Ukr);0;0;[];1.32;2.98
+Setka Cup (Ucrania);1;g_25_QgbTA4DO;Finalizado;;Gomilko O. (Ukr);Trydukh I. (Ukr);3;0;[{'home': 11, 'away': 7}, {'home': 12, 'away': 10}, {'home': 11, 'away': 3}];;
+Setka Cup (Ucrania);1;g_25_4OZLOBK9;Finalizado;;Vasko V. (Ukr);Dovzhenko S. (Ukr);2;3;[{'home': 10, 'away': 12}, {'home': 11, 'away': 6}, {'home': 11, 'away': 9}, {'home': 6, 'away': 11}, {'home': 7, 'away': 11}];2.08;1.63
+Setka Cup (Ucrania);1;g_25_lYp5cZLA;Finalizado;;Chornobab V. (Ukr);Yurchenko K. (Ukr);0;3;[{'home': 8, 'away': 11}, {'home': 4, 'away': 11}, {'home': 10, 'away': 12}];2.7;1.38
+Setka Cup (Ucrania);1;g_25_OGM8Tf7U;Finalizado;;Khairov D. (Ukr);Kolivay O. (Ukr);3;1;[{'home': 11, 'away': 6}, {'home': 12, 'away': 10}, {'home': 8, 'away': 11}, {'home': 11, 'away': 5}];2.95;1.32
+Setka Cup (Ucrania);1;g_25_SMtUuPCb;Finalizado;;Romaniuk A. (Ukr);Sapuzhak O. (Ukr);2;3;[{'home': 5, 'away': 11}, {'home': 11, 'away': 5}, {'home': 6, 'away': 11}, {'home': 11, 'away': 6}, {'home': 6, 'away': 11}];1.42;2.55
+Setka Cup (Ucrania);1;g_25_4pDU3Vas;Finalizado;;Sulim A. (Ukr);Kolesnik Y. (Ukr);2;3;[{'home': 11, 'away': 3}, {'home': 8, 'away': 11}, {'home': 13, 'away': 15}, {'home': 11, 'away': 8}, {'home': 6, 'away': 11}];1.63;2.08
+Setka Cup (Ucrania);1;g_25_2BsCZmjP;Finalizado;;Kostuk B. (Ukr);Rehotun D. (Ukr);2;3;[{'home': 11, 'away': 9}, {'home': 11, 'away': 4}, {'home': 5, 'away': 11}, {'home': 6, 'away': 11}, {'home': 8, 'away': 11}];;
+Setka Cup (Ucrania);1;g_25_IRwQNVZF;Finalizado;;Solomko S. (Ukr);Klymenko K. (Ukr);3;0;[{'home': 11, 'away': 6}, {'home': 11, 'away': 7}, {'home': 11, 'away': 7}];2.55;1.42
+Setka Cup (Ucrania);1;g_25_fBo1bF64;Finalizado;;Zholubak M. (Ukr);Ivashkin O. (Ukr);3;1;[{'home': 11, 'away': 6}, {'home': 11, 'away': 13}, {'home': 11, 'away': 6}, {'home': 11, 'away': 9}];1.27;3.25
+Setka Cup (Ucrania);1;g_25_OjwIfX5T;Finalizado;;Volkovskyi V. (Ukr);Burdelnyi S. (Ukr);2;3;[{'home': 5, 'away': 11}, {'home': 11, 'away': 8}, {'home': 12, 'away': 10}, {'home': 4, 'away': 11}, {'home': 8, 'away': 11}];;
+Setka Cup (Ucrania);1;g_25_YJqxv3sB;Finalizado;;Kundeus I. (Ukr);Korobko V. (Ukr);0;3;[{'home': 5, 'away': 11}, {'home': 8, 'away': 11}, {'home': 4, 'away': 11}];1.68;1.98
+Setka Cup (Ucrania);1;g_25_n92Z2kFm;Finalizado;;Solomko R. (Ukr);Hnoievoi R. (Ukr);2;3;[{'home': 11, 'away': 5}, {'home': 11, 'away': 8}, {'home': 5, 'away': 11}, {'home': 9, 'away': 11}, {'home': 6, 'away': 11}];1.38;2.7
+Setka Cup (Ucrania);1;g_25_4KTwV7bt;Finalizado;;Liushnia O. (Ukr);Bondarenko S. (Ukr);2;3;[{'home': 12, 'away': 10}, {'home': 7, 'away': 11}, {'home': 11, 'away': 4}, {'home': 6, 'away': 11}, {'home': 6, 'away': 11}];1.28;3.2
+Setka Cup (Ucrania);1;g_25_AN1g634r;Finalizado;;Kucheryavyi V. (Ukr);Pereguda O. (Ukr);1;3;[{'home': 11, 'away': 5}, {'home': 8, 'away': 11}, {'home': 4, 'away': 11}, {'home': 8, 'away': 11}];2.22;1.55
+Setka Cup (Ucrania);1;g_25_GrVqjiEp;Finalizado;;Kolivay O. (Ukr);Melnykov V. (Ukr);3;1;[{'home': 11, 'away': 6}, {'home': 10, 'away': 12}, {'home': 11, 'away': 5}, {'home': 11, 'away': 8}];1.83;1.83
+Setka Cup (Ucrania);1;g_25_GpWmYIha;Finalizado;;Yurchenko K. (Ukr);Ivashkin O. (Ukr);3;1;[{'home': 11, 'away': 7}, {'home': 7, 'away': 11}, {'home': 12, 'away': 10}, {'home': 11, 'away': 9}];1.24;3.5
+Setka Cup (Ucrania);1;g_25_0C6w29Ug;Finalizado;;Kolesnik Y. (Ukr);Diachenko S. (Ukr);1;3;[{'home': 11, 'away': 6}, {'home': 10, 'away': 12}, {'home': 6, 'away': 11}, {'home': 6, 'away': 11}];1.83;1.83
+Setka Cup (Ucrania);1;g_25_fyViXx85;Anulado;;Chornobab V. (Ukr);Yolkin A. (Ukr);0;0;[];1.63;2.08
+Setka Cup (Ucrania);1;g_25_p0vEeDjN;Finalizado;;Zholubak M. (Ukr);Chornobab V. (Ukr);3;0;[{'home': 11, 'away': 8}, {'home': 11, 'away': 7}, {'home': 11, 'away': 8}];1.38;2.7
+Setka Cup (Ucrania);1;g_25_bsTsURDn;Finalizado;;Gomilko O. (Ukr);Kostuk B. (Ukr);3;1;[{'home': 7, 'away': 11}, {'home': 11, 'away': 7}, {'home': 11, 'away': 6}, {'home': 11, 'away': 8}];1.16;4.25
+Setka Cup (Ucrania);1;g_25_lE0c5NJl;Finalizado;;Vasko V. (Ukr);Solomko S. (Ukr);0;3;[{'home': 1, 'away': 11}, {'home': 8, 'away': 11}, {'home': 4, 'away': 11}];2.4;1.48
+Setka Cup (Ucrania);1;g_25_GrZtwNdH;Finalizado;;Demko Z. (Ukr);Romaniuk A. (Ukr);1;3;[{'home': 11, 'away': 5}, {'home': 7, 'away': 11}, {'home': 7, 'away': 11}, {'home': 10, 'away': 12}];2.4;1.48
+Setka Cup (Ucrania);1;g_25_fZTmkBTj;Finalizado;;Kovalchuk P. (Ukr);Khairov D. (Ukr);3;0;[{'home': 11, 'away': 9}, {'home': 11, 'away': 5}, {'home': 11, 'away': 6}];1.42;2.55
+Setka Cup (Ucrania);1;g_25_fZ5s1Tq0;Finalizado;;Sulim A. (Ukr);Paniotov A. (Ukr);0;3;[{'home': 11, 'away': 13}, {'home': 16, 'away': 18}, {'home': 8, 'away': 11}];1.58;2.15
+Setka Cup (Ucrania);1;g_25_GKncaeib;Anulado;;Yurchenko K. (Ukr);Malynka R. (Ukr);0;0;[];1.52;2.28
+Setka Cup (Ucrania);1;g_25_CpXoToTh;Finalizado;;Liushnia O. (Ukr);Trydukh I. (Ukr);3;2;[{'home': 10, 'away': 12}, {'home': 7, 'away': 11}, {'home': 11, 'away': 3}, {'home': 11, 'away': 7}, {'home': 11, 'away': 6}];;
+Setka Cup (Ucrania);1;g_25_h8dALfRq;Finalizado;;Kundeus I. (Ukr);Serediuk M. (Ukr);1;3;[{'home': 11, 'away': 7}, {'home': 9, 'away': 11}, {'home': 3, 'away': 11}, {'home': 10, 'away': 12}];3.9;1.19
+Setka Cup (Ucrania);1;g_25_6ke24sZf;Finalizado;;Kucheryavyi V. (Ukr);Dovzhenko S. (Ukr);1;3;[{'home': 11, 'away': 9}, {'home': 11, 'away': 13}, {'home': 6, 'away': 11}, {'home': 9, 'away': 11}];3.2;1.28
+Setka Cup (Ucrania);1;g_25_dv8WDf6i;Finalizado;;Volkovskyi V. (Ukr);Kolivay O. (Ukr);1;3;[{'home': 7, 'away': 11}, {'home': 11, 'away': 6}, {'home': 6, 'away': 11}, {'home': 5, 'away': 11}];;
+Setka Cup (Ucrania);1;g_25_YP4o0ma6;Finalizado;;Solomko R. (Ukr);Kolesnik Y. (Ukr);2;3;[{'home': 11, 'away': 6}, {'home': 11, 'away': 7}, {'home': 8, 'away': 11}, {'home': 9, 'away': 11}, {'home': 7, 'away': 11}];1.55;2.22
+Setka Cup (Ucrania);1;g_25_Ms1EKEtj;Finalizado;;Sapuzhak O. (Ukr);Korobko V. (Ukr);0;3;[{'home': 12, 'away': 14}, {'home': 8, 'away': 11}, {'home': 7, 'away': 11}];2.55;1.42
+Setka Cup (Ucrania);1;g_25_f9MjS5ra;Finalizado;;Rehotun D. (Ukr);Bondarenko S. (Ukr);2;3;[{'home': 8, 'away': 11}, {'home': 4, 'away': 11}, {'home': 12, 'away': 10}, {'home': 11, 'away': 8}, {'home': 5, 'away': 11}];;
+Setka Cup (Ucrania);1;g_25_8KWqZbwg;Finalizado;;Yurchenko K. (Ukr);Zholubak M. (Ukr);3;0;[{'home': 11, 'away': 8}, {'home': 12, 'away': 10}, {'home': 13, 'away': 11}];2.55;1.42
+Setka Cup (Ucrania);1;g_25_2yk9dgyH;Finalizado;;Ivashkin O. (Ukr);Chornobab V. (Ukr);3;2;[{'home': 5, 'away': 11}, {'home': 11, 'away': 7}, {'home': 11, 'away': 9}, {'home': 8, 'away': 11}, {'home': 11, 'away': 8}];3.2;1.28
+Setka Cup (Ucrania);1;g_25_ptf631l1;Finalizado;;Klymenko K. (Ukr);Pereguda O. (Ukr);3;1;[{'home': 7, 'away': 11}, {'home': 11, 'away': 6}, {'home': 12, 'away': 10}, {'home': 11, 'away': 6}];1.42;2.55
+Setka Cup (Ucrania);1;g_25_8EBzDELc;Finalizado;;Khairov D. (Ukr);Burdelnyi S. (Ukr);0;3;[{'home': 8, 'away': 11}, {'home': 8, 'away': 11}, {'home': 11, 'away': 13}];1.58;2.15
+Setka Cup (Ucrania);1;g_25_0YaIJYed;Finalizado;;Demko Z. (Ukr);Kundeus I. (Ukr);1;3;[{'home': 9, 'away': 11}, {'home': 11, 'away': 6}, {'home': 7, 'away': 11}, {'home': 2, 'away': 11}];1.93;1.73
+Setka Cup (Ucrania);1;g_25_EyMra7EC;Finalizado;;Sulim A. (Ukr);Hnoievoi R. (Ukr);3;2;[{'home': 7, 'away': 11}, {'home': 17, 'away': 19}, {'home': 11, 'away': 5}, {'home': 14, 'away': 12}, {'home': 11, 'away': 9}];1.53;2.26
+Setka Cup (Ucrania);1;g_25_YaLfRPc5;Finalizado;;Gomilko O. (Ukr);Liushnia O. (Ukr);3;1;[{'home': 9, 'away': 11}, {'home': 11, 'away': 9}, {'home': 11, 'away': 7}, {'home': 11, 'away': 5}];;
+Setka Cup (Ucrania);1;g_25_v3gA2L37;Finalizado;;Vasko V. (Ukr);Kucheryavyi V. (Ukr);0;3;[{'home': 13, 'away': 15}, {'home': 7, 'away': 11}, {'home': 7, 'away': 11}];1.83;1.83
+Setka Cup (Ucrania);1;g_25_2yBvCYz4;Finalizado;;Kovalchuk P. (Ukr);Melnykov V. (Ukr);3;1;[{'home': 11, 'away': 4}, {'home': 9, 'away': 11}, {'home': 11, 'away': 8}, {'home': 11, 'away': 7}];2.6;1.4
+Setka Cup (Ucrania);1;g_25_hSKnbRTI;Finalizado;;Diachenko S. (Ukr);Paniotov A. (Ukr);3;1;[{'home': 11, 'away': 8}, {'home': 11, 'away': 6}, {'home': 7, 'away': 11}, {'home': 11, 'away': 8}];1.23;3.5
+Setka Cup (Ucrania);1;g_25_2wv1rIYd;Finalizado;;Romaniuk A. (Ukr);Korobko V. (Ukr);3;1;[{'home': 10, 'away': 12}, {'home': 11, 'away': 7}, {'home': 11, 'away': 6}, {'home': 11, 'away': 6}];1.78;1.88
+Setka Cup (Ucrania);1;g_25_tQKbQqDB;Finalizado;;Kostuk B. (Ukr);Bondarenko S. (Ukr);0;3;[{'home': 9, 'away': 11}, {'home': 5, 'away': 11}, {'home': 10, 'away': 12}];;
+Setka Cup (Ucrania);1;g_25_jwcE1uJD;Finalizado;;Solomko S. (Ukr);Pereguda O. (Ukr);3;1;[{'home': 5, 'away': 11}, {'home': 11, 'away': 6}, {'home': 11, 'away': 4}, {'home': 11, 'away': 5}];2.08;1.63
+Setka Cup (Ucrania);1;g_25_tS9rBhjA;Finalizado;;Volkovskyi V. (Ukr);Khairov D. (Ukr);0;3;[{'home': 9, 'away': 11}, {'home': 9, 'away': 11}, {'home': 4, 'away': 11}];;
+Setka Cup (Ucrania);1;g_25_Gtr5sxl3;Finalizado;;Serediuk M. (Ukr);Sapuzhak O. (Ukr);3;2;[{'home': 6, 'away': 11}, {'home': 6, 'away': 11}, {'home': 12, 'away': 10}, {'home': 11, 'away': 5}, {'home': 11, 'away': 2}];1.3;3.0
+Setka Cup (Ucrania);1;g_25_6V8UMA6J;Finalizado;;Solomko R. (Ukr);Sulim A. (Ukr);1;3;[{'home': 3, 'away': 11}, {'home': 4, 'away': 11}, {'home': 11, 'away': 7}, {'home': 8, 'away': 11}];1.63;2.08
+Setka Cup (Ucrania);1;g_25_KGJ2P3SH;Finalizado;;Trydukh I. (Ukr);Rehotun D. (Ukr);3;2;[{'home': 8, 'away': 11}, {'home': 11, 'away': 7}, {'home': 11, 'away': 8}, {'home': 9, 'away': 11}, {'home': 11, 'away': 7}];2.08;1.63
+Setka Cup (Ucrania);1;g_25_fBNfAXMD;Finalizado;;Dovzhenko S. (Ukr);Klymenko K. (Ukr);0;3;[{'home': 8, 'away': 11}, {'home': 2, 'away': 11}, {'home': 12, 'away': 14}];2.22;1.55
+Setka Cup (Ucrania);1;g_25_b34mAC5G;Finalizado;;Kovalchuk P. (Ukr);Kolivay O. (Ukr);2;3;[{'home': 7, 'away': 11}, {'home': 20, 'away': 18}, {'home': 6, 'away': 11}, {'home': 15, 'away': 13}, {'home': 7, 'away': 11}];1.67;2.02
+Setka Cup (Ucrania);1;g_25_KYCYLULP;Finalizado;;Kolesnik Y. (Ukr);Paniotov A. (Ukr);3;1;[{'home': 11, 'away': 5}, {'home': 11, 'away': 7}, {'home': 8, 'away': 11}, {'home': 11, 'away': 8}];1.48;2.4
+Setka Cup (Ucrania);1;g_25_QFk1HlUt;Finalizado;;Hnoievoi R. (Ukr);Diachenko S. (Ukr);1;3;[{'home': 7, 'away': 11}, {'home': 11, 'away': 5}, {'home': 4, 'away': 11}, {'home': 8, 'away': 11}];2.15;1.58
+Setka Cup (Ucrania);1;g_25_xf3i9WKM;Finalizado;;Burdelnyi S. (Ukr);Melnykov V. (Ukr);3;2;[{'home': 13, 'away': 11}, {'home': 8, 'away': 11}, {'home': 5, 'away': 11}, {'home': 11, 'away': 9}, {'home': 11, 'away': 9}];2.22;1.55
+Setka Cup (Ucrania);1;g_25_WG2e8jzT;Finalizado;;Volkovskyi V. (Ukr);Kovalchuk P. (Ukr);1;3;[{'home': 15, 'away': 13}, {'home': 10, 'away': 12}, {'home': 8, 'away': 11}, {'home': 7, 'away': 11}];;
+Setka Cup (Ucrania);1;g_25_A3s9td39;Finalizado;;Volkov P. (Ukr);Diachenko I. (Ukr);0;3;[{'home': 9, 'away': 11}, {'home': 10, 'away': 12}, {'home': 7, 'away': 11}];2.7;1.38
+Setka Cup (Ucrania);1;g_25_8xfN3Arp;Finalizado;;Khairov D. (Ukr);Melnykov V. (Ukr);1;3;[{'home': 4, 'away': 11}, {'home': 11, 'away': 9}, {'home': 9, 'away': 11}, {'home': 6, 'away': 11}];2.55;1.42
+Setka Cup (Ucrania);1;g_25_j1qS2Ucj;Finalizado;;Kolivay O. (Ukr);Burdelnyi S. (Ukr);3;0;[{'home': 11, 'away': 6}, {'home': 11, 'away': 9}, {'home': 11, 'away': 5}];1.3;3.05
+Setka Cup (Ucrania);1;g_25_lftDuGIF;Finalizado;;Kuvaiev R. (Ukr);Polysynskyi M. (Ukr);2;3;[{'home': 11, 'away': 9}, {'home': 6, 'away': 11}, {'home': 9, 'away': 11}, {'home': 11, 'away': 5}, {'home': 8, 'away': 11}];;
+Setka Cup (Ucrania);1;g_25_GGC9vzYL;Finalizado;;Lisechko A. (Ukr);Halimbaiev R. (Ukr);3;0;[{'home': 13, 'away': 11}, {'home': 12, 'away': 10}, {'home': 12, 'away': 10}];;
+Setka Cup (Ucrania);1;g_25_6ginsEyU;Finalizado;;Volkov P. (Ukr);Polysynskyi M. (Ukr);0;3;[{'home': 3, 'away': 11}, {'home': 2, 'away': 11}, {'home': 5, 'away': 11}];3.05;1.3
+Setka Cup (Ucrania);1;g_25_rFrExYqo;Finalizado;;Halimbaiev R. (Ukr);Diachenko I. (Ukr);3;2;[{'home': 11, 'away': 3}, {'home': 8, 'away': 11}, {'home': 12, 'away': 14}, {'home': 11, 'away': 5}, {'home': 11, 'away': 5}];1.63;2.08
+Setka Cup (Ucrania);1;g_25_dIWe1HMo;Finalizado;;Kuvaiev R. (Ukr);Lisechko A. (Ukr);2;3;[{'home': 3, 'away': 11}, {'home': 8, 'away': 11}, {'home': 11, 'away': 9}, {'home': 11, 'away': 9}, {'home': 9, 'away': 11}];2.77;1.36
+Setka Cup (Ucrania);1;g_25_f7BDwfmS;Finalizado;;Volkov P. (Ukr);Halimbaiev R. (Ukr);1;3;[{'home': 11, 'away': 8}, {'home': 8, 'away': 11}, {'home': 7, 'away': 11}, {'home': 3, 'away': 11}];2.15;1.58
+Setka Cup (Ucrania);1;g_25_CnbuZDeq;Finalizado;;Lisechko A. (Ukr);Polysynskyi M. (Ukr);3;2;[{'home': 10, 'away': 12}, {'home': 4, 'away': 11}, {'home': 16, 'away': 14}, {'home': 14, 'away': 12}, {'home': 11, 'away': 8}];;
+Setka Cup (Ucrania);1;g_25_Qk2qYXAk;Finalizado;;Kuvaiev R. (Ukr);Diachenko I. (Ukr);0;3;[{'home': 5, 'away': 11}, {'home': 9, 'away': 11}, {'home': 8, 'away': 11}];2.08;1.63
+Setka Cup (Ucrania);1;g_25_8EilXiQe;Finalizado;;Volkov P. (Ukr);Lisechko A. (Ukr);3;2;[{'home': 12, 'away': 10}, {'home': 7, 'away': 11}, {'home': 11, 'away': 8}, {'home': 6, 'away': 11}, {'home': 11, 'away': 8}];;
+Setka Cup (Ucrania);1;g_25_n5jhWBu2;Finalizado;;Kuvaiev R. (Ukr);Halimbaiev R. (Ukr);1;3;[{'home': 7, 'away': 11}, {'home': 1, 'away': 11}, {'home': 11, 'away': 9}, {'home': 8, 'away': 11}];;
+Setka Cup (Ucrania);1;g_25_zLqzeeI2;Finalizado;;Polysynskyi M. (Ukr);Diachenko I. (Ukr);0;3;[{'home': 12, 'away': 14}, {'home': 8, 'away': 11}, {'home': 6, 'away': 11}];1.63;2.08
+Setka Cup (Ucrania);1;g_25_EBrvfFX8;1er Set;;Volkov P. (Ukr);Kuvaiev R. (Ukr);0;0;[{'home': 5, 'away': 5}];;
+Setka Cup (Ucrania);1;g_25_dzYrgZnF;;;Lisechko A. (Ukr);Diachenko I. (Ukr);0;0;[];2.08;1.63
+TT Cup (Ucrania);1;g_25_SdFsCmgf;Finalizado;;Teterya U. (Ukr);Pismennyi Y. (Ukr);3;1;[{'home': 11, 'away': 8}, {'home': 9, 'away': 11}, {'home': 11, 'away': 9}, {'home': 11, 'away': 4}];;
+TT Cup (Ucrania);1;g_25_Mu6pKN8S;Finalizado;;Zhuravlov M. (Ukr);Borysov A. (Ukr);3;1;[{'home': 4, 'away': 11}, {'home': 11, 'away': 9}, {'home': 11, 'away': 7}, {'home': 11, 'away': 7}];;
+TT Cup (Ucrania);1;g_25_AaicPcTA;Finalizado;;Tsybulin S. (Ukr);Kats L. (Ukr);1;3;[{'home': 11, 'away': 13}, {'home': 11, 'away': 8}, {'home': 8, 'away': 11}, {'home': 10, 'away': 12}];;
+TT Cup (Ucrania);1;g_25_dYdCFsHq;Finalizado;;Makarchuk K. (Ukr);Yarovoi O. (Ukr);3;0;[{'home': 11, 'away': 9}, {'home': 11, 'away': 6}, {'home': 11, 'away': 9}];;
+TT Cup (Ucrania);1;g_25_tKwBD0Ub;Finalizado;;Baystryuchenko D. (Ukr);Shvidkiy V. (Ukr);3;0;[{'home': 11, 'away': 4}, {'home': 14, 'away': 12}, {'home': 11, 'away': 8}];;
+TT Cup (Ucrania);1;g_25_2ZRJBvaB;Finalizado;;Kotov V. (Ukr);Trachuk V. (Ukr);3;1;[{'home': 11, 'away': 7}, {'home': 6, 'away': 11}, {'home': 11, 'away': 2}, {'home': 11, 'away': 4}];1.67;2.02
+TT Cup (Ucrania);1;g_25_EVf9Akzt;Finalizado;;Petukhov V. (Ukr);Lytvynenko M. (Ukr);1;3;[{'home': 8, 'away': 11}, {'home': 3, 'away': 11}, {'home': 11, 'away': 9}, {'home': 4, 'away': 11}];;
+TT Cup (Ucrania);1;g_25_O2e1OHrH;Finalizado;;Yaremchuk D. (Ukr);Derypaska R. (Ukr);3;1;[{'home': 8, 'away': 11}, {'home': 11, 'away': 8}, {'home': 13, 'away': 11}, {'home': 11, 'away': 1}];;
+TT Cup (Ucrania);1;g_25_vcnHE1Wk;Finalizado;;Rubtsov S. (Ukr);Volokhov V. (Ukr);2;3;[{'home': 9, 'away': 11}, {'home': 6, 'away': 11}, {'home': 11, 'away': 7}, {'home': 11, 'away': 8}, {'home': 8, 'away': 11}];;
+TT Cup (Ucrania);1;g_25_Ygz3FMan;Finalizado;;Rutskiy S. (Ukr);Tokar V. (Ukr);0;3;[{'home': 10, 'away': 12}, {'home': 3, 'away': 11}, {'home': 7, 'away': 11}];1.7;1.96
+TT Cup (Ucrania);1;g_25_OrTFCKq5;Finalizado;;Sokur M. (Ukr);Riadynskyi Y. (Ukr);3;0;[{'home': 11, 'away': 5}, {'home': 11, 'away': 3}, {'home': 11, 'away': 9}];;
+TT Cup (Ucrania);1;g_25_W8WNAbEH;Finalizado;;Oliynyk R. (Ukr);Malashevsky V. (Ukr);0;3;[{'home': 7, 'away': 11}, {'home': 9, 'away': 11}, {'home': 5, 'away': 11}];2.17;1.57
+TT Cup (Ucrania);1;g_25_hMgD99kn;Finalizado;;Dubrovin D. (Ukr);Sandulenko U. (Ukr);3;0;[{'home': 11, 'away': 6}, {'home': 11, 'away': 8}, {'home': 11, 'away': 6}];;
+TT Cup (Ucrania);1;g_25_SGZ6EtFh;Finalizado;;Gaevy N. (Ukr);Zenyuk A. (Ukr);1;3;[{'home': 9, 'away': 11}, {'home': 7, 'away': 11}, {'home': 11, 'away': 4}, {'home': 4, 'away': 11}];1.7;1.96
+TT Cup (Ucrania);1;g_25_6Rp6NybN;Finalizado;;Teterya U. (Ukr);Kats L. (Ukr);0;3;[{'home': 7, 'away': 11}, {'home': 5, 'away': 11}, {'home': 4, 'away': 11}];;
+TT Cup (Ucrania);1;g_25_Io8f9owD;Finalizado;;Zhuravlov M. (Ukr);Yarovoi O. (Ukr);3;2;[{'home': 9, 'away': 11}, {'home': 11, 'away': 7}, {'home': 6, 'away': 11}, {'home': 11, 'away': 6}, {'home': 11, 'away': 4}];;
+TT Cup (Ucrania);1;g_25_QolRSii0;Finalizado;;Krivenko V. (Ukr);Shvidkiy V. (Ukr);0;3;[{'home': 1, 'away': 11}, {'home': 6, 'away': 11}, {'home': 8, 'away': 11}];2.77;1.36
+TT Cup (Ucrania);1;g_25_K890si6g;Finalizado;;Lohosha D. (Ukr);Trachuk V. (Ukr);3;1;[{'home': 11, 'away': 3}, {'home': 11, 'away': 8}, {'home': 8, 'away': 11}, {'home': 11, 'away': 9}];1.32;2.95
+TT Cup (Ucrania);1;g_25_jHXjRvGe;Finalizado;;Sheshurak L. (Ukr);Tokar V. (Ukr);0;3;[{'home': 3, 'away': 11}, {'home': 7, 'away': 11}, {'home': 7, 'away': 11}];1.73;1.93
+TT Cup (Ucrania);1;g_25_SGBb4dio;Finalizado;;Filatov S. (Ukr);Yakovliev H. (Ukr);1;3;[{'home': 7, 'away': 11}, {'home': 12, 'away': 10}, {'home': 8, 'away': 11}, {'home': 4, 'away': 11}];;
+TT Cup (Ucrania);1;g_25_pIqAMeDT;Finalizado;;Derypaska R. (Ukr);Pismennyi Y. (Ukr);0;3;[{'home': 6, 'away': 11}, {'home': 5, 'away': 11}, {'home': 7, 'away': 11}];;
+TT Cup (Ucrania);1;g_25_dx7b85hJ;Finalizado;;Volokhov V. (Ukr);Borysov A. (Ukr);3;1;[{'home': 9, 'away': 11}, {'home': 11, 'away': 7}, {'home': 11, 'away': 6}, {'home': 11, 'away': 9}];;
+TT Cup (Ucrania);1;g_25_4xmVRB66;Finalizado;;Baystryuchenko D. (Ukr);Sokur M. (Ukr);2;3;[{'home': 11, 'away': 7}, {'home': 11, 'away': 5}, {'home': 9, 'away': 11}, {'home': 10, 'away': 12}, {'home': 5, 'away': 11}];;
+TT Cup (Ucrania);1;g_25_ba84tBLa;Finalizado;;Kotov V. (Ukr);Oliynyk R. (Ukr);3;1;[{'home': 12, 'away': 10}, {'home': 11, 'away': 4}, {'home': 11, 'away': 13}, {'home': 11, 'away': 9}];1.38;2.7
+TT Cup (Ucrania);1;g_25_4KyeQbV1;Finalizado;;Rutskiy S. (Ukr);Gaevy N. (Ukr);3;2;[{'home': 13, 'away': 11}, {'home': 9, 'away': 11}, {'home': 4, 'away': 11}, {'home': 11, 'away': 6}, {'home': 12, 'away': 10}];1.42;2.55
+TT Cup (Ucrania);1;g_25_tKatTuUo;Finalizado;;Petukhov V. (Ukr);Sandulenko U. (Ukr);0;3;[{'home': 5, 'away': 11}, {'home': 3, 'away': 11}, {'home': 11, 'away': 13}];2.08;1.63
+TT Cup (Ucrania);1;g_25_AL4nB780;Finalizado;;Tsybulin S. (Ukr);Yaremchuk D. (Ukr);0;3;[{'home': 3, 'away': 11}, {'home': 8, 'away': 11}, {'home': 7, 'away': 11}];;
+TT Cup (Ucrania);1;g_25_f3yaG2pt;Finalizado;;Makarchuk K. (Ukr);Rubtsov S. (Ukr);0;3;[{'home': 8, 'away': 11}, {'home': 4, 'away': 11}, {'home': 9, 'away': 11}];3.9;1.19
+TT Cup (Ucrania);1;g_25_MDszRVLC;Finalizado;;Krivenko V. (Ukr);Riadynskyi Y. (Ukr);3;2;[{'home': 7, 'away': 11}, {'home': 11, 'away': 2}, {'home': 11, 'away': 8}, {'home': 6, 'away': 11}, {'home': 11, 'away': 4}];1.55;2.22
+TT Cup (Ucrania);1;g_25_tOc9uVz6;Finalizado;;Lohosha D. (Ukr);Malashevsky V. (Ukr);3;0;[{'home': 11, 'away': 8}, {'home': 11, 'away': 6}, {'home': 11, 'away': 8}];1.26;3.3
+TT Cup (Ucrania);1;g_25_6PFwkr82;Finalizado;;Sheshurak L. (Ukr);Zenyuk A. (Ukr);3;1;[{'home': 7, 'away': 11}, {'home': 14, 'away': 12}, {'home': 11, 'away': 5}, {'home': 11, 'away': 3}];1.4;2.58
+TT Cup (Ucrania);1;g_25_KrQ98T4h;Finalizado;;Yakovliev H. (Ukr);Lytvynenko M. (Ukr);1;3;[{'home': 7, 'away': 11}, {'home': 7, 'away': 11}, {'home': 11, 'away': 6}, {'home': 4, 'away': 11}];2.3;1.5
+TT Cup (Ucrania);1;g_25_2BoyIFLp;Finalizado;;Teterya U. (Ukr);Derypaska R. (Ukr);3;0;[{'home': 11, 'away': 8}, {'home': 12, 'away': 10}, {'home': 11, 'away': 5}];;
+TT Cup (Ucrania);1;g_25_ImoLDLod;Finalizado;;Zhuravlov M. (Ukr);Volokhov V. (Ukr);3;0;[{'home': 11, 'away': 7}, {'home': 11, 'away': 7}, {'home': 11, 'away': 7}];;
+TT Cup (Ucrania);1;g_25_04tvQkyJ;Finalizado;;Sokur M. (Ukr);Shvidkiy V. (Ukr);2;3;[{'home': 9, 'away': 11}, {'home': 11, 'away': 9}, {'home': 9, 'away': 11}, {'home': 11, 'away': 6}, {'home': 5, 'away': 11}];;
+TT Cup (Ucrania);1;g_25_fR1DvkjC;Finalizado;;Oliynyk R. (Ukr);Trachuk V. (Ukr);3;1;[{'home': 11, 'away': 8}, {'home': 7, 'away': 11}, {'home': 11, 'away': 8}, {'home': 11, 'away': 8}];1.55;2.22
+TT Cup (Ucrania);1;g_25_pGEsl2N8;Finalizado;;Gaevy N. (Ukr);Tokar V. (Ukr);1;3;[{'home': 11, 'away': 9}, {'home': 5, 'away': 11}, {'home': 5, 'away': 11}, {'home': 8, 'away': 11}];2.55;1.42
+TT Cup (Ucrania);1;g_25_bZOD7mKb;Finalizado;;Dubrovin D. (Ukr);Filatov S. (Ukr);3;0;[{'home': 11, 'away': 7}, {'home': 11, 'away': 8}, {'home': 11, 'away': 8}];2.08;1.63
+TT Cup (Ucrania);1;g_25_t2puHZzi;Finalizado;;Yaremchuk D. (Ukr);Kats L. (Ukr);3;0;[{'home': 11, 'away': 5}, {'home': 11, 'away': 4}, {'home': 11, 'away': 7}];;
+TT Cup (Ucrania);1;g_25_63v3x5Od;Finalizado;;Rubtsov S. (Ukr);Yarovoi O. (Ukr);0;3;[{'home': 9, 'away': 11}, {'home': 6, 'away': 11}, {'home': 5, 'away': 11}];;
+TT Cup (Ucrania);1;g_25_E7ULlZDJ;Finalizado;;Krivenko V. (Ukr);Sokur M. (Ukr);3;1;[{'home': 9, 'away': 11}, {'home': 11, 'away': 7}, {'home': 11, 'away': 2}, {'home': 12, 'away': 10}];1.57;2.17
+TT Cup (Ucrania);1;g_25_ll1Hw95I;Finalizado;;Lohosha D. (Ukr);Oliynyk R. (Ukr);3;0;[{'home': 11, 'away': 9}, {'home': 11, 'away': 6}, {'home': 11, 'away': 6}];1.5;2.3
+TT Cup (Ucrania);1;g_25_EkJomMxF;Finalizado;;Sheshurak L. (Ukr);Gaevy N. (Ukr);2;3;[{'home': 11, 'away': 8}, {'home': 6, 'away': 11}, {'home': 9, 'away': 11}, {'home': 11, 'away': 4}, {'home': 9, 'away': 11}];1.32;2.98
+TT Cup (Ucrania);1;g_25_hdOH67Z4;Finalizado;;Petukhov V. (Ukr);Yakovliev H. (Ukr);0;3;[{'home': 6, 'away': 11}, {'home': 6, 'away': 11}, {'home': 8, 'away': 11}];;
+TT Cup (Ucrania);1;g_25_pzBLPRvi;Finalizado;;Tsybulin S. (Ukr);Pismennyi Y. (Ukr);2;3;[{'home': 6, 'away': 11}, {'home': 7, 'away': 11}, {'home': 14, 'away': 12}, {'home': 11, 'away': 9}, {'home': 7, 'away': 11}];;
+TT Cup (Ucrania);1;g_25_pfw7yPw3;Finalizado;;Makarchuk K. (Ukr);Borysov A. (Ukr);0;3;[{'home': 7, 'away': 11}, {'home': 10, 'away': 12}, {'home': 4, 'away': 11}];1.83;1.83
+TT Cup (Ucrania);1;g_25_SAYPmgTP;Finalizado;;Baystryuchenko D. (Ukr);Riadynskyi Y. (Ukr);3;1;[{'home': 17, 'away': 15}, {'home': 9, 'away': 11}, {'home': 11, 'away': 5}, {'home': 11, 'away': 8}];;
+TT Cup (Ucrania);1;g_25_Sv0LxTKO;Finalizado;;Kotov V. (Ukr);Malashevsky V. (Ukr);2;3;[{'home': 8, 'away': 11}, {'home': 11, 'away': 8}, {'home': 6, 'away': 11}, {'home': 11, 'away': 5}, {'home': 6, 'away': 11}];2.55;1.42
+TT Cup (Ucrania);1;g_25_jFtFVg7s;Finalizado;;Rutskiy S. (Ukr);Zenyuk A. (Ukr);3;0;[{'home': 11, 'away': 9}, {'home': 11, 'away': 6}, {'home': 11, 'away': 5}];1.83;1.83
+TT Cup (Ucrania);1;g_25_6aSL5RlB;Finalizado;;Filatov S. (Ukr);Sandulenko U. (Ukr);3;1;[{'home': 11, 'away': 8}, {'home': 9, 'away': 11}, {'home': 11, 'away': 5}, {'home': 13, 'away': 11}];1.32;2.98
+TT Cup (Ucrania);1;g_25_bwFPOofc;Finalizado;;Teterya U. (Ukr);Yaremchuk D. (Ukr);0;3;[{'home': 5, 'away': 11}, {'home': 3, 'away': 11}, {'home': 6, 'away': 11}];2.52;1.43
+TT Cup (Ucrania);1;g_25_SISBzqg9;Finalizado;;Zhuravlov M. (Ukr);Rubtsov S. (Ukr);2;3;[{'home': 11, 'away': 7}, {'home': 13, 'away': 11}, {'home': 4, 'away': 11}, {'home': 7, 'away': 11}, {'home': 2, 'away': 11}];;
+TT Cup (Ucrania);1;g_25_YiBhqDys;Finalizado;;Krivenko V. (Ukr);Baystryuchenko D. (Ukr);0;3;[{'home': 8, 'away': 11}, {'home': 5, 'away': 11}, {'home': 7, 'away': 11}];1.83;1.83
+TT Cup (Ucrania);1;g_25_4dq41CcP;Finalizado;;Lohosha D. (Ukr);Kotov V. (Ukr);1;3;[{'home': 7, 'away': 11}, {'home': 3, 'away': 11}, {'home': 11, 'away': 7}, {'home': 6, 'away': 11}];2.08;1.63
+TT Cup (Ucrania);1;g_25_YwWJUDMm;Finalizado;;Sheshurak L. (Ukr);Rutskiy S. (Ukr);3;1;[{'home': 11, 'away': 9}, {'home': 9, 'away': 11}, {'home': 11, 'away': 7}, {'home': 11, 'away': 9}];1.63;2.08
+TT Cup (Ucrania);1;g_25_KAbpSaqh;Finalizado;;Dubrovin D. (Ukr);Lytvynenko M. (Ukr);2;3;[{'home': 11, 'away': 5}, {'home': 5, 'away': 11}, {'home': 5, 'away': 11}, {'home': 11, 'away': 5}, {'home': 3, 'away': 11}];2.82;1.35
+TT Cup (Ucrania);1;g_25_h0ETN593;Finalizado;;Tsybulin S. (Ukr);Derypaska R. (Ukr);2;3;[{'home': 12, 'away': 10}, {'home': 9, 'away': 11}, {'home': 11, 'away': 9}, {'home': 3, 'away': 11}, {'home': 7, 'away': 11}];2.82;1.35
+TT Cup (Ucrania);1;g_25_tMWFZ28F;Finalizado;;Makarchuk K. (Ukr);Volokhov V. (Ukr);3;2;[{'home': 8, 'away': 11}, {'home': 11, 'away': 6}, {'home': 3, 'away': 11}, {'home': 11, 'away': 7}, {'home': 11, 'away': 9}];;
+TT Cup (Ucrania);1;g_25_CrAdrXjm;Finalizado;;Riadynskyi Y. (Ukr);Shvidkiy V. (Ukr);3;0;[{'home': 11, 'away': 9}, {'home': 11, 'away': 3}, {'home': 11, 'away': 9}];2.47;1.45
+TT Cup (Ucrania);1;g_25_65VVdW5t;Finalizado;;Malashevsky V. (Ukr);Trachuk V. (Ukr);1;3;[{'home': 3, 'away': 11}, {'home': 11, 'away': 6}, {'home': 9, 'away': 11}, {'home': 5, 'away': 11}];2.22;1.55
+TT Cup (Ucrania);1;g_25_WOlNTXyf;Finalizado;;Zenyuk A. (Ukr);Tokar V. (Ukr);2;3;[{'home': 3, 'away': 11}, {'home': 11, 'away': 4}, {'home': 6, 'away': 11}, {'home': 11, 'away': 9}, {'home': 0, 'away': 11}];2.4;1.48
+TT Cup (Ucrania);1;g_25_lOHQ4o4H;Finalizado;;Petukhov V. (Ukr);Filatov S. (Ukr);1;3;[{'home': 4, 'away': 11}, {'home': 1, 'away': 11}, {'home': 11, 'away': 8}, {'home': 8, 'away': 11}];2.58;1.4
+TT Cup (Ucrania);1;g_25_WjDXMPO9;Finalizado;;Kats L. (Ukr);Pismennyi Y. (Ukr);1;3;[{'home': 6, 'away': 11}, {'home': 11, 'away': 8}, {'home': 10, 'away': 12}, {'home': 7, 'away': 11}];1.52;2.28
+TT Cup (Ucrania);1;g_25_zqWJYMNL;Finalizado;;Yarovoi O. (Ukr);Borysov A. (Ukr);3;1;[{'home': 9, 'away': 11}, {'home': 12, 'away': 10}, {'home': 11, 'away': 6}, {'home': 11, 'away': 9}];;
+TT Cup (Ucrania);1;g_25_SEGU35JN;Finalizado;;Dubrovin D. (Ukr);Yakovliev H. (Ukr);3;1;[{'home': 11, 'away': 9}, {'home': 7, 'away': 11}, {'home': 11, 'away': 8}, {'home': 11, 'away': 4}];1.7;1.96
+TT Cup (Ucrania);1;g_25_lS7xMqvG;Finalizado;;Teterya U. (Ukr);Tsybulin S. (Ukr);3;0;[{'home': 11, 'away': 7}, {'home': 11, 'away': 7}, {'home': 11, 'away': 7}];2.4;1.48
+TT Cup (Ucrania);1;g_25_EZUNXtwS;Finalizado;;Zhuravlov M. (Ukr);Makarchuk K. (Ukr);2;3;[{'home': 11, 'away': 6}, {'home': 11, 'away': 13}, {'home': 9, 'away': 11}, {'home': 11, 'away': 9}, {'home': 6, 'away': 11}];1.83;1.83
+TT Cup (Ucrania);1;g_25_dlLY2PYT;Finalizado;;Sandulenko U. (Ukr);Lytvynenko M. (Ukr);0;3;[{'home': 8, 'away': 11}, {'home': 4, 'away': 11}, {'home': 9, 'away': 11}];2.3;1.5
+TT Cup (Ucrania);1;g_25_I3ZrT0oq;Finalizado;;Rubtsov S. (Ukr);Borysov A. (Ukr);2;3;[{'home': 11, 'away': 4}, {'home': 7, 'away': 11}, {'home': 11, 'away': 8}, {'home': 6, 'away': 11}, {'home': 9, 'away': 11}];1.88;1.78
+TT Cup (Ucrania);1;g_25_AaVR9ITN;Finalizado;;Rychkou V. (Ukr);Baklykov A. (Ukr);0;3;[{'home': 3, 'away': 11}, {'home': 9, 'away': 11}, {'home': 7, 'away': 11}];;
+TT Cup (Ucrania);1;g_25_xngkRJbb;Finalizado;;Gabrelian D. (Ukr);Leonenko O. (Ukr);3;0;[{'home': 11, 'away': 3}, {'home': 11, 'away': 6}, {'home': 11, 'away': 9}];1.58;2.15
+TT Cup (Ucrania);1;g_25_SI6tL3gM;Anulado;;Yaremchuk D. (Ukr);Pismennyi Y. (Ukr);0;0;[];1.35;2.82
+TT Cup (Ucrania);1;g_25_YFodHwbn;Finalizado;;Mosuk N. (Ukr);Kuzmenko G. (Ukr);3;2;[{'home': 11, 'away': 5}, {'home': 10, 'away': 12}, {'home': 5, 'away': 11}, {'home': 11, 'away': 8}, {'home': 11, 'away': 6}];;
+TT Cup (Ucrania);1;g_25_bc70bqso;Finalizado;;Petukhov V. (Ukr);Dubrovin D. (Ukr);2;3;[{'home': 11, 'away': 9}, {'home': 9, 'away': 11}, {'home': 11, 'away': 4}, {'home': 10, 'away': 12}, {'home': 9, 'away': 11}];2.42;1.47
+TT Cup (Ucrania);1;g_25_dfYnSK0k;Finalizado;;Volokhov V. (Ukr);Yarovoi O. (Ukr);1;3;[{'home': 4, 'away': 11}, {'home': 13, 'away': 11}, {'home': 8, 'away': 11}, {'home': 6, 'away': 11}];1.96;1.7
+TT Cup (Ucrania);1;g_25_hOKW8xqU;Finalizado;;Plishilo V. (Ukr);Kalugin V. (Ukr);3;0;[{'home': 11, 'away': 7}, {'home': 11, 'away': 9}, {'home': 11, 'away': 9}];;
+TT Cup (Ucrania);1;g_25_OO8jARN6;Finalizado;;Derypaska R. (Ukr);Kats L. (Ukr);3;2;[{'home': 6, 'away': 11}, {'home': 6, 'away': 11}, {'home': 11, 'away': 7}, {'home': 11, 'away': 5}, {'home': 11, 'away': 7}];1.35;2.82
+TT Cup (Ucrania);1;g_25_GxhgQwE4;Finalizado;;Holoborodko Y. (Ukr);Zapletniuk A. (Ukr);0;3;[{'home': 8, 'away': 11}, {'home': 15, 'away': 17}, {'home': 6, 'away': 11}];2.55;1.42
+TT Cup (Ucrania);1;g_25_jeYlFTkD;Finalizado;;Vahta D. (Ukr);Nazrin A. (Ukr);1;3;[{'home': 10, 'away': 12}, {'home': 11, 'away': 6}, {'home': 9, 'away': 11}, {'home': 10, 'away': 12}];;
+TT Cup (Ucrania);1;g_25_Sxo0GcDh;Finalizado;;Zenyuk D. (Ukr);Simonchuk D. (Ukr);1;3;[{'home': 5, 'away': 11}, {'home': 11, 'away': 13}, {'home': 11, 'away': 9}, {'home': 9, 'away': 11}];;
+TT Cup (Ucrania);1;g_25_02oqNSJo;Finalizado;;Filatov S. (Ukr);Lytvynenko M. (Ukr);3;1;[{'home': 8, 'away': 11}, {'home': 11, 'away': 9}, {'home': 11, 'away': 6}, {'home': 11, 'away': 8}];1.53;2.26
+TT Cup (Ucrania);1;g_25_0SUZejLn;Finalizado;;Maksiuta V. (Ukr);Baklykov A. (Ukr);0;3;[{'home': 3, 'away': 11}, {'home': 5, 'away': 11}, {'home': 6, 'away': 11}];;
+TT Cup (Ucrania);1;g_25_6aliL6lb;Finalizado;;Miniailo Y. (Ukr);Leonenko O. (Ukr);2;3;[{'home': 11, 'away': 9}, {'home': 11, 'away': 5}, {'home': 6, 'away': 11}, {'home': 3, 'away': 11}, {'home': 5, 'away': 11}];1.35;2.82
+TT Cup (Ucrania);1;g_25_UwwUxXsK;Finalizado;;Kotik A. (Ukr);Vahta D. (Ukr);2;3;[{'home': 14, 'away': 12}, {'home': 10, 'away': 12}, {'home': 8, 'away': 11}, {'home': 13, 'away': 11}, {'home': 9, 'away': 11}];;
+TT Cup (Ucrania);1;g_25_6Tq4FHSb;Finalizado;;Boiko V. (Ukr);Kuzmenko G. (Ukr);0;3;[{'home': 4, 'away': 11}, {'home': 10, 'away': 12}, {'home': 4, 'away': 11}];;
+TT Cup (Ucrania);1;g_25_CxkmMnZi;Finalizado;;Yakovliev H. (Ukr);Sandulenko U. (Ukr);3;1;[{'home': 11, 'away': 6}, {'home': 13, 'away': 11}, {'home': 10, 'away': 12}, {'home': 11, 'away': 9}];1.36;2.77
+TT Cup (Ucrania);1;g_25_C2YweAzg;Finalizado;;Rychkou V. (Ukr);Plishilo V. (Ukr);1;3;[{'home': 8, 'away': 11}, {'home': 7, 'away': 11}, {'home': 11, 'away': 3}, {'home': 7, 'away': 11}];;
+TT Cup (Ucrania);1;g_25_pjmeKQ34;Finalizado;;Gabrelian D. (Ukr);Holoborodko Y. (Ukr);3;0;[{'home': 11, 'away': 4}, {'home': 11, 'away': 6}, {'home': 11, 'away': 5}];1.06;6.6
+TT Cup (Ucrania);1;g_25_O0xYyicQ;Finalizado;;Gritsienko N. (Ukr);Nazrin A. (Ukr);3;1;[{'home': 8, 'away': 11}, {'home': 11, 'away': 7}, {'home': 11, 'away': 7}, {'home': 11, 'away': 6}];;
+TT Cup (Ucrania);1;g_25_YkG0Eyr5;Finalizado;;Mosuk N. (Ukr);Zenyuk D. (Ukr);3;2;[{'home': 11, 'away': 8}, {'home': 11, 'away': 7}, {'home': 7, 'away': 11}, {'home': 10, 'away': 12}, {'home': 11, 'away': 8}];;
+TT Cup (Ucrania);1;g_25_2Rs0JpJA;Finalizado;;Miniailo Y. (Ukr);Zapletniuk A. (Ukr);3;0;[{'home': 11, 'away': 5}, {'home': 11, 'away': 8}, {'home': 11, 'away': 8}];2.15;1.58
+TT Cup (Ucrania);1;g_25_0MTaXA5s;Finalizado;;Gritsienko N. (Ukr);Vahta D. (Ukr);3;2;[{'home': 7, 'away': 11}, {'home': 11, 'away': 5}, {'home': 8, 'away': 11}, {'home': 11, 'away': 3}, {'home': 11, 'away': 9}];;
+TT Cup (Ucrania);1;g_25_CtF4DecB;Finalizado;;Boiko V. (Ukr);Simonchuk D. (Ukr);1;3;[{'home': 7, 'away': 11}, {'home': 13, 'away': 11}, {'home': 4, 'away': 11}, {'home': 7, 'away': 11}];2.82;1.35
+TT Cup (Ucrania);1;g_25_zLBVNcYp;Finalizado;;Komar V. (Ukr);Tytyunnik O. (Ukr);3;1;[{'home': 12, 'away': 10}, {'home': 4, 'away': 11}, {'home': 11, 'away': 6}, {'home': 11, 'away': 9}];;
+TT Cup (Ucrania);1;g_25_fRNrfUka;Anulado;;Maksiuta V. (Ukr);Kalugin V. (Ukr);0;0;[];;
+TT Cup (Ucrania);1;g_25_YHMngl55;Finalizado;;Plishilo V. (Ukr);Baklykov A. (Ukr);1;3;[{'home': 10, 'away': 12}, {'home': 11, 'away': 7}, {'home': 4, 'away': 11}, {'home': 6, 'away': 11}];1.83;1.83
+TT Cup (Ucrania);1;g_25_xQkEnsBo;Finalizado;;Puhach P. (Ukr);Fashchevskyi I. (Ukr);3;1;[{'home': 11, 'away': 4}, {'home': 10, 'away': 12}, {'home': 11, 'away': 7}, {'home': 11, 'away': 6}];;
+TT Cup (Ucrania);1;g_25_tIt4I4YG;Finalizado;;Holoborodko Y. (Ukr);Leonenko O. (Ukr);3;2;[{'home': 8, 'away': 11}, {'home': 11, 'away': 6}, {'home': 10, 'away': 12}, {'home': 11, 'away': 6}, {'home': 12, 'away': 10}];2.22;1.55
+TT Cup (Ucrania);1;g_25_roJ4WUKm;Finalizado;;Kotik A. (Ukr);Nazrin A. (Ukr);3;2;[{'home': 8, 'away': 11}, {'home': 11, 'away': 7}, {'home': 11, 'away': 7}, {'home': 10, 'away': 12}, {'home': 11, 'away': 8}];;
+TT Cup (Ucrania);1;g_25_63E8CFCH;Finalizado;;Zenyuk D. (Ukr);Kuzmenko G. (Ukr);3;2;[{'home': 6, 'away': 11}, {'home': 9, 'away': 11}, {'home': 12, 'away': 10}, {'home': 11, 'away': 7}, {'home': 12, 'away': 10}];2.08;1.63
+TT Cup (Ucrania);1;g_25_jTgIo1Qi;Finalizado;;Zakladnyi M. (Ukr);Pokydko S. (Ukr);1;3;[{'home': 9, 'away': 11}, {'home': 11, 'away': 8}, {'home': 7, 'away': 11}, {'home': 6, 'away': 11}];2.7;1.38
+TT Cup (Ucrania);1;g_25_pjgMpLub;Finalizado;;Komar V. (Ukr);Fashchevskyi I. (Ukr);0;3;[{'home': 9, 'away': 11}, {'home': 10, 'away': 12}, {'home': 7, 'away': 11}];1.58;2.15
+TT Cup (Ucrania);1;g_25_YD4X0x3q;Finalizado;;Miniailo Y. (Ukr);Holoborodko Y. (Ukr);3;2;[{'home': 11, 'away': 8}, {'home': 9, 'away': 11}, {'home': 11, 'away': 9}, {'home': 8, 'away': 11}, {'home': 11, 'away': 8}];1.42;2.55
+TT Cup (Ucrania);1;g_25_jmvQwDSD;Finalizado;;Gritsienko N. (Ukr);Kotik A. (Ukr);1;3;[{'home': 5, 'away': 11}, {'home': 7, 'away': 11}, {'home': 16, 'away': 14}, {'home': 7, 'away': 11}];;
+TT Cup (Ucrania);1;g_25_2iRjh8KB;Aplazado;;Maksiuta V. (Ukr);Plishilo V. (Ukr);0;0;[];;
+TT Cup (Ucrania);1;g_25_K6ICBZRN;Finalizado;;Boiko V. (Ukr);Zenyuk D. (Ukr);2;3;[{'home': 11, 'away': 9}, {'home': 5, 'away': 11}, {'home': 11, 'away': 13}, {'home': 12, 'away': 10}, {'home': 8, 'away': 11}];3.25;1.27
+TT Cup (Ucrania);1;g_25_OthQque4;Finalizado;;Pokydko S. (Ukr);Tytyunnik O. (Ukr);3;0;[{'home': 14, 'away': 12}, {'home': 11, 'away': 8}, {'home': 11, 'away': 6}];;
+TT Cup (Ucrania);1;g_25_tInVraAA;Finalizado;;Puhach P. (Ukr);Zakladnyi M. (Ukr);3;1;[{'home': 11, 'away': 7}, {'home': 4, 'away': 11}, {'home': 11, 'away': 8}, {'home': 11, 'away': 9}];3.25;1.27
+TT Cup (Ucrania);1;g_25_nH8y0dIk;Finalizado;;Gabrelian D. (Ukr);Zapletniuk A. (Ukr);3;2;[{'home': 5, 'away': 11}, {'home': 11, 'away': 8}, {'home': 4, 'away': 11}, {'home': 11, 'away': 6}, {'home': 11, 'away': 9}];1.67;2.02
+TT Cup (Ucrania);1;g_25_MyI8Vlzf;Anulado;;Vahta D. (Ukr);Kotik A. (Ukr);0;0;[];;
+TT Cup (Ucrania);1;g_25_2V7HAgsU;Finalizado;;Mosuk N. (Ukr);Simonchuk D. (Ukr);3;0;[{'home': 11, 'away': 9}, {'home': 11, 'away': 8}, {'home': 11, 'away': 6}];2.08;1.63
+TT Cup (Ucrania);1;g_25_trQfiSZH;Finalizado;;Rychkou V. (Ukr);Kalugin V. (Ukr);2;3;[{'home': 13, 'away': 11}, {'home': 5, 'away': 11}, {'home': 10, 'away': 12}, {'home': 11, 'away': 8}, {'home': 6, 'away': 11}];;
+TT Cup (Ucrania);1;g_25_K8oZsJPG;Finalizado;;Komar V. (Ukr);Pokydko S. (Ukr);3;2;[{'home': 8, 'away': 11}, {'home': 11, 'away': 8}, {'home': 12, 'away': 10}, {'home': 6, 'away': 11}, {'home': 11, 'away': 8}];1.48;2.4
+TT Cup (Ucrania);1;g_25_EVpwswuN;Finalizado;;Zakladnyi M. (Ukr);Fashchevskyi I. (Ukr);3;1;[{'home': 11, 'away': 7}, {'home': 6, 'away': 11}, {'home': 11, 'away': 6}, {'home': 12, 'away': 10}];1.83;1.83
+TT Cup (Ucrania);1;g_25_UubtaGXe;Finalizado;;Miniailo Y. (Ukr);Gabrelian D. (Ukr);2;3;[{'home': 4, 'away': 11}, {'home': 11, 'away': 13}, {'home': 11, 'away': 8}, {'home': 11, 'away': 9}, {'home': 5, 'away': 11}];1.3;3.05
+TT Cup (Ucrania);1;g_25_jBMCU8k0;Anulado;;Gritsienko N. (Ukr);Vahta D. (Ukr);0;0;[];;
+TT Cup (Ucrania);1;g_25_4vfq6Dko;Finalizado;;Boiko V. (Ukr);Mosuk N. (Ukr);0;3;[{'home': 10, 'away': 12}, {'home': 8, 'away': 11}, {'home': 10, 'away': 12}];4.05;1.18
+TT Cup (Ucrania);1;g_25_Q5lstcfT;Finalizado;;Puhach P. (Ukr);Tytyunnik O. (Ukr);1;3;[{'home': 8, 'away': 11}, {'home': 7, 'away': 11}, {'home': 11, 'away': 8}, {'home': 9, 'away': 11}];;
+TT Cup (Ucrania);1;g_25_WnR9yH2p;Finalizado;;Komar V. (Ukr);Zakladnyi M. (Ukr);3;0;[{'home': 11, 'away': 6}, {'home': 11, 'away': 8}, {'home': 12, 'away': 10}];2.02;1.67
+TT Cup (Ucrania);1;g_25_8Wdpbzm2;Finalizado;;Zapletniuk A. (Ukr);Leonenko O. (Ukr);3;0;[{'home': 11, 'away': 5}, {'home': 13, 'away': 11}, {'home': 11, 'away': 5}];1.28;3.2
+TT Cup (Ucrania);1;g_25_O6FajnkO;Anulado;;Maksiuta V. (Ukr);Rychkou V. (Ukr);0;0;[];1.38;2.7
+TT Cup (Ucrania);1;g_25_hfmRUdSo;Finalizado;;Simonchuk D. (Ukr);Kuzmenko G. (Ukr);2;3;[{'home': 12, 'away': 10}, {'home': 12, 'away': 14}, {'home': 10, 'away': 12}, {'home': 11, 'away': 7}, {'home': 8, 'away': 11}];;
+TT Cup (Ucrania);1;g_25_xAJ3k64U;Finalizado;;Kalugin V. (Ukr);Baklykov A. (Ukr);1;3;[{'home': 12, 'away': 10}, {'home': 5, 'away': 11}, {'home': 10, 'away': 12}, {'home': 5, 'away': 11}];1.63;2.08
+TT Cup (Ucrania);1;g_25_U1LGTS46;Finalizado;;Nazrin A. (Ukr);Kotik A. (Ukr);1;3;[{'home': 12, 'away': 10}, {'home': 3, 'away': 11}, {'home': 9, 'away': 11}, {'home': 4, 'away': 11}];;
+TT Cup (Ucrania);1;g_25_AwQDzyIj;Finalizado;;Puhach P. (Ukr);Pokydko S. (Ukr);0;3;[{'home': 4, 'away': 11}, {'home': 8, 'away': 11}, {'home': 3, 'away': 11}];3.0;1.3
+TT Cup (Ucrania);1;g_25_MJEcyGCh;Finalizado;;Vahta D. (Ukr);Kotik A. (Ukr);1;3;[{'home': 14, 'away': 12}, {'home': 5, 'away': 11}, {'home': 10, 'away': 12}, {'home': 7, 'away': 11}];;
+TT Cup (Ucrania);1;g_25_bgJeaKfi;Finalizado;;Fashchevskyi I. (Ukr);Tytyunnik O. (Ukr);1;3;[{'home': 11, 'away': 8}, {'home': 3, 'away': 11}, {'home': 6, 'away': 11}, {'home': 6, 'away': 11}];;
+TT Cup (Ucrania);1;g_25_CQALSnKC;Anulado;;Nazrin A. (Ukr);Vahta D. (Ukr);0;0;[];;
+TT Cup (Ucrania);1;g_25_xpIabvAc;Finalizado;;Komar V. (Ukr);Puhach P. (Ukr);3;2;[{'home': 7, 'away': 11}, {'home': 7, 'away': 11}, {'home': 12, 'away': 10}, {'home': 11, 'away': 5}, {'home': 11, 'away': 9}];1.28;3.2
+TT Cup (Ucrania);1;g_25_K874cbP3;Finalizado;;Zakladnyi M. (Ukr);Tytyunnik O. (Ukr);1;3;[{'home': 3, 'away': 11}, {'home': 11, 'away': 6}, {'home': 7, 'away': 11}, {'home': 7, 'away': 11}];;
+TT Cup (Ucrania);1;g_25_YBB8dIvA;Finalizado;;Pokydko S. (Ukr);Fashchevskyi I. (Ukr);3;2;[{'home': 7, 'away': 11}, {'home': 11, 'away': 8}, {'home': 14, 'away': 12}, {'home': 10, 'away': 12}, {'home': 11, 'away': 5}];1.48;2.4
+TT Cup (Ucrania);1;g_25_O0EPR6ZI;Finalizado;;Gritsienko N. (Ukr);Kotik A. (Ukr);2;3;[{'home': 7, 'away': 11}, {'home': 10, 'away': 12}, {'home': 11, 'away': 8}, {'home': 11, 'away': 6}, {'home': 11, 'away': 13}];;
+TT Cup (Ucrania);1;g_25_6Ft4zR8F;Finalizado;;Kalinyuk D. (Ukr);Kuravsky O. (Ukr);3;2;[{'home': 7, 'away': 11}, {'home': 6, 'away': 11}, {'home': 11, 'away': 8}, {'home': 12, 'away': 10}, {'home': 11, 'away': 8}];;
+TT Cup (Ucrania);1;g_25_x427jjCJ;Finalizado;;Nazrin A. (Ukr);Gritsienko N. (Ukr);3;1;[{'home': 11, 'away': 7}, {'home': 11, 'away': 9}, {'home': 9, 'away': 11}, {'home': 11, 'away': 5}];;
+TT Cup (Ucrania);1;g_25_hWvCY4wS;Finalizado;;Pinchuk R. (Ukr);Kalinyuk D. (Ukr);2;3;[{'home': 5, 'away': 11}, {'home': 11, 'away': 13}, {'home': 11, 'away': 6}, {'home': 11, 'away': 7}, {'home': 10, 'away': 12}];;
+TT Cup (Ucrania);1;g_25_bDHvUOoq;Finalizado;;Kuravsky O. (Ukr);Faflei Y. (Ukr);1;3;[{'home': 11, 'away': 5}, {'home': 10, 'away': 12}, {'home': 1, 'away': 11}, {'home': 2, 'away': 11}];1.63;2.08
+TT Cup (Ucrania);1;g_25_CGLrTr1k;Finalizado;;Kalinyuk D. (Ukr);Kuravsky O. (Ukr);1;3;[{'home': 6, 'away': 11}, {'home': 13, 'away': 11}, {'home': 4, 'away': 11}, {'home': 2, 'away': 11}];;
+TT Cup (Ucrania);1;g_25_Eut8ZpOL;Finalizado;;Pinchuk R. (Ukr);Faflei Y. (Ukr);2;3;[{'home': 9, 'away': 11}, {'home': 11, 'away': 7}, {'home': 12, 'away': 10}, {'home': 8, 'away': 11}, {'home': 5, 'away': 11}];2.28;1.52
+TT Cup (Ucrania);1;g_25_6wLnS2Ge;Finalizado;;Pinchuk R. (Ukr);Kuravsky O. (Ukr);0;3;[{'home': 7, 'away': 11}, {'home': 6, 'away': 11}, {'home': 6, 'away': 11}];1.57;2.17
+TT Cup (Ucrania);1;g_25_pUJjRMV1;Finalizado;;Kalinyuk D. (Ukr);Faflei Y. (Ukr);1;3;[{'home': 4, 'away': 11}, {'home': 11, 'away': 9}, {'home': 6, 'away': 11}, {'home': 6, 'away': 11}];1.6;2.1
+TT Cup (Ucrania);1;g_25_Mo3Zk682;Finalizado;;Pinchuk R. (Ukr);Kalinyuk D. (Ukr);1;3;[{'home': 8, 'away': 11}, {'home': 11, 'away': 5}, {'home': 9, 'away': 11}, {'home': 7, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_8QaqnzgE;Finalizado;;Khorolsky V. (Rus);Kozhenkov I. (Ukr);3;0;[{'home': 11, 'away': 9}, {'home': 11, 'away': 4}, {'home': 11, 'away': 9}];;
+Win Cup (Ucrania);1;g_25_MT3mof8K;Finalizado;;Novikov Y. (Ukr);Lazebny R. (Ukr);3;1;[{'home': 12, 'away': 10}, {'home': 11, 'away': 3}, {'home': 9, 'away': 11}, {'home': 13, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_4hghpENQ;Finalizado;;Lazebny R. (Ukr);Kozhenkov I. (Ukr);3;0;[{'home': 11, 'away': 8}, {'home': 11, 'away': 4}, {'home': 11, 'away': 9}];;
+Win Cup (Ucrania);1;g_25_plbBZHQ5;Finalizado;;Pirveli R. (Ukr);Kutniy I. (Ukr);1;3;[{'home': 6, 'away': 11}, {'home': 11, 'away': 7}, {'home': 4, 'away': 11}, {'home': 6, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_OvcFYytC;Finalizado;;Kuzo L. (Ukr);Khimenko A. (Ukr);0;3;[{'home': 7, 'away': 11}, {'home': 9, 'away': 11}, {'home': 7, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_KO5PrM3J;Finalizado;;Kyienko S. (Ukr);Shukin D. (Ukr);1;3;[{'home': 8, 'away': 11}, {'home': 6, 'away': 11}, {'home': 11, 'away': 8}, {'home': 9, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_61uKuYVs;Finalizado;;Novikov Y. (Ukr);Khorolsky V. (Rus);3;0;[{'home': 11, 'away': 7}, {'home': 11, 'away': 3}, {'home': 11, 'away': 8}];;
+Win Cup (Ucrania);1;g_25_Gfiew0Rt;Finalizado;;Rodin A. (Ukr);Cherednichenko P. (Ukr);0;3;[{'home': 7, 'away': 11}, {'home': 9, 'away': 11}, {'home': 7, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_bF4TstJP;Finalizado;;Gimadeev R. (Ukr);Medvedev Y. (Ukr);3;0;[{'home': 11, 'away': 7}, {'home': 11, 'away': 9}, {'home': 11, 'away': 7}];;
+Win Cup (Ucrania);1;g_25_UceaxKtm;Finalizado;;Kolesnik P. (Ukr);Kolesnik A. (Ukr);3;2;[{'home': 11, 'away': 5}, {'home': 11, 'away': 9}, {'home': 4, 'away': 11}, {'home': 8, 'away': 11}, {'home': 11, 'away': 8}];;
+Win Cup (Ucrania);1;g_25_63nKXeeI;Finalizado;;Pirveli R. (Ukr);Khimenko A. (Ukr);3;1;[{'home': 13, 'away': 11}, {'home': 7, 'away': 11}, {'home': 11, 'away': 9}, {'home': 11, 'away': 7}];;
+Win Cup (Ucrania);1;g_25_IuFmGTPp;Finalizado;;Kuzo L. (Ukr);Kutniy I. (Ukr);1;3;[{'home': 8, 'away': 11}, {'home': 11, 'away': 6}, {'home': 8, 'away': 11}, {'home': 8, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_Y9CpByqs;Finalizado;;Kyienko S. (Ukr);Medvedev Y. (Ukr);0;3;[{'home': 5, 'away': 11}, {'home': 7, 'away': 11}, {'home': 8, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_WvDJNESn;Finalizado;;Rodin A. (Ukr);Kolesnik A. (Ukr);1;3;[{'home': 6, 'away': 11}, {'home': 11, 'away': 0}, {'home': 7, 'away': 11}, {'home': 8, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_xt0a2MIa;Finalizado;;Yurchenko G. (Ukr);Nemchenko D. (Ukr);0;3;[{'home': 9, 'away': 11}, {'home': 8, 'away': 11}, {'home': 9, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_C0BlAebm;Finalizado;;Gimadeev R. (Ukr);Shukin D. (Ukr);0;3;[{'home': 9, 'away': 11}, {'home': 6, 'away': 11}, {'home': 7, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_prHNMYsg;Finalizado;;Kolesnik P. (Ukr);Cherednichenko P. (Ukr);3;1;[{'home': 13, 'away': 11}, {'home': 7, 'away': 11}, {'home': 11, 'away': 5}, {'home': 11, 'away': 8}];;
+Win Cup (Ucrania);1;g_25_6F431tY5;Finalizado;;Maksimenko A. (Ukr);Tsubera R. (Ukr);1;3;[{'home': 5, 'away': 11}, {'home': 13, 'away': 11}, {'home': 7, 'away': 11}, {'home': 8, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_Wr3VvD2o;Finalizado;;Pirveli R. (Ukr);Kuzo L. (Ukr);3;2;[{'home': 4, 'away': 11}, {'home': 11, 'away': 5}, {'home': 12, 'away': 10}, {'home': 11, 'away': 13}, {'home': 12, 'away': 10}];;
+Win Cup (Ucrania);1;g_25_tzGh9FDg;Finalizado;;Kyienko S. (Ukr);Gimadeev R. (Ukr);0;3;[{'home': 7, 'away': 11}, {'home': 7, 'away': 11}, {'home': 3, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_S66SLhca;Finalizado;;Rodin A. (Ukr);Kolesnik P. (Ukr);0;3;[{'home': 6, 'away': 11}, {'home': 7, 'away': 11}, {'home': 8, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_p63700mC;Finalizado;;Yurchenko G. (Ukr);Tsubera R. (Ukr);0;3;[{'home': 9, 'away': 11}, {'home': 7, 'away': 11}, {'home': 9, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_AZ1ZwXHi;Finalizado;;Khimenko A. (Ukr);Kutniy I. (Ukr);3;1;[{'home': 11, 'away': 5}, {'home': 10, 'away': 12}, {'home': 11, 'away': 8}, {'home': 11, 'away': 9}];;
+Win Cup (Ucrania);1;g_25_6c5WKCC5;Finalizado;;Kolesnik A. (Ukr);Cherednichenko P. (Ukr);3;2;[{'home': 8, 'away': 11}, {'home': 11, 'away': 9}, {'home': 8, 'away': 11}, {'home': 12, 'away': 10}, {'home': 11, 'away': 9}];;
+Win Cup (Ucrania);1;g_25_SAdvwiXc;Finalizado;;Kutniy I. (Ukr);Pirveli R. (Ukr);1;3;[{'home': 6, 'away': 11}, {'home': 11, 'away': 3}, {'home': 10, 'away': 12}, {'home': 9, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_SUhCaK2I;Finalizado;;Maksimenko A. (Ukr);Nemchenko D. (Ukr);3;1;[{'home': 11, 'away': 8}, {'home': 11, 'away': 13}, {'home': 11, 'away': 9}, {'home': 11, 'away': 3}];;
+Win Cup (Ucrania);1;g_25_KQEd8ZSa;Finalizado;;Medvedev Y. (Ukr);Shukin D. (Ukr);2;3;[{'home': 11, 'away': 6}, {'home': 9, 'away': 11}, {'home': 10, 'away': 12}, {'home': 11, 'away': 5}, {'home': 8, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_61erxBn4;Finalizado;;Khimenko A. (Ukr);Kuzo L. (Ukr);1;3;[{'home': 11, 'away': 4}, {'home': 18, 'away': 20}, {'home': 11, 'away': 13}, {'home': 9, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_zB03r7AT;Finalizado;;Yurchenko G. (Ukr);Maksimenko A. (Ukr);1;3;[{'home': 2, 'away': 11}, {'home': 9, 'away': 11}, {'home': 11, 'away': 8}, {'home': 7, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_zX9zKWRB;Finalizado;;Cherednichenko P. (Ukr);Rodin A. (Ukr);1;3;[{'home': 11, 'away': 9}, {'home': 3, 'away': 11}, {'home': 8, 'away': 11}, {'home': 7, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_2k417gr6;Finalizado;;Shukin D. (Ukr);Kyienko S. (Ukr);3;2;[{'home': 11, 'away': 7}, {'home': 8, 'away': 11}, {'home': 8, 'away': 11}, {'home': 11, 'away': 9}, {'home': 11, 'away': 9}];;
+Win Cup (Ucrania);1;g_25_0OfnyV1A;Finalizado;;Khimenko A. (Ukr);Pirveli R. (Ukr);3;2;[{'home': 4, 'away': 11}, {'home': 11, 'away': 9}, {'home': 7, 'away': 11}, {'home': 11, 'away': 9}, {'home': 11, 'away': 5}];;
+Win Cup (Ucrania);1;g_25_EN8vJjsI;Finalizado;;Kolesnik A. (Ukr);Kolesnik P. (Ukr);3;2;[{'home': 11, 'away': 7}, {'home': 11, 'away': 5}, {'home': 9, 'away': 11}, {'home': 9, 'away': 11}, {'home': 11, 'away': 8}];;
+Win Cup (Ucrania);1;g_25_tYdGbvIO;Finalizado;;Tsubera R. (Ukr);Nemchenko D. (Ukr);3;2;[{'home': 11, 'away': 13}, {'home': 8, 'away': 11}, {'home': 11, 'away': 7}, {'home': 11, 'away': 9}, {'home': 11, 'away': 5}];;
+Win Cup (Ucrania);1;g_25_Gh856DcC;Finalizado;;Medvedev Y. (Ukr);Gimadeev R. (Ukr);0;3;[{'home': 10, 'away': 12}, {'home': 7, 'away': 11}, {'home': 8, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_dnbqIAdO;Finalizado;;Kolesnik A. (Ukr);Rodin A. (Ukr);0;3;[{'home': 14, 'away': 16}, {'home': 9, 'away': 11}, {'home': 8, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_CbbjzkHG;Finalizado;;Kutniy I. (Ukr);Kuzo L. (Ukr);0;3;[{'home': 4, 'away': 11}, {'home': 10, 'away': 12}, {'home': 5, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_AF795XCI;Finalizado;;Medvedev Y. (Ukr);Kyienko S. (Ukr);3;0;[{'home': 11, 'away': 8}, {'home': 11, 'away': 6}, {'home': 11, 'away': 8}];;
+Win Cup (Ucrania);1;g_25_fyobNNfP;Finalizado;;Nemchenko D. (Ukr);Yurchenko G. (Ukr);3;1;[{'home': 11, 'away': 4}, {'home': 7, 'away': 11}, {'home': 14, 'away': 12}, {'home': 13, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_8M1mHUBU;Finalizado;;Cherednichenko P. (Ukr);Kolesnik P. (Ukr);3;2;[{'home': 8, 'away': 11}, {'home': 6, 'away': 11}, {'home': 11, 'away': 5}, {'home': 11, 'away': 3}, {'home': 11, 'away': 9}];;
+Win Cup (Ucrania);1;g_25_l66D4iSO;Finalizado;;Gimadeev R. (Ukr);Kyienko S. (Ukr);2;3;[{'home': 8, 'away': 11}, {'home': 7, 'away': 11}, {'home': 13, 'away': 11}, {'home': 11, 'away': 3}, {'home': 8, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_fNmeZ8WM;Finalizado;;Kuzo L. (Ukr);Pirveli R. (Ukr);3;1;[{'home': 7, 'away': 11}, {'home': 11, 'away': 9}, {'home': 11, 'away': 5}, {'home': 11, 'away': 8}];;
+Win Cup (Ucrania);1;g_25_dpXPIs3t;Finalizado;;Tsubera R. (Ukr);Maksimenko A. (Ukr);2;3;[{'home': 11, 'away': 4}, {'home': 11, 'away': 8}, {'home': 9, 'away': 11}, {'home': 6, 'away': 11}, {'home': 7, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_YDnaYSoT;Finalizado;;Kutniy I. (Ukr);Khimenko A. (Ukr);3;2;[{'home': 11, 'away': 13}, {'home': 12, 'away': 10}, {'home': 5, 'away': 11}, {'home': 11, 'away': 8}, {'home': 11, 'away': 7}];;
+Win Cup (Ucrania);1;g_25_z9RmTz5P;Finalizado;;Shukin D. (Ukr);Gimadeev R. (Ukr);3;2;[{'home': 9, 'away': 11}, {'home': 11, 'away': 7}, {'home': 16, 'away': 14}, {'home': 9, 'away': 11}, {'home': 11, 'away': 6}];;
+Win Cup (Ucrania);1;g_25_xdlNH1In;Finalizado;;Tsubera R. (Ukr);Yurchenko G. (Ukr);3;0;[{'home': 11, 'away': 8}, {'home': 11, 'away': 9}, {'home': 11, 'away': 5}];;
+Win Cup (Ucrania);1;g_25_prwgxEst;Finalizado;;Kolesnik P. (Ukr);Rodin A. (Ukr);0;3;[{'home': 5, 'away': 11}, {'home': 7, 'away': 11}, {'home': 6, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_OYycyYdn;Finalizado;;Cherednichenko P. (Ukr);Kolesnik A. (Ukr);1;3;[{'home': 5, 'away': 11}, {'home': 3, 'away': 11}, {'home': 12, 'away': 10}, {'home': 6, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_GnmRGLXh;Finalizado;;Nemchenko D. (Ukr);Maksimenko A. (Ukr);2;3;[{'home': 9, 'away': 11}, {'home': 12, 'away': 10}, {'home': 11, 'away': 9}, {'home': 10, 'away': 12}, {'home': 10, 'away': 12}];;
+Win Cup (Ucrania);1;g_25_xIDFOfDt;Finalizado;;Shukin D. (Ukr);Medvedev Y. (Ukr);3;1;[{'home': 11, 'away': 5}, {'home': 11, 'away': 7}, {'home': 16, 'away': 18}, {'home': 11, 'away': 6}];;
+Win Cup (Ucrania);1;g_25_ERrSwC0f;Finalizado;;Bondarenko I. (Ukr);Chukanov M. (Ukr);0;3;[{'home': 12, 'away': 14}, {'home': 10, 'away': 12}, {'home': 5, 'away': 11}];1.27;3.25
+Win Cup (Ucrania);1;g_25_A9nVFuma;Finalizado;;Maksimenko A. (Ukr);Yurchenko G. (Ukr);1;3;[{'home': 11, 'away': 7}, {'home': 10, 'away': 12}, {'home': 11, 'away': 13}, {'home': 6, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_zypOvhol;Finalizado;;Zezyulin A. (Ukr);Ozhiganov N. (Ukr);0;3;[{'home': 6, 'away': 11}, {'home': 6, 'away': 11}, {'home': 9, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_tAW1zhCh;Finalizado;;Lazebny R. (Ukr);Kovalenko S. (Ukr);2;3;[{'home': 9, 'away': 11}, {'home': 13, 'away': 11}, {'home': 5, 'away': 11}, {'home': 12, 'away': 10}, {'home': 10, 'away': 12}];;
+Win Cup (Ucrania);1;g_25_K0V5ZBRb;Finalizado;;Smetenko V. (Ukr);Zezyulin A. (Ukr);3;1;[{'home': 11, 'away': 9}, {'home': 5, 'away': 11}, {'home': 12, 'away': 10}, {'home': 11, 'away': 7}];1.67;2.02
+Win Cup (Ucrania);1;g_25_djYWxWF0;Finalizado;;Krol Y. (Ukr);Gaynyuk V. (Ukr);3;1;[{'home': 11, 'away': 7}, {'home': 11, 'away': 6}, {'home': 11, 'away': 13}, {'home': 12, 'away': 10}];1.67;2.02
+Win Cup (Ucrania);1;g_25_thwWwRIp;Finalizado;;Nemchenko D. (Ukr);Tsubera R. (Ukr);3;1;[{'home': 8, 'away': 11}, {'home': 14, 'away': 12}, {'home': 11, 'away': 7}, {'home': 11, 'away': 9}];;
+Win Cup (Ucrania);1;g_25_8QyyxjV6;Finalizado;;Polusmiak V. (Ukr);Gusev V. (Ukr);3;1;[{'home': 11, 'away': 9}, {'home': 11, 'away': 7}, {'home': 10, 'away': 12}, {'home': 11, 'away': 5}];1.67;2.02
+Win Cup (Ucrania);1;g_25_x29Wwnzr;Finalizado;;Riabukhin A. (Ukr);Vakulin A. (Ukr);3;1;[{'home': 7, 'away': 11}, {'home': 11, 'away': 6}, {'home': 11, 'away': 9}, {'home': 11, 'away': 5}];;
+Win Cup (Ucrania);1;g_25_ENU9YVt5;Finalizado;;Deynega M. (Ukr);Grabskiy A. (Ukr);3;1;[{'home': 6, 'away': 11}, {'home': 11, 'away': 8}, {'home': 11, 'away': 5}, {'home': 11, 'away': 7}];;
+Win Cup (Ucrania);1;g_25_CMp4yvdg;Finalizado;;Morgun G. (Ukr);Averyanov A. (Ukr);3;1;[{'home': 11, 'away': 8}, {'home': 11, 'away': 4}, {'home': 10, 'away': 12}, {'home': 11, 'away': 8}];;
+Win Cup (Ucrania);1;g_25_4dwVS69j;Finalizado;;Gaynyuk V. (Ukr);Polusmiak V. (Ukr);3;0;[{'home': 11, 'away': 8}, {'home': 11, 'away': 7}, {'home': 11, 'away': 2}];1.7;1.96
+Win Cup (Ucrania);1;g_25_4Cqho9QA;Finalizado;;Naplekov A. (Rus);Serikov V. (Ukr);2;3;[{'home': 7, 'away': 11}, {'home': 6, 'away': 11}, {'home': 11, 'away': 9}, {'home': 11, 'away': 1}, {'home': 2, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_Q5vRTnfp;Finalizado;;Ozhiganov N. (Ukr);Gusev V. (Ukr);3;1;[{'home': 11, 'away': 9}, {'home': 5, 'away': 11}, {'home': 11, 'away': 9}, {'home': 11, 'away': 4}];1.96;1.7
+Win Cup (Ucrania);1;g_25_SQYDXkdB;Finalizado;;Averyanov A. (Ukr);Deynega M. (Ukr);2;3;[{'home': 13, 'away': 11}, {'home': 12, 'away': 10}, {'home': 8, 'away': 11}, {'home': 7, 'away': 11}, {'home': 8, 'away': 11}];2.02;1.67
+Win Cup (Ucrania);1;g_25_jDq8zbBa;Finalizado;;Kovalenko S. (Ukr);Grabskiy A. (Ukr);1;3;[{'home': 8, 'away': 11}, {'home': 6, 'away': 11}, {'home': 11, 'away': 9}, {'home': 10, 'away': 12}];;
+Win Cup (Ucrania);1;g_25_KrxzwoYj;Finalizado;;Mashtakov A. (Ukr);Zhuravlev A. (Ukr);3;1;[{'home': 11, 'away': 8}, {'home': 11, 'away': 9}, {'home': 10, 'away': 12}, {'home': 11, 'away': 7}];;
+Win Cup (Ucrania);1;g_25_61HDijni;Finalizado;;Chukanov M. (Ukr);Krol Y. (Ukr);3;2;[{'home': 3, 'away': 11}, {'home': 11, 'away': 9}, {'home': 12, 'away': 10}, {'home': 8, 'away': 11}, {'home': 11, 'away': 9}];1.52;2.28
+Win Cup (Ucrania);1;g_25_lxDzw6kl;Finalizado;;Riabukhin A. (Ukr);Serikov V. (Ukr);2;3;[{'home': 11, 'away': 4}, {'home': 6, 'away': 11}, {'home': 12, 'away': 14}, {'home': 11, 'away': 7}, {'home': 7, 'away': 11}];1.83;1.83
+Win Cup (Ucrania);1;g_25_K4LHjA1c;Finalizado;;Zezyulin A. (Ukr);Bondarenko I. (Ukr);1;3;[{'home': 10, 'away': 12}, {'home': 14, 'away': 12}, {'home': 10, 'away': 12}, {'home': 10, 'away': 12}];;
+Win Cup (Ucrania);1;g_25_OCjZEa25;Finalizado;;Kushko D. (Ukr);Andreev O. (Ukr);1;3;[{'home': 3, 'away': 11}, {'home': 8, 'away': 11}, {'home': 11, 'away': 9}, {'home': 7, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_AkOIW9BH;Finalizado;;Zezyulin A. (Ukr);Morgun G. (Ukr);3;2;[{'home': 7, 'away': 11}, {'home': 11, 'away': 6}, {'home': 3, 'away': 11}, {'home': 11, 'away': 8}, {'home': 11, 'away': 6}];;
+Win Cup (Ucrania);1;g_25_ltNMVTQN;Finalizado;;Lazebny R. (Ukr);Smetenko V. (Ukr);3;0;[{'home': 15, 'away': 13}, {'home': 11, 'away': 8}, {'home': 11, 'away': 9}];1.78;1.88
+Win Cup (Ucrania);1;g_25_hIJPllW9;Finalizado;;Krol Y. (Ukr);Zezyulin A. (Ukr);3;0;[{'home': 11, 'away': 2}, {'home': 11, 'away': 4}, {'home': 11, 'away': 6}];;
+Win Cup (Ucrania);1;g_25_raCvxQ4f;Finalizado;;Naplekov A. (Rus);Vakulin A. (Ukr);0;3;[{'home': 12, 'away': 14}, {'home': 5, 'away': 11}, {'home': 6, 'away': 11}];1.32;2.98
+Win Cup (Ucrania);1;g_25_ERKLkUG3;Finalizado;;Bondarenko I. (Ukr);Ozhiganov N. (Ukr);2;3;[{'home': 11, 'away': 8}, {'home': 10, 'away': 12}, {'home': 11, 'away': 5}, {'home': 3, 'away': 11}, {'home': 9, 'away': 11}];1.22;3.6
+Win Cup (Ucrania);1;g_25_d6MQUmtU;Finalizado;;Averyanov A. (Ukr);Smetenko V. (Ukr);0;3;[{'home': 5, 'away': 11}, {'home': 6, 'away': 11}, {'home': 3, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_6ytvEJHB;Finalizado;;Mashtakov A. (Ukr);Andreev O. (Ukr);1;3;[{'home': 9, 'away': 11}, {'home': 11, 'away': 8}, {'home': 6, 'away': 11}, {'home': 8, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_bF8hQ7lo;Finalizado;;Morgun G. (Ukr);Lazebny R. (Ukr);2;3;[{'home': 9, 'away': 11}, {'home': 11, 'away': 8}, {'home': 11, 'away': 8}, {'home': 6, 'away': 11}, {'home': 4, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_CKZQnS0M;Finalizado;;Gusev V. (Ukr);Gaynyuk V. (Ukr);3;0;[{'home': 11, 'away': 9}, {'home': 11, 'away': 6}, {'home': 11, 'away': 9}];2.98;1.32
+Win Cup (Ucrania);1;g_25_YTzNm8oG;Finalizado;;Polusmiak V. (Ukr);Chukanov M. (Ukr);2;3;[{'home': 15, 'away': 13}, {'home': 9, 'away': 11}, {'home': 14, 'away': 12}, {'home': 4, 'away': 11}, {'home': 8, 'away': 11}];1.83;1.83
+Win Cup (Ucrania);1;g_25_MkBrypK0;Finalizado;;Riabukhin A. (Ukr);Naplekov A. (Rus);3;1;[{'home': 11, 'away': 8}, {'home': 9, 'away': 11}, {'home': 11, 'away': 6}, {'home': 11, 'away': 2}];1.58;2.15
+Win Cup (Ucrania);1;g_25_0KnykiRo;Finalizado;;Deynega M. (Ukr);Zezyulin A. (Ukr);3;2;[{'home': 11, 'away': 13}, {'home': 11, 'away': 6}, {'home': 11, 'away': 9}, {'home': 9, 'away': 11}, {'home': 12, 'away': 10}];;
+Win Cup (Ucrania);1;g_25_ENjulBth;Finalizado;;Grabskiy A. (Ukr);Averyanov A. (Ukr);3;1;[{'home': 12, 'away': 10}, {'home': 11, 'away': 7}, {'home': 9, 'away': 11}, {'home': 11, 'away': 7}];;
+Win Cup (Ucrania);1;g_25_pSvrDwXH;Finalizado;;Kushko D. (Ukr);Zhuravlev A. (Ukr);3;0;[{'home': 11, 'away': 6}, {'home': 23, 'away': 21}, {'home': 11, 'away': 6}];;
+Win Cup (Ucrania);1;g_25_r3Qds6Oq;Finalizado;;Chukanov M. (Ukr);Gusev V. (Ukr);1;3;[{'home': 9, 'away': 11}, {'home': 3, 'away': 11}, {'home': 11, 'away': 6}, {'home': 8, 'away': 11}];1.83;1.83
+Win Cup (Ucrania);1;g_25_vR5mz4Z6;Finalizado;;Serikov V. (Ukr);Vakulin A. (Ukr);2;3;[{'home': 11, 'away': 7}, {'home': 9, 'away': 11}, {'home': 3, 'away': 11}, {'home': 13, 'away': 11}, {'home': 4, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_6sZUonGS;Finalizado;;Ozhiganov N. (Ukr);Gaynyuk V. (Ukr);3;2;[{'home': 5, 'away': 11}, {'home': 6, 'away': 11}, {'home': 11, 'away': 8}, {'home': 11, 'away': 9}, {'home': 11, 'away': 9}];2.15;1.58
+Win Cup (Ucrania);1;g_25_8pjqmVeb;Finalizado;;Kovalenko S. (Ukr);Averyanov A. (Ukr);2;3;[{'home': 9, 'away': 11}, {'home': 6, 'away': 11}, {'home': 11, 'away': 7}, {'home': 11, 'away': 6}, {'home': 9, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_Cz8BeB1p;Finalizado;;Mashtakov A. (Ukr);Kushko D. (Ukr);3;0;[{'home': 11, 'away': 8}, {'home': 11, 'away': 6}, {'home': 11, 'away': 6}];;
+Win Cup (Ucrania);1;g_25_nykmnkB4;Finalizado;;Zezyulin A. (Ukr);Grabskiy A. (Ukr);2;3;[{'home': 12, 'away': 10}, {'home': 9, 'away': 11}, {'home': 8, 'away': 11}, {'home': 11, 'away': 6}, {'home': 7, 'away': 11}];2.52;1.43
+Win Cup (Ucrania);1;g_25_4IE5upgd;Finalizado;;Bondarenko I. (Ukr);Krol Y. (Ukr);0;3;[{'home': 12, 'away': 14}, {'home': 4, 'away': 11}, {'home': 6, 'away': 11}];1.96;1.7
+Win Cup (Ucrania);1;g_25_r3rdpTuH;Finalizado;;Vakulin A. (Ukr);Riabukhin A. (Ukr);3;1;[{'home': 11, 'away': 8}, {'home': 11, 'away': 4}, {'home': 7, 'away': 11}, {'home': 11, 'away': 8}];;
+Win Cup (Ucrania);1;g_25_QRF1tQwj;Anulado;;Zezyulin A. (Ukr);Polusmiak V. (Ukr);0;0;[];;
+Win Cup (Ucrania);1;g_25_jR6FfVGj;Finalizado;;Andreev O. (Ukr);Zhuravlev A. (Ukr);3;0;[{'home': 11, 'away': 9}, {'home': 11, 'away': 4}, {'home': 11, 'away': 7}];;
+Win Cup (Ucrania);1;g_25_8bVH1UAi;Finalizado;;Lazebny R. (Ukr);Deynega M. (Ukr);3;2;[{'home': 11, 'away': 5}, {'home': 14, 'away': 12}, {'home': 6, 'away': 11}, {'home': 9, 'away': 11}, {'home': 11, 'away': 8}];;
+Win Cup (Ucrania);1;g_25_nkUL0lQc;Finalizado;;Smetenko V. (Ukr);Morgun G. (Ukr);3;2;[{'home': 6, 'away': 11}, {'home': 7, 'away': 11}, {'home': 11, 'away': 8}, {'home': 11, 'away': 8}, {'home': 11, 'away': 8}];1.58;2.15
+Win Cup (Ucrania);1;g_25_hY7m4TVd;Finalizado;;Krol Y. (Ukr);Ozhiganov N. (Ukr);0;3;[{'home': 9, 'away': 11}, {'home': 6, 'away': 11}, {'home': 6, 'away': 11}];1.67;2.02
+Win Cup (Ucrania);1;g_25_WO6i3mo3;Finalizado;;Polusmiak V. (Ukr);Bondarenko I. (Ukr);3;0;[{'home': 11, 'away': 7}, {'home': 11, 'away': 7}, {'home': 11, 'away': 6}];;
+Win Cup (Ucrania);1;g_25_IH4iZNlD;Finalizado;;Serikov V. (Ukr);Naplekov A. (Rus);3;2;[{'home': 11, 'away': 5}, {'home': 11, 'away': 9}, {'home': 11, 'away': 13}, {'home': 9, 'away': 11}, {'home': 11, 'away': 8}];;
+Win Cup (Ucrania);1;g_25_rHNUbSfA;Finalizado;;Deynega M. (Ukr);Smetenko V. (Ukr);0;3;[{'home': 13, 'away': 15}, {'home': 9, 'away': 11}, {'home': 9, 'away': 11}];1.47;2.42
+Win Cup (Ucrania);1;g_25_UDJQa8u4;Finalizado;;Morgun G. (Ukr);Kovalenko S. (Ukr);3;2;[{'home': 6, 'away': 11}, {'home': 6, 'away': 11}, {'home': 11, 'away': 5}, {'home': 11, 'away': 5}, {'home': 12, 'away': 10}];;
+Win Cup (Ucrania);1;g_25_hWpbJEgi;Finalizado;;Zhuravlev A. (Ukr);Mashtakov A. (Ukr);2;3;[{'home': 11, 'away': 6}, {'home': 9, 'away': 11}, {'home': 11, 'away': 9}, {'home': 7, 'away': 11}, {'home': 8, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_CYEa1RFF;Finalizado;;Gaynyuk V. (Ukr);Chukanov M. (Ukr);3;1;[{'home': 7, 'away': 11}, {'home': 11, 'away': 6}, {'home': 11, 'away': 7}, {'home': 11, 'away': 9}];1.28;3.2
+Win Cup (Ucrania);1;g_25_Emdd2709;Finalizado;;Gusev V. (Ukr);Zezyulin A. (Ukr);3;0;[{'home': 11, 'away': 3}, {'home': 13, 'away': 11}, {'home': 11, 'away': 8}];;
+Win Cup (Ucrania);1;g_25_WKhZc7RD;Finalizado;;Serikov V. (Ukr);Riabukhin A. (Ukr);0;3;[{'home': 8, 'away': 11}, {'home': 7, 'away': 11}, {'home': 6, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_jH31IY8c;Finalizado;;Andreev O. (Ukr);Kushko D. (Ukr);3;0;[{'home': 11, 'away': 9}, {'home': 11, 'away': 3}, {'home': 11, 'away': 6}];;
+Win Cup (Ucrania);1;g_25_E3p2tKvq;Finalizado;;Averyanov A. (Ukr);Zezyulin A. (Ukr);3;0;[{'home': 13, 'away': 11}, {'home': 11, 'away': 5}, {'home': 11, 'away': 6}];1.96;1.7
+Win Cup (Ucrania);1;g_25_xvNYcnAG;Finalizado;;Grabskiy A. (Ukr);Lazebny R. (Ukr);3;0;[{'home': 11, 'away': 9}, {'home': 11, 'away': 9}, {'home': 11, 'away': 4}];;
+Win Cup (Ucrania);1;g_25_6eE30oVL;Finalizado;;Ozhiganov N. (Ukr);Chukanov M. (Ukr);3;1;[{'home': 20, 'away': 18}, {'home': 12, 'away': 10}, {'home': 8, 'away': 11}, {'home': 11, 'away': 7}];1.32;2.98
+Win Cup (Ucrania);1;g_25_pOdwcRtK;Finalizado;;Vakulin A. (Ukr);Naplekov A. (Rus);3;2;[{'home': 11, 'away': 7}, {'home': 2, 'away': 11}, {'home': 11, 'away': 3}, {'home': 7, 'away': 11}, {'home': 11, 'away': 9}];;
+Win Cup (Ucrania);1;g_25_pnD7a5pS;Finalizado;;Zezyulin A. (Ukr);Gaynyuk V. (Ukr);3;2;[{'home': 7, 'away': 11}, {'home': 11, 'away': 7}, {'home': 9, 'away': 11}, {'home': 11, 'away': 5}, {'home': 11, 'away': 9}];;
+Win Cup (Ucrania);1;g_25_pv35HhO3;Finalizado;;Andreev O. (Ukr);Mashtakov A. (Ukr);3;1;[{'home': 7, 'away': 11}, {'home': 11, 'away': 8}, {'home': 13, 'away': 11}, {'home': 11, 'away': 4}];;
+Win Cup (Ucrania);1;g_25_fF1auvfk;Finalizado;;Kovalenko S. (Ukr);Zezyulin A. (Ukr);2;3;[{'home': 11, 'away': 9}, {'home': 15, 'away': 17}, {'home': 11, 'away': 9}, {'home': 7, 'away': 11}, {'home': 10, 'away': 12}];;
+Win Cup (Ucrania);1;g_25_Y503vb9e;Finalizado;;Lazebny R. (Ukr);Averyanov A. (Ukr);3;2;[{'home': 11, 'away': 8}, {'home': 9, 'away': 11}, {'home': 11, 'away': 5}, {'home': 6, 'away': 11}, {'home': 11, 'away': 8}];1.58;2.15
+Win Cup (Ucrania);1;g_25_QuezePhq;Finalizado;;Bondarenko I. (Ukr);Gusev V. (Ukr);3;0;[{'home': 14, 'away': 12}, {'home': 11, 'away': 7}, {'home': 11, 'away': 8}];2.02;1.67
+Win Cup (Ucrania);1;g_25_4Wgvfq8k;Finalizado;;Krol Y. (Ukr);Polusmiak V. (Ukr);1;3;[{'home': 7, 'away': 11}, {'home': 11, 'away': 5}, {'home': 5, 'away': 11}, {'home': 10, 'away': 12}];2.98;1.32
+Win Cup (Ucrania);1;g_25_SnnrdodQ;Finalizado;;Naplekov A. (Rus);Riabukhin A. (Ukr);1;3;[{'home': 11, 'away': 4}, {'home': 6, 'away': 11}, {'home': 4, 'away': 11}, {'home': 6, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_tW3Bxxv8;Finalizado;;Morgun G. (Ukr);Deynega M. (Ukr);2;3;[{'home': 11, 'away': 9}, {'home': 11, 'away': 6}, {'home': 5, 'away': 11}, {'home': 9, 'away': 11}, {'home': 6, 'away': 11}];3.2;1.28
+Win Cup (Ucrania);1;g_25_SSa7wIO1;Finalizado;;Smetenko V. (Ukr);Grabskiy A. (Ukr);1;3;[{'home': 7, 'away': 11}, {'home': 14, 'away': 12}, {'home': 9, 'away': 11}, {'home': 10, 'away': 12}];;
+Win Cup (Ucrania);1;g_25_OU19GCwA;Finalizado;;Zhuravlev A. (Ukr);Kushko D. (Ukr);0;3;[{'home': 8, 'away': 11}, {'home': 7, 'away': 11}, {'home': 5, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_CdcnhNx2;Finalizado;;Gusev V. (Ukr);Krol Y. (Ukr);2;3;[{'home': 11, 'away': 7}, {'home': 10, 'away': 12}, {'home': 9, 'away': 11}, {'home': 11, 'away': 4}, {'home': 7, 'away': 11}];1.58;2.15
+Win Cup (Ucrania);1;g_25_bggrg3Ne;Finalizado;;Polusmiak V. (Ukr);Ozhiganov N. (Ukr);3;0;[{'home': 11, 'away': 7}, {'home': 11, 'away': 8}, {'home': 11, 'away': 9}];1.43;2.52
+Win Cup (Ucrania);1;g_25_UeY9i54s;Finalizado;;Vakulin A. (Ukr);Serikov V. (Ukr);3;1;[{'home': 11, 'away': 9}, {'home': 11, 'away': 8}, {'home': 9, 'away': 11}, {'home': 11, 'away': 5}];;
+Win Cup (Ucrania);1;g_25_p4UioUs8;Finalizado;;Deynega M. (Ukr);Kovalenko S. (Ukr);2;3;[{'home': 8, 'away': 11}, {'home': 11, 'away': 6}, {'home': 11, 'away': 8}, {'home': 8, 'away': 11}, {'home': 12, 'away': 14}];;
+Win Cup (Ucrania);1;g_25_OfTeplcE;Finalizado;;Grabskiy A. (Ukr);Morgun G. (Ukr);3;1;[{'home': 11, 'away': 9}, {'home': 11, 'away': 9}, {'home': 7, 'away': 11}, {'home': 11, 'away': 6}];1.58;2.15
+Win Cup (Ucrania);1;g_25_t6dEFWhG;Finalizado;;Kushko D. (Ukr);Mashtakov A. (Ukr);1;3;[{'home': 4, 'away': 11}, {'home': 9, 'away': 11}, {'home': 11, 'away': 8}, {'home': 4, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_hhzZFQU8;Finalizado;;Chukanov M. (Ukr);Zezyulin A. (Ukr);3;2;[{'home': 7, 'away': 11}, {'home': 7, 'away': 11}, {'home': 11, 'away': 4}, {'home': 11, 'away': 7}, {'home': 12, 'away': 10}];;
+Win Cup (Ucrania);1;g_25_E1yVG6F2;Finalizado;;Gaynyuk V. (Ukr);Bondarenko I. (Ukr);0;3;[{'home': 6, 'away': 11}, {'home': 8, 'away': 11}, {'home': 10, 'away': 12}];1.7;1.96
+Win Cup (Ucrania);1;g_25_hUXaq8CK;Finalizado;;Smetenko V. (Ukr);Kovalenko S. (Ukr);3;1;[{'home': 5, 'away': 11}, {'home': 11, 'away': 7}, {'home': 11, 'away': 8}, {'home': 11, 'away': 5}];;
+Win Cup (Ucrania);1;g_25_WKW3rSRQ;Finalizado;;Zezyulin A. (Ukr);Lazebny R. (Ukr);3;2;[{'home': 9, 'away': 11}, {'home': 5, 'away': 11}, {'home': 11, 'away': 7}, {'home': 11, 'away': 7}, {'home': 11, 'away': 6}];1.7;1.96
+Win Cup (Ucrania);1;g_25_KdeIEj8M;Finalizado;;Zhuravlev A. (Ukr);Andreev O. (Ukr);1;3;[{'home': 11, 'away': 7}, {'home': 7, 'away': 11}, {'home': 10, 'away': 12}, {'home': 9, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_OWnDjPJm;Finalizado;;Novikov Y. (Ukr);Kalenik S. (Ukr);3;0;[{'home': 11, 'away': 9}, {'home': 11, 'away': 7}, {'home': 11, 'away': 6}];1.52;2.28
+Win Cup (Ucrania);1;g_25_2myuyApD;Finalizado;;Panasenko V. (Ukr);Naida O. (Ukr);3;2;[{'home': 9, 'away': 11}, {'home': 11, 'away': 9}, {'home': 8, 'away': 11}, {'home': 11, 'away': 9}, {'home': 11, 'away': 8}];2.02;1.67
+Win Cup (Ucrania);1;g_25_2NoHkqZg;Finalizado;;Vavrenyuk S. (Ukr);Khorolsky V. (Rus);1;3;[{'home': 11, 'away': 9}, {'home': 8, 'away': 11}, {'home': 9, 'away': 11}, {'home': 8, 'away': 11}];1.67;2.02
+Win Cup (Ucrania);1;g_25_tvzqzUaJ;Finalizado;;Ivchenko K. (Ukr);Ivchenko D. (Ukr);2;3;[{'home': 11, 'away': 7}, {'home': 11, 'away': 8}, {'home': 4, 'away': 11}, {'home': 14, 'away': 16}, {'home': 8, 'away': 11}];2.73;1.37
+Win Cup (Ucrania);1;g_25_pnyMl3l0;Finalizado;;Novikov Y. (Ukr);Khorolsky V. (Rus);2;3;[{'home': 9, 'away': 11}, {'home': 8, 'away': 11}, {'home': 11, 'away': 9}, {'home': 11, 'away': 6}, {'home': 9, 'away': 11}];1.58;2.15
+Win Cup (Ucrania);1;g_25_0IZxFppF;Finalizado;;Panasenko V. (Ukr);Ivchenko D. (Ukr);3;1;[{'home': 11, 'away': 7}, {'home': 11, 'away': 9}, {'home': 9, 'away': 11}, {'home': 11, 'away': 9}];;
+Win Cup (Ucrania);1;g_25_xQs0qmeN;Finalizado;;Vavrenyuk S. (Ukr);Kalenik S. (Ukr);1;3;[{'home': 1, 'away': 11}, {'home': 13, 'away': 11}, {'home': 3, 'away': 11}, {'home': 6, 'away': 11}];2.15;1.58
+Win Cup (Ucrania);1;g_25_v9YtE4aL;Finalizado;;Ivchenko K. (Ukr);Naida O. (Ukr);0;3;[{'home': 8, 'away': 11}, {'home': 7, 'away': 11}, {'home': 13, 'away': 15}];2.15;1.58
+Win Cup (Ucrania);1;g_25_bkuQmN36;Finalizado;;Novikov Y. (Ukr);Vavrenyuk S. (Ukr);0;3;[{'home': 8, 'away': 11}, {'home': 5, 'away': 11}, {'home': 14, 'away': 16}];1.7;1.96
+Win Cup (Ucrania);1;g_25_MXNoDOER;Finalizado;;Panasenko V. (Ukr);Ivchenko K. (Ukr);3;1;[{'home': 11, 'away': 5}, {'home': 15, 'away': 17}, {'home': 11, 'away': 8}, {'home': 11, 'away': 5}];1.32;2.98
+Win Cup (Ucrania);1;g_25_hCvUnsJC;Finalizado;;Khorolsky V. (Rus);Kalenik S. (Ukr);1;3;[{'home': 11, 'away': 5}, {'home': 5, 'away': 11}, {'home': 10, 'away': 12}, {'home': 8, 'away': 11}];1.67;2.02
+Win Cup (Ucrania);1;g_25_bgFD8rNr;Finalizado;;Ivchenko D. (Ukr);Naida O. (Ukr);1;3;[{'home': 12, 'away': 10}, {'home': 7, 'away': 11}, {'home': 7, 'away': 11}, {'home': 10, 'away': 12}];;
+Win Cup (Ucrania);1;g_25_W2wYo1YI;Finalizado;;Kalenik S. (Ukr);Novikov Y. (Ukr);3;1;[{'home': 11, 'away': 6}, {'home': 8, 'away': 11}, {'home': 11, 'away': 7}, {'home': 11, 'away': 8}];;
+Win Cup (Ucrania);1;g_25_hGEH72xk;Finalizado;;Naida O. (Ukr);Panasenko V. (Ukr);3;0;[{'home': 11, 'away': 5}, {'home': 11, 'away': 6}, {'home': 11, 'away': 8}];;
+Win Cup (Ucrania);1;g_25_8KMGApBJ;Finalizado;;Khorolsky V. (Rus);Vavrenyuk S. (Ukr);3;1;[{'home': 6, 'away': 11}, {'home': 13, 'away': 11}, {'home': 12, 'away': 10}, {'home': 13, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_W6DL6Mie;Finalizado;;Ivchenko D. (Ukr);Ivchenko K. (Ukr);3;1;[{'home': 11, 'away': 2}, {'home': 11, 'away': 7}, {'home': 6, 'away': 11}, {'home': 11, 'away': 9}];;
+Win Cup (Ucrania);1;g_25_nBLK94QP;Finalizado;;Khorolsky V. (Rus);Novikov Y. (Ukr);2;3;[{'home': 3, 'away': 11}, {'home': 11, 'away': 6}, {'home': 5, 'away': 11}, {'home': 11, 'away': 8}, {'home': 7, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_lr8Q5t71;Finalizado;;Ivchenko D. (Ukr);Panasenko V. (Ukr);1;3;[{'home': 8, 'away': 11}, {'home': 9, 'away': 11}, {'home': 11, 'away': 8}, {'home': 9, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_4j8n5OYt;Finalizado;;Kalenik S. (Ukr);Vavrenyuk S. (Ukr);2;3;[{'home': 11, 'away': 9}, {'home': 9, 'away': 11}, {'home': 9, 'away': 11}, {'home': 12, 'away': 10}, {'home': 12, 'away': 14}];;
+Win Cup (Ucrania);1;g_25_SY6U40M7;Finalizado;;Naida O. (Ukr);Ivchenko K. (Ukr);3;0;[{'home': 11, 'away': 2}, {'home': 11, 'away': 4}, {'home': 11, 'away': 7}];;
+Win Cup (Ucrania);1;g_25_GQBj4rlm;Finalizado;;Vavrenyuk S. (Ukr);Novikov Y. (Ukr);3;1;[{'home': 12, 'away': 10}, {'home': 8, 'away': 11}, {'home': 11, 'away': 6}, {'home': 11, 'away': 9}];;
+Win Cup (Ucrania);1;g_25_txeCTqa8;Finalizado;;Ivchenko K. (Ukr);Panasenko V. (Ukr);3;1;[{'home': 11, 'away': 8}, {'home': 7, 'away': 11}, {'home': 11, 'away': 7}, {'home': 14, 'away': 12}];;
+Win Cup (Ucrania);1;g_25_bk1e323g;Finalizado;;Kalenik S. (Ukr);Khorolsky V. (Rus);3;2;[{'home': 11, 'away': 2}, {'home': 10, 'away': 12}, {'home': 11, 'away': 1}, {'home': 5, 'away': 11}, {'home': 11, 'away': 8}];;
+Win Cup (Ucrania);1;g_25_hCbGS3EE;Finalizado;;Naida O. (Ukr);Ivchenko D. (Ukr);3;0;[{'home': 11, 'away': 8}, {'home': 11, 'away': 8}, {'home': 11, 'away': 4}];;
+Setka Cup (Ucrania);2;g_25_08GRpBfe;Finalizado;;Pachich Y. (Ukr);Khilinska Y. (Ukr);3;2;[{'home': 13, 'away': 11}, {'home': 14, 'away': 12}, {'home': 9, 'away': 11}, {'home': 10, 'away': 12}, {'home': 11, 'away': 9}];;
+Setka Cup (Ucrania);2;g_25_fVFVqV91;Finalizado;;Nerush P. (Ukr);Tishchenko D. (Ukr);3;1;[{'home': 11, 'away': 7}, {'home': 11, 'away': 6}, {'home': 11, 'away': 13}, {'home': 11, 'away': 9}];;
+Setka Cup (Ucrania);2;g_25_8YJZrkP7;Finalizado;;Kregul O. (Ukr);Khilinska Y. (Ukr);3;2;[{'home': 4, 'away': 11}, {'home': 13, 'away': 15}, {'home': 11, 'away': 4}, {'home': 13, 'away': 11}, {'home': 11, 'away': 7}];;
+Setka Cup (Ucrania);2;g_25_AwbI7Y18;Finalizado;;Pachich Y. (Ukr);Nerush P. (Ukr);2;3;[{'home': 11, 'away': 5}, {'home': 11, 'away': 7}, {'home': 7, 'away': 11}, {'home': 6, 'away': 11}, {'home': 11, 'away': 13}];;
+Setka Cup (Ucrania);2;g_25_lUdM6hHE;Finalizado;;Kregul O. (Ukr);Tishchenko D. (Ukr);3;2;[{'home': 9, 'away': 11}, {'home': 11, 'away': 6}, {'home': 13, 'away': 11}, {'home': 7, 'away': 11}, {'home': 11, 'away': 7}];;
+Setka Cup (Ucrania);2;g_25_dfdQ5CWK;Finalizado;;Nerush P. (Ukr);Khilinska Y. (Ukr);3;0;[{'home': 11, 'away': 6}, {'home': 11, 'away': 2}, {'home': 11, 'away': 8}];;
+Setka Cup (Ucrania);2;g_25_zoeU4WoR;Finalizado;;Pachich Y. (Ukr);Tishchenko D. (Ukr);2;3;[{'home': 8, 'away': 11}, {'home': 9, 'away': 11}, {'home': 11, 'away': 9}, {'home': 11, 'away': 9}, {'home': 6, 'away': 11}];;
+Setka Cup (Ucrania);2;g_25_tSXd0jfr;Finalizado;;Kregul O. (Ukr);Nerush P. (Ukr);3;1;[{'home': 11, 'away': 7}, {'home': 11, 'away': 7}, {'home': 7, 'away': 11}, {'home': 11, 'away': 9}];;
+Setka Cup (Ucrania);2;g_25_fVy1aA9l;Finalizado;;Tishchenko D. (Ukr);Khilinska Y. (Ukr);2;3;[{'home': 11, 'away': 7}, {'home': 11, 'away': 8}, {'home': 8, 'away': 11}, {'home': 9, 'away': 11}, {'home': 9, 'away': 11}];;
+Setka Cup (Ucrania);2;g_25_lhy5bUOf;Finalizado;;Kregul O. (Ukr);Pachich Y. (Ukr);2;3;[{'home': 8, 'away': 11}, {'home': 11, 'away': 8}, {'home': 11, 'away': 8}, {'home': 5, 'away': 11}, {'home': 9, 'away': 11}];;
+Setka Cup (Ucrania);2;g_25_4tNInXPr;Finalizado;;Gubskaya E. (Ukr);Kosmina N. (Ukr);1;3;[{'home': 11, 'away': 8}, {'home': 6, 'away': 11}, {'home': 6, 'away': 11}, {'home': 7, 'away': 11}];;
+Setka Cup (Ucrania);2;g_25_MHHNoiuk;Finalizado;;Schekotikhina N. (Ukr);Saltanovskaya M. (Ukr);3;1;[{'home': 11, 'away': 9}, {'home': 11, 'away': 9}, {'home': 6, 'away': 11}, {'home': 11, 'away': 4}];1.16;4.25
+Setka Cup (Ucrania);2;g_25_Srz9clv1;Finalizado;;Svydnytska N. (Ukr);Kosmina N. (Ukr);3;2;[{'home': 11, 'away': 13}, {'home': 9, 'away': 11}, {'home': 13, 'away': 11}, {'home': 11, 'away': 6}, {'home': 11, 'away': 8}];1.58;2.15
+Setka Cup (Ucrania);2;g_25_pKUDd8g7;Finalizado;;Gubskaya E. (Ukr);Schekotikhina N. (Ukr);2;3;[{'home': 8, 'away': 11}, {'home': 11, 'away': 6}, {'home': 9, 'away': 11}, {'home': 12, 'away': 10}, {'home': 8, 'away': 11}];;
+Setka Cup (Ucrania);2;g_25_OATHeS8D;Finalizado;;Svydnytska N. (Ukr);Saltanovskaya M. (Ukr);3;2;[{'home': 5, 'away': 11}, {'home': 7, 'away': 11}, {'home': 11, 'away': 4}, {'home': 11, 'away': 7}, {'home': 11, 'away': 9}];1.23;3.5
+Setka Cup (Ucrania);2;g_25_xEHaKBoE;Finalizado;;Schekotikhina N. (Ukr);Kosmina N. (Ukr);3;1;[{'home': 7, 'away': 11}, {'home': 14, 'away': 12}, {'home': 11, 'away': 1}, {'home': 13, 'away': 11}];1.42;2.55
+Setka Cup (Ucrania);2;g_25_zaz3JV0K;Finalizado;;Gubskaya E. (Ukr);Saltanovskaya M. (Ukr);3;1;[{'home': 11, 'away': 3}, {'home': 7, 'away': 11}, {'home': 11, 'away': 6}, {'home': 11, 'away': 7}];;
+Setka Cup (Ucrania);2;g_25_INP7IkGQ;Finalizado;;Svydnytska N. (Ukr);Schekotikhina N. (Ukr);0;3;[{'home': 5, 'away': 11}, {'home': 3, 'away': 11}, {'home': 5, 'away': 11}];1.22;3.65
+Setka Cup (Ucrania);2;g_25_KWBZD9Os;Finalizado;;Saltanovskaya M. (Ukr);Kosmina N. (Ukr);1;3;[{'home': 11, 'away': 6}, {'home': 8, 'away': 11}, {'home': 4, 'away': 11}, {'home': 9, 'away': 11}];1.7;1.96
+Setka Cup (Ucrania);2;g_25_l6GwDTwl;Finalizado;;Svydnytska N. (Ukr);Gubskaya E. (Ukr);3;1;[{'home': 12, 'away': 10}, {'home': 8, 'away': 11}, {'home': 11, 'away': 3}, {'home': 12, 'away': 10}];;
+TT Cup (Ucrania);2;g_25_zwoSMJP2;Finalizado;;Khmelevskaia N. (Ukr);Telna H. (Ukr);0;3;[{'home': 8, 'away': 11}, {'home': 5, 'away': 11}, {'home': 11, 'away': 13}];;
+TT Cup (Ucrania);2;g_25_ETqWLwu9;Finalizado;;Andryushchenko V. (Ukr);Aseeva I. (Ukr);2;3;[{'home': 8, 'away': 11}, {'home': 11, 'away': 7}, {'home': 11, 'away': 4}, {'home': 4, 'away': 11}, {'home': 8, 'away': 11}];;
+TT Cup (Ucrania);2;g_25_dhZzLcfF;Finalizado;;Kurtenko A. (Ukr);Telna H. (Ukr);3;2;[{'home': 9, 'away': 11}, {'home': 11, 'away': 9}, {'home': 2, 'away': 11}, {'home': 11, 'away': 6}, {'home': 11, 'away': 7}];;
+TT Cup (Ucrania);2;g_25_AewuKH9L;Finalizado;;Khmelevskaia N. (Ukr);Andryushchenko V. (Ukr);3;1;[{'home': 11, 'away': 4}, {'home': 11, 'away': 1}, {'home': 6, 'away': 11}, {'home': 11, 'away': 5}];;
+TT Cup (Ucrania);2;g_25_4IxqJyPR;Finalizado;;Kurtenko A. (Ukr);Aseeva I. (Ukr);3;1;[{'home': 11, 'away': 1}, {'home': 7, 'away': 11}, {'home': 11, 'away': 8}, {'home': 11, 'away': 7}];1.38;2.7
+TT Cup (Ucrania);2;g_25_6ROAEeXr;Finalizado;;Andryushchenko V. (Ukr);Telna H. (Ukr);3;2;[{'home': 11, 'away': 7}, {'home': 11, 'away': 9}, {'home': 13, 'away': 15}, {'home': 8, 'away': 11}, {'home': 11, 'away': 7}];;
+TT Cup (Ucrania);2;g_25_O2JFDFnk;Finalizado;;Kurtenko A. (Ukr);Andryushchenko V. (Ukr);0;3;[{'home': 7, 'away': 11}, {'home': 9, 'away': 11}, {'home': 9, 'away': 11}];;
+TT Cup (Ucrania);2;g_25_2gIJCZ1e;Finalizado;;Khmelevskaia N. (Ukr);Aseeva I. (Ukr);3;0;[{'home': 19, 'away': 17}, {'home': 11, 'away': 8}, {'home': 11, 'away': 4}];;
+TT Cup (Ucrania);2;g_25_dGHNBgH1;Finalizado;;Kurtenko A. (Ukr);Khmelevskaia N. (Ukr);3;1;[{'home': 13, 'away': 11}, {'home': 12, 'away': 10}, {'home': 7, 'away': 11}, {'home': 11, 'away': 7}];1.5;2.3
+TT Cup (Ucrania);2;g_25_f1zRADW7;Finalizado;;Aseeva I. (Ukr);Telna H. (Ukr);2;3;[{'home': 13, 'away': 11}, {'home': 9, 'away': 11}, {'home': 11, 'away': 5}, {'home': 7, 'away': 11}, {'home': 10, 'away': 12}];1.96;1.7
+Win Cup (Ucrania);2;g_25_EJfMDANS;Finalizado;;Man A. (Ukr);Hrusko I. (Ukr);3;1;[{'home': 11, 'away': 9}, {'home': 12, 'away': 14}, {'home': 11, 'away': 9}, {'home': 11, 'away': 6}];;
+Win Cup (Ucrania);2;g_25_junl9UVq;Finalizado;;Stefaniuk A. (Ukr);Stefanuk O. (Ukr);0;3;[{'home': 4, 'away': 11}, {'home': 8, 'away': 11}, {'home': 9, 'away': 11}];;
+Win Cup (Ucrania);2;g_25_Y3yg8loj;Finalizado;;Zoidze E. (Ukr);Volgina A. (Ukr);3;0;[{'home': 15, 'away': 13}, {'home': 11, 'away': 7}, {'home': 11, 'away': 8}];;
+Win Cup (Ucrania);2;g_25_v1OvWiwc;Finalizado;;Man A. (Ukr);Stefanuk O. (Ukr);3;1;[{'home': 14, 'away': 12}, {'home': 5, 'away': 11}, {'home': 11, 'away': 8}, {'home': 13, 'away': 11}];;
+Win Cup (Ucrania);2;g_25_Cfzc780d;Finalizado;;Bayrak T. (Ukr);Dotsenko M. (Ukr);1;3;[{'home': 6, 'away': 11}, {'home': 4, 'away': 11}, {'home': 11, 'away': 6}, {'home': 9, 'away': 11}];;
+Win Cup (Ucrania);2;g_25_IiNrVBh3;Finalizado;;Stefaniuk A. (Ukr);Hrusko I. (Ukr);1;3;[{'home': 12, 'away': 14}, {'home': 11, 'away': 7}, {'home': 3, 'away': 11}, {'home': 8, 'away': 11}];;
+Win Cup (Ucrania);2;g_25_EJxNrVM2;Finalizado;;Zoidze E. (Ukr);Dotsenko M. (Ukr);1;3;[{'home': 8, 'away': 11}, {'home': 9, 'away': 11}, {'home': 11, 'away': 7}, {'home': 8, 'away': 11}];;
+Win Cup (Ucrania);2;g_25_0GCmUV79;Finalizado;;Man A. (Ukr);Stefaniuk A. (Ukr);3;2;[{'home': 11, 'away': 7}, {'home': 6, 'away': 11}, {'home': 11, 'away': 6}, {'home': 11, 'away': 13}, {'home': 11, 'away': 5}];;
+Win Cup (Ucrania);2;g_25_hAyRskx9;Finalizado;;Bayrak T. (Ukr);Volgina A. (Ukr);3;0;[{'home': 11, 'away': 5}, {'home': 11, 'away': 5}, {'home': 11, 'away': 2}];;
+Win Cup (Ucrania);2;g_25_EJGiTkNF;Finalizado;;Stefanuk O. (Ukr);Hrusko I. (Ukr);2;3;[{'home': 11, 'away': 8}, {'home': 11, 'away': 8}, {'home': 8, 'away': 11}, {'home': 6, 'away': 11}, {'home': 10, 'away': 12}];;
+Win Cup (Ucrania);2;g_25_MqtVt9iF;Finalizado;;Zoidze E. (Ukr);Bayrak T. (Ukr);3;2;[{'home': 2, 'away': 11}, {'home': 6, 'away': 11}, {'home': 11, 'away': 8}, {'home': 12, 'away': 10}, {'home': 12, 'away': 10}];;
+Win Cup (Ucrania);2;g_25_8tGeS9xM;Finalizado;;Hrusko I. (Ukr);Man A. (Ukr);3;0;[{'home': 12, 'away': 10}, {'home': 11, 'away': 8}, {'home': 12, 'away': 10}];;
+Win Cup (Ucrania);2;g_25_0zuZuT6L;Finalizado;;Dotsenko M. (Ukr);Volgina A. (Ukr);2;3;[{'home': 11, 'away': 5}, {'home': 11, 'away': 9}, {'home': 8, 'away': 11}, {'home': 6, 'away': 11}, {'home': 4, 'away': 11}];;
+Win Cup (Ucrania);2;g_25_nXEaRTiS;Finalizado;;Stefanuk O. (Ukr);Stefaniuk A. (Ukr);2;3;[{'home': 11, 'away': 9}, {'home': 11, 'away': 9}, {'home': 7, 'away': 11}, {'home': 7, 'away': 11}, {'home': 8, 'away': 11}];;
+Win Cup (Ucrania);2;g_25_raUwumMR;Finalizado;;Volgina A. (Ukr);Zoidze E. (Ukr);0;3;[{'home': 7, 'away': 11}, {'home': 6, 'away': 11}, {'home': 7, 'away': 11}];;
+Win Cup (Ucrania);2;g_25_SQdSMm0q;Finalizado;;Stefanuk O. (Ukr);Man A. (Ukr);1;3;[{'home': 11, 'away': 9}, {'home': 4, 'away': 11}, {'home': 4, 'away': 11}, {'home': 10, 'away': 12}];;
+Win Cup (Ucrania);2;g_25_KKL5z7Ur;Finalizado;;Dotsenko M. (Ukr);Bayrak T. (Ukr);3;1;[{'home': 11, 'away': 9}, {'home': 9, 'away': 11}, {'home': 11, 'away': 6}, {'home': 11, 'away': 3}];;
+Win Cup (Ucrania);2;g_25_6HeWL7Fk;Finalizado;;Hrusko I. (Ukr);Stefaniuk A. (Ukr);3;1;[{'home': 11, 'away': 6}, {'home': 11, 'away': 9}, {'home': 8, 'away': 11}, {'home': 11, 'away': 7}];;
+Win Cup (Ucrania);2;g_25_EsL9ZQqk;Finalizado;;Dotsenko M. (Ukr);Zoidze E. (Ukr);1;3;[{'home': 9, 'away': 11}, {'home': 6, 'away': 11}, {'home': 11, 'away': 7}, {'home': 11, 'away': 13}];;
+Win Cup (Ucrania);2;g_25_0vezLRUe;Finalizado;;Stefaniuk A. (Ukr);Man A. (Ukr);2;3;[{'home': 13, 'away': 11}, {'home': 15, 'away': 17}, {'home': 9, 'away': 11}, {'home': 11, 'away': 9}, {'home': 6, 'away': 11}];;
+Win Cup (Ucrania);2;g_25_hYJDYpae;Finalizado;;Volgina A. (Ukr);Bayrak T. (Ukr);1;3;[{'home': 11, 'away': 8}, {'home': 6, 'away': 11}, {'home': 2, 'away': 11}, {'home': 4, 'away': 11}];;
+Win Cup (Ucrania);2;g_25_CEbvKop2;Finalizado;;Hrusko I. (Ukr);Stefanuk O. (Ukr);3;1;[{'home': 9, 'away': 11}, {'home': 11, 'away': 5}, {'home': 11, 'away': 9}, {'home': 11, 'away': 3}];;
+Win Cup (Ucrania);2;g_25_KfjAX4E1;Finalizado;;Bayrak T. (Ukr);Zoidze E. (Ukr);2;3;[{'home': 6, 'away': 11}, {'home': 7, 'away': 11}, {'home': 11, 'away': 3}, {'home': 11, 'away': 9}, {'home': 6, 'away': 11}];;
+Win Cup (Ucrania);2;g_25_bokEWOT7;Finalizado;;Volgina A. (Ukr);Dotsenko M. (Ukr);3;0;[{'home': 11, 'away': 7}, {'home': 11, 'away': 2}, {'home': 11, 'away': 8}];;
+Bundesliga (Alemania);1;g_25_dtegPf17;Finalizado;;Filus R./Meng F. B.;Pletea C./Karakasevic A.;1;3;[{'home': 8, 'away': 11}, {'home': 11, 'away': 6}, {'home': 2, 'away': 11}, {'home': 13, 'away': 15}];;

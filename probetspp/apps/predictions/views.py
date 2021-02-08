@@ -13,7 +13,10 @@ from apps.predictions.serializers import (
 
 class PredictionView(APIErrorsMixin, APIView):
     class InputSerializer(serializers.Serializer):
-        status = serializers.IntegerField()
+        status = serializers.IntegerField(
+            required=False,
+            allow_null=True
+        )
         league_id = serializers.IntegerField(
             required=False,
             allow_null=True

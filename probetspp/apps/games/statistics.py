@@ -81,6 +81,8 @@ def get_games_stats(
             start_dt: game start_dt
             h_id: home player id
             a_id: away player id
+            h_name: home player name
+            a_name: away player name
             h_score: home score
             a_score: away score
             l_score: line score

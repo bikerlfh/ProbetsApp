@@ -15,6 +15,8 @@ import sys
 from os import environ
 from os.path import abspath, basename, dirname, join, normpath
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 DJANGO_ROOT = dirname(dirname(abspath(__file__)))
 
 PROJECT_ROOT = dirname(DJANGO_ROOT)
@@ -31,10 +33,11 @@ STATIC_ROOT = join(PROJECT_ROOT, 'run', 'static')
 MEDIA_ROOT = join(PROJECT_ROOT, 'run', 'images')
 
 STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
 ]
 
 PROJECT_TEMPLATES = [
-    join(PROJECT_ROOT, 'templates'),
+    join(BASE_DIR, 'templates'),
 ]
 
 sys.path.append(normpath(join(PROJECT_ROOT, 'apps')))
@@ -45,7 +48,9 @@ sys.path.append(normpath(join(PROJECT_ROOT, 'apps')))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+# For demo purposes only. Use a white list in the real world.
+CORS_ORIGIN_ALLOW_ALL = True
 
 DEFAULT_APPS = [
     'django.contrib.admin',
@@ -59,6 +64,7 @@ DEFAULT_APPS = [
 
 THIRD_PARTY_APPS = [
     'django_extensions',
+    'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
     'django_filters',
@@ -82,6 +88,7 @@ LOCAL_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -204,8 +211,6 @@ SWAGGER_SETTINGS = {
     'LOGIN_URL': 'login',
     'LOGOUT_URL': 'logout',
 }
-# For demo purposes only. Use a white list in the real world.
-CORS_ORIGIN_ALLOW_ALL = True
 
 LOGGING = {
     'version': 1,

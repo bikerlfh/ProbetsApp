@@ -106,12 +106,14 @@ class PredictionDataSerializer(serializers.Serializer):
 class PredictionModelSerializer(serializers.ModelSerializer):
     game = GameSerializer()
     game_data = serializers.SerializerMethodField()
+    player_winner = serializers.SerializerMethodField()
 
     class Meta:
         model = Prediction
         fields = [
             'id',
             'status',
+            'player_winner',
             'player_winner_id',
             'confidence',
             'game',
@@ -121,5 +123,7 @@ class PredictionModelSerializer(serializers.ModelSerializer):
     def get_game_data(self, obj):
         if not obj.game_data:
             return
-        data = json.loads(obj.game_data)
-        return data
+        return json.loads(obj.game_data)
+
+    def get_player_winner(self, obj):
+        return str(obj.player_winner)

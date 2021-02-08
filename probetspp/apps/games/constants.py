@@ -9,3 +9,4 @@ class GameStatus(IntEnum):
     CANCELED = 4
     ABANDONMENT = 5
     DISCONTINUED = 6
+    POSTPONED = 7
