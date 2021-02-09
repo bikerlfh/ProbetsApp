@@ -1,0 +1,191 @@
+{
+	"info": {
+		"_postman_id": "fa343dd0-7052-4559-b498-aefd79a03239",
+		"name": "probetspp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "games",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"start_dt\": \"2021-01-17\",\n    \"status\": 1,\n    \"league_id\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api_url}}/games/?start_dt=2021-02-03",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"games",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "25031",
+							"disabled": true
+						},
+						{
+							"key": "start_dt",
+							"value": "2021-02-03"
+						},
+						{
+							"key": "external_id",
+							"value": "fugPHaC2",
+							"disabled": true
+						},
+						{
+							"key": "status",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "player_id",
+							"value": "17",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "10",
+							"disabled": true
+						},
+						{
+							"key": "order_by",
+							"value": "start_dt",
+							"disabled": true
+						},
+						{
+							"key": "h2h_ids",
+							"value": "348, 106",
+							"disabled": true
+						},
+						{
+							"key": "league_id",
+							"value": "3",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "leagues",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api_url}}/games/league/",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"games",
+						"league",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "player",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api_url}}/games/player/?id=238",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"games",
+						"player",
+						""
+					],
+					"query": [
+						{
+							"key": "league_id",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "id",
+							"value": "238"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "predictions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api_url}}/predictions/?status=0&start_dt=2021-02-08",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"predictions",
+						""
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "0"
+						},
+						{
+							"key": "start_dt",
+							"value": "2021-02-08"
+						},
+						{
+							"key": "game_id",
+							"value": "25871",
+							"disabled": true
+						},
+						{
+							"key": "league_id",
+							"value": "4",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "game_detail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api_url}}/games/4526465465/",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"games",
+						"4526465465",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

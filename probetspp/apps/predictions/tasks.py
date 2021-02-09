@@ -53,8 +53,7 @@ def create_periodical_prediction() -> Union[None]:
               f'Winner: {winner}\n' \
               f'Confidence: {confidence}'
         message = Message(
-            message=msg.format(**data),
-            user='me'
+            message=msg.format(**data)
         )
         messages.append(message)
     communications_services.send_telegram_messages(

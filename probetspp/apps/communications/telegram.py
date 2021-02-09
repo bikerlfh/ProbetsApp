@@ -4,7 +4,7 @@ https://docs.telethon.dev/en/latest/basic/signing-in.html
 import logging
 from typing import Union
 from telethon import TelegramClient
-from apps.core.singleton import Singleton
+from apps.utils.singleton import Singleton
 from apps.communications.constants import (
     TELEGRAM_PHONE_NUMBER,
     TELEGRAM_CHANNEL_NAME,

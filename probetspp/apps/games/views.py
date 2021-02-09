@@ -55,21 +55,26 @@ class GameDetailView(APIErrorsMixin, APIView):
         data_ = services.get_games_data_to_predict(
             game_id=game_id,
             last_games_limit=10
-        )
+        )[0]
         data = dict(
+            id=data_['id'],
+            external_id=data_['external_id'],
             name=str(game),
+            league=str(game.league),
+            start_dt=timezone.localtime(data_['start_dt']),
+            status=data_['status'],
             h_id=game.h_id,
             a_id=game.a_id,
             h_name=str(game.home_player),
             a_name=str(game.away_player),
             h_odds=game.h_odds,
             a_odds=game.a_odds,
-            league=str(game.league),
+            home_player=data_['home_player'],
+            away_player=data_['away_player'],
             prediction=prediction,
             data_game=data_game,
-        )
-        data.update(**data_[0])
-        data.update(
-            start_dt=timezone.localtime(data['start_dt'])
+            h2h_games_data=data_['h2h_games_data'],
+            h_last_games=data_['h_last_games'],
+            a_last_games=data_['a_last_games'],
         )
         return Response(data=data)

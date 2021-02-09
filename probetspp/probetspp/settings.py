@@ -48,7 +48,7 @@ sys.path.append(normpath(join(PROJECT_ROOT, 'apps')))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['186.31.79.101']
 # For demo purposes only. Use a white list in the real world.
 CORS_ORIGIN_ALLOW_ALL = True
 
@@ -69,11 +69,7 @@ THIRD_PARTY_APPS = [
     'rest_framework.authtoken',
     'django_filters',
     'django_q',
-    #'dj_rest_auth',
-    #'dj_rest_auth.registration',
-    #'allauth',
-    #'allauth.account',
-    #'allauth.socialaccount',
+    'dj_rest_auth'
 ]
 
 # Application definition
@@ -195,6 +191,7 @@ REST_AUTH_REGISTER_SERIALIZERS = {
 #JWT_AUTH_COOKIE = 'auth'
 
 REST_FRAMEWORK = {
+    'EXCEPTION_HANDLER': 'apps.utils.handlers.exception_errors_format_handler',
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
     ),
