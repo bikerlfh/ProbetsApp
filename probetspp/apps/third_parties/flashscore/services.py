@@ -7,7 +7,6 @@ from datetime import datetime, date, timedelta
 from typing import Union, Dict, Any, List, Optional
 from django.db import transaction
 import pandas as pd
-import numpy as np
 from apps.utils.constants import DELIMITER_CSV
 from apps.games.constants import GameStatus
 from apps.games import (
@@ -66,9 +65,13 @@ def read_events_by_dataset(
             sep=DELIMITER_CSV,
             converters={
                 'line_score': literal_eval
+            },
+            dtype={
+                'start_dt': datetime
             }
         )
         df = df.where(pd.notnull(df), None)
+        df['start_dt'] = df['start_dt'].astype('datetime64[ns]')
         events = df.to_dict(orient='records')
     return events
 
@@ -91,9 +94,12 @@ def save_events_data(
     if not os.path.exists(path):
         os.mkdir(path)
     df = pd.DataFrame(events)
+    df['start_dt'] = df['start_dt'].astype('datetime64[ns]')
+
     if os.path.isfile(filename):
         # if not is new file, can not replace odds and start_dt
         df_o = pd.read_csv(filename, sep=DELIMITER_CSV)
+        df_o['start_dt'] = df_o['start_dt'].astype('datetime64[ns]')
         df_new = None
         if len(df) != len(df_o):
             df_o = df_o[df_o['external_id'].isin(df['external_id'])]
@@ -101,19 +107,25 @@ def save_events_data(
             df = df[df['external_id'].isin(df_o['external_id'])]
         df_o.reset_index(drop=True, inplace=True)
         df.reset_index(drop=True, inplace=True)
-
-        df['start_dt'] = df_o[
-            df_o['external_id'] == df['external_id']
-        ]['start_dt']
-        df['h_odds'] = np.where(
-            (df['external_id'] == df_o['external_id']) & (df_o['h_odds']),
-            df_o['h_odds'],
-            df['h_odds'])
-        df['a_odds'] = np.where(
-            (df_o['external_id'] == df['external_id']) & (df_o['a_odds']),
-            df_o['a_odds'],
-            df['a_odds']
-        )
+        for index, row in df_o.iterrows():
+            external_id = row['external_id']
+            start_dt = row['start_dt']
+            h_odds = row['h_odds']
+            a_odds = row['a_odds']
+            is_nat = issubclass(type(start_dt), type(pd.NaT))
+            # TODO update date for games to changed
+            if not pd.isna(start_dt) and not is_nat:
+                df.loc[
+                    df.external_id.isin([external_id]), ['start_dt']
+                ] = start_dt
+            if not pd.isna(h_odds):
+                df.loc[
+                    df.external_id.isin([external_id]), ['h_odds']
+                ] = h_odds
+            if not pd.isna(a_odds):
+                df.loc[
+                    df.external_id.isin([external_id]), ['a_odds']
+                ] = a_odds
         if df_new is not None:
             df = df.append(df_new)
     df.to_csv(filename, sep=DELIMITER_CSV, index=False, encoding='utf-8')
@@ -287,6 +299,8 @@ def create_or_update_game(
         away_score=away_score,
         line_score=line_score
     )
+    if status == GameStatus.SCHEDULED.value:
+        data.update(start_dt=start_dt)
     if h_odds and a_odds:
         data.update(
             h_odds=h_odds,
