@@ -67,6 +67,8 @@ class GameDetailView(APIErrorsMixin, APIView):
             a_id=game.a_id,
             h_name=str(game.home_player),
             a_name=str(game.away_player),
+            h_score=game.home_score,
+            a_score=game.away_score,
             h_odds=game.h_odds,
             a_odds=game.a_odds,
             home_player=data_['home_player'],

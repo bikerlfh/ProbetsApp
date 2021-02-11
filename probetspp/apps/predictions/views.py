@@ -10,6 +10,6 @@ from apps.predictions.serializers import (
 
 
 class PredictionView(APIErrorsMixin, ListAPIView):
-    queryset = Prediction.objects.all()
+    queryset = Prediction.objects.all().order_by('-game__start_dt')
     serializer_class = PredictionModelSerializer
     filterset_class = PredictionFilter

@@ -65,9 +65,6 @@ def read_events_by_dataset(
             sep=DELIMITER_CSV,
             converters={
                 'line_score': literal_eval
-            },
-            dtype={
-                'start_dt': datetime
             }
         )
         df = df.where(pd.notnull(df), None)
@@ -299,8 +296,8 @@ def create_or_update_game(
         away_score=away_score,
         line_score=line_score
     )
-    if status == GameStatus.SCHEDULED.value:
-        data.update(start_dt=start_dt)
+    # if status == GameStatus.SCHEDULED.value:
+    #    data.update(start_dt=start_dt)
     if h_odds and a_odds:
         data.update(
             h_odds=h_odds,
