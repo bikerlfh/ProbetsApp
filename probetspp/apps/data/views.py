@@ -2,6 +2,8 @@
 from rest_framework import serializers
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
 
 from apps.utils.mixins import APIErrorsMixin
 
@@ -10,6 +12,9 @@ from apps.data import services
 
 
 class AdvanceAnalysisView(APIErrorsMixin, APIView):
+    authentication_classes = (TokenAuthentication,)
+    permission_classes = (IsAuthenticated,)
+
     class InputSerializer(serializers.Serializer):
         game_id = serializers.IntegerField(
             required=False,
