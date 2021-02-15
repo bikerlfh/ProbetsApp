@@ -31,6 +31,11 @@ class PredictionStatus(IntEnum):
     ERROR_CORE = -2
 
 
+class PredictionType(IntEnum):
+    AUTOMATIC = 1
+    MANUAL = 2
+
+
 class WinnerPrediction(IntEnum):
     NO_DATA = -1
     HOME_OR_AWAY = 0

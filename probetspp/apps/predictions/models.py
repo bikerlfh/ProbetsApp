@@ -3,7 +3,10 @@ from decimal import Decimal
 from apps.core.models import BaseModel
 
 from apps.games.models import Game, Player
-from apps.predictions.constants import PredictionStatus
+from apps.predictions.constants import (
+    PredictionStatus,
+    PredictionType
+)
 
 
 class Prediction(BaseModel):
@@ -23,6 +26,9 @@ class Prediction(BaseModel):
     )
     status = models.SmallIntegerField(
         default=PredictionStatus.DEFAULT.value
+    )
+    type = models.SmallIntegerField(
+        default=PredictionType.AUTOMATIC.value
     )
     game_data = models.JSONField(null=True)
     confidence = models.DecimalField(
