@@ -6,6 +6,13 @@ from apps.predictions.models import Prediction
 from apps.predictions.constants import PredictionStatus
 
 
+def filter_prediction_by_id(
+    *,
+    prediction_id: int
+) -> 'QuerySet[Prediction]':
+    return Prediction.objects.filter(id=prediction_id)
+
+
 def filter_prediction(
     *,
     game_id: Optional[int] = None,

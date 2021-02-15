@@ -5,13 +5,13 @@ import logging
 from typing import Union
 from telethon import TelegramClient
 from apps.utils.singleton import Singleton
-from apps.communications.constants import (
+from apps.telegram_bot.constants import (
     TELEGRAM_PHONE_NUMBER,
     TELEGRAM_CHANNEL_NAME,
     TELEGRAM_API_HASH,
     TELEGRAM_API_ID
 )
-from apps.communications.typing import Message
+from apps.telegram_bot.typing import Message
 
 logger = logging.getLogger(__name__)
 

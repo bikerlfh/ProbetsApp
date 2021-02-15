@@ -1,17 +1,18 @@
 import logging
-import json
 from decimal import Decimal
 from django.db import transaction
-from django.core.serializers.json import DjangoJSONEncoder
 from datetime import datetime, date
-from typing import Dict, Any, List, Optional, Union
+from typing import List, Optional, Union
 
 from apps.data import services as data_services
 from apps.games.models import Game
 from apps.games.constants import GameStatus
 from apps.games import selectors as games_selectors
 
-from apps.predictions.constants import PredictionStatus
+from apps.predictions.constants import (
+    PredictionStatus,
+    PredictionType
+)
 from apps.predictions.models import Prediction
 from apps.predictions import selectors
 
@@ -24,8 +25,8 @@ def create_prediction(
     player_winner_id: int,
     confidence: Decimal,
     status: Optional[int] = None,
-    game_data: Optional[Dict[str, Any]] = None
-) -> Union[Dict[str, Any], None]:
+    type_: Optional[int] = None
+) -> Union[Prediction, None]:
     game = games_selectors.\
         filter_game_by_id(game_id=game_id).first()
     player_winner = games_selectors.filter_player_by_id(
@@ -33,7 +34,8 @@ def create_prediction(
     ).first()
     if not status:
         status = PredictionStatus.DEFAULT.value
-
+    if not type_:
+        type_ = PredictionType.AUTOMATIC.value
     prediction_qry = selectors.filter_prediction(
         game_id=game_id
     )
@@ -52,23 +54,11 @@ def create_prediction(
         game=game,
         player_winner=player_winner,
         status=status,
+        type=type_,
         confidence=confidence
     )
-    if game_data:
-        data.update(
-            game_data=json.dumps(game_data, cls=DjangoJSONEncoder)
-        )
     prediction = Prediction.objects.create(**data)
-    winner = prediction.player_winner
-    data_ = dict(
-        game=str(game),
-        league=str(game.league),
-        start_dt=game.start_dt,
-        winner=str(winner),
-        confidence=confidence,
-        odds=game.player_odds(player_id=winner.id)
-    )
-    return data_
+    return prediction
 
 
 def create_prediction_by_advance_analysis(
@@ -77,7 +67,7 @@ def create_prediction_by_advance_analysis(
     status: Optional[int] = None,
     start_dt: Optional[date] = None,
     start_dt_range: Optional[List[datetime]] = None
-) -> List[Dict[str, Any]]:
+) -> List[Prediction]:
     if not status:
         status = GameStatus.SCHEDULED.value
     if not start_dt:

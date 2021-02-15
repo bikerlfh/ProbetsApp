@@ -1,8 +1,8 @@
 from typing import Union, List
 from datetime import datetime
 from asgiref.sync import async_to_sync
-from apps.communications import telegram
-from apps.communications.typing import Message
+from apps.telegram_bot import telegram
+from apps.telegram_bot.typing import Message
 
 
 @async_to_sync
