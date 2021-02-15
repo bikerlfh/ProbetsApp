@@ -3,8 +3,6 @@ from rest_framework.generics import ListAPIView
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.exceptions import ValidationError
-from rest_framework.authentication import TokenAuthentication
-from rest_framework.permissions import IsAuthenticated
 
 from apps.utils.mixins import APIErrorsMixin
 from apps.data import selectors as data_selectors
@@ -31,16 +29,12 @@ class PlayerListView(APIErrorsMixin, ListAPIView):
 
 
 class GameListView(APIErrorsMixin, ListAPIView):
-    authentication_classes = (TokenAuthentication,)
-    permission_classes = (IsAuthenticated,)
     queryset = Game.objects.all()
     serializer_class = GameSerializer
     filterset_class = filters.GameFilter
 
 
 class GameDetailView(APIErrorsMixin, APIView):
-    authentication_classes = (TokenAuthentication,)
-    permission_classes = (IsAuthenticated,)
 
     def get(self, request, game_id: int):
         game_qry = selectors.filter_game_by_id(

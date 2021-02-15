@@ -20,6 +20,7 @@ urlpatterns = [
     path('auth/', include('dj_rest_auth.urls')),
     path('admin/', admin.site.urls),
     # path('data/', include('apps.data.urls')),
+    path('core/', include('apps.core.urls')),
     path('games/', include('apps.games.urls')),
     path('predictions/', include('apps.predictions.urls')),
 ]
