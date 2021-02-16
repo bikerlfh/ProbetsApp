@@ -29,7 +29,9 @@ class PlayerListView(APIErrorsMixin, ListAPIView):
 
 
 class GameListView(APIErrorsMixin, ListAPIView):
-    queryset = Game.objects.all()
+    queryset = Game.objects.filter(
+        data__isnull=False
+    )
     serializer_class = GameSerializer
     filterset_class = filters.GameFilter
 
@@ -46,6 +48,7 @@ class GameDetailView(APIErrorsMixin, APIView):
         prediction = predictions_selectors.filter_prediction_by_game_id(
             game_id=game_id
         ).values(
+            'id',
             'player_winner_id',
             'status',
             'confidence'

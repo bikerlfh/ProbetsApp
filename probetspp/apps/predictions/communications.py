@@ -8,6 +8,7 @@ from apps.telegram_bot.typing import Message
 from apps.telegram_bot.constants import Emoji, TELEGRAM_CHANNEL_NAME
 from apps.telegram_bot import services as telegram_services
 from apps.predictions.constants import PredictionStatus
+from apps.predictions.models import Prediction
 from apps.predictions import selectors
 
 logger = logging.getLogger(__name__)
@@ -15,17 +16,19 @@ logger = logging.getLogger(__name__)
 
 def notify_prediction(
     *,
-    prediction_id: int,
+    prediction_id: Optional[int] = None,
+    prediction: Optional[Prediction] = None,
     to: Optional[str] = TELEGRAM_CHANNEL_NAME
 ) -> Union[None]:
-    prediction_qry = selectors.filter_prediction_by_id(
-        prediction_id=prediction_id
-    )
-    if not prediction_qry.exists():
-        msg = f'{prediction_id} does not exists'
-        logger.warning(f'notify_prediction :: {msg}')
-        raise ValidationError(msg)
-    prediction = prediction_qry.first()
+    if not prediction:
+        prediction_qry = selectors.filter_prediction_by_id(
+            prediction_id=prediction_id
+        )
+        if not prediction_qry.exists():
+            msg = f'{prediction_id} does not exists'
+            logger.warning(f'notify_prediction :: {msg}')
+            raise ValidationError(msg)
+        prediction = prediction_qry.first()
     status = PredictionStatus(prediction.status)
     if status != PredictionStatus.DEFAULT:
         msg = 'prediction status does not allowed'
@@ -43,7 +46,7 @@ def notify_prediction(
     winner = str(prediction.player_winner)
     msg = f'<b>{Emoji.FIRE.value} {str(game)} {Emoji.FIRE.value}</b>\n' \
           f'{Emoji.TROPHY.value} {league} - ' \
-          f'{Emoji.WATCH.value} {start_dt}\n' \
+          f'{Emoji.WATCH.value} {start_dt}\n\n' \
           f'<b>{Emoji.PING_PONG.value} {winner} {odds}</b>\n' \
           f'{Emoji.CHECK_BUTTON.value} {confidence}%\n\n' \
           f'{Emoji.ONLY_ADULTS.value} Juega con responsabilidad'

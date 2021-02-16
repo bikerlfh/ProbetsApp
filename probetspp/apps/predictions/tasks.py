@@ -36,7 +36,7 @@ def create_periodical_prediction() -> Union[None]:
     num_predictions = len(predictions)
     for item in predictions:
         communications.notify_prediction(
-            prediction_id=item.id,
+            prediction=item,
             to='me'
         )
     logger.info(f'create_periodical_prediction :: {num_predictions}')
