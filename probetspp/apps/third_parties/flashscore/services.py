@@ -3,7 +3,7 @@ import re
 import logging
 from ast import literal_eval
 from decimal import Decimal
-from datetime import datetime, date, timedelta
+from datetime import datetime, date
 from typing import Union, Dict, Any, List, Optional
 from django.db import transaction
 import pandas as pd
@@ -23,23 +23,6 @@ from apps.third_parties.flashscore.connector import FlashConnector
 
 
 logger = logging.getLogger(__name__)
-
-
-def read_yesterday_events_web_driver() -> Union[None, List[Dict[str, Any]]]:
-    connector = FlashConnector()
-    try:
-        events = connector.get_yesterday_events()
-    except Exception as exc:
-        logger.exception(
-            f'read_yesterday_events_web_driver :: {exc}'
-        )
-        return
-    now = datetime.now() - timedelta(days=1)
-    events = save_events_data(
-        events=events,
-        event_date=now.date()
-    )
-    return events
 
 
 def read_events_web_driver() -> Union[None, List[Dict[str, Any]]]:
@@ -166,6 +149,58 @@ def read_events_from_html_file(
     return events
 
 
+def get_event_detail(
+    *,
+    external_id: str
+) -> Union[Dict[str, Any], None]:
+    """
+    get event detail by external_id
+    """
+    connector = FlashConnector()
+    try:
+        external_id = external_id.replace('g_25_', '')
+        data = connector.get_event_detail(
+            external_id=external_id
+        )
+        if data and 'error' not in data:
+            status = get_game_status_by_stage(
+                stage=data['stage']
+            )
+            data.pop('stage')
+            data['status'] = status
+    except Exception as exc:
+        logger.exception(f'get_event_detail :: {exc}')
+        return
+    return data
+
+
+def get_game_status_by_stage(
+    *,
+    stage: str
+) -> int:
+    status = GameStatus.SCHEDULED.value
+    finished = TableTennisStatus.FINISHED.value
+    canceled = TableTennisStatus.CANCELED.value
+    in_live = TableTennisStatus.IN_LIVE.value
+    discontinued = TableTennisStatus.DISCONTINUED.value
+    abandonment = TableTennisStatus.ABANDONMENT.value
+    for_lost = TableTennisStatus.FOR_LOST.value
+    postponed = TableTennisStatus.POSTPONED.value
+    if stage and finished in stage:
+        status = GameStatus.FINISHED.value
+    elif stage and (canceled in stage or for_lost in stage):
+        status = GameStatus.CANCELED.value
+    elif stage and in_live in stage:
+        status = GameStatus.IN_LIVE.value
+    elif stage and abandonment in stage:
+        status = GameStatus.ABANDONMENT.value
+    elif stage and discontinued in stage:
+        status = GameStatus.DISCONTINUED.value
+    elif stage and postponed in stage:
+        status = GameStatus.POSTPONED.value
+    return status
+
+
 def format_player_name(
     name: str
 ) -> str:
@@ -245,27 +280,7 @@ def create_or_update_game(
             gender=gender
         )
 
-    status = GameStatus.SCHEDULED.value
-    finished = TableTennisStatus.FINISHED.value
-    canceled = TableTennisStatus.CANCELED.value
-    in_live = TableTennisStatus.IN_LIVE.value
-    discontinued = TableTennisStatus.DISCONTINUED.value
-    abandonment = TableTennisStatus.ABANDONMENT.value
-    for_lost = TableTennisStatus.FOR_LOST.value
-    postponed = TableTennisStatus.POSTPONED.value
-    if stage and finished in stage:
-        status = GameStatus.FINISHED.value
-    elif stage and (canceled in stage or for_lost in stage):
-        status = GameStatus.CANCELED.value
-    elif stage and in_live in stage:
-        status = GameStatus.IN_LIVE.value
-    elif stage and abandonment in stage:
-        status = GameStatus.ABANDONMENT.value
-    elif stage and discontinued in stage:
-        status = GameStatus.DISCONTINUED.value
-    elif stage and postponed in stage:
-        status = GameStatus.POSTPONED.value
-
+    status = get_game_status_by_stage(stage=stage)
     game_qry = games_selectors.filter_game_by_external_id(
         external_id=external_id
     )
@@ -317,14 +332,10 @@ def create_or_update_game(
 
 def load_events(
     *,
-    file_date: Optional[date] = None,
-    yesterday: Optional[bool] = None
+    file_date: Optional[date] = None
 ) -> Union[Dict[str, Any], None]:
     if not file_date:
-        if yesterday:
-            events = read_yesterday_events_web_driver()
-        else:
-            events = read_events_web_driver()
+        events = read_events_web_driver()
     else:
         events = read_events_by_dataset(
             event_date=file_date

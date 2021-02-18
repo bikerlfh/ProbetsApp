@@ -10,3 +10,4 @@ class GameStatus(IntEnum):
     ABANDONMENT = 5
     DISCONTINUED = 6
     POSTPONED = 7
+    NO_DATA = -2
