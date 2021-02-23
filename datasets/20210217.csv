@@ -115,9 +115,7 @@ Liga Pro (Rusia);1;g_25_neaVmZRL;Finalizado;2021-02-17 20:45:00;Soldatov I. (Rus
 Liga Pro (Rusia);1;g_25_UJ4QlFCF;Finalizado;2021-02-17 21:00:00;Tsybikov Z. (Rus);Turabekov T. (Rus);1;3;[{'home': 11, 'away': 3}, {'home': 7, 'away': 11}, {'home': 9, 'away': 11}, {'home': 8, 'away': 11}];;
 Liga Pro (Rusia);1;g_25_QobZngsS;Finalizado;2021-02-17 21:15:00;Merkushin Y. (Rus);Safonov V. (Rus);1;3;[{'home': 11, 'away': 8}, {'home': 8, 'away': 11}, {'home': 8, 'away': 11}, {'home': 8, 'away': 11}];;
 Liga Pro (Rusia);1;g_25_dUl5sX4k;Finalizado;2021-02-17 21:15:00;Minkov M. (Rus);Sidorin V. (Rus);3;2;[{'home': 12, 'away': 14}, {'home': 11, 'away': 8}, {'home': 6, 'away': 11}, {'home': 11, 'away': 8}, {'home': 11, 'away': 8}];;
-Liga Pro (Rusia);1;g_25_Yakkx3Wn;;2021-02-17 23:30:00;Andreev A. (Rus);Vologzhanin V. (Rus);0;0;[];1.52;2.28
-Liga Pro (Rusia);1;g_25_tQhczs1a;;2021-02-17 23:45:00;Ermilov A. (Rus);Nemashkalo V. (Rus);0;0;[];1.7;1.96
-Liga Pro (Rusia);1;g_25_nwOcYKVB;;2021-02-17 23:45:00;Lisov A. (Rus);Klavdenkov A. (Rus);0;0;[];1.83;1.83
+Liga Pro (Rusia);1;g_25_Yakkx3Wn;Finalizado;2021-02-17 23:30:00;Andreev A. (Rus);Vologzhanin V. (Rus);3;2;[{'home': 6, 'away': 11}, {'home': 13, 'away': 11}, {'home': 9, 'away': 11}, {'home': 11, 'away': 8}, {'home': 11, 'away': 8}];1.52;2.28
 Setka Cup (Ucrania);1;g_25_Y10RgYtA;Finalizado;2021-02-17 00:00:00;Pereyaslavsky D. (Ukr);Kobets V. (Ukr);3;1;[{'home': 10, 'away': 12}, {'home': 11, 'away': 9}, {'home': 11, 'away': 5}, {'home': 11, 'away': 6}];2.42;1.47
 Setka Cup (Ucrania);1;g_25_ATdAfXI3;Finalizado;2021-02-17 00:00:00;Hlaholev M. (Ukr);Heresko V. (Ukr);3;0;[{'home': 11, 'away': 8}, {'home': 11, 'away': 3}, {'home': 11, 'away': 8}];;
 Setka Cup (Ucrania);1;g_25_Uk3Qy7kA;Finalizado;2021-02-17 00:00:00;Tymchenko V. (Ukr);Sydorenko V. (Ukr);3;1;[{'home': 6, 'away': 11}, {'home': 11, 'away': 1}, {'home': 11, 'away': 9}, {'home': 11, 'away': 6}];1.55;2.22
@@ -294,11 +292,11 @@ Setka Cup (Ucrania);1;g_25_nwGqy4Zu;Anulado;2021-02-17 20:55:00;Malynka R. (Ukr)
 Setka Cup (Ucrania);1;g_25_McHlasE1;Finalizado;2021-02-17 20:55:00;Malynka R. (Ukr);Dukhovenko O. (Ukr);3;1;[{'home': 9, 'away': 11}, {'home': 11, 'away': 3}, {'home': 11, 'away': 5}, {'home': 11, 'away': 5}];;
 Setka Cup (Ucrania);1;g_25_QTEmzOln;Finalizado;2021-02-17 21:25:00;Matvieiev D. (Ukr);Yolkin A. (Ukr);3;2;[{'home': 11, 'away': 4}, {'home': 4, 'away': 11}, {'home': 7, 'away': 11}, {'home': 11, 'away': 7}, {'home': 12, 'away': 10}];2.08;1.63
 Setka Cup (Ucrania);1;g_25_8h4hZs4h;Finalizado;2021-02-17 21:55:00;Zholubak M. (Ukr);Malynka R. (Ukr);3;1;[{'home': 11, 'away': 5}, {'home': 6, 'away': 11}, {'home': 11, 'away': 7}, {'home': 11, 'away': 7}];1.09;5.6
-Setka Cup (Ucrania);1;g_25_KS7dY1Jb;4º Set;2021-02-17 22:25:00;Matvieiev D. (Ukr);Voitekhov T. (Ukr);1;2;[{'home': 11, 'away': 9}, {'home': 9, 'away': 11}, {'home': 5, 'away': 11}, {'home': 2, 'away': 1}];1.83;1.83
-Setka Cup (Ucrania);1;g_25_Sf8vM4LE;;2021-02-17 22:55:00;Dukhovenko O. (Ukr);Yolkin A. (Ukr);0;0;[];;
+Setka Cup (Ucrania);1;g_25_KS7dY1Jb;Finalizado;2021-02-17 22:25:00;Matvieiev D. (Ukr);Voitekhov T. (Ukr);2;3;[{'home': 11, 'away': 9}, {'home': 9, 'away': 11}, {'home': 5, 'away': 11}, {'home': 11, 'away': 6}, {'home': 6, 'away': 11}];1.83;1.83
 Setka Cup (Ucrania);1;g_25_Ek70XLY4;Anulado;2021-02-17 22:55:00;Koshchug E. (Ukr);Yolkin A. (Ukr);0;0;[];;
-Setka Cup (Ucrania);1;g_25_ht64WulB;;2021-02-17 23:25:00;Zholubak M. (Ukr);Matvieiev D. (Ukr);0;0;[];1.55;2.22
-Setka Cup (Ucrania);1;g_25_AH09Va3H;;2021-02-17 23:55:00;Malynka R. (Ukr);Yolkin A. (Ukr);0;0;[];3.5;1.23
+Setka Cup (Ucrania);1;g_25_Sf8vM4LE;Finalizado;2021-02-17 22:55:00;Dukhovenko O. (Ukr);Yolkin A. (Ukr);0;3;[{'home': 4, 'away': 11}, {'home': 6, 'away': 11}, {'home': 6, 'away': 11}];;
+Setka Cup (Ucrania);1;g_25_ht64WulB;Finalizado;2021-02-17 23:25:00;Zholubak M. (Ukr);Matvieiev D. (Ukr);3;0;[{'home': 11, 'away': 6}, {'home': 11, 'away': 8}, {'home': 14, 'away': 12}];1.55;2.22
+Setka Cup (Ucrania);1;g_25_AH09Va3H;Finalizado;2021-02-17 23:55:00;Malynka R. (Ukr);Yolkin A. (Ukr);3;0;[{'home': 11, 'away': 7}, {'home': 11, 'away': 8}, {'home': 11, 'away': 9}];3.5;1.23
 TT Cup (Ucrania);1;g_25_jy6xfEVj;Finalizado;2021-02-17 00:00:00;Krutko O. (Ukr);Levadniy A. (Ukr);1;3;[{'home': 5, 'away': 11}, {'home': 11, 'away': 8}, {'home': 9, 'away': 11}, {'home': 2, 'away': 11}];2.22;1.55
 TT Cup (Ucrania);1;g_25_06mTGyw4;Finalizado;2021-02-17 00:00:00;Treshchetka M. (Ukr);Mykhalus O. (Ukr);3;1;[{'home': 12, 'away': 10}, {'home': 11, 'away': 2}, {'home': 8, 'away': 11}, {'home': 11, 'away': 9}];2.08;1.63
 TT Cup (Ucrania);1;g_25_viaKIc8i;Finalizado;2021-02-17 00:00:00;Shcherbak D. (Ukr);Shkurupii O. (Ukr);2;3;[{'home': 11, 'away': 8}, {'home': 6, 'away': 11}, {'home': 8, 'away': 11}, {'home': 11, 'away': 9}, {'home': 7, 'away': 11}];;
@@ -667,14 +665,14 @@ Win Cup (Ucrania);1;g_25_fJuhKl2K;Finalizado;2021-02-17 20:15:00;Ivchenko D. (Uk
 Win Cup (Ucrania);1;g_25_0rqodczm;Finalizado;2021-02-17 20:30:00;Khorolsky V. (Rus);Kalenik S. (Ukr);3;2;[{'home': 5, 'away': 11}, {'home': 7, 'away': 11}, {'home': 11, 'away': 6}, {'home': 14, 'away': 12}, {'home': 11, 'away': 5}];;
 Win Cup (Ucrania);1;g_25_budmAkMM;Finalizado;2021-02-17 20:35:00;Nepochatov A. (Ukr);Strelets V. (Ukr);3;0;[{'home': 11, 'away': 1}, {'home': 12, 'away': 10}, {'home': 11, 'away': 8}];;
 Win Cup (Ucrania);1;g_25_xrVdJ8HQ;Finalizado;2021-02-17 20:50:00;Naida O. (Ukr);Zaitsev A. (Ukr);1;3;[{'home': 11, 'away': 8}, {'home': 8, 'away': 11}, {'home': 10, 'away': 12}, {'home': 6, 'away': 11}];;
-Win Cup (Ucrania);1;g_25_vmVv57y8;;2021-02-17 21:00:00;Smetenko V. (Ukr);Kalenik S. (Ukr);0;0;[];;
+Win Cup (Ucrania);1;g_25_vmVv57y8;Finalizado;2021-02-17 21:00:00;Smetenko V. (Ukr);Kalenik S. (Ukr);1;3;[{'home': 3, 'away': 11}, {'home': 11, 'away': 9}, {'home': 8, 'away': 11}, {'home': 6, 'away': 11}];;
 Win Cup (Ucrania);1;g_25_h2ei99yT;Finalizado;2021-02-17 21:10:00;Sharpay V. (Ukr);Boychuk V. (Ukr);0;3;[{'home': 8, 'away': 11}, {'home': 10, 'away': 12}, {'home': 7, 'away': 11}];;
 Win Cup (Ucrania);1;g_25_viHOESPs;Finalizado;2021-02-17 21:25:00;Ivchenko D. (Ukr);Ivchenko K. (Ukr);3;1;[{'home': 11, 'away': 5}, {'home': 11, 'away': 9}, {'home': 6, 'away': 11}, {'home': 11, 'away': 7}];;
-Win Cup (Ucrania);1;g_25_rLeLDau8;;2021-02-17 21:30:00;Khorolsky V. (Rus);Novikov Y. (Ukr);0;0;[];;
-Win Cup (Ucrania);1;g_25_feaPCJfE;;2021-02-17 22:00:00;Smetenko V. (Ukr);Khorolsky V. (Rus);0;0;[];;
-Win Cup (Ucrania);1;g_25_niNheiPt;;2021-02-17 22:30:00;Kalenik S. (Ukr);Novikov Y. (Ukr);0;0;[];;
-Win Cup (Ucrania);1;g_25_QsMdfBvm;;2021-02-17 23:00:00;Novikov Y. (Ukr);Smetenko V. (Ukr);0;0;[];;
-Win Cup (Ucrania);1;g_25_rJG1gVgg;;2021-02-17 23:30:00;Kalenik S. (Ukr);Khorolsky V. (Rus);0;0;[];;
+Win Cup (Ucrania);1;g_25_rLeLDau8;Finalizado;2021-02-17 21:30:00;Khorolsky V. (Rus);Novikov Y. (Ukr);0;3;[{'home': 5, 'away': 11}, {'home': 8, 'away': 11}, {'home': 6, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_feaPCJfE;Finalizado;2021-02-17 22:00:00;Smetenko V. (Ukr);Khorolsky V. (Rus);3;2;[{'home': 7, 'away': 11}, {'home': 6, 'away': 11}, {'home': 11, 'away': 5}, {'home': 11, 'away': 5}, {'home': 11, 'away': 4}];;
+Win Cup (Ucrania);1;g_25_niNheiPt;Finalizado;2021-02-17 22:30:00;Kalenik S. (Ukr);Novikov Y. (Ukr);0;3;[{'home': 4, 'away': 11}, {'home': 8, 'away': 11}, {'home': 13, 'away': 15}];;
+Win Cup (Ucrania);1;g_25_QsMdfBvm;Finalizado;2021-02-17 23:00:00;Novikov Y. (Ukr);Smetenko V. (Ukr);1;3;[{'home': 8, 'away': 11}, {'home': 11, 'away': 5}, {'home': 7, 'away': 11}, {'home': 9, 'away': 11}];;
+Win Cup (Ucrania);1;g_25_rJG1gVgg;Finalizado;2021-02-17 23:30:00;Kalenik S. (Ukr);Khorolsky V. (Rus);3;1;[{'home': 11, 'away': 9}, {'home': 11, 'away': 4}, {'home': 11, 'away': 13}, {'home': 11, 'away': 3}];;
 Liga Pro (Rusia);2;g_25_rgkrxXjM;Finalizado;2021-02-17 00:00:00;Shabanova A. (Rus);Golubeva A. (Rus);0;3;[{'home': 8, 'away': 11}, {'home': 9, 'away': 11}, {'home': 8, 'away': 11}];;
 Liga Pro (Rusia);2;g_25_xGlnyi6S;Anulado;2021-02-17 08:20:00;Kondratova A. (Rus);Kandybina V. (Rus);0;0;[];;
 Liga Pro (Rusia);2;g_25_d0VIVUTk;Finalizado;2021-02-17 08:45:00;Golubeva A. (Rus);Kondratova A. (Rus);2;3;[{'home': 13, 'away': 11}, {'home': 11, 'away': 5}, {'home': 5, 'away': 11}, {'home': 5, 'away': 11}, {'home': 3, 'away': 11}];1.88;1.78

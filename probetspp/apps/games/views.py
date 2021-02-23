@@ -60,6 +60,8 @@ class GameDetailView(APIErrorsMixin, APIView):
             game_id=game_id,
             last_games_limit=10
         )[0]
+        h2h_games = data_['h2h_games_data']['games']
+        data_['h2h_games_data']['games'] = h2h_games[:15]
         data = dict(
             id=data_['id'],
             external_id=data_['external_id'],

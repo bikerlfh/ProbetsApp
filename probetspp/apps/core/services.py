@@ -10,6 +10,7 @@ def get_dashboard_data() -> Dict[str, Any]:
     data = {}
     won_status = PredictionStatus.WON.value
     lost_status = PredictionStatus.LOSE.value
+    pending_status = PredictionStatus.DEFAULT.value
     default_status = PredictionStatus.DEFAULT.value
     p_qry = Prediction.objects.values('status').annotate(
         count=Count('status'),
@@ -37,6 +38,8 @@ def get_dashboard_data() -> Dict[str, Any]:
                          if p['status'] == won_status])
     lost_pdt_today = sum([p['count'] for p in today_predictions
                           if p['status'] == lost_status])
+    pending_pdt_today = sum([p['count'] for p in today_predictions
+                            if p['status'] == pending_status])
     won_pdt_total = sum([p['count'] for p in predictions
                          if p['status'] == won_status])
     lost_pdt_total = sum([p['count'] for p in predictions
@@ -45,6 +48,7 @@ def get_dashboard_data() -> Dict[str, Any]:
         today_predictions=dict(
             total_won=won_pdt_today,
             total_lost=lost_pdt_today,
+            total_pending=pending_pdt_today,
             predictions=today_predictions
         ),
         history_predictions=dict(

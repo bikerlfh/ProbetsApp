@@ -111,7 +111,7 @@ class AdvanceAnalysis:
         confidence_ = 100 * (confidence_ / self.wt_total)
         t_score = h_score + a_score
         # add diff score to confidence_
-        if diff_ <= t_score:
+        if diff_ <= t_score and t_score > 0:
             diff_per_ = (100 * (diff_ / t_score)) * Decimal(0.2)
             confidence_ = diff_per_ + (confidence_ * Decimal(0.9))
             confidence_ = confidence_ if confidence_ <= 100 else 100

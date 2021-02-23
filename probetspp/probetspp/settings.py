@@ -46,7 +46,7 @@ sys.path.append(normpath(join(PROJECT_ROOT, 'apps')))
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['186.31.79.101', '127.0.0.1']
 # For demo purposes only. Use a white list in the real world.

@@ -192,6 +192,8 @@ def recalculate_player_stats(
     player_stats = games_selectors.\
         get_player_stats_by_player_id(player_id=player_id)
 
+    if len(games_stats) == 0:
+        return
     df = pd.DataFrame(games_stats)
     t_games = len(df)
     w_games = len(df[(df['winner_id'] == player_id)])
