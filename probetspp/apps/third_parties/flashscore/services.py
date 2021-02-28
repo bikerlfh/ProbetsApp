@@ -332,17 +332,19 @@ def create_or_update_game(
 
 def load_events(
     *,
-    file_date: Optional[date] = None
+    file_date: Optional[date] = None,
+    from_html_file: Optional[bool] = False
 ) -> Union[Dict[str, Any], None]:
     if not file_date:
         events = read_events_web_driver()
     else:
-        events = read_events_by_dataset(
-            event_date=file_date
-        )
-        if not events:
+        if from_html_file:
             events = read_events_from_html_file(
                 file_date=file_date
+            )
+        else:
+            events = read_events_by_dataset(
+                event_date=file_date
             )
     events_created = 0
     events_updated = 0

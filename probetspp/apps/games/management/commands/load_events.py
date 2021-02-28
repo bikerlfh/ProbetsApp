@@ -19,6 +19,11 @@ class Command(BaseCommand):
             type=str,
             help='file date from',
         )
+        parser.add_argument(
+            '--from_html_file',
+            type=bool,
+            help='from html file',
+        )
 
     def load_events_date(self, file_date: date):
         self.stdout.write(
@@ -33,6 +38,7 @@ class Command(BaseCommand):
         file_date = options['file_date']
         file_date_from = options['file_date_from']
         file_date_to = options['file_date_to']
+        from_html_file = options['from_html_file']
         if file_date:
             self.stdout.write(
                 self.style.SUCCESS(f'loading events from {file_date}....')
@@ -40,7 +46,10 @@ class Command(BaseCommand):
             file_date = datetime.strptime(
                 file_date, self.date_format
             ).date()
-            data = flash_services.load_events(file_date=file_date)
+            data = flash_services.load_events(
+                file_date=file_date,
+                from_html_file=from_html_file
+            )
             self.stdout.write(
                 self.style.SUCCESS(data)
             )
