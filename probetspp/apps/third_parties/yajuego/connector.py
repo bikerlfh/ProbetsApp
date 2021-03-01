@@ -6,6 +6,7 @@ from babel.dates import format_date
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 
@@ -30,6 +31,10 @@ class YaJuegoConnector:
         self.driver = None
         self.content = None
         self.odds = []
+        options = Options()
+        options.add_argument("--headless")
+        options.add_argument("window-size=1400,1500")
+        self.driver = webdriver.Chrome(DRIVER_PATH, options=options)
 
     def get_odds_by_leagues(
         self,
@@ -49,7 +54,6 @@ class YaJuegoConnector:
             a_odds: away player odds
         )
         """
-        self.driver = webdriver.Chrome(DRIVER_PATH)
         for league_ in leagues_data:
             league_id = league_['id']
             name = league_['name']

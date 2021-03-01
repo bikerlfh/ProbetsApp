@@ -48,7 +48,7 @@ sys.path.append(normpath(join(PROJECT_ROOT, 'apps')))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['186.31.79.101', '127.0.0.1']
+# ALLOWED_HOSTS = ['186.31.79.101', '127.0.0.1']
 # For demo purposes only. Use a white list in the real world.
 CORS_ORIGIN_ALLOW_ALL = True
 
@@ -112,22 +112,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'probetspp.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': environ.get('DATABASE_NAME', 'mydatabase'),
-        'USER': environ.get('DATABASE_USER', 'mydatabaseuser'),
-        'PASSWORD': environ.get('DATABASE_PASSWORD', 'mypassword'),
-        'HOST': environ.get('DATABASE_HOST', '127.0.0.1'),
-        'PORT': environ.get('DATABASE_PORT', '5432'),
-    }
-}
-
-
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -170,7 +154,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-SHELL_PLUS = "ipython"
 
 TOKEN_DURATION = int(environ.get('TOKEN_DURATION', 10000))
 

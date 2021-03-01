@@ -39,8 +39,8 @@ class FlashConnector:
         self.sport = sport.value
         options = Options()
         options.add_argument("--headless")
-        options.add_argument("window-size=1920,1080")
-        self.driver = webdriver.Chrome(DRIVER_PATH)
+        options.add_argument("window-size=1400,1500")
+        self.driver = webdriver.Chrome(DRIVER_PATH, options=options)
         self.content = None
         self.events = None
 
