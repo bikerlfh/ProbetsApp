@@ -1,8 +1,5 @@
 from .common import *
 
-SHELL_PLUS = "ipython"
-ALLOWED_HOSTS = ['186.31.79.101', '127.0.0.1']
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -13,3 +10,8 @@ DATABASES = {
         'PORT': os.getenv('DATABASE_PORT', '5432'),
     }
 }
+
+SHELL_PLUS = "ipython"
+ALLOWED_HOSTS = ['186.31.79.101', '127.0.0.1']
+THIRD_PARTY_APPS += ['django_extensions']
+INSTALLED_APPS = DEFAULT_APPS + THIRD_PARTY_APPS + LOCAL_APPS  # noqa
