@@ -20,7 +20,7 @@ class Command(BaseCommand):
             help='file date from',
         )
         parser.add_argument(
-            '--from_html_file',
+            '--html_file',
             type=bool,
             help='from html file',
         )
@@ -38,7 +38,7 @@ class Command(BaseCommand):
         file_date = options['file_date']
         file_date_from = options['file_date_from']
         file_date_to = options['file_date_to']
-        from_html_file = options['from_html_file']
+        from_html_file = options['html_file']
         if file_date:
             self.stdout.write(
                 self.style.SUCCESS(f'loading events from {file_date}....')
