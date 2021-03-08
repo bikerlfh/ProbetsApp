@@ -4,6 +4,7 @@ from .common import *
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS','').split(',')
 STATIC_ROOT = os.path.join(BASE_DIR, "..", "www", "static")
 STATIC_URL = '/static/'
+ROOT_URLCONF = 'probetspp.probetspp.urls'
 
 DATABASES = {
     'default': {
