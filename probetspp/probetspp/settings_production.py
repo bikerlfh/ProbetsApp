@@ -1,9 +1,7 @@
-from .common import *
+from .settings_common import *
 
 STATIC_ROOT = os.path.join(BASE_DIR, "..", "www", "static")
 STATIC_URL = '/static/'
-ALLOWED_HOSTS = ['probetspp-prod.us-east-1.elasticbeanstalk.com']
-
 
 DATABASES = {
     'default': {
