@@ -21,4 +21,3 @@ os.environ.setdefault(
 """
 
 application = get_wsgi_application()
-os.environ['DJANGO_SETTINGS_MODULE'] = f'{SITE_NAME}.settings.production'
