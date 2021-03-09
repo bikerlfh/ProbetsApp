@@ -2,8 +2,8 @@ from .common import *
 
 # DEBUG = False
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
-STATIC_ROOT = os.path.join(BASE_DIR, "..", "www", "static")
-STATIC_URL = '/static/'
+# STATIC_ROOT = os.path.join(BASE_DIR, "..", "www", "static")
+# STATIC_URL = '/static/'
 
 ROOT_URLCONF = f'{SITE_NAME}.{SITE_NAME}.urls'
 

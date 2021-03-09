@@ -45,12 +45,7 @@ sys.path.append(normpath(join(PROJECT_ROOT, 'apps')))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
 ALLOWED_HOSTS = ['186.31.79.101', '127.0.0.1']
-# For demo purposes only. Use a white list in the real world.
-CORS_ORIGIN_ALLOW_ALL = True
 
 DEFAULT_APPS = [
     'django.contrib.admin',
@@ -103,6 +98,7 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.static',
                 'django.contrib.messages.context_processors.messages',
             ],
         },
