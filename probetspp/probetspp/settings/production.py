@@ -1,12 +1,4 @@
 from .common import *
-
-# DEBUG = False
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
-# STATIC_ROOT = os.path.join(BASE_DIR, "..", "www", "static")
-# STATIC_URL = '/static/'
-
-ROOT_URLCONF = f'{SITE_NAME}.{SITE_NAME}.urls'
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -17,3 +9,16 @@ DATABASES = {
         'PORT': os.getenv('RDS_PORT'),
     }
 }
+
+
+# DEBUG = False
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')
+ROOT_URLCONF = f'{SITE_NAME}.{SITE_NAME}.urls'
+# STATICS AND MEDIA FILES
+AWS_STORAGE_BUCKET_NAME = os.getenv('BUCKET_FILES')
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+STATICFILES_LOCATION = 'static'
+STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/"
+STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+MEDIAFILES_LOCATION = 'media'
+DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'

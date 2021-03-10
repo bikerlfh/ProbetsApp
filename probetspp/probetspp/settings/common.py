@@ -28,12 +28,15 @@ SECRET_KEY = environ.get(
 
 SITE_NAME = basename(DJANGO_ROOT)
 
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+
 STATIC_ROOT = join(PROJECT_ROOT, 'run', 'static')
 
 MEDIA_ROOT = join(PROJECT_ROOT, 'run', 'images')
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "../static"),
 ]
 
 PROJECT_TEMPLATES = [
@@ -45,7 +48,7 @@ sys.path.append(normpath(join(PROJECT_ROOT, 'apps')))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
-ALLOWED_HOSTS = ['186.31.79.101', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 DEFAULT_APPS = [
     'django.contrib.admin',
@@ -63,7 +66,8 @@ THIRD_PARTY_APPS = [
     'rest_framework.authtoken',
     'django_filters',
     'django_q',
-    'dj_rest_auth'
+    'dj_rest_auth',
+    'storages'
 ]
 
 # Application definition
@@ -165,8 +169,8 @@ REST_AUTH_REGISTER_SERIALIZERS = {
     'REGISTER_SERIALIZER': 'apps.access.serializers.RegisterSerializer'
 }
 # REST_AUTH_TOKEN_CREATOR = 'apps.access.services.generate_token2'
-#REST_USE_JWT = True
-#JWT_AUTH_COOKIE = 'auth'
+# REST_USE_JWT = True
+# JWT_AUTH_COOKIE = 'auth'
 
 REST_FRAMEWORK = {
     'EXCEPTION_HANDLER': 'apps.utils.handlers.exception_errors_format_handler',
