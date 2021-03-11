@@ -245,3 +245,6 @@ Q_CLUSTER = {
     "name": "probets",
     "orm": "default",  # Use Django's ORM + database for broker
 }
+# AWS CREDENTIALS
+AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
