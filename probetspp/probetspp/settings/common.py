@@ -68,7 +68,6 @@ THIRD_PARTY_APPS = [
     'django_q',
     'dj_rest_auth',
     'storages',
-    'eb_sqs_worker',
 ]
 
 # Application definition
@@ -249,6 +248,3 @@ Q_CLUSTER = {
 # AWS CREDENTIALS
 AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
-# eb-sqs-worker
-AWS_EB_DEFAULT_REGION = os.getenv('AWS_REGION')
-AWS_EB_DEFAULT_QUEUE_NAME = os.getenv('AWS_DEFAULT_QUEUE_NAME')
