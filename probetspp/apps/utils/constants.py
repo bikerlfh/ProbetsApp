@@ -12,8 +12,7 @@ DELIMITER_CSV = getenv('DELIMITER_CSV', ';')
 
 DRIVER_PATH = getenv(
     'DRIVER_PATH',
-    f'{_main_path}/probetspp/web_drivers/'
-    f'{platform.system()}/chromedriver'
+    '/usr/bin/chromedriver'
 )
 
 
