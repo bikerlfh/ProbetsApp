@@ -8,6 +8,12 @@ from apps.games import selectors, services
 logger = logging.getLogger(__name__)
 
 
+def test_task():
+    logger.error(
+        f'test_task:: test task successful'
+    )
+
+
 def update_old_scheduled_games() -> Union[None]:
     yesterday = datetime.now() - timedelta(days=1)
     game_qry = selectors.filter_games(
