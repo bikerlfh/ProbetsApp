@@ -1,0 +1,12 @@
+{
+    "dev": {
+        "aws_region": "us-east-1",
+        "django_settings": "probetspp.settings.zappa",
+        "profile_name": "default",
+        "project_name": "probetspp",
+        "runtime": "python3.7",
+        "s3_bucket": "zappa-w7yquj3r3",
+        "delete_s3_zip": false,
+        "slim_handler": true
+    }
+}

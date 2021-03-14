@@ -1,1 +1,0 @@
-from games.tasks import test_task # noqa
