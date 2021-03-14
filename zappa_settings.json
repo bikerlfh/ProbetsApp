@@ -18,7 +18,7 @@
                 "function": "short_urls.test_task",
                 "expression": "rate(1 minute)"
             }
-        ]
-
+        ],
+        "use_precompiled_packages": false
     }
 }
