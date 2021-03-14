@@ -1,0 +1,9 @@
+{
+    "dev": {
+        "django_settings": "probetspp.probetspp.production",
+        "profile_name": "eb-cli",
+        "project_name": "probetspp",
+        "runtime": "python3.7",
+        "s3_bucket": "zappa-2kxby5csv"
+    }
+}

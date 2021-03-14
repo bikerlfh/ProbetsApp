@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from eb_sqs_worker.urls import urlpatterns as eb_sqs_urlpatterns
 
 
 urlpatterns = [
@@ -25,5 +24,3 @@ urlpatterns = [
     path('games/', include('apps.games.urls')),
     path('predictions/', include('apps.predictions.urls')),
 ]
-
-urlpatterns += eb_sqs_urlpatterns
