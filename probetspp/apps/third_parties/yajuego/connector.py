@@ -3,6 +3,7 @@ import logging
 from typing import Dict, Union, List, Any
 from datetime import datetime, date
 from babel.dates import format_date
+import chromedriver_binary  # noqa
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -10,7 +11,6 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 
-from apps.utils.constants import DRIVER_PATH
 from apps.third_parties.yajuego.constants import URL_LEAGUES
 
 
@@ -34,7 +34,7 @@ class YaJuegoConnector:
         options = Options()
         options.add_argument("--headless")
         options.add_argument("window-size=1400,1500")
-        self.driver = webdriver.Chrome(DRIVER_PATH, options=options)
+        self.driver = webdriver.Chrome(options=options)
 
     def get_odds_by_leagues(
         self,

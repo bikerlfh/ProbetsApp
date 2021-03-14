@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 
 def test_task():
     logger.error(
-        f'test_task:: test task successful'
+        'test_task:: test task successful'
     )
 
 

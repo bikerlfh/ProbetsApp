@@ -2,13 +2,13 @@ from enum import Enum
 from datetime import datetime, date
 from typing import Union, Dict, Any, List, Optional, TextIO
 import pandas as pd
+import chromedriver_binary  # noqa
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.chrome.options import Options
-from apps.utils.constants import DRIVER_PATH
 from apps.core.constants import GenderConstants
 from apps.third_parties.flashscore.constants import GenderLeague
 
@@ -40,7 +40,7 @@ class FlashConnector:
         options = Options()
         options.add_argument("--headless")
         options.add_argument("window-size=1400,1500")
-        self.driver = webdriver.Chrome(DRIVER_PATH, options=options)
+        self.driver = webdriver.Chrome(options=options)
         self.content = None
         self.events = None
 
