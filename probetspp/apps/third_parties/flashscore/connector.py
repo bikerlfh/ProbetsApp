@@ -2,14 +2,12 @@ from enum import Enum
 from datetime import datetime, date
 from typing import Union, Dict, Any, List, Optional, TextIO
 import pandas as pd
-import chromedriver_binary  # noqa
 from bs4 import BeautifulSoup
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
-from selenium.webdriver.chrome.options import Options
 from apps.core.constants import GenderConstants
+from apps.third_parties.chrome_custom import ChromeCustom
 from apps.third_parties.flashscore.constants import GenderLeague
 
 
@@ -37,12 +35,10 @@ class FlashConnector:
         sport: Optional[SPORTS] = SPORTS.TABLE_TENNIS
     ):
         self.sport = sport.value
-        options = Options()
-        options.add_argument("--headless")
-        options.add_argument("window-size=1400,1500")
-        self.driver = webdriver.Chrome(options=options)
+        self.driver = ChromeCustom()
         self.content = None
         self.events = None
+        self.url = None
 
     def get_today_events(
         self,
@@ -66,15 +62,15 @@ class FlashConnector:
             a_odds: away odd
         )
         """
-        url = URLS.SPORT_EVENTS.value.format(
+        self.url = URLS.SPORT_EVENTS.value.format(
             sport.value
         )
-        self.driver.get(url)
-        # wait a page has been loaded
-        WebDriverWait(self.driver, 90).until(
-            ec.presence_of_element_located((By.CLASS_NAME, "sportName"))
+        self.content = self.driver.get_content(
+            self.url,
+            wait_until_method=ec.presence_of_element_located(
+                (By.CLASS_NAME, "sportName")
+            )
         )
-        self.content = self.driver.page_source
         self.events = FlashConnector.read_events_by_content(
             content=self.content,
             event_date=datetime.now().date()
@@ -102,27 +98,18 @@ class FlashConnector:
         )
         """
         data = []
-        div_ods = self.driver.find_element_by_xpath("//div[text()='Cuotas']")
-        div_ods.click()
-        WebDriverWait(self.driver, 90).until(
-            ec.presence_of_element_located(
-                (By.CLASS_NAME, "event__participant")
-            )
+        odds_content = self.driver.get_content_by_xpath_click(
+            url=self.url,
+            xpath="//div[text()='Cuotas']",
+            wait_until_method=[
+                ec.presence_of_element_located(
+                    (By.CLASS_NAME, "sportName")
+                ),
+                ec.presence_of_element_located(
+                    (By.CLASS_NAME, "event__participant")
+                )
+            ]
         )
-        last_height = self.driver.execute_script(
-            "return document.body.scrollHeight"
-        )
-        while True:
-            self.driver.execute_script(
-                "window.scrollTo(0, document.body.scrollHeight);"
-            )
-            new_height = self.driver.execute_script(
-                "return document.body.scrollHeight"
-            )
-            if new_height == last_height:
-                break
-            last_height = new_height
-        odds_content = self.driver.page_source
         soup = BeautifulSoup(odds_content, features='html.parser')
         result = soup.find("div", {"id": "live-table"})
         events = result.find_all('div', class_='sportName')

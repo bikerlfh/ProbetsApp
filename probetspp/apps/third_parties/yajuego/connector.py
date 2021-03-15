@@ -5,12 +5,9 @@ from datetime import datetime, date
 from babel.dates import format_date
 import chromedriver_binary  # noqa
 from bs4 import BeautifulSoup
-from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
-
+from apps.third_parties.chrome_custom import ChromeCustom
 from apps.third_parties.yajuego.constants import URL_LEAGUES
 
 
@@ -31,10 +28,7 @@ class YaJuegoConnector:
         self.driver = None
         self.content = None
         self.odds = []
-        options = Options()
-        options.add_argument("--headless")
-        options.add_argument("window-size=1400,1500")
-        self.driver = webdriver.Chrome(options=options)
+        self.driver = ChromeCustom()
 
     def get_odds_by_leagues(
         self,
@@ -60,32 +54,16 @@ class YaJuegoConnector:
             if name not in URL_LEAGUES:
                 continue
             url = URL_LEAGUES[name]
-            self.driver.get(url)
-            # wait a page has been loaded
-            try:
-                # find sports-table or search-results(no events)
-                or_ = "//*[contains(@class,'sports-table') or " \
-                      "(contains(@class,'search-results'))]"
-                WebDriverWait(self.driver, 60).until(
-                    ec.presence_of_all_elements_located((By.XPATH, or_)),
-                )
-            except Exception as exc:
-                logger.exception(f'get_odds_by_league_name :: {exc}')
-                return None
-            last_height = self.driver.execute_script(
-                "return document.body.scrollHeight"
+            # find sports-table or search-results(no events)
+            or_ = "//*[contains(@class,'sports-table') or " \
+                  "(contains(@class,'search-results'))]"
+            self.content = self.driver.get_content(
+                url,
+                wait_until_method=ec.presence_of_all_elements_located(
+                    (By.XPATH, or_)
+                ),
+                scroll=True
             )
-            while True:
-                self.driver.execute_script(
-                    "window.scrollTo(0, document.body.scrollHeight);"
-                )
-                new_height = self.driver.execute_script(
-                    "return document.body.scrollHeight"
-                )
-                if new_height == last_height:
-                    break
-                last_height = new_height
-            self.content = self.driver.page_source
             odds = self._read_odds_by_content(
                 league_id=league_id
             )
