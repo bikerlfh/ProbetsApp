@@ -6,7 +6,15 @@
         "project_name": "probetspp",
         "runtime": "python3.7",
         "s3_bucket": "zappa-w7yquj3r3",
-        "delete_s3_zip": false,
-        "slim_handler": true
+        "delete_s3_zip": true,
+        "slim_handler": true,
+        "memory_size": 1536,
+        "keep_warm": false,
+        "events": [
+            {
+                "function": "apps.games.tasks.test_task",
+                "expression": "cron(0/5 * * * ? *)"
+            }
+        ]
     }
 }
