@@ -2,28 +2,25 @@
 
 This README would normally document whatever steps are necessary to get your application up and running.
 
-### What is this repository for? ###
+## Configuration
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+### chromeless
+Install https://pypi.org/project/chromeless/ and configure chromeless in aws lambda. by defaul a lambda name is chromeless-server-prod
 
-### How do I get set up? ###
+* Add Lambda Enviroment variable TZ=America/Bogota
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+### zappa deploy dev
+zappa deploy dev
 
-### Contribution guidelines ###
 
-* Writing tests
-* Code review
-* Other guidelines
+Add envars
+* ALLOWED_HOSTS
+* BUCKET_FILES
+* DATABASE_HOST
+* DATABASE_NAME
+* DATABASE_PASSWORD
+* DATABASE_PORT
+* DATABASE_USER
+* ENVIRONMENT = production
+* SENTRY_URL
 
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
