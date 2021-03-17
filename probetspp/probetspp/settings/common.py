@@ -244,6 +244,7 @@ LOGGING = {
 Q_CLUSTER = {
     "name": "probets",
     "orm": "default",  # Use Django's ORM + database for broker
+    "timeout": 500
 }
 # AWS CREDENTIALS
 AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')

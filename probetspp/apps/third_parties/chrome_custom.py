@@ -12,8 +12,8 @@ class ChromeCustom:
         if not USE_CHROMELESS:
             if not options:
                 options = Options()
-            #options.add_argument("--headless")
-            #options.add_argument("window-size=1400,1500")
+            options.add_argument("--headless")
+            options.add_argument("window-size=1400,1500")
             self._driver = webdriver.Chrome(options=options)
         else:
             self._driver = chromeless.Chromeless()

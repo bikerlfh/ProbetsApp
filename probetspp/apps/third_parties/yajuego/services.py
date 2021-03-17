@@ -119,6 +119,11 @@ def update_odds_games() -> Union[None]:
         'name',
         'gender'
     )
-    update_odds_games_by_leagues(
-        leagues_data=league_data
-    )
+    try:
+        update_odds_games_by_leagues(
+            leagues_data=league_data
+        )
+    except Exception as exc:
+        logger.exception(
+            f'update_odds_games :: {exc}'
+        )
