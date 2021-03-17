@@ -3,7 +3,6 @@ import logging
 from typing import Dict, Union, List, Any
 from datetime import datetime, date
 from babel.dates import format_date
-import chromedriver_binary  # noqa
 from bs4 import BeautifulSoup
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as ec
