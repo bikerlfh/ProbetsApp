@@ -1,5 +1,5 @@
 from typing import Callable, Optional, Dict, Any, Union, List
-# import chromedriver_binary  # noqa
+import chromedriver_binary  # noqa
 from chromeless import chromeless
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
@@ -12,8 +12,8 @@ class ChromeCustom:
         if ENVIRONMENT == 'alpha':
             if not options:
                 options = Options()
-            options.add_argument("--headless")
-            options.add_argument("window-size=1400,1500")
+            #options.add_argument("--headless")
+            #options.add_argument("window-size=1400,1500")
             self._driver = webdriver.Chrome(options=options)
         elif ENVIRONMENT == 'production':
             self._driver = chromeless.Chromeless()
@@ -93,7 +93,9 @@ class ChromeCustom:
         return self._driver.find_element_by_xpath(xpath)
 
     def close(self):
-        pass
+        if isinstance(self._driver, chromeless.Chromeless):
+            return
+        self._driver.close()
 
 
 def exec_function(

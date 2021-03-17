@@ -71,7 +71,6 @@ class FlashConnector:
                 (By.CLASS_NAME, "sportName")
             )
         )
-        self.driver.close()
         self.events = FlashConnector.read_events_by_content(
             content=self.content,
             event_date=datetime.now().date()
@@ -111,7 +110,6 @@ class FlashConnector:
                 )
             ]
         )
-        self.driver.close()
         soup = BeautifulSoup(odds_content, features='html.parser')
         result = soup.find("div", {"id": "live-table"})
         events = result.find_all('div', class_='sportName')

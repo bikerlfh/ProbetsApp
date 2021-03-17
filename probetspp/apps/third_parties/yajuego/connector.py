@@ -63,7 +63,6 @@ class YaJuegoConnector:
                 ),
                 scroll=True
             )
-            self.driver.close()
             odds = self._read_odds_by_content(
                 league_id=league_id
             )
