@@ -1,5 +1,5 @@
 from typing import Callable, Optional, Dict, Any, Union, List
-import chromedriver_binary  # noqa
+# import chromedriver_binary  # noqa
 from chromeless import chromeless
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
