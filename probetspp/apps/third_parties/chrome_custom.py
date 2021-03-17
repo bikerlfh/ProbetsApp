@@ -4,18 +4,18 @@ from chromeless import chromeless
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.chrome.options import Options
-from apps.utils.constants import ENVIRONMENT
+from apps.third_parties.constants import USE_CHROMELESS
 
 
 class ChromeCustom:
     def __init__(self, options: Optional[Options] = None):
-        if ENVIRONMENT == 'alpha':
+        if not USE_CHROMELESS:
             if not options:
                 options = Options()
             #options.add_argument("--headless")
             #options.add_argument("window-size=1400,1500")
             self._driver = webdriver.Chrome(options=options)
-        elif ENVIRONMENT == 'production':
+        else:
             self._driver = chromeless.Chromeless()
             self._driver.attach(get_content)
             self._driver.attach(get_content_by_xpath_click)
