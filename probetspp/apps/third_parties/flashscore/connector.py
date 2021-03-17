@@ -71,6 +71,7 @@ class FlashConnector:
                 (By.CLASS_NAME, "sportName")
             )
         )
+        self.driver.close()
         self.events = FlashConnector.read_events_by_content(
             content=self.content,
             event_date=datetime.now().date()
@@ -110,6 +111,7 @@ class FlashConnector:
                 )
             ]
         )
+        self.driver.close()
         soup = BeautifulSoup(odds_content, features='html.parser')
         result = soup.find("div", {"id": "live-table"})
         events = result.find_all('div', class_='sportName')
@@ -143,16 +145,14 @@ class FlashConnector:
         url = URLS.EVENT_DETAIL.value.format(
             external_id
         )
-        self.driver.get(url)
         # wait a page has been loaded
         or_ = "//*[contains(@class,'part--current') or " \
               "(contains(@class,'noData')) or (contains(@class,'error'))]"
-        WebDriverWait(self.driver, 10).until(
-            ec.presence_of_all_elements_located((
+        content = self.driver.get_content(
+            url,
+            wait_until_method=ec.presence_of_all_elements_located((
                 By.XPATH, or_
-            )),
-        )
-        content = self.driver.page_source
+            )))
         self.driver.close()
         soup = BeautifulSoup(content, features='html.parser')
         error_ = soup.find('div', class_='error')
