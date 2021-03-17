@@ -8,12 +8,21 @@
         "s3_bucket": "zappa-w7yquj3r3",
         "delete_s3_zip": true,
         "slim_handler": true,
-        "memory_size": 1536,
+        "memory_size": 10240,
         "keep_warm": false,
+        "exclude": ["*.pyc"],
         "events": [
             {
-                "function": "apps.games.tasks.test_task",
-                "expression": "cron(0/5 * * * ? *)"
+                "function": "short_urls.update_old_scheduled_games",
+                "expression": "cron(5 5 * * ? *)"
+            },
+            {
+                "function": "short_urls.update_events_data",
+                "expression": "cron(0/10 * * * ? *)"
+            },
+            {
+                "function": "short_urls.create_periodical_prediction",
+                "expression": "cron(0/25 0 * * ? *)"
             }
         ]
     }
