@@ -76,7 +76,6 @@ def update_odds_games_by_leagues(
         'a_name'
     )
     games = list(games_qry)
-    import pdb; pdb.set_trace()
     for odds_ in odds:
         h_name = odds_['h_name']
         a_name = odds_['a_name']

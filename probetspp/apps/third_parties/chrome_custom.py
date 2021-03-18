@@ -1,3 +1,4 @@
+import logging
 from typing import Callable, Optional, Dict, Any, Union, List
 # import chromedriver_binary  # noqa
 from chromeless import chromeless
@@ -5,6 +6,9 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.chrome.options import Options
 from apps.third_parties.constants import USE_CHROMELESS
+
+
+logger = logging.getLogger(__name__)
 
 
 class ChromeCustom:
@@ -29,13 +33,20 @@ class ChromeCustom:
         wait_seconds: Optional[int] = 20,
         scroll: Optional[bool] = False
     ) -> str:
+        logger.info(
+            f'get_content :: DRIVER CHROME STARTED'
+        )
         if isinstance(self._driver, chromeless.Chromeless):
-            return self._driver.get_content(
+            content = self._driver.get_content(
                 url,
                 wait_until_method=wait_until_method,
                 wait_seconds=wait_seconds,
                 scroll=scroll
             )
+            logger.info(
+                f'get_content :: DRIVER CHROME FINISHED'
+            )
+            return content
         self._driver.get(url)
         if wait_until_method:
             WebDriverWait(self._driver, wait_seconds).until(wait_until_method)
@@ -53,7 +64,11 @@ class ChromeCustom:
                 if new_height == last_height:
                     break
                 last_height = new_height
-        return self._driver.page_source
+        content = self._driver.page_source
+        logger.info(
+            f'get_content :: DRIVER CHROME FINISHED'
+        )
+        return content
 
     def get_content_by_xpath_click(
         self,
@@ -63,14 +78,21 @@ class ChromeCustom:
         wait_seconds: Optional[int] = 90,
         scroll: Optional[bool] = False
     ) -> str:
+        logger.info(
+            f'get_content_by_xpath_click :: DRIVER CHROME STARTED'
+        )
         if isinstance(self._driver, chromeless.Chromeless):
-            return self._driver.get_content_by_xpath_click(
+            content = self._driver.get_content_by_xpath_click(
                 url,
                 xpath,
                 wait_until_method=wait_until_method,
                 wait_seconds=wait_seconds,
                 scroll=scroll
             )
+            logger.info(
+                f'get_content_by_xpath_click :: DRIVER CHROME FINISHED'
+            )
+            return content
         div_ods = self._driver.find_element_by_xpath(xpath)
         div_ods.click()
         WebDriverWait(self._driver, wait_seconds).until(wait_until_method[1])
@@ -87,7 +109,11 @@ class ChromeCustom:
             if new_height == last_height:
                 break
             last_height = new_height
-        return self._driver.page_source
+        content = self._driver.page_source
+        logger.info(
+            f'get_content_by_xpath_click :: DRIVER CHROME FINISHED'
+        )
+        return content
 
     def find_element_by_xpath(self, xpath):
         return self._driver.find_element_by_xpath(xpath)
