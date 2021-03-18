@@ -17,8 +17,8 @@ THIRD_PARTY_APPS += ['django_extensions']
 INSTALLED_APPS = DEFAULT_APPS + THIRD_PARTY_APPS + LOCAL_APPS  # noqa
 
 STATIC_URL = 'http://192.168.0.10:8000/static/'
-STATIC_ROOT = "/var/probetspp/static/"
+STATIC_ROOT = "/tmp/probetspp/static/"
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
+    '/tmp/probetspp/',
 ]
 
