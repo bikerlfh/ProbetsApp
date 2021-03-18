@@ -22,8 +22,23 @@ def create_periodical_prediction() -> Union[None]:
     """
     create today periodical prediction task
     """
+    logger.info(
+        f'create_periodical_prediction :: STARTED'
+    )
+    logger.info(
+        f'load_events :: STARTED'
+    )
     flash_services.load_events()
+    logger.info(
+        f'load_events :: FINISHED'
+    )
+    logger.info(
+        f'update_odds_games :: STARTED'
+    )
     yajuego_services.update_odds_games()
+    logger.info(
+        f'update_odds_games :: FINISHED'
+    )
     start_dt_from = datetime.now()
     start_dt_to = start_dt_from + timedelta(minutes=30)
     predictions = services.create_prediction_by_advance_analysis(

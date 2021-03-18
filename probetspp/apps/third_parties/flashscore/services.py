@@ -324,9 +324,9 @@ def create_or_update_game(
     if game.away_player != away_player:
         data.update(away_player=away_player)
     games_services.update_game(**data)
-    logger.info(
+    """logger.info(
         f'create_update_game :: game {external_id} update'
-    )
+    )"""
     return False
 
 
