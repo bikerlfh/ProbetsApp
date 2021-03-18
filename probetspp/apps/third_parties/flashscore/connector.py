@@ -4,7 +4,6 @@ from typing import Union, Dict, Any, List, Optional, TextIO
 import pandas as pd
 from bs4 import BeautifulSoup
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from apps.core.constants import GenderConstants
 from apps.third_parties.chrome_custom import ChromeCustom

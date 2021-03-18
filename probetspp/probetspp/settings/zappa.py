@@ -13,7 +13,7 @@ DATABASES = {
     }
 }
 
-#DEBUG = False
+DEBUG = False
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')
 ROOT_URLCONF = f'{SITE_NAME}.urls'
 # STATICS AND MEDIA FILES
