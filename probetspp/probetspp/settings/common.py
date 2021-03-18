@@ -230,14 +230,10 @@ LOGGING = {
             'handlers': ['console'],
             'level': environ.get('LOG_LEVEL', 'INFO')
         },
-        'apps.third_parties.flashscore': {
+        'apps.third_parties': {
             'handlers': ['console'],
             'level': environ.get('LOG_LEVEL', 'INFO')
-        },
-        'apps.third_parties.yajuego': {
-            'handlers': ['console'],
-            'level': environ.get('LOG_LEVEL', 'INFO')
-        },
+        }
     }
 }
 
