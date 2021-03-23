@@ -29,6 +29,12 @@ def read_events_web_driver() -> Union[None, List[Dict[str, Any]]]:
     connector = FlashConnector()
     try:
         events = connector.get_today_events()
+        now = datetime.now()
+        filename = f'{FOLDER_PATH_FLASH_DATA}' \
+                   f'{now.strftime(FILENAME_FORMAT_FLASH_DATA)}'
+        f = open(filename, "w")
+        f.write(connector.content)
+        f.close()
     except Exception as exc:
         logger.exception(f'read_events_web_driver :: {exc}')
         return
