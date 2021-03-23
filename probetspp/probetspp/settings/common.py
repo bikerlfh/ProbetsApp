@@ -31,14 +31,6 @@ SITE_NAME = basename(DJANGO_ROOT)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-STATIC_ROOT = join(PROJECT_ROOT, 'run', 'static')
-
-MEDIA_ROOT = join(PROJECT_ROOT, 'run', 'images')
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "../static"),
-]
-
 PROJECT_TEMPLATES = [
     join(BASE_DIR, 'templates'),
 ]
@@ -77,7 +69,6 @@ LOCAL_APPS = [
     'apps.games',
     'apps.predictions'
 ]
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -153,6 +144,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+# STATIC_ROOT = join(PROJECT_ROOT, 'static')
+STATIC_ROOT = '/tmp/probetspp/static'
+
+MEDIA_ROOT = join(PROJECT_ROOT, 'media')
+
+# STATICFILES_DIRS = [
+#   os.path.join(BASE_DIR, "static"),
+# ]
 
 TOKEN_DURATION = int(environ.get('TOKEN_DURATION', 10000))
 

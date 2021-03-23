@@ -1,0 +1,27 @@
+version: '3.7'
+
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/opt/app
+    env_file:
+      - .envrc
+    #environment:
+    #  - DEBUG=1
+  nginx:
+    image: nginx:1.13
+    ports:
+      - 8080:80
+    volumes:
+      - ./config/nginx/conf.d:/etc/nginx/conf.d
+      - static:/tmp/probetspp/static
+    depends_on:
+      - app
+
+volumes:
+  .:
+  static:

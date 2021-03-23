@@ -1,6 +1,10 @@
 from .common import *
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
+import mimetypes
+mimetypes.add_type("text/css", ".css", True)
+mimetypes.add_type("text/html", ".htm", True)
+
 
 DATABASES = {
     'default': {
@@ -8,22 +12,22 @@ DATABASES = {
         'NAME': os.getenv('DATABASE_NAME', 'probets_pp'),
         'USER': os.getenv('DATABASE_USER', 'postgres'),
         'PASSWORD': os.getenv('DATABASE_PASSWORD', 'postgres'),
-        'HOST': os.getenv('DATABASE_HOST', '127.0.0.1'),
+        'HOST': os.getenv('DATABASE_HOST', 'localhost'),
         'PORT': os.getenv('DATABASE_PORT', '5432'),
     }
 }
 
 DEBUG = False
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')
-ROOT_URLCONF = f'{SITE_NAME}.{SITE_NAME}.urls'
+ROOT_URLCONF = f'{SITE_NAME}.urls'
 # STATICS AND MEDIA FILES
-AWS_STORAGE_BUCKET_NAME = os.getenv('BUCKET_FILES')
-AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-STATICFILES_LOCATION = 'static'
-STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/"
-STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-MEDIAFILES_LOCATION = 'media'
-DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+#AWS_STORAGE_BUCKET_NAME = os.getenv('BUCKET_FILES')
+#AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+#STATICFILES_LOCATION = 'static'
+#STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/"
+#STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+#MEDIAFILES_LOCATION = 'media'
+#DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
 
 sentry_sdk.init(
