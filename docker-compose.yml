@@ -15,7 +15,7 @@ services:
   nginx:
     image: nginx:1.13
     ports:
-      - 8080:80
+      - 80:80
     volumes:
       - ./config/nginx/conf.d:/etc/nginx/conf.d
       - static:/tmp/probetspp/static
