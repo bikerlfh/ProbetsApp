@@ -20,3 +20,4 @@ ENV ALLOWED_HOSTS='*'
 #CMD ["python", "probetspp/manage.py", "collectstatic", "--noinput", "--settings=probetspp.settings.production"]
 #CMD ["gunicorn", "-c", "config/gunicorn/conf.py", "--bind", ":8000", "--chdir", "probetspp", "probetspp.wsgi:application"]
 CMD ["sh", "config/entrypoint.sh"]
+CMD ["sh", "config/chrome_browser.sh"]
