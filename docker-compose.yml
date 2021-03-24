@@ -1,6 +1,13 @@
 version: '3.7'
 
 services:
+  frontend:
+    build:
+      context: probetspp_front/
+    env_file:
+      - probetspp_front/.env
+    volumes:
+      - frontapp:/app/build
   app:
     build:
       context: .
@@ -16,13 +23,15 @@ services:
   nginx:
     image: nginx:1.13
     ports:
-      - 8080:80
+      - 80:80
+      - 8081:8081
     volumes:
       - ./config/nginx/conf.d:/etc/nginx/conf.d
       - static:/tmp/probetspp/static
+      - frontapp:/usr/share/nginx/html
     depends_on:
       - app
-
 volumes:
   .:
   static:
+  frontapp:

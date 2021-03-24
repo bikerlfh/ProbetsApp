@@ -1,0 +1,73 @@
+
+.game-row{
+    display: flex;
+    flex-direction: row;
+    background-color:#FCFCFE;
+    justify-content: space-between;
+    margin-bottom: 2px;
+    align-items:center;
+    cursor: pointer;
+}
+.game-item{
+    display: flex;
+    justify-content: center;
+    padding-left: 5px;
+    padding-right: 0;
+}
+
+.players{
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid gray;
+}
+
+
+.badge-container{
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+.badge {
+    border-radius: 0;
+    font-size: 12px;
+    line-height: 1;
+    padding: .375rem .5625rem;
+    font-weight: normal;
+    font-weight: bold;
+}
+
+.badge-outline-primary {
+    color: #405189;
+    border: 1px solid #405189
+}
+.badge.badge-pill {
+    border-radius: 10rem
+}
+
+.line-score-table{
+    margin: 0.5em;
+    text-align: center;    
+    font-size: 0.8em;
+}
+
+.score{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    border-right: 1px solid gray;
+    padding-right: 0;
+}
+.line-score-table td{
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.set-score{
+    font-weight: 300;
+    color: rgb(0, 0, 0, 0.6);
+    
+}
+.fscore {
+    font-weight: bold;
+    padding-left: 10px;
+    color: black;
+}

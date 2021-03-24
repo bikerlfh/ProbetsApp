@@ -1,0 +1,24 @@
+.chart-container{
+    background-color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+.rb-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+.rb{
+    display: flex;
+    flex-direction: row;
+    margin-left: 5px;
+    margin-right: 5px;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+label{
+    padding-left: 5px;
+}

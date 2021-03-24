@@ -1,0 +1,10 @@
+.prediction-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.btn-notify{
+    padding: 0px;
+    margin: 0px;
+    font-size: 10px;
+}
