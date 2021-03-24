@@ -4,10 +4,11 @@ services:
   app:
     build:
       context: .
-    ports:
-      - "8000:8000"
+    #ports:
+    #  - "8000:8000"
     volumes:
       - .:/opt/app
+      - static:/tmp/probetspp/static
     env_file:
       - .envrc
     #environment:
@@ -15,7 +16,7 @@ services:
   nginx:
     image: nginx:1.13
     ports:
-      - 80:80
+      - 8080:80
     volumes:
       - ./config/nginx/conf.d:/etc/nginx/conf.d
       - static:/tmp/probetspp/static

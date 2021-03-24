@@ -1,10 +1,6 @@
 from .common import *
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
-import mimetypes
-mimetypes.add_type("text/css", ".css", True)
-mimetypes.add_type("text/html", ".htm", True)
-
 
 DATABASES = {
     'default': {
