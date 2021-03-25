@@ -19,7 +19,6 @@ interface IProps {
 
 class DashBoardView extends Component<IProps> {
     componentDidMount(){
-        console.log('DID MOUNT')
         this.props.getDashboardData()
     }
     render(){

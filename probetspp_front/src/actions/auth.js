@@ -16,8 +16,6 @@ export const loadUser = () => (dispatch, getState) => {
     dispatch({ type: USER_LOADING });
     APIRequest.requestMe()
     .then((res) => {
-        console.log('REQUEST ME');
-        console.log(res);
         dispatch({
             type: USER_LOADED,
             payload: Object.assign({}, res),

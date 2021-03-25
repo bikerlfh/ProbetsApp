@@ -8,7 +8,7 @@ import GameList from '../components/GameList';
 import GamesChart from '../components/GamesChart';
 import '../assets/css/gamedetail.css';
 import { toast } from 'react-toastify';
-import { Console } from 'console';
+import { Pacman, BallScaleRippleMultiple } from 'react-pure-loaders';
 
 interface IProps {
   	match: Dictionary<any>
@@ -105,7 +105,11 @@ class GameViewDetail extends Component<IProps, IState> {
         const game = this.state.game
         if(game == null){
           return(
-            <div>NO DATA</div>
+			<MainContainer>
+				<div className="loading-container">
+            		<BallScaleRippleMultiple color='#FF0404' loading/>
+				</div>
+			</MainContainer>
           )
         }
         const data = this.state.data || {}

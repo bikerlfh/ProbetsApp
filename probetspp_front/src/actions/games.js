@@ -7,7 +7,6 @@ import { GET_GAMES, GET_GAME_DETAIL, GET_LEAGUES } from './types';
 
 // GET LEAGUES
 export const getLeagues = () => (dispatch, getState) => {
-    console.log('GET_LEAGUES')
     APIRequest.getLeagues()
     .then((res) => {
         dispatch({

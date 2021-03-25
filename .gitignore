@@ -2,6 +2,7 @@
 __pycache__/
 node_modules/
 dist/
+.env*
 .envrc
 .moenv
 .mo_env_file

@@ -51,7 +51,6 @@ class PredictionBarChart extends Component<IProps, IState>{
     }
 
     getBarProperties(){
-        console.log('ENTRO')
         const leagues = this.props.leagues;
 		const showToday = this.state.showToday;
         let gameData = this.props.gameData.today_predictions;

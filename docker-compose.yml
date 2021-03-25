@@ -5,7 +5,7 @@ services:
     build:
       context: probetspp_front/
     env_file:
-      - probetspp_front/.env
+      - .env.prod
     volumes:
       - frontapp:/app/build
   app:
@@ -17,7 +17,7 @@ services:
       - .:/opt/app
       - static:/tmp/probetspp/static
     env_file:
-      - .envrc
+      - .env.prod
     #environment:
     #  - DEBUG=1
   nginx:
