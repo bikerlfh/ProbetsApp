@@ -34,6 +34,7 @@ def _add_line_score_data(
     if not game_data['l_score']:
         return game_data
     df = pd.DataFrame(game_data['l_score'])
+    df = df.apply(pd.to_numeric)
     sum_pts = df.sum()
     h_points = sum_pts['home']
     a_points = sum_pts['away']
