@@ -1,9 +1,14 @@
 FROM python:3.7-buster
 RUN mkdir -p /opt/app
-COPY . /opt/app
+RUN mkdir -p /opt/app/info_pages/flash
+RUN mkdir -p /opt/app/datasets
+
+COPY ./probetspp /opt/app/probetspp
+COPY ./requirements /opt/app/requirements
+COPY ./config /opt/app/config
 WORKDIR /opt/app
 RUN chmod +x /opt/app/config/*
-RUN pip install --default-timeout=1000 -r /opt/app/requirements/production_pi.txt
+RUN pip install --default-timeout=150 -r /opt/app/requirements/production_pi.txt
 RUN mkdir -p /tmp/probetspp/static
 RUN chmod -R 775 /tmp/probetspp/static
 ENV ALLOWED_HOSTS='*'

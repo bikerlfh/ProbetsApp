@@ -1,8 +1,12 @@
 FROM python:3.7-buster
 
 RUN mkdir -p /opt/app
+RUN mkdir -p /opt/app/info_pages/flash
+RUN mkdir -p /opt/app/datasets
 
-COPY . /opt/app
+COPY ./probetspp /opt/app/probetspp
+COPY ./requirements /opt/app/requirements
+COPY ./config /opt/app/config
 
 WORKDIR /opt/app
 RUN chmod +x /opt/app/config/*
