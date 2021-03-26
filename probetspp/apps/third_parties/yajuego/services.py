@@ -9,6 +9,7 @@ from apps.core.constants import GenderConstants
 from apps.games.constants import GameStatus
 from apps.games import selectors as games_selectors
 from apps.third_parties.yajuego.connector import YaJuegoConnector
+from apps.third_parties.yajuego.constants import UPDATE_YAJUEGO_ODDS
 
 
 logger = logging.getLogger(__name__)
@@ -110,6 +111,8 @@ def update_odds_games_by_leagues(
 
 
 def update_odds_games() -> Union[None]:
+    if not UPDATE_YAJUEGO_ODDS:
+        return
     now = datetime.now().date()
     league_data = games_selectors.get_all_leagues().filter(
         games__status=GameStatus.SCHEDULED.value,

@@ -1,3 +1,7 @@
+from os import getenv
+
+
+UPDATE_YAJUEGO_ODDS = bool(int(getenv('UPDATE_YAJUEGO_ODDS', '1')))
 
 _URL = 'https://sports.yajuego.co/competition/tabletennis'
 
