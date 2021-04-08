@@ -23,7 +23,7 @@ def create_periodical_prediction() -> Union[None]:
     create today periodical prediction task
     """
     logger.info(
-        f'create_periodical_prediction :: started'
+        'create_periodical_prediction :: started'
     )
     flash_services.load_events()
     yajuego_services.update_odds_games()
