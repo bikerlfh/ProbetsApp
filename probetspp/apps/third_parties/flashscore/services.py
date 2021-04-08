@@ -290,8 +290,9 @@ def create_or_update_game(
     game_qry = games_selectors.filter_game_by_external_id(
         external_id=external_id
     )
-    if a_odds.is_nan() or h_odds.is_nan():
+    if a_odds and a_odds.is_nan():
         a_odds = None
+    if h_odds and h_odds.is_nan():
         h_odds = None
     if not game_qry.exists():
         games_services.create_game(
