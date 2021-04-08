@@ -86,7 +86,8 @@ def get_last_games_player_wt_score(
             wt_score += score_data['h_game_wt_score']
             continue
         wt_score += score_data['a_game_wt_score']
-
+    if t_games == 0:
+        return Decimal(0)
     player_wt_score = wt_last_games * (wt_score / t_games)
     return player_wt_score
 
