@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import {connect} from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {logout} from '../actions/auth';
@@ -15,7 +15,7 @@ class MainContainer extends Component<any, any> {
         
         if(!auth.isAuthenticated){
             return(
-                <Redirect to='/login/'/>
+                <Navigate to='/login/' replace />
             )
         }
         let username = 'anonymous';

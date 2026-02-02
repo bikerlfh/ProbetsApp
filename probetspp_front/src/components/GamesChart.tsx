@@ -1,10 +1,30 @@
 import {Component} from 'react'
 import {Line} from 'react-chartjs-2';
+import {
+    Chart as ChartJS,
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend,
+} from 'chart.js';
 import '../assets/css/gameschart.css';
 import {Dictionary} from '../types/interfaces';
 import {range} from '../utils/common';
 
 import {chartColors} from '../utils/constants'
+
+ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend
+);
 
 
 
@@ -22,7 +42,6 @@ const styleOpponent2 = {
     borderColor: chartColors.blue
 }
 
-const datasetKeyProvider = () =>{ return Math.random().toString() } 
 
 
 interface IProps {
@@ -37,7 +56,7 @@ interface IProps {
 interface IState {
     hData: number[];
     aData: number[];
-    data: Dictionary<any>;
+    data: { labels: string[]; datasets: any[] };
     options: Dictionary<any>;
     showPoints: boolean;
 }
@@ -49,7 +68,7 @@ class GamesChart extends Component<IProps, IState>{
         this.state = {
             hData: [],
             aData: [],
-            data: {},
+            data: { labels: [], datasets: [] },
             options: {},
             showPoints: false
         }
@@ -60,7 +79,7 @@ class GamesChart extends Component<IProps, IState>{
     }
     
     componentDidUpdate(prevProps: IProps, prevState: IState){
-        if(this.state.showPoints != prevState.showPoints){
+        if(this.state.showPoints !== prevState.showPoints){
             this.setPlayerData();
         }
     }
@@ -87,7 +106,7 @@ class GamesChart extends Component<IProps, IState>{
         const aPlayerData = this.props.aPlayerData;
         const h_id = hPlayerData.id;
         const a_id = aPlayerData? aPlayerData.id : 0;
-        const onlyOpponent = h_id != winnerId &&  a_id != winnerId;
+        const onlyOpponent = h_id !== winnerId &&  a_id !== winnerId;
         const hDataSet = {
             id: this.props.hPlayerData.id,
             label: this.props.hPlayerData.name,
@@ -116,12 +135,12 @@ class GamesChart extends Component<IProps, IState>{
         else{
             datasets.push(
                 Object.assign({}, hDataSet,
-                    winnerId == h_id? styleWinner : styleOpponent
+                    winnerId === h_id? styleWinner : styleOpponent
                 )
             )
             datasets.push(
                 Object.assign({}, aDataSet,
-                    winnerId == a_id? styleWinner : styleOpponent
+                    winnerId === a_id? styleWinner : styleOpponent
                 )
             )
         }
@@ -131,38 +150,43 @@ class GamesChart extends Component<IProps, IState>{
         }
         const options = {
             responsive: true,
-            title: {
-                display: true,
-                text: this.props.title
+            plugins: {
+                title: {
+                    display: true,
+                    text: this.props.title
+                },
+                tooltip: {
+                    enabled: true,
+                    mode: 'point' as const,
+                    intersect: false
+                },
             },
-            tooltrips: {
-                enabled: true,
-                mode: 'point',
-                intersect: false
-            },
-            hover: {
-                mode: 'nearest',
+            interaction: {
+                mode: 'nearest' as const,
                 intersect: true
             },
             scales: {
-                xAxes: [{
+                x: {
                     display: true,
-                    scaleLabel: {
+                    title: {
                         display: true,
-                        labelString: 'Games'
+                        text: 'Games'
                     }
-                }],
-                yAxes: [{
+                },
+                y: {
                     display: true,
-                    scaleLabel: {
+                    title: {
                         display: true,
-                        labelString: !showPoints? 'Won Sets': 'Won Points'
+                        text: !showPoints? 'Won Sets': 'Won Points'
                     },
+                    beginAtZero: true,
                     ticks: {
-                        beginAtZero: true,
-                        callback: (value: number) => {if (value % 1 === 0) return value;}
+                        callback: (value: number | string) => {
+                            if (typeof value === 'number' && value % 1 === 0) return value;
+                            return null;
+                        }
                     }
-                }]
+                }
             },
         }
         this.setState({data: data, options: options});
@@ -175,7 +199,7 @@ class GamesChart extends Component<IProps, IState>{
         let hData: number[] = []
         let aData: number[] = []        
         games.slice().reverse().slice(0, numMaxGames).forEach(game => {
-            if(game.h_id == h_id){
+            if(game.h_id === h_id){
                 hData.push((showPoints)? game.h_points : game.h_score);
                 aData.push((showPoints)? game.a_points : game.a_score);
             }
@@ -194,8 +218,7 @@ class GamesChart extends Component<IProps, IState>{
                 <div className='col-lg-12'>
                     <Line 
                         data={this.state.data} 
-                        options={this.state.options} 
-                        datasetKeyProvider={datasetKeyProvider} />
+                        options={this.state.options} />
                 </div>
                 <div className='row rb-container'>
                     <div className='rb'>

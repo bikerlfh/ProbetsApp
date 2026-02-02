@@ -1,6 +1,5 @@
-import React, {Component} from 'react';
 import {Provider} from 'react-redux';
-import { BrowserRouter, Route, useHistory } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import DashBoardView from './containers/DashBoardView';
 import LoginView from './containers/LoginView';
@@ -18,15 +17,16 @@ store.subscribe(() => {
 
 
 function App() {
-	let history = useHistory();
 	return (
 		<Provider store={store}>
-			<BrowserRouter >
-				<Route exact path="/" component={DashBoardView} />
-				<Route exact path="/login/" component={LoginView} />
-				<Route exact path="/game/:gameId/" component={GameDetailView} />
-				<Route exact path="/predictions/" component={PredictionsView} />
-				<Route exact path="/games/" component={GameListView} />
+			<BrowserRouter>
+				<Routes>
+					<Route path="/" element={<DashBoardView />} />
+					<Route path="/login/" element={<LoginView />} />
+					<Route path="/game/:gameId/" element={<GameDetailView />} />
+					<Route path="/predictions/" element={<PredictionsView />} />
+					<Route path="/games/" element={<GameListView />} />
+				</Routes>
 			</BrowserRouter>
 		</Provider>
 	);

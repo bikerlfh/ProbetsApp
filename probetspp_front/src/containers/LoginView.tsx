@@ -1,5 +1,5 @@
 import { Component} from 'react';
-import { Redirect } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import {connect} from 'react-redux';
 import { login, loadUser } from '../actions/auth';
 import '../assets/css/login.css';
@@ -16,10 +16,6 @@ interface IState {
 }
 
 class Login extends Component<IProps, IState> {
-	constructor(props: IProps){
-		super(props);
-
-	}
 	componentDidUpdate(prevProps: IProps, prevState: IState){
 		if(prevProps.auth.token !== this.props.auth.token){
 			this.props.loadUser();
@@ -36,7 +32,7 @@ class Login extends Component<IProps, IState> {
 	render(){
 		const auth = this.props.auth;
 		if (auth.isAuthenticated) {
-			return <Redirect to="/predictions/" />;
+			return <Navigate to="/predictions/" replace />;
 		}
 		return(
 			<div className='login-container'>

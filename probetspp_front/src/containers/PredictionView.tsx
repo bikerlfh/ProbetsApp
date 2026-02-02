@@ -36,7 +36,7 @@ class PredictionsView extends Component<IProps, IState> {
     }
 
     componentDidMount(){
-        if(this.props.leagues.length == 0){
+        if(this.props.leagues.length === 0){
             this.props.getLeagues();
         }
         this.searchPredictions();
