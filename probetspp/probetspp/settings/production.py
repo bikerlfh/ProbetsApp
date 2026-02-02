@@ -13,11 +13,21 @@ DATABASES = {
     }
 }
 
-DEBUG = False
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')
+DEBUG = True
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '*').split(',')
 ROOT_URLCONF = f'{SITE_NAME}.urls'
 
-CORS_ALLOWED_ORIGINS = ALLOWED_HOSTS
+# CORS configuration - only set CORS_ALLOWED_ORIGINS if we have valid origins
+# If ALLOWED_HOSTS contains '*', use CORS_ORIGIN_ALLOW_ALL instead
+if '*' in ALLOWED_HOSTS or not ALLOWED_HOSTS or ALLOWED_HOSTS == ['']:
+    CORS_ORIGIN_ALLOW_ALL = True
+else:
+    # Convert hosts to proper CORS origins (add http:// if no scheme)
+    CORS_ALLOWED_ORIGINS = [
+        origin if origin.startswith('http://') or origin.startswith('https://') 
+        else f'http://{origin}' 
+        for origin in ALLOWED_HOSTS if origin.strip()
+    ]
 
 # STATICS AND MEDIA FILES
 #AWS_STORAGE_BUCKET_NAME = os.getenv('BUCKET_FILES')

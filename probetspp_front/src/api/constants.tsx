@@ -2,7 +2,7 @@
  * Url de la api
  * @type {string}
  */
-//export const APIUrl = "http://201.244.226.121:8081/";
+// export const APIUrl = "http://localhost:8081/api/";
 export const APIUrl = process.env.REACT_APP_API_URL;
 export const APIKey = "edd19a46ed105cf8fb22056328072bec";
 

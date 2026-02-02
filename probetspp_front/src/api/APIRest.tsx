@@ -22,8 +22,9 @@
  */
  import {Dictionary} from '../types/interfaces';
  import {APIMethod} from '../types/common'
- import {APIKey, APIUrl, HTTPStatus} from './constants'
+ import {APIUrl} from './constants'
  import {loadState} from '../localStorage';
+ import moment from 'moment';
 
 /**
  * format parameters to stringify
@@ -35,8 +36,7 @@ const formatParameters = (params: Dictionary<any>) => {
         for (let key of Object.keys(params)) {
             // si el atributo es una instancia de Date
             if (params[key] instanceof Date) {
-                // ojo se usa la libreria momentjs (fromat es ProtoType de Date)
-                params[key] = params[key].format("YYYY-MM-DD H:mm:ss");
+                params[key] = moment(params[key]).format("YYYY-MM-DD H:mm:ss");
             }
         }
         return JSON.stringify(params);

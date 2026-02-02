@@ -1,10 +1,28 @@
 import {Component} from 'react'
 import {connect} from 'react-redux';
 import {Bar} from 'react-chartjs-2';
+import {
+    Chart as ChartJS,
+    CategoryScale,
+    LinearScale,
+    BarElement,
+    Title,
+    Tooltip,
+    Legend,
+} from 'chart.js';
 import {getLeagues} from '../actions/games';
 import { Dictionary } from '../types/interfaces';
 import {chartColors} from '../utils/constants'
-import { GameStatus, PredictionStatus } from '../types/common';
+import { PredictionStatus } from '../types/common';
+
+ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    BarElement,
+    Title,
+    Tooltip,
+    Legend
+);
 
 
 interface IProps {
@@ -15,7 +33,7 @@ interface IProps {
 interface IState {
     showToday: boolean;
     options: Dictionary<any>;
-    data: Dictionary<any>;
+    data: { labels: string[]; datasets: any[] };
 }
 
 class PredictionBarChart extends Component<IProps, IState>{
@@ -23,12 +41,12 @@ class PredictionBarChart extends Component<IProps, IState>{
         super(props);
         this.state = {
             showToday: true,
-            data: {},
+            data: { labels: [], datasets: [] },
             options: {}
         }
     }
     componentDidMount(){
-        if(this.props.leagues.length == 0){
+        if(this.props.leagues.length === 0){
             this.props.getLeagues();
         }else{
             this.getBarProperties();
@@ -36,7 +54,7 @@ class PredictionBarChart extends Component<IProps, IState>{
     }
     
     componentDidUpdate(prevProps: IProps, prevState: IState){
-        if(this.state.showToday != prevState.showToday){
+        if(this.state.showToday !== prevState.showToday){
             this.getBarProperties();
         }
     }
@@ -44,7 +62,7 @@ class PredictionBarChart extends Component<IProps, IState>{
     filterValue(obj: Dictionary<any>[], value: number, status: number) {
         for(let i=0; i<obj.length; i++){
             let item = obj[i];
-            if(item.status == status && item.league_id==value){
+            if(item.status === status && item.league_id === value){
                 return item;
             }
         }
@@ -71,15 +89,15 @@ class PredictionBarChart extends Component<IProps, IState>{
                 item.id,
                 PredictionStatus.LOST
             );
-            if(won != undefined || lost != undefined){
+            if(won !== undefined || lost !== undefined){
                 labels.push(item.name);
-                if(won != undefined){
+                if(won !== undefined){
                     won_data.push(won.count);
                 }
                 else{
                     won_data.push(0);
                 }
-                if(lost != undefined){
+                if(lost !== undefined){
                     lost_data.push(lost.count);
                 }
                 else{
@@ -104,17 +122,22 @@ class PredictionBarChart extends Component<IProps, IState>{
         }
 		const options = {
 			responsive: true,
-			title: {
-				display: true,
-				text: showToday? 'Today Predictions': 'History Predictions'
+			plugins: {
+				title: {
+					display: true,
+					text: showToday? 'Today Predictions': 'History Predictions'
+				},
 			},
 			scales: {
-                yAxes: [{
+                y: {
+                    beginAtZero: true,
                     ticks: {
-                        beginAtZero: true,
-                        callback: (value: number) => {if (value % 1 === 0) return value;}
+                        callback: (value: number | string) => {
+                            if (typeof value === 'number' && value % 1 === 0) return value;
+                            return null;
+                        }
                     },
-                }],
+                },
             }
 		}
 		this.setState({data: data, options: options});

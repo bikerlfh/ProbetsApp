@@ -1,6 +1,21 @@
-version: '3.7'
-
 services:
+  postgres:
+    image: postgres:13
+    command: postgres -c log_statement=all
+    environment:
+      POSTGRES_DB: probetspp_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
   app:
     build:
       context: .
@@ -13,25 +28,31 @@ services:
       - .env.prod
     #environment:
     #  - DEBUG=1
-  frontend:
-    build:
-      context: probetspp_front/
-    env_file:
-      - .env.prod
-    volumes:
-      - frontapp:/app/build
+    depends_on:
+      postgres:
+        condition: service_healthy
+  # frontend:
+  #   build:
+  #     context: probetspp_front/
+  #   env_file:
+  #     - .env.prod
+  #   volumes:
+  #     - frontapp:/app/build
+  #   depends_on:
+  #     - app
   nginx:
-    image: nginx:1.13
+    image: nginx:1.29.4
     ports:
       - 80:80
       - 8081:8081
     volumes:
       - ./config/nginx/conf.d:/etc/nginx/conf.d
       - static:/tmp/probetspp/static
-      - frontapp:/usr/share/nginx/html
+      # - frontapp:/usr/share/nginx/html
     depends_on:
       - app
 volumes:
   .:
   static:
-  frontapp:
+  postgres_data:
+  # frontapp:

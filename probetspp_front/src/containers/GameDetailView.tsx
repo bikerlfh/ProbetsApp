@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { useParams } from 'react-router-dom';
 import APIRequest from '../api/APIRequests'
 import {Dictionary} from '../types/interfaces';
 import {GameStatus, PredictionStatus} from '../types/common'
@@ -8,10 +9,9 @@ import GameList from '../components/GameList';
 import GamesChart from '../components/GamesChart';
 import '../assets/css/gamedetail.css';
 import { toast } from 'react-toastify';
-import { Pacman, BallScaleRippleMultiple } from 'react-pure-loaders';
 
 interface IProps {
-  	match: Dictionary<any>
+  	gameId: string;
 }
 
 interface IState {
@@ -45,10 +45,10 @@ class GameViewDetail extends Component<IProps, IState> {
     }
 
 	async componentDidMount(){
-        const params = this.props.match.params;
-        const game = await APIRequest.getGameDetail(params.gameId);
+        const gameId = parseInt(this.props.gameId, 10);
+        const game = await APIRequest.getGameDetail(gameId);
         let prediction = game.prediction || null;
-		if(prediction == null){
+		if(prediction === null){
 			prediction = this.getPredictionByDataGame(game);
 		}
         const player_winner_id = prediction? prediction.player_winner_id: null;
@@ -69,7 +69,7 @@ class GameViewDetail extends Component<IProps, IState> {
 
 	getPredictionByDataGame(game: Dictionary<any>){
 		const dataGame = game.data_game;
-		if(dataGame == null)
+		if(dataGame === null)
 			return {noPrediction: true}
 		let h_score = dataGame.h_wt_score + dataGame.h_h2h_wt_score;
         h_score += dataGame.h_lg_wt_score + dataGame.h_d_opp_wt_score;
@@ -92,22 +92,24 @@ class GameViewDetail extends Component<IProps, IState> {
 		APIRequest.notifyPrediction(prediction.id)
 		.then((res)=>{
 			toast.success("🛩 prediction has been notified", {
-				position: toast.POSITION.BOTTOM_RIGHT
+				position: "bottom-right"
 			});
 		}).catch((res) => {
 			toast.error("error to invoke ep", {
-				position: toast.POSITION.BOTTOM_RIGHT
+				position: "bottom-right"
 			});
 		});
 	}
 
 	render() {
         const game = this.state.game
-        if(game == null){
+        if(game === null){
           return(
 			<MainContainer>
 				<div className="loading-container">
-            		<BallScaleRippleMultiple color='#FF0404' loading/>
+					<div className="spinner-border text-danger" role="status">
+						<span className="sr-only">Loading...</span>
+					</div>
 				</div>
 			</MainContainer>
           )
@@ -121,7 +123,7 @@ class GameViewDetail extends Component<IProps, IState> {
         const player_winner_id = this.state.player_winner_id;
 
         let player_data = this.state.home_player;
-        if(player_winner_id == game.a_id){
+        if(player_winner_id === game.a_id){
             player_data = this.state.away_player;
         }
         let url_game = 'https://www.flashscore.co/partido/'+game.external_id+'/'
@@ -151,7 +153,7 @@ class GameViewDetail extends Component<IProps, IState> {
 									<td>
 									<b>
 										{game.name} 
-										{game.status == GameStatus.FINISHED && 
+										{game.status === GameStatus.FINISHED && 
 										<b>  ({game.h_score}-{game.a_score})</b>
 										}
 									</b>
@@ -171,7 +173,7 @@ class GameViewDetail extends Component<IProps, IState> {
 								</tr>
 								<tr>
 									<td>Url</td>
-									<td><a href={url_game} target='_blank'>view game</a></td>
+									<td><a href={url_game} target='_blank' rel='noreferrer'>view game</a></td>
 								</tr>
 								</tbody>
 							</table>
@@ -184,7 +186,7 @@ class GameViewDetail extends Component<IProps, IState> {
 								<h6 className="m-0 font-weight-bold text-primary prediction-card">
 									{prediction.noPrediction? 'NO PREDICTION': 'Prediction'}
 									{!prediction.noPrediction && 
-									<a className='cursor-pointer' onClick={this.notifyPrediction.bind(this)}>Notify</a>}
+									<button type='button' className='btn btn-link cursor-pointer p-0' onClick={this.notifyPrediction.bind(this)}>Notify</button>}
 								</h6>
 								
 							</div>
@@ -196,7 +198,7 @@ class GameViewDetail extends Component<IProps, IState> {
 											<td>
 											{player_winner_id?	
 												<b>
-													{player_winner_id == game.h_id? game.h_name: game.a_name}
+													{player_winner_id === game.h_id? game.h_name: game.a_name}
 												</b>
 											:
 												<b>-----------------</b>
@@ -221,7 +223,7 @@ class GameViewDetail extends Component<IProps, IState> {
 											<td>Odds</td>
 											<td>
 											<b>
-												{player_winner_id && player_winner_id == game.h_id? game.h_odds: game.a_odds}
+												{player_winner_id && player_winner_id === game.h_id? game.h_odds: game.a_odds}
 											</b>
 											</td>
 										</tr>
@@ -259,26 +261,26 @@ class GameViewDetail extends Component<IProps, IState> {
 									</tr>
 									</thead>
 									<tbody>
-									<tr>
-										<td>H2H score</td>
-										<td>{data.h_h2h_wt_score && data.h_h2h_wt_score.toFixed(2) || 0}</td>
-										<td>{data.a_h2h_wt_score && data.a_h2h_wt_score.toFixed(2) || 0}</td>
-									</tr>
-									<tr>
-										<td>P score</td>
-										<td>{data.h_wt_score && data.h_wt_score.toFixed(2) || 0}</td>
-										<td>{data.a_wt_score && data.a_wt_score.toFixed(2) || 0}</td>
-									</tr>
-									<tr>
-										<td>LG score</td>
-										<td>{data.h_lg_wt_score && data.h_lg_wt_score.toFixed(2) || 0}</td>
-										<td>{data.a_lg_wt_score && data.a_lg_wt_score.toFixed(2) || 0}</td>
-									</tr>
-									<tr>
-										<td>DOPP score</td>
-										<td>{data.h_d_opp_wt_score && data.h_d_opp_wt_score.toFixed(2) || 0}</td>
-										<td>{data.a_d_opp_wt_score && data.a_d_opp_wt_score.toFixed(2) || 0}</td>
-									</tr>
+								<tr>
+									<td>H2H score</td>
+									<td>{(data.h_h2h_wt_score && data.h_h2h_wt_score.toFixed(2)) || 0}</td>
+									<td>{(data.a_h2h_wt_score && data.a_h2h_wt_score.toFixed(2)) || 0}</td>
+								</tr>
+								<tr>
+									<td>P score</td>
+									<td>{(data.h_wt_score && data.h_wt_score.toFixed(2)) || 0}</td>
+									<td>{(data.a_wt_score && data.a_wt_score.toFixed(2)) || 0}</td>
+								</tr>
+								<tr>
+									<td>LG score</td>
+									<td>{(data.h_lg_wt_score && data.h_lg_wt_score.toFixed(2)) || 0}</td>
+									<td>{(data.a_lg_wt_score && data.a_lg_wt_score.toFixed(2)) || 0}</td>
+								</tr>
+								<tr>
+									<td>DOPP score</td>
+									<td>{(data.h_d_opp_wt_score && data.h_d_opp_wt_score.toFixed(2)) || 0}</td>
+									<td>{(data.a_d_opp_wt_score && data.a_d_opp_wt_score.toFixed(2)) || 0}</td>
+								</tr>
 									</tbody>
 								</table>
 							</div>
@@ -324,8 +326,8 @@ class GameViewDetail extends Component<IProps, IState> {
 							<div className="card-body">
 								<GameList 
 									games={h_lg_games}
-									player_winner_id={game.h_id == player_winner_id? player_winner_id: game.h_id}
-									isOpponent={game.h_id == player_winner_id}
+									player_winner_id={game.h_id === player_winner_id? player_winner_id: game.h_id}
+									isOpponent={game.h_id === player_winner_id}
 								/>
 							</div>
 						</div>
@@ -353,8 +355,8 @@ class GameViewDetail extends Component<IProps, IState> {
 							<div className="card-body">
 								<GameList 
 									games={a_lg_games}
-									player_winner_id={game.a_id == player_winner_id? player_winner_id: game.a_id}
-									isOpponent={game.a_id == player_winner_id}
+									player_winner_id={game.a_id === player_winner_id? player_winner_id: game.a_id}
+									isOpponent={game.a_id === player_winner_id}
 								/>
 							</div>
 						</div>
@@ -365,4 +367,10 @@ class GameViewDetail extends Component<IProps, IState> {
 	}
 }
 
-export default GameViewDetail;
+// Wrapper funcional para usar useParams con componente de clase
+function GameDetailView() {
+	const { gameId } = useParams<{ gameId: string }>();
+	return <GameViewDetail gameId={gameId || ''} />;
+}
+
+export default GameDetailView;

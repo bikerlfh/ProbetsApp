@@ -32,7 +32,7 @@ class GameRow extends Component<IProps, IState> {
     renderBadge(){
         const game = this.props.game;
         const winnerId = this.props.player_winner_id;
-        if(winnerId == game.winner_id)
+        if(winnerId === game.winner_id)
             return(
                 <span className="badge badge-pill badge-success ml-2">W</span>
             )
